@@ -1,15 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import MainPage from '../Containers/MainContainer';
-import FeedPage from '../Containers/FeedContainer';
-import ItemPage from '../Containers/ItemContainer';
+import MainContainer from '../Containers/MainContainer';
+import FeedContainer from '../Containers/FeedContainer';
+import ItemContainer from '../Containers/ItemContainer';
 
 const MainRouter = () => {
   return (
     <Switch>
-      <Route exact path="/" component={MainPage} />
-      <Route path="/feed" component={FeedPage} />
-      <Route path="/item" component={ItemPage} />
+      <Route exact path="/" component={MainContainer} />
+      <Route path="/feed" component={FeedContainer} />
+      <Route path="/item" component={ItemContainer} />
     </Switch>
   );
 };
