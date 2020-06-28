@@ -1,5 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 import { DevApi } from './DevApi';
+
+const CustomButton = styled.button`
+  width: 200px;
+  height: 40px;
+  color: #000;
+  font-weight: 500;
+  margin: 30px;
+  background-color: #ffdf18;
+`;
 
 function DevComponent() {
   const getFeed = async () => {
@@ -8,9 +18,7 @@ function DevComponent() {
   };
   return (
     <div className="dev-component">
-      <button type="button" onClick={() => getFeed()}>
-        get feed
-      </button>
+      <CustomButton onClick={() => getFeed()}>get feed</CustomButton>
     </div>
   );
 }
