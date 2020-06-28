@@ -18,7 +18,7 @@
 
 - React를 이용한 효과적인 컴포넌트 설계
 - 재사용 가능한 Component 설계로 중복 Code 및 중복 Component 최소화
-- Mainternence를 고려하여 Redux로 상태 관리 (상태 Tree 및 Action 문서화)
+- Maintrnence를 고려하여 Redux로 상태 관리 (상태 Tree 및 Action 문서화)
 - React Router를 이용한 트래픽 분산
 - 핵심 구현 기능: 위치기반 매장검색/ 메뉴의 수량 및 가격계산/ 장바구니 담기
 
