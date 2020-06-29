@@ -10,6 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import RootReducer from './Modules';
 
 const store = createStore(RootReducer, applyMiddleware(ReduxThunk));
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
