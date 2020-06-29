@@ -1952,5 +1952,199 @@
         }]
       }]
     }
-  ]
+  ],
+  "user": {
+    "user_name": "USER1",
+    "email": "user1@gmail.com",
+    "phone": "010-9999-9999",
+    "address": "서울특별시 성동구 성수동",
+    "favorite": [{
+      "id": 31,
+      "name": "Store Title",
+      "delivery": true,
+      "pickup": true,
+      "delivery_price": 30,
+      "estimated_prep_time": 40,
+      "is_partner": true,
+      "thumbnail": "https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg&quality=90&w=320&h=174&mode=crop&format=jpg&v=4",
+      "state": true,
+      "address": "",
+      "lat": 40.7077779,
+      "lng": -74.013832,
+      "badge": "badge",
+      "food_type": "American",
+      "description": "description",
+      "city": "New York",
+      "favorit": 25,
+      "item": [{
+        "category": "American",
+        "food_name": "pasta",
+        "description": "description",
+        "cost": 50,
+        "image": "",
+        "option_group": [{
+          "name": "Choose Size ",
+          "options": [{
+              "name": "Small ",
+              "price": 0,
+              "pickup_price": 0
+            },
+            {
+              "name": "Medium ",
+              "price": 0.5,
+              "pickup_price": 0.5
+            },
+            {
+              "name": "Large ",
+              "price": 0.75,
+              "pickup_price": 0.75
+            }
+          ]
+        }, {
+          "name": "Toppings ",
+          "options": [{
+              "name": "Onions",
+              "price": 1,
+              "pickup_price": 1
+            },
+            {
+              "name": "Bell peppers ",
+              "price": 1,
+              "pickup_price": 1
+            },
+            {
+              "name": "Black olives",
+              "price": 1,
+              "pickup_price": 1
+            }
+          ]
+        }]
+      }]
+    }, {
+      "id": 32,
+      "name": "Store Title",
+      "delivery": true,
+      "pickup": true,
+      "delivery_price": 30,
+      "estimated_prep_time": 40,
+      "is_partner": true,
+      "thumbnail": "https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg&quality=90&w=320&h=174&mode=crop&format=jpg&v=4",
+      "state": true,
+      "address": "",
+      "lat": 40.7077779,
+      "lng": -74.013832,
+      "badge": "badge",
+      "food_type": "American",
+      "description": "description",
+      "city": "New York",
+      "favorit": 25,
+      "item": [{
+        "category": "American",
+        "food_name": "pasta",
+        "description": "description",
+        "cost": 50,
+        "image": "",
+        "option_group": [{
+          "name": "Choose Size ",
+          "options": [{
+              "name": "Small ",
+              "price": 0,
+              "pickup_price": 0
+            },
+            {
+              "name": "Medium ",
+              "price": 0.5,
+              "pickup_price": 0.5
+            },
+            {
+              "name": "Large ",
+              "price": 0.75,
+              "pickup_price": 0.75
+            }
+          ]
+        }, {
+          "name": "Toppings ",
+          "options": [{
+              "name": "Onions",
+              "price": 1,
+              "pickup_price": 1
+            },
+            {
+              "name": "Bell peppers ",
+              "price": 1,
+              "pickup_price": 1
+            },
+            {
+              "name": "Black olives",
+              "price": 1,
+              "pickup_price": 1
+            }
+          ]
+        }]
+      }]
+    }, {
+      "id": 33,
+      "name": "Store Title",
+      "delivery": true,
+      "pickup": true,
+      "delivery_price": 30,
+      "estimated_prep_time": 40,
+      "is_partner": true,
+      "thumbnail": "https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg&quality=90&w=320&h=174&mode=crop&format=jpg&v=4",
+      "state": true,
+      "address": "",
+      "lat": 40.7077779,
+      "lng": -74.013832,
+      "badge": "badge",
+      "food_type": "American",
+      "description": "description",
+      "city": "New York",
+      "favorit": 25,
+      "item": [{
+        "category": "American",
+        "food_name": "pasta",
+        "description": "description",
+        "cost": 50,
+        "image": "",
+        "option_group": [{
+          "name": "Choose Size ",
+          "options": [{
+              "name": "Small ",
+              "price": 0,
+              "pickup_price": 0
+            },
+            {
+              "name": "Medium ",
+              "price": 0.5,
+              "pickup_price": 0.5
+            },
+            {
+              "name": "Large ",
+              "price": 0.75,
+              "pickup_price": 0.75
+            }
+          ]
+        }, {
+          "name": "Toppings ",
+          "options": [{
+              "name": "Onions",
+              "price": 1,
+              "pickup_price": 1
+            },
+            {
+              "name": "Bell peppers ",
+              "price": 1,
+              "pickup_price": 1
+            },
+            {
+              "name": "Black olives",
+              "price": 1,
+              "pickup_price": 1
+            }
+          ]
+        }]
+      }]
+    }],
+    "history": []
+  }
 }
