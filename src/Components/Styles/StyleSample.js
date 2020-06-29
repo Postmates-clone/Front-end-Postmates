@@ -246,7 +246,7 @@ const AddToCart = styled.button`
 `;
 const CartCounter = styled.button`
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: -0.28px;
   font-weight: 500;
   line-height: normal;
@@ -257,9 +257,63 @@ const CartCounter = styled.button`
   align-items: center;
   position: relative;
   background-color: rgb(255, 255, 255);
-  width: 168px;
-  max-width: 168px;
-  height: 56px;
+  width: 11rem;
+  max-width: 10.5rem;
+  height: 4rem;
+  color: rgb(45, 49, 56);
+  margin-left: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(217, 219, 224, 0.5);
+  border-image: initial;
+  border-radius: 100px;
+`;
+const CounterLeft = styled.button`
+  font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
+  font-size: 1rem;
+  letter-spacing: -0.28px;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  width: 11rem;
+  max-width: 10.5rem;
+  height: 4rem;
+  color: rgb(45, 49, 56);
+  margin-left: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(217, 219, 224, 0.5);
+  border-image: initial;
+  border-radius: 100px;
+`;
+const CounterRight = styled.button`
+  font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
+  font-size: 1rem;
+  letter-spacing: -0.28px;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  width: 11rem;
+  max-width: 10.5rem;
+  height: 4rem;
   color: rgb(45, 49, 56);
   margin-left: auto;
   margin-top: 0px;
@@ -306,6 +360,8 @@ const StyleSample = () => {
       <SignInBtn>SIGN UP</SignInBtn>
       <AddToCart>Add To CART</AddToCart>
       <CartCounter>1</CartCounter>
+      <CounterLeft>-</CounterLeft>
+      <CounterRight>+</CounterRight>
     </div>
   );
 };
