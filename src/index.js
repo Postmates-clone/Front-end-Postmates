@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+// import feedReducer from './Modules/feedReducer';
 import './index.css';
-import { createStore, Provider } from 'react-redux';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import RootReducer from './Modules/RootReducer';
+import RootReducer from './Modules';
 
 const store = createStore(RootReducer);
 ReactDOM.render(
