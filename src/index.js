@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import FeedReducer from './Modules/feedReducer';
+// import feedReducer from './Modules/feedReducer';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import RootReducer from './Modules';
 
-const store = createStore(FeedReducer);
-
+const store = createStore(RootReducer);
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
