@@ -5,7 +5,7 @@ import {
   FEED_SET_LOADING,
   FEED_HAS_ERROR,
   FEED_SET_DATA,
-} from '../../Modules/FeedReducer';
+} from '../../Modules/feedReducer';
 import Stores from '../Items/Stores';
 
 const FeedPage = () => {

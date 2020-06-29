@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import feedReducer from './FeedReducer';
-import { ItemReducer } from './ItemReducer';
-import UserReducer from './UserReducer';
+import feedReducer from './feedReducer';
+import { itemReducer } from './ItemReducer';
+import UserReducer from './userReducer';
 
 const RootReducer = combineReducers({
   Feed: feedReducer,
-  Item: ItemReducer,
+  Item: itemReducer,
   User: UserReducer,
 });
 
