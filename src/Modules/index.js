@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import feedReducer from './feedReducer';
+import feedReducer from './FeedReducer';
 import { ItemReducer } from './ItemReducer';
 import { UserReducer } from './UserReducer';
 
