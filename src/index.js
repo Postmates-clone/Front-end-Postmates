@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 import './index.css';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import RootReducer from './Modules/RootReducer';
+
+const sotre = createStore(RootReducer);
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Provider store={sotre}>
     <App />
-  </BrowserRouter>,
+  </Provider>,
   document.getElementById('root'),
 );
 
