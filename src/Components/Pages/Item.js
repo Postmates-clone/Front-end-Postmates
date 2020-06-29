@@ -1,7 +1,8 @@
 import React from 'react';
+import MenuCategories from '../Items/MenuCategories';
 
-const ItemPage = ({ menuList }) => {
-  return menuList.map((data) => <h2>{data.category}</h2>);
+const ItemPage = ({ categoryList }) => {
+  return categoryList().map((list) => <MenuCategories list={list} />);
 };
 
 export default ItemPage;
