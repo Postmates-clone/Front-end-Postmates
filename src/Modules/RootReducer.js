@@ -1,4 +1,7 @@
-import { FeedReducer, ItemReducer, UserReducer, CombineReducers } from 'redux';
+import { CombineReducers } from 'redux';
+import { FeedReducer } from './FeedReducer';
+import { ItemReducer } from './ItemReducer';
+import { UserReducer } from './UserReducer';
 
 const RootReducer = CombineReducers({
   Feed: FeedReducer,
