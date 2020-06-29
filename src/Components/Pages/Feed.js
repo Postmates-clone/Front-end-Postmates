@@ -5,12 +5,12 @@ import {
   FEED_SET_LOADING,
   FEED_HAS_ERROR,
   FEED_SET_DATA,
-} from '../../Modules/feedReducer';
+} from '../../Modules/FeedReducer';
 import Stores from '../Items/Stores';
 
 const FeedPage = () => {
-  const status = useSelector((state) => state.status);
-  const stores = useSelector((state) => state.stores);
+  const status = useSelector(({ Feed }) => Feed.status);
+  const stores = useSelector(({ Feed }) => Feed.stores);
 
   const dispatch = useDispatch();
 
