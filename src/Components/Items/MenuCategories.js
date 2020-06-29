@@ -1,12 +1,17 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import MenuItem from './MenuItem';
+import MenuCategoryTitle from './MenuCategoryTitle';
 
 const MenuCategories = ({ list }) => {
   return (
     <div>
+      <MenuCategoryTitle title={list[0].category} />
       <ul>
         {list.map((item) => (
-          <li>{item.food_name}</li>
+          <li>
+            <MenuItem item={item} />
+          </li>
         ))}
       </ul>
     </div>
