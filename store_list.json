@@ -1,0 +1,1936 @@
+{
+    "items": [
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/7986e196-a8ea-4172-8884-52639f9cf316/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F7986e196-a8ea-4172-8884-52639f9cf316%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F7986e196-a8ea-4172-8884-52639f9cf316%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/cf8af977-8990-4b9b-9678-4de858b0bd24/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "ttps://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fcf8af977-8990-4b9b-9678-4de858b0bd24%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fcf8af977-8990-4b9b-9678-4de858b0bd24%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 332546,
+            "name": "The Best of New York Food",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437096
+            },
+            "uuid": "11b614df-16ab-4e9c-bbf8-c85c87f7d631",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 45,
+            "edt_range_info": {
+                "lower": 55,
+                "upper": 70,
+                "edt_range": "55–70 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7064364,
+            "lng": -74.00598,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Deli",
+                "plural_name": "Delis",
+                "slug": "deli",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F3e9aaa57-5437-48f4-93a9-67bc16750706%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F3e9aaa57-5437-48f4-93a9-67bc16750706%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$2.99 Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "is_pickup_enabled": true,
+            "slug": "the-best-of-new-york-food-new-york",
+            "street_address_1": "150 Water St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10005",
+            "country": "US",
+            "phone_number": "+12129521890",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/7986e196-a8ea-4172-8884-52639f9cf316/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F7986e196-a8ea-4172-8884-52639f9cf316%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F7986e196-a8ea-4172-8884-52639f9cf316%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/cf8af977-8990-4b9b-9678-4de858b0bd24/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fcf8af977-8990-4b9b-9678-4de858b0bd24%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fcf8af977-8990-4b9b-9678-4de858b0bd24%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 704,
+            "badges": [
+                {
+                    "text": "POPULAR",
+                    "text_color": "#979CA6"
+                }
+            ],
+            "favorite_count": 54,
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "New On Pickup",
+                            "good for groups",
+                            "Local Restaurant",
+                            "[Business Category] Long Tail",
+                            "Local Restaurants(1-5 locations)"
+                        ]
+                    }
+                },
+                {
+                    "type_id": 1
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/de8639c3-3878-4fc7-80eb-513801e84d3a/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fde8639c3-3878-4fc7-80eb-513801e84d3a%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fde8639c3-3878-4fc7-80eb-513801e84d3a%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/f1738e03-b503-448e-b3e8-297bab90f22b/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff1738e03-b503-448e-b3e8-297bab90f22b%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff1738e03-b503-448e-b3e8-297bab90f22b%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 5114253,
+            "name": "The Ice Cream Shop",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437177
+            },
+            "uuid": "3b1a2705-89a7-48ac-a0d0-fcb38f253b1b",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 0,
+            "edt_range_info": {
+                "lower": 25,
+                "upper": 40,
+                "edt_range": "25–40 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7185941,
+            "lng": -73.9893848,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Ice Cream",
+                "plural_name": "Ice Creams",
+                "slug": "ice-cream",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/b5221786-b9d9-4836-bf0f-a940fa53ba31/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb5221786-b9d9-4836-bf0f-a940fa53ba31%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb5221786-b9d9-4836-bf0f-a940fa53ba31%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$2.99 Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "brand": {
+                "uuid": "dbf37ea1-bb0e-4457-9606-9c161cd7cced",
+                "logo_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/9eecb10e-254f-46b8-8800-c13fb5ffb70a/orig.jpg",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F9eecb10e-254f-46b8-8800-c13fb5ffb70a%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "background_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/7d96d9aa-1a4f-45e3-9545-9694b8e2eb20/orig.jpg",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F7d96d9aa-1a4f-45e3-9545-9694b8e2eb20%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "name": "The Ice Cream Shop",
+                "cta": "TBD",
+                "active": true,
+                "slug": "the-ice-cream-shop",
+                "description": "   "
+            },
+            "is_pickup_enabled": true,
+            "slug": "the-ice-cream-shop-new-york-76455",
+            "street_address_1": "95 Delancey St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10002",
+            "country": "US",
+            "phone_number": "+16465025424",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/de8639c3-3878-4fc7-80eb-513801e84d3a/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fde8639c3-3878-4fc7-80eb-513801e84d3a%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fde8639c3-3878-4fc7-80eb-513801e84d3a%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/f1738e03-b503-448e-b3e8-297bab90f22b/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff1738e03-b503-448e-b3e8-297bab90f22b%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff1738e03-b503-448e-b3e8-297bab90f22b%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 1540,
+            "badges": [
+                {
+                    "text": "NEW",
+                    "text_color": "#979CA6"
+                }
+            ],
+            "favorite_count": 6,
+            "merchant_store_id": "Green Star Foods",
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": ["Dessert", "[Business Category] Enterprise"]
+                    }
+                },
+                {
+                    "type_id": 3
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/890faea7-d034-434c-bcb1-56381003f7e6/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F890faea7-d034-434c-bcb1-56381003f7e6%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F890faea7-d034-434c-bcb1-56381003f7e6%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/f1c54a22-50eb-4f2b-b058-55cef8aeea8d/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff1c54a22-50eb-4f2b-b058-55cef8aeea8d%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff1c54a22-50eb-4f2b-b058-55cef8aeea8d%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 24630,
+            "name": "Tribeca Bagels",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437127
+            },
+            "uuid": "27b08e93-9ac3-4986-a567-4210db24bc47",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 15,
+            "edt_range_info": {
+                "lower": 25,
+                "upper": 40,
+                "edt_range": "25–40 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7209045,
+            "lng": -74.00442660000002,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Deli",
+                "plural_name": "Delis",
+                "slug": "deli",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F3e9aaa57-5437-48f4-93a9-67bc16750706%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F3e9aaa57-5437-48f4-93a9-67bc16750706%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$2.99 Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "is_pickup_enabled": true,
+            "slug": "tribeca-bagels-new-york-2",
+            "street_address_1": "374 Canal St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10013",
+            "country": "US",
+            "phone_number": "+12122268518",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/890faea7-d034-434c-bcb1-56381003f7e6/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F890faea7-d034-434c-bcb1-56381003f7e6%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F890faea7-d034-434c-bcb1-56381003f7e6%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/f1c54a22-50eb-4f2b-b058-55cef8aeea8d/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff1c54a22-50eb-4f2b-b058-55cef8aeea8d%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff1c54a22-50eb-4f2b-b058-55cef8aeea8d%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 913,
+            "favorite_count": 146,
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "Super Bowl",
+                            "good for groups",
+                            "Local Restaurant",
+                            "[Business Category] Long Tail",
+                            "Local Restaurants(1-5 locations)"
+                        ]
+                    }
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/faec99d5-27b4-48dd-b860-5f868e2bb4f0/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffaec99d5-27b4-48dd-b860-5f868e2bb4f0%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffaec99d5-27b4-48dd-b860-5f868e2bb4f0%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/8c3d15db-aeb6-4627-b745-360bbb4784b3/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8c3d15db-aeb6-4627-b745-360bbb4784b3%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8c3d15db-aeb6-4627-b745-360bbb4784b3%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 484489,
+            "name": "Subway",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437227
+            },
+            "uuid": "883a70e2-df78-48cf-8fdc-20a094742263",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 15,
+            "edt_range_info": {
+                "lower": 25,
+                "upper": 40,
+                "edt_range": "25–40 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7062784,
+            "lng": -74.01162769999999,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Sandwich",
+                "plural_name": "Sandwiches",
+                "slug": "sandwich",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/df8619df-ada0-428a-b2c7-79a31a2f9d1e/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fdf8619df-ada0-428a-b2c7-79a31a2f9d1e%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fdf8619df-ada0-428a-b2c7-79a31a2f9d1e%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$2.99 Delivery",
+            "description": "6 inch, footlong, or kids meal. Breakfast, lunch, or dinner. Whatever your need, Subway is serving up fresh options that'll satisfy.",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "brand": {
+                "uuid": "7519cd92-f3d8-4677-9821-7092e45f7498",
+                "logo_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/e4e9f8b1-7b1a-4143-8062-3c23ea7000ba/orig.jpg",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fe4e9f8b1-7b1a-4143-8062-3c23ea7000ba%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "background_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/194b558c-26a3-4232-80e6-ec3488574582/orig.jpg",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F194b558c-26a3-4232-80e6-ec3488574582%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "name": "Subway",
+                "cta": "TBD",
+                "active": true,
+                "slug": "subway",
+                "description": "6 inch, footlong, or kids meal. Breakfast, lunch, or dinner. Whatever your need, Subway is serving up fresh options that'll satisfy. And Postmates can deliver your favorite Subway sandwich right to your door as soon as your craving hits. All the freshest bread, meat, cheese, and veggies are at your fingertips. Whether you're trying out the latest flavor or sticking to one of the classics, Subway makes it easy to get exactly what you want on your sandwich, salad, or flatbread. Postmates makes it easy to get your meal ASAP. Simply tap the app to select a nearby store and order your fresh fave, then we'll take care of the rest."
+            },
+            "is_pickup_enabled": true,
+            "slug": "subway-new-york-30-broad-st",
+            "street_address_1": "30 Broad St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10004",
+            "country": "US",
+            "phone_number": "+12129204568",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/faec99d5-27b4-48dd-b860-5f868e2bb4f0/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffaec99d5-27b4-48dd-b860-5f868e2bb4f0%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffaec99d5-27b4-48dd-b860-5f868e2bb4f0%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/8c3d15db-aeb6-4627-b745-360bbb4784b3/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8c3d15db-aeb6-4627-b745-360bbb4784b3%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8c3d15db-aeb6-4627-b745-360bbb4784b3%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 865,
+            "favorite_count": 35,
+            "merchant_store_id": "62296-0",
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "Deli",
+                            "Fast Food",
+                            "[Business Category] Enterprise"
+                        ]
+                    }
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/fbbe9548-423b-45c0-9083-df977c0a29b2/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffbbe9548-423b-45c0-9083-df977c0a29b2%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffbbe9548-423b-45c0-9083-df977c0a29b2%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/6e48ff98-d500-46b4-a8ff-fc0e2edc8b0c/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F6e48ff98-d500-46b4-a8ff-fc0e2edc8b0c%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F6e48ff98-d500-46b4-a8ff-fc0e2edc8b0c%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 2666382,
+            "name": "Spring Street Finest Deli",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437335
+            },
+            "uuid": "c5d70b55-9bc7-4f6c-a186-34a5919bb34a",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 15,
+            "edt_range_info": {
+                "lower": 30,
+                "upper": 45,
+                "edt_range": "30–45 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7258761,
+            "lng": -74.0092864,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Deli",
+                "plural_name": "Delis",
+                "slug": "deli",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F3e9aaa57-5437-48f4-93a9-67bc16750706%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F3e9aaa57-5437-48f4-93a9-67bc16750706%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$2.99 Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "is_pickup_enabled": true,
+            "slug": "spring-street-finest-feli-new-york",
+            "street_address_1": "322 Spring St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10013",
+            "country": "US",
+            "phone_number": "+12123432335",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/fbbe9548-423b-45c0-9083-df977c0a29b2/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffbbe9548-423b-45c0-9083-df977c0a29b2%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffbbe9548-423b-45c0-9083-df977c0a29b2%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/6e48ff98-d500-46b4-a8ff-fc0e2edc8b0c/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F6e48ff98-d500-46b4-a8ff-fc0e2edc8b0c%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F6e48ff98-d500-46b4-a8ff-fc0e2edc8b0c%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 1483,
+            "badges": [
+                {
+                    "text": "$5 OFF $20",
+                    "text_color": "#EB4826"
+                }
+            ],
+            "favorite_count": 93,
+            "merchant_promotion_uuids": [
+                "dbd8009f-f2b2-45c8-ac85-2c211aad2235"
+            ],
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "Stay Home",
+                            "Super Bowl",
+                            "free delivery",
+                            "good for groups",
+                            "Local Restaurant",
+                            "[Promotions] Local",
+                            "[Business Category] Long Tail",
+                            "Local Restaurants(1-5 locations)"
+                        ]
+                    }
+                },
+                {
+                    "type_id": 6,
+                    "overrides": {
+                        "text": "$5 off $20"
+                    },
+                    "meta": {
+                        "merchant_promotion_uuid": "dbd8009f-f2b2-45c8-ac85-2c211aad2235"
+                    }
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/1cb86454-1ff3-47f6-bf29-1ff77d4bcc9f/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1cb86454-1ff3-47f6-bf29-1ff77d4bcc9f%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1cb86454-1ff3-47f6-bf29-1ff77d4bcc9f%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/a0dae694-b225-43ed-bbaf-de5704c963fe/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fa0dae694-b225-43ed-bbaf-de5704c963fe%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fa0dae694-b225-43ed-bbaf-de5704c963fe%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 22500,
+            "name": "7-Eleven",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.43715
+            },
+            "uuid": "2b1624c9-5b68-4487-8262-d6ce73f23b80",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 20,
+            "edt_range_info": {
+                "lower": 20,
+                "upper": 35,
+                "edt_range": "20–35 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7146769,
+            "lng": -74.0083781,
+            "pricing": {
+                "price_authority": true,
+                "swipe_card": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Convenience Store",
+                "plural_name": "Convenience Stores",
+                "slug": "convenience-store",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/30f90746-7ae7-4400-a29c-d1f8a81cbfa0/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F30f90746-7ae7-4400-a29c-d1f8a81cbfa0%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F30f90746-7ae7-4400-a29c-d1f8a81cbfa0%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$0.99 Delivery",
+            "description": "Serving up all your favorites from brownies, chicken wings, and mozzarella sticks to daily essentials and signature Slurpees. 7-Eleven's selection never leaves you high and dry.",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "brand": {
+                "uuid": "25fdb151-7753-4f33-8c8b-3b733e06203d",
+                "logo_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/fa26bffe-c018-4dcc-834b-b9fe526a88ae/orig.png",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffa26bffe-c018-4dcc-834b-b9fe526a88ae%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "background_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/16f39866-ec85-4203-bb86-9604c548f4d9/orig.jpg",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F16f39866-ec85-4203-bb86-9604c548f4d9%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "name": "7-Eleven",
+                "cta": "TBD",
+                "active": true,
+                "slug": "7-eleven",
+                "description": "Serving up everything from snacks and hot food—you know you love the brownies, chicken wings, and mozzarella sticks—to their daily essentials and signature Slurpees, 7-Eleven's selection never leaves you high and dry. Best part is, you can almost always count on there being a 7-Eleven closeby. Combine that with the fact that you can order Postmates from 7-Eleven, we're basically put the convenience in \"convenience store.\" So whether you're busy on free slurpee day and don't want to miss out, or need 7-Eleven kettle chips like...right now, we'll get it to you—fast."
+            },
+            "slug": "7-eleven-new-york-10",
+            "street_address_1": "140 Church St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10007",
+            "country": "US",
+            "phone_number": "+12126081100",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/1cb86454-1ff3-47f6-bf29-1ff77d4bcc9f/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1cb86454-1ff3-47f6-bf29-1ff77d4bcc9f%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1cb86454-1ff3-47f6-bf29-1ff77d4bcc9f%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/a0dae694-b225-43ed-bbaf-de5704c963fe/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fa0dae694-b225-43ed-bbaf-de5704c963fe%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fa0dae694-b225-43ed-bbaf-de5704c963fe%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 292,
+            "favorite_count": 17,
+            "merchant_store_id": "39102",
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": ["[Business Category] Long Tail"]
+                    }
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/1d781361-827f-4ef9-b0f6-d24706e5c95b/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1d781361-827f-4ef9-b0f6-d24706e5c95b%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1d781361-827f-4ef9-b0f6-d24706e5c95b%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/b32dc08c-db0d-46e6-af1a-808cb1d09381/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb32dc08c-db0d-46e6-af1a-808cb1d09381%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb32dc08c-db0d-46e6-af1a-808cb1d09381%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 406198,
+            "name": "Ali Baba Organic Marketplace",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437383
+            },
+            "uuid": "c7bb687f-a7ba-4e6d-8142-05c8a28bd19c",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 25,
+            "edt_range_info": {
+                "lower": 35,
+                "upper": 50,
+                "edt_range": "35–50 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7138025,
+            "lng": -73.9988233,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Grocery Store",
+                "plural_name": "Grocery Stores",
+                "slug": "grocery-store",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/07d847f8-7a7a-42a7-8ed0-000247fc0f5e/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F07d847f8-7a7a-42a7-8ed0-000247fc0f5e%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F07d847f8-7a7a-42a7-8ed0-000247fc0f5e%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "Free Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "is_pickup_enabled": true,
+            "slug": "ali-baba-organic-marketplace-new-york",
+            "street_address_1": "1 Mott St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10013",
+            "country": "US",
+            "phone_number": "+12122335797",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/1d781361-827f-4ef9-b0f6-d24706e5c95b/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1d781361-827f-4ef9-b0f6-d24706e5c95b%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1d781361-827f-4ef9-b0f6-d24706e5c95b%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/b32dc08c-db0d-46e6-af1a-808cb1d09381/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb32dc08c-db0d-46e6-af1a-808cb1d09381%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb32dc08c-db0d-46e6-af1a-808cb1d09381%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 613,
+            "favorite_count": 145,
+            "merchant_promotion_uuids": [
+                "347c5227-0a19-47a7-9c6a-6d82d5b1491c"
+            ],
+            "original_delivery_fee_badge": "$2.99 Delivery",
+            "delivery_fee_badge_color_override": "#EB4826",
+            "place_tags": [
+                {
+                    "type_id": 7,
+                    "overrides": {
+                        "text": "No $12 Minimum"
+                    },
+                    "meta": {
+                        "merchant_promotion_uuid": "347c5227-0a19-47a7-9c6a-6d82d5b1491c"
+                    }
+                },
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "free delivery",
+                            "[Business Category] Long Tail",
+                            "Local Restaurants(1-5 locations)"
+                        ]
+                    }
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/7f953305-3525-451c-ad48-49fb6c45fb4c/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F7f953305-3525-451c-ad48-49fb6c45fb4c%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F7f953305-3525-451c-ad48-49fb6c45fb4c%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/8d001a20-01b3-4658-bc04-7b38017ba621/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8d001a20-01b3-4658-bc04-7b38017ba621%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8d001a20-01b3-4658-bc04-7b38017ba621%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 5231389,
+            "name": "mr. panda Chinese",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437369
+            },
+            "uuid": "c7a80cd5-50e4-4cfa-93d1-88fce6ef3269",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 0,
+            "edt_range_info": {
+                "lower": 20,
+                "upper": 35,
+                "edt_range": "20–35 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7127207,
+            "lng": -73.9968047,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Chinese",
+                "plural_name": "Chinese",
+                "slug": "chinese",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/bd565fae-26b6-44a9-8f9d-35263a865f73/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fbd565fae-26b6-44a9-8f9d-35263a865f73%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fbd565fae-26b6-44a9-8f9d-35263a865f73%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$2.99 Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "is_pickup_enabled": true,
+            "slug": "mr-panda-chinese-new-york",
+            "street_address_1": "20 Henry St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10002",
+            "country": "US",
+            "phone_number": "+19172426966",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/7f953305-3525-451c-ad48-49fb6c45fb4c/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F7f953305-3525-451c-ad48-49fb6c45fb4c%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F7f953305-3525-451c-ad48-49fb6c45fb4c%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/8d001a20-01b3-4658-bc04-7b38017ba621/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8d001a20-01b3-4658-bc04-7b38017ba621%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8d001a20-01b3-4658-bc04-7b38017ba621%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 772,
+            "badges": [
+                {
+                    "text": "NEW",
+                    "text_color": "#979CA6"
+                }
+            ],
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "Local Restaurant",
+                            "[Business Category] Long Tail"
+                        ]
+                    }
+                },
+                {
+                    "type_id": 3
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/f68f0114-795c-4ed1-b61f-adfc618760a5/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff68f0114-795c-4ed1-b61f-adfc618760a5%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff68f0114-795c-4ed1-b61f-adfc618760a5%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/40575631-3e1a-4ce3-8328-2f35f944b950/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F40575631-3e1a-4ce3-8328-2f35f944b950%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F40575631-3e1a-4ce3-8328-2f35f944b950%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 331046,
+            "name": "Lamar's Bagel Express",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437186
+            },
+            "uuid": "3c286ca6-008c-4c3f-aeeb-30196b5dff34",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 15,
+            "edt_range_info": {
+                "lower": 30,
+                "upper": 45,
+                "edt_range": "30–45 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.71240027991683,
+            "lng": -73.99022551384547,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Bagel",
+                "plural_name": "Bagels",
+                "slug": "bagel",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/a4295e0b-fa31-40bf-ba1b-0255cfded0de/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fa4295e0b-fa31-40bf-ba1b-0255cfded0de%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fa4295e0b-fa31-40bf-ba1b-0255cfded0de%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$2.99 Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "is_pickup_enabled": true,
+            "street_address_1": "197 Madison St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10002",
+            "country": "US",
+            "phone_number": "+12125717381",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/f68f0114-795c-4ed1-b61f-adfc618760a5/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff68f0114-795c-4ed1-b61f-adfc618760a5%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ff68f0114-795c-4ed1-b61f-adfc618760a5%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/40575631-3e1a-4ce3-8328-2f35f944b950/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F40575631-3e1a-4ce3-8328-2f35f944b950%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F40575631-3e1a-4ce3-8328-2f35f944b950%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 1327,
+            "badges": [
+                {
+                    "text": "POPULAR",
+                    "text_color": "#979CA6"
+                }
+            ],
+            "favorite_count": 25,
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "Breakfast",
+                            "good for groups",
+                            "Local Restaurant",
+                            "[Business Category] Long Tail",
+                            "Local Restaurants(1-5 locations)"
+                        ]
+                    }
+                },
+                {
+                    "type_id": 1
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/95ed9bab-b174-49ce-a009-9b60c9c4fd07/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F95ed9bab-b174-49ce-a009-9b60c9c4fd07%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F95ed9bab-b174-49ce-a009-9b60c9c4fd07%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/ff37271f-f637-49ea-9bff-efefbc8eb1ba/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fff37271f-f637-49ea-9bff-efefbc8eb1ba%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fff37271f-f637-49ea-9bff-efefbc8eb1ba%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 778569,
+            "name": "The Halal Guys",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437283
+            },
+            "uuid": "a0493a69-1f14-4fe8-9bba-091570590980",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 15,
+            "edt_range_info": {
+                "lower": 35,
+                "upper": 50,
+                "edt_range": "35–50 min"
+            },
+            "show_custom_order": false,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7323367,
+            "lng": -73.9843918,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Mediterranean",
+                "plural_name": "Mediterraneans",
+                "slug": "mediterranean",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/fb3e26af-6bd9-43bc-83d7-1895e9ca1c85/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffb3e26af-6bd9-43bc-83d7-1895e9ca1c85%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffb3e26af-6bd9-43bc-83d7-1895e9ca1c85%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "radius_km": 0,
+            "currency_type": "USD",
+            "brand": {
+                "uuid": "6bbe89e2-0d31-45a4-9063-06687afb8abd",
+                "logo_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/ff37271f-f637-49ea-9bff-efefbc8eb1ba/orig.png",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fff37271f-f637-49ea-9bff-efefbc8eb1ba%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "background_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/e562eeb2-363a-4af6-9773-10e4d66fef38/orig.jpg",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fe562eeb2-363a-4af6-9773-10e4d66fef38%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "name": "The Halal Guys",
+                "cta": "TBD",
+                "active": true,
+                "slug": "the-halal-guys",
+                "description": "Fast, delicious halal gyros and chicken served up at dizzying speed with only the tastiest ingredients? At The Halal Guys, that's just another Tuesday. Savor one of their famous halal beef gyros, or place an order for the favorites you crave late at night. Or in the afternoon. Or, honestly, any time. It's just that good. And don't forget the sides! The hummus and baba ganouj? Best. Ever."
+            },
+            "is_pickup_enabled": true,
+            "slug": "the-halal-guys-307-e-14th-st",
+            "street_address_1": "307 E 14th St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10003",
+            "country": "US",
+            "phone_number": "+12125337707",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/95ed9bab-b174-49ce-a009-9b60c9c4fd07/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F95ed9bab-b174-49ce-a009-9b60c9c4fd07%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F95ed9bab-b174-49ce-a009-9b60c9c4fd07%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/ff37271f-f637-49ea-9bff-efefbc8eb1ba/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fff37271f-f637-49ea-9bff-efefbc8eb1ba%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fff37271f-f637-49ea-9bff-efefbc8eb1ba%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 2835,
+            "badges": [
+                {
+                    "text": "INFATUATION APPROVED",
+                    "text_color": "#0C6BED"
+                },
+                {
+                    "text": "POPULAR",
+                    "text_color": "#979CA6"
+                }
+            ],
+            "favorite_count": 1598,
+            "merchant_store_id": "101",
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "Family Meal",
+                            "good for groups",
+                            "[Business Category] Regional"
+                        ]
+                    }
+                },
+                {
+                    "type_id": 1
+                },
+                {
+                    "type_id": 4
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/549cba44-b427-4ddc-8bb3-f609d598a8a0/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F549cba44-b427-4ddc-8bb3-f609d598a8a0%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F549cba44-b427-4ddc-8bb3-f609d598a8a0%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/fd99324b-dd6c-4c8d-b644-d2cc4671c2cb/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffd99324b-dd6c-4c8d-b644-d2cc4671c2cb%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffd99324b-dd6c-4c8d-b644-d2cc4671c2cb%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 54687,
+            "name": "McDonald's",
+            "hours": {
+                "state": "open",
+                "delivery_message": "",
+                "current_time": 1592978217.437202
+            },
+            "uuid": "5bd8ffbd-63e9-4a68-99a4-f17ac437de9f",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 20,
+            "edt_range_info": {
+                "lower": 25,
+                "upper": 40,
+                "edt_range": "25–40 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "active": true,
+            "lat": 40.7093664,
+            "lng": -74.009975,
+            "pricing": {
+                "price_authority": true,
+                "swipe_card": true,
+                "tax_rate": 8.88
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Fast Food",
+                "plural_name": "Fast Food",
+                "slug": "fast-food",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/1533bacf-014c-4902-a638-3aab50f63c4a/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1533bacf-014c-4902-a638-3aab50f63c4a%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1533bacf-014c-4902-a638-3aab50f63c4a%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$4.99 Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "brand": {
+                "uuid": "2ca4e411-ab2f-4f63-b329-a9530b6d1de2",
+                "logo_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/fd99324b-dd6c-4c8d-b644-d2cc4671c2cb/orig.png",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffd99324b-dd6c-4c8d-b644-d2cc4671c2cb%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "background_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/549cba44-b427-4ddc-8bb3-f609d598a8a0/orig.jpg",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F549cba44-b427-4ddc-8bb3-f609d598a8a0%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "name": "McDonald's",
+                "cta": "TBD",
+                "active": true,
+                "slug": "mcdonalds",
+                "description": "Happy Meals, Big Macs, the dollar menu, Mc-everything... it can only come from one classic all-American place. From their breakfast menu with sausage and egg McMuffins to their classic burgers, chicken nuggets, fries, and shakes, McDonald's tastes just as good at 1 PM as it does at 4 AM. Plus, with Postmates on call anytime you need, skip the drive-through and let us bring your Big Mac straight to you."
+            },
+            "slug": "mcdonalds-new-york-59",
+            "street_address_1": "160 Broadway",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10038",
+            "country": "US",
+            "phone_number": "+12123852066",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/549cba44-b427-4ddc-8bb3-f609d598a8a0/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F549cba44-b427-4ddc-8bb3-f609d598a8a0%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F549cba44-b427-4ddc-8bb3-f609d598a8a0%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/fd99324b-dd6c-4c8d-b644-d2cc4671c2cb/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffd99324b-dd6c-4c8d-b644-d2cc4671c2cb%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffd99324b-dd6c-4c8d-b644-d2cc4671c2cb%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 507,
+            "place_meta": {},
+            "favorite_count": 39,
+            "merchant_store_id": "10528",
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "🏃🍔",
+                            "Fast Food",
+                            "[Business Category] Enterprise"
+                        ]
+                    }
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/6c55fec2-2c60-4b78-9e3f-a99a1798a203/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F6c55fec2-2c60-4b78-9e3f-a99a1798a203%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F6c55fec2-2c60-4b78-9e3f-a99a1798a203%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/cf8af977-8990-4b9b-9678-4de858b0bd24/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fcf8af977-8990-4b9b-9678-4de858b0bd24%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fcf8af977-8990-4b9b-9678-4de858b0bd24%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 2272938,
+            "name": "Seaport Deli",
+            "hours": {
+                "state": "throttled",
+                "status": "This merchant is temporarily offline and cannot accept new orders. Please select a different merchant or try again later.",
+                "state_message": "This merchant is temporarily offline and cannot accept new orders. Please select a different merchant or try again later.",
+                "delivery_message": "",
+                "short_state_message": "Offline",
+                "throttle_type": "merchant",
+                "current_time": 1592978217.437168
+            },
+            "uuid": "395264bc-a7e8-4fbc-833e-cda551d8acb3",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 20,
+            "edt_range_info": {
+                "lower": 30,
+                "upper": 45,
+                "edt_range": "30–45 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7087319,
+            "lng": -74.00536129999999,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Deli",
+                "plural_name": "Delis",
+                "slug": "deli",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F3e9aaa57-5437-48f4-93a9-67bc16750706%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F3e9aaa57-5437-48f4-93a9-67bc16750706%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$0.99 Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "is_pickup_enabled": true,
+            "slug": "seaport-deli-new-york",
+            "street_address_1": "64 Fulton St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10038",
+            "country": "US",
+            "phone_number": "+12125710691",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/6c55fec2-2c60-4b78-9e3f-a99a1798a203/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F6c55fec2-2c60-4b78-9e3f-a99a1798a203%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F6c55fec2-2c60-4b78-9e3f-a99a1798a203%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/cf8af977-8990-4b9b-9678-4de858b0bd24/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fcf8af977-8990-4b9b-9678-4de858b0bd24%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fcf8af977-8990-4b9b-9678-4de858b0bd24%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 452,
+            "favorite_count": 34,
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": [
+                            "good for groups",
+                            "Local Restaurant",
+                            "[Business Category] Long Tail",
+                            "Local Restaurants(1-5 locations)"
+                        ]
+                    }
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/8248d1cb-d12e-4f63-a73f-98ca1b1d270f/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8248d1cb-d12e-4f63-a73f-98ca1b1d270f%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8248d1cb-d12e-4f63-a73f-98ca1b1d270f%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/0d4c048a-4446-4d52-9198-621b15c65502/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F0d4c048a-4446-4d52-9198-621b15c65502%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F0d4c048a-4446-4d52-9198-621b15c65502%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 4939651,
+            "name": "The Stromboli Shop",
+            "hours": {
+                "state": "throttled",
+                "status": "This merchant is temporarily offline and cannot accept new orders. Please select a different merchant or try again later.",
+                "state_message": "This merchant is temporarily offline and cannot accept new orders. Please select a different merchant or try again later.",
+                "delivery_message": "",
+                "short_state_message": "Offline",
+                "throttle_type": "merchant",
+                "current_time": 1592978217.437138
+            },
+            "uuid": "284a1120-e9a8-4a15-87ec-9b48d34d4886",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 20,
+            "edt_range_info": {
+                "lower": 30,
+                "upper": 45,
+                "edt_range": "30–45 min"
+            },
+            "show_custom_order": false,
+            "preferred": true,
+            "is_partner": true,
+            "active": true,
+            "lat": 40.7159783,
+            "lng": -74.0096945,
+            "pricing": {
+                "price_authority": true,
+                "tax_rate": 8.875
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Italian",
+                "plural_name": "Italians",
+                "slug": "italian",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/b6dd958e-867e-45ed-8017-251080b47583/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb6dd958e-867e-45ed-8017-251080b47583%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb6dd958e-867e-45ed-8017-251080b47583%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "delivery_fee_badge": "$0.99 Delivery",
+            "radius_km": 0,
+            "currency_type": "USD",
+            "is_pickup_enabled": true,
+            "slug": "the-stromboli-shop-new-york",
+            "street_address_1": "147 Chambers St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10007",
+            "country": "US",
+            "phone_number": "+12126190746",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/8248d1cb-d12e-4f63-a73f-98ca1b1d270f/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8248d1cb-d12e-4f63-a73f-98ca1b1d270f%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F8248d1cb-d12e-4f63-a73f-98ca1b1d270f%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/0d4c048a-4446-4d52-9198-621b15c65502/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F0d4c048a-4446-4d52-9198-621b15c65502%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F0d4c048a-4446-4d52-9198-621b15c65502%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 474,
+            "favorite_count": 1,
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": ["[Business Category] Long Tail"]
+                    }
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        },
+        {
+            "media": {
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/bad4be54-f556-470b-b954-315efc6b4fd8/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fbad4be54-f556-470b-b954-315efc6b4fd8%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fbad4be54-f556-470b-b954-315efc6b4fd8%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "icon_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/b2b0e1dc-a113-49d2-bca0-939b3caa2474/orig.png",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb2b0e1dc-a113-49d2-bca0-939b3caa2474%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                            "width": 200,
+                            "height": 200
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb2b0e1dc-a113-49d2-bca0-939b3caa2474%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "item_type": "place",
+            "id": 5171431,
+            "name": "Taco Bell",
+            "hours": {
+                "state": "throttled",
+                "status": "This merchant is temporarily at capacity and cannot accept new orders. Please select a different merchant or try again later.",
+                "state_message": "This merchant is temporarily at capacity and cannot accept new orders. Please select a different merchant or try again later.",
+                "delivery_message": "",
+                "short_state_message": "Too busy",
+                "throttle_type": "merchant",
+                "current_time": 1592978217.437349
+            },
+            "uuid": "c71f054e-113f-464d-b27b-dfce69333303",
+            "market_slug": "new-york-city",
+            "estimated_prep_time": 20,
+            "edt_range_info": {
+                "lower": 40,
+                "upper": 55,
+                "edt_range": "40–55 min"
+            },
+            "show_custom_order": false,
+            "active": true,
+            "lat": 40.7552667,
+            "lng": -73.98958209999999,
+            "pricing": {
+                "price_authority": true,
+                "swipe_card": true,
+                "tax_rate": 8.88
+            },
+            "primary_place_category": {
+                "uuid": "",
+                "name": "Fast Food",
+                "plural_name": "Fast Food",
+                "slug": "fast-food",
+                "header_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/1533bacf-014c-4902-a638-3aab50f63c4a/orig.jpg",
+                    "resolutions": [
+                        {
+                            "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1533bacf-014c-4902-a638-3aab50f63c4a%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                            "width": 558,
+                            "height": 711
+                        }
+                    ],
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F1533bacf-014c-4902-a638-3aab50f63c4a%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                }
+            },
+            "description": "From Crunchwraps to nachos, and tacos to Quesaritos, get all of your favorite Mexican-inspired dishes brought to you.\nItems with a green & white “V” are certified vegetarian by the American Vegetarian Association and are lacto-ovo, allowing consumption of dairy and eggs. Same frying oil may be used to prepare menu items that could contain meat. Vegetarian and meat ingredients are handled in common, and cross contact may occur. Neither Taco Bell nor the AVA assume any responsibility for such cross contact.",
+            "radius_km": 0,
+            "brand": {
+                "uuid": "69241e07-f253-44c9-9c16-b6b24e5ebe5a",
+                "logo_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/0a109888-6b28-4b5f-89f4-767c9d51a913/orig.jpg",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2F0a109888-6b28-4b5f-89f4-767c9d51a913%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "background_img": {
+                    "original_url": "https://d1725r39asqzt3.cloudfront.net/fc6d1e1c-caa9-4a64-9ecd-a6c86005babf/orig.jpg",
+                    "uuid": "",
+                    "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Ffc6d1e1c-caa9-4a64-9ecd-a6c86005babf%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+                },
+                "name": "Taco Bell",
+                "cta": "TBD",
+                "active": true,
+                "slug": "taco-bell",
+                "description": "Need a quick bite after a late night? The Taco Bell menu has something for everyone. Get in on the classics, with tacos, nachos, and bean and cheese burritos. Or dig into some funkier flavors, like Doritos locos tacos and Baja Blast slushies. If you're starting out your day, get into some of their breakfast options, like the breakfast quesadilla, hash browns, or the grilled breakfast burrito. With a little help from Postmates, you can have your favorite tacos, nachos, grillers, quesadillas, and more delivered to your door faster than you can say, \"Think outside the bun.\""
+            },
+            "slug": "taco-bell-new-york-83339",
+            "street_address_1": "240 West 40th St",
+            "city": "New York",
+            "state": "NY",
+            "zip_code": "10018",
+            "country": "US",
+            "header_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/bad4be54-f556-470b-b954-315efc6b4fd8/orig.jpg",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fbad4be54-f556-470b-b954-315efc6b4fd8%2Forig.jpg&quality=85&mode=auto&format=jpg&v=4&h=711",
+                        "width": 558,
+                        "height": 711
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fbad4be54-f556-470b-b954-315efc6b4fd8%2Forig.jpg&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "icon_img": {
+                "original_url": "https://d1725r39asqzt3.cloudfront.net/b2b0e1dc-a113-49d2-bca0-939b3caa2474/orig.png",
+                "resolutions": [
+                    {
+                        "url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb2b0e1dc-a113-49d2-bca0-939b3caa2474%2Forig.png&quality=85&mode=auto&format=jpg&v=4&h=200",
+                        "width": 200,
+                        "height": 200
+                    }
+                ],
+                "uuid": "",
+                "templated_url": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fb2b0e1dc-a113-49d2-bca0-939b3caa2474%2Forig.png&quality=85&w={width}&h={height}&mode={mode}&format={format}&v=4"
+            },
+            "distance_m": 4922,
+            "badges": [
+                {
+                    "text": "NEW",
+                    "text_color": "#979CA6"
+                }
+            ],
+            "favorite_count": 5,
+            "merchant_store_id": "36322",
+            "place_tags": [
+                {
+                    "type_id": 9,
+                    "meta": {
+                        "terms": ["[Business Category] Enterprise"]
+                    }
+                },
+                {
+                    "type_id": 3
+                }
+            ],
+            "storefront": "restaurant",
+            "highlighted": false
+        }
+    ],
+    "name": "Nearby",
+    "has_more": true
+}
