@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DevApi } from './DevApi';
+import { useSelector, useDispatch } from 'react-redux';
+import { getUsersAsync, patchUsersAsync } from '../Modules/UserReducer';
 
 const CustomButton = styled.button`
   width: 200px;
@@ -11,14 +12,38 @@ const CustomButton = styled.button`
   background-color: #ffdf18;
 `;
 
+const userinfo = {
+  id: 0,
+  user_name: '',
+  email: '',
+  phone: '',
+  address: '',
+  favorite: [],
+  cart: {
+    totalPrice: 0,
+    orderList: [],
+  },
+  history: [],
+};
+
 function DevUserComponent() {
-  const getFeed = async () => {
-    const { data } = await DevApi.getFeed();
-    console.log(data);
+  const store = useSelector(({ User }) => User);
+  const dispatch = useDispatch();
+
+  const getStore = () => {
+    console.log(store);
+  };
+  const getUser = () => {
+    dispatch(getUsersAsync());
+  };
+  const patchUser = () => {
+    dispatch(patchUsersAsync(userinfo));
   };
   return (
     <div className="dev-user-component">
-      <CustomButton onClick={() => getFeed()}>get user</CustomButton>
+      <CustomButton onClick={() => getStore()}>get store</CustomButton>
+      <CustomButton onClick={() => getUser()}>get user</CustomButton>
+      <CustomButton onClick={() => patchUser()}>patch user</CustomButton>
     </div>
   );
 }
