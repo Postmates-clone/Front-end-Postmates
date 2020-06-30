@@ -28,6 +28,6 @@ const StyleSignUp = styled.button`
   transition: background-color 0.1s ease-in-out 0s;
 `;
 function SignUpBtn() {
-  return <StyleSignUp />;
+  return <StyleSignUp>signup</StyleSignUp>;
 }
 export default SignUpBtn;

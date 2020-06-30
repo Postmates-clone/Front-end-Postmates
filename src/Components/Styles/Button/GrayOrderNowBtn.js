@@ -2,30 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 
 const GrayOrderNow = styled.button`
-  padding: 0;
+  display: flex;
+  width: 10.5rem;
+  height: 3rem;
   margin: 0;
+  padding: 0;
   border: none;
+  border-radius: 28px;
   outline: none;
+  background: #d9dbe0;
+  color: #fff;
   font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
   font-size: 0.75rem;
   letter-spacing: 0.72px;
   font-weight: 600;
   text-transform: uppercase;
   line-height: normal;
-  cursor: pointer;
   text-align: center;
-  height: 3rem;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  border-radius: 28px;
-  color: #fff;
-  display: flex;
   justify-content: center;
   align-items: center;
-  width: 10.5rem;
-  background: #d9dbe0;
+  cursor: pointer;
 `;
 
 function GrayOrderNowBtn() {
-  return <GrayOrderNow />;
+  return <GrayOrderNow>order now</GrayOrderNow>;
 }
 export default GrayOrderNowBtn;

@@ -2,32 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 
 const GreenOrderNow = styled.button`
-  padding: 0;
+  display: flex;
+  width: 10.5rem;
+  height: 3rem;
   margin: 0;
+  padding: 0;
   border: none;
+  border-radius: 28px;
+  background-color: #00cc99;
+  color: #fff;
   outline: none;
+  font-size: 0.75rem;
   font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
   letter-spacing: 0.72px;
   font-weight: 600;
   text-transform: uppercase;
   line-height: normal;
-  cursor: pointer;
   text-align: center;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  border-radius: 28px;
-  display: flex;
   justify-content: center;
   align-items: center;
-  /* 크기 */
-  height: 3rem;
-  width: 10.5rem;
-  font-size: 0.75rem;
-  /* 색상 */
-  background-color: #00cc99;
-  color: #fff;
+  cursor: pointer;
 `;
 
 function GreenOrderNowBtn() {
-  return <GreenOrderNow />;
+  return <GreenOrderNow>order now</GreenOrderNow>;
 }
 export default GreenOrderNowBtn;

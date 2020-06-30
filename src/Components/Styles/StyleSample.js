@@ -91,7 +91,6 @@ const Postmates = styled.div`
   margin: 0 auto;
   min-height: 72px;
   background: #ffdf18;
-  transition: min-height 0.2s ease-in-out;
   width: 100%;
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
   font-size: 1rem;
@@ -158,7 +157,6 @@ const CountIncrease = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: rgb(255, 255, 255);
   width: 11rem;
   max-width: 10.5rem;
@@ -226,14 +224,11 @@ const StyleSample = () => {
       <br />
       <br />
       <Postmates>Postmates</Postmates>
-      <GreenOrderNowBtn>ORDER NOW</GreenOrderNowBtn>
-      <GrayOrderNowBtn>ORDER NOW</GrayOrderNowBtn>
-      <LoginBtn>LOG IN</LoginBtn>
-      <SignUpBtn>SIGN UP</SignUpBtn>
-      <AddCartBtn>
-        <span>ADD TO CART</span>
-        <span>$5.80</span>
-      </AddCartBtn>
+      <GreenOrderNowBtn />
+      <GrayOrderNowBtn />
+      <LoginBtn />
+      <SignUpBtn />
+      <AddCartBtn />
       <CartCountWrapper>
         <CountDecrease>-</CountDecrease>
         <CartCount>1</CartCount>

@@ -28,6 +28,6 @@ const StyelLogin = styled.button`
 `;
 
 function LogInBtn() {
-  return <StyelLogin />;
+  return <StyelLogin>log in</StyelLogin>;
 }
 export default LogInBtn;
