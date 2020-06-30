@@ -1,0 +1,24 @@
+{
+  "page": 1,
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
+      "store_img": "com.postmates.img.prod.s3.amazonaws.com/c590876c-cacc-4da8-aab1-ff3349f51d67/orig.jpg",
+      "delivery_time": "Order Delivery until 4:00 AM",
+      "name": "Jack in the Box",
+      "delivery_fee_badge": 2.99,
+      "estimated_prep_time": 0,
+      "is_partner": false,
+      "food_type": "fast-food",
+      "badges": [
+        {
+          "text": "POPULAR",
+          "text_color": "#979CA6"
+        }
+      ]
+    }
+  ]
+}
