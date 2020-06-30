@@ -56,7 +56,6 @@ const Fonts = styled.div`
   font-weight: 300;
   font-size: 36px;
   line-height: 42px;
-
   color: #000000;
 `;
 const PostmatesStd = styled.div`
@@ -80,35 +79,37 @@ const BoldPostmatesStd = styled.div`
   color: #000000;
 `;
 const Postmates = styled.div`
-  position: sticky;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  z-index: 400;
-  background-color: rgb(254, 217, 40);
-  transition: background-color 0.2s ease-in-out 0s;
+  max-width: 1024px;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  min-height: 72px;
+  background: #ffdf18;
+  position: relative;
+  transition: min-height 0.2s ease-in-out;
+  width: 100%;
+  font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
+  font-size: 1rem;
+  letter-spacing: 0.14px;
+  font-weight: 400;
+  line-height: normal;
+  text-rendering: optimizelegibility;
 `;
 const GreenOrderNowBtn = styled.button`
   padding: 0;
   margin: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border: none;
   outline: none;
   font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
   font-size: 12px;
-  -webkit-letter-spacing: 0.72px;
-  -moz-letter-spacing: 0.72px;
-  -ms-letter-spacing: 0.72px;
   letter-spacing: 0.72px;
   font-weight: 600;
   text-transform: uppercase;
   line-height: normal;
   cursor: pointer;
   text-align: center;
-  height: 56px;
-  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   border-radius: 28px;
   background-color: #00cc99;
@@ -117,38 +118,26 @@ const GreenOrderNowBtn = styled.button`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  width: 265px;
-  height: 48px;
+  height: 3rem;
+  width: 10.5rem;
 `;
 const GrayOrderNowBtn = styled.button`
   padding: 0;
   margin: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border: none;
   outline: none;
   font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
-  font-size: 12px;
-  -webkit-letter-spacing: 0.72px;
-  -moz-letter-spacing: 0.72px;
-  -ms-letter-spacing: 0.72px;
+  font-size: 0.8;
   letter-spacing: 0.72px;
   font-weight: 600;
   text-transform: uppercase;
   line-height: normal;
   cursor: pointer;
   text-align: center;
-  height: 56px;
-  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  height: 3rem;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   border-radius: 28px;
   color: #fff;
@@ -156,16 +145,9 @@ const GrayOrderNowBtn = styled.button`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  width: 265px;
-  height: 48px;
+  width: 10.5rem;
   background: #d9dbe0;
 `;
 const LoginBtn = styled.button`
@@ -187,52 +169,54 @@ const LoginBtn = styled.button`
   border-radius: 16px;
   cursor: pointer;
   white-space: nowrap;
-  -webkit-transition: background-color 0.1s ease-in-out;
   transition: background-color 0.1s ease-in-out;
   min-width: 86px;
   margin-right: 10px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
 `;
 const SignInBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
+  font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
   font-size: 12px;
   letter-spacing: 0.72px;
   font-weight: 600;
   text-transform: uppercase;
   line-height: normal;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  color: #000;
-  background-color: transparent;
+  color: rgb(255, 255, 255);
+  background-color: rgb(45, 49, 56);
   height: 32px;
   padding-left: 16px;
   padding-right: 16px;
-  border-radius: 16px;
   cursor: pointer;
   white-space: nowrap;
-  -webkit-transition: background-color 0.1s ease-in-out;
-  transition: background-color 0.1s ease-in-out;
   min-width: 86px;
+  margin-right: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(45, 49, 56, 0.15);
+  border-image: initial;
+  border-radius: 16px;
+  transition: background-color 0.1s ease-in-out 0s;
 `;
 const AddToCart = styled.button`
-  -webkit-appearance: none;
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
-  font-size: 12px;
+  font-size: 0.8rem;
   letter-spacing: 0.72px;
   text-transform: uppercase;
   line-height: normal;
   cursor: pointer;
   text-align: center;
-  height: 56px;
+  height: 3.7rem;
   background-color: rgb(0, 204, 153);
   color: rgb(255, 255, 255);
   width: 15%;
   display: flex;
-  -webkit-box-pack: end;
   justify-content: flex-end;
   font-weight: 600;
-  -webkit-box-align: center;
   align-items: center;
   margin: 0px;
   border-width: initial;
@@ -244,16 +228,14 @@ const AddToCart = styled.button`
   padding: 0px 16px;
   border-radius: 28px;
 `;
-const CartCounter = styled.button`
+const CartCounter = styled.div`
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
   font-size: 1rem;
   letter-spacing: -0.28px;
   font-weight: 500;
   line-height: normal;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   position: relative;
   background-color: rgb(255, 255, 255);
@@ -278,9 +260,7 @@ const CounterLeft = styled.button`
   font-weight: 500;
   line-height: normal;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   position: relative;
   background-color: rgb(255, 255, 255);
@@ -305,9 +285,7 @@ const CounterRight = styled.button`
   font-weight: 500;
   line-height: normal;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   position: relative;
   background-color: rgb(255, 255, 255);
@@ -358,7 +336,10 @@ const StyleSample = () => {
       <GrayOrderNowBtn>ORDER NOW</GrayOrderNowBtn>
       <LoginBtn>LOG IN</LoginBtn>
       <SignInBtn>SIGN UP</SignInBtn>
-      <AddToCart>Add To CART</AddToCart>
+      <AddToCart>
+        <span>ADD TO CART</span>
+        <span>$5.80</span>
+      </AddToCart>
       <CartCounter>1</CartCounter>
       <CounterLeft>-</CounterLeft>
       <CounterRight>+</CounterRight>
