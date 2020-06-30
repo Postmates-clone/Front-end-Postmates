@@ -25,7 +25,7 @@ const GrayOrderNow = styled.button`
   background: #d9dbe0;
 `;
 
-function GreenOrderNowBtn() {
+function GrayOrderNowBtn() {
   return <GrayOrderNow />;
 }
-export default GreenOrderNowBtn;
+export default GrayOrderNowBtn;
