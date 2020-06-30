@@ -1,20 +1,20 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
-import MenuCategories from '../Items/MenuCategories';
+import StoreIndividual from '../Layout/StoreIndividual';
+import MenuList from '../Layout/MenuList';
 
-const WarpItem = styled.main`
+const StorePageBlock = styled.main`
   max-width: 1200px;
   background-color: #ffdf18;
 `;
 
-const ItemPage = ({ generateList }) => {
+const ItemPage = ({ storeData }) => {
   return (
-    <WarpItem>
-      {generateList().map((list) => (
-        <MenuCategories list={list} />
-      ))}
-    </WarpItem>
+    <StorePageBlock>
+      <StoreIndividual />
+      <MenuList storeData={storeData} />
+    </StorePageBlock>
   );
 };
 
