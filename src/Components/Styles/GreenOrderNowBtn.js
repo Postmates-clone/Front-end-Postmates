@@ -1,7 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 
-// eslint-disable-next-line import/prefer-default-export
-export const GreenOrderNowBtn = styled.button`
+const GreenOrderNow = styled.button`
   padding: 0;
   margin: 0;
   border: none;
@@ -24,3 +24,8 @@ export const GreenOrderNowBtn = styled.button`
   height: 3rem;
   width: 10.5rem;
 `;
+
+function GreenOrderNowBtn() {
+  return <GreenOrderNow />;
+}
+export default GreenOrderNowBtn;

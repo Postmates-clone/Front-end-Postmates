@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import GreenOrderNowBtn from './Button';
+import GreenOrderNowBtn from './GreenOrderNowBtn';
 
 const ColorPalette = styled.div`
   display: flex;
