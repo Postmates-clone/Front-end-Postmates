@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ProductInfo from '../../Components/Items/ProductInfo';
 
 const MainSectionLayout = styled.div`
   border: 1px solid blue;
@@ -12,6 +13,9 @@ const MainSectionLayout = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
+
+  /* flex-direction: ${({ isRowReverse }) =>
+    isRowReverse ? 'row-reverse' : 'row'}; */
 `;
 
 const Image = styled.div`
@@ -20,27 +24,11 @@ const Image = styled.div`
   background-color: blue;
 `;
 
-export default function MainSection() {
+export default function MainSection({ title, text, buttonText, isRowReverse }) {
   return (
-    <MainSectionLayout>
-      <div>
-        <h2>
-          <span>Save big on every order. Join Unlimited.</span>
-        </h2>
-        <p>
-          <span>
-            Unlimited free deliveries. Reduced fees on eligible orders.
-            Exclusive deals. Try Postmates Unlimited now for free, cancel
-            anytime.
-          </span>
-        </p>
-        <button type="button">try unlimited free</button>
-      </div>
-      <div>
-        <div>
-          <Image>image</Image>
-        </div>
-      </div>
+    <MainSectionLayout isRowReverse={isRowReverse}>
+      <ProductInfo title={title} text={text} buttonText={buttonText} />
+      <Image>ll</Image>
     </MainSectionLayout>
   );
 }

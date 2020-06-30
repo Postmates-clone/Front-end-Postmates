@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Location } from './MainBanner';
 
 export const DeliverySectionBlock = styled.div`
   background-color: #0c494c;
@@ -25,7 +24,6 @@ export default function DeliverySection() {
             your address below.
           </span>
         </p>
-        <Location />
       </div>
     </DeliverySectionBlock>
   );
