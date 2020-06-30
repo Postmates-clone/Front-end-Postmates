@@ -228,7 +228,7 @@ const AddToCart = styled.button`
   padding: 0px 16px;
   border-radius: 28px;
 `;
-const CartCounter = styled.div`
+const CartCount = styled.div`
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
   font-size: 1rem;
   letter-spacing: -0.28px;
@@ -253,7 +253,7 @@ const CartCounter = styled.div`
   border-image: initial;
   border-radius: 100px;
 `;
-const CounterLeft = styled.button`
+const CountDecrease = styled.button`
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
   font-size: 1rem;
   letter-spacing: -0.28px;
@@ -277,8 +277,35 @@ const CounterLeft = styled.button`
   border-color: rgba(217, 219, 224, 0.5);
   border-image: initial;
   border-radius: 100px;
+  cursor: pointer;
 `;
-const CounterRight = styled.button`
+const CountIncrease = styled.button`
+  font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
+  font-size: 1rem;
+  letter-spacing: -0.28px;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  width: 11rem;
+  max-width: 10.5rem;
+  height: 4rem;
+  cursor: pointer;
+  color: rgb(45, 49, 56);
+  margin-left: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(217, 219, 224, 0.5);
+  border-image: initial;
+  border-radius: 100px;
+`;
+const CartCountWrapper = styled.div`
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
   font-size: 1rem;
   letter-spacing: -0.28px;
@@ -340,9 +367,11 @@ const StyleSample = () => {
         <span>ADD TO CART</span>
         <span>$5.80</span>
       </AddToCart>
-      <CartCounter>1</CartCounter>
-      <CounterLeft>-</CounterLeft>
-      <CounterRight>+</CounterRight>
+      <CartCountWrapper>
+        <CountDecrease>-</CountDecrease>
+        <CartCount>1</CartCount>
+        <CountIncrease>+</CountIncrease>
+      </CartCountWrapper>
     </div>
   );
 };

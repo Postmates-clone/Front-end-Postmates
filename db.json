@@ -1,4 +1,86 @@
 {
+  "favorite": [
+  {
+    "id": 0,
+    "name": "Favorite Store Title",
+    "delivery": true,
+    "pickup": true,
+    "delivery_price": 30,
+    "estimated_prep_time": 40,
+    "is_partner": true,
+    "thumbnail": "https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg&quality=90&w=320&h=174&mode=crop&format=jpg&v=4",
+    "state": true,
+    "address": "322 Spring St",
+    "lat": 40.7077779,
+    "lng": -74.013832,
+    "badge": "badge",
+    "food_type": "American",
+    "description": "description",
+    "city": "New York",
+    "favorit": 50
+  }],
+  "getinfast": [
+    {
+      "id": 0,
+      "name": "Get in Fast Store Title",
+      "delivery": true,
+      "pickup": true,
+      "delivery_price": 30,
+      "estimated_prep_time": 40,
+      "is_partner": true,
+      "thumbnail": "https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg&quality=90&w=320&h=174&mode=crop&format=jpg&v=4",
+      "state": true,
+      "address": "322 Spring St",
+      "lat": 40.7077779,
+      "lng": -74.013832,
+      "badge": "badge",
+      "food_type": "American",
+      "description": "description",
+      "city": "New York",
+      "favorite": 50
+    }],
+    "orderby": [
+      {
+        "id": 0,
+        "name": "Order By Store Title",
+        "delivery": true,
+        "pickup": true,
+        "delivery_price": 30,
+        "estimated_prep_time": 40,
+        "is_partner": true,
+        "thumbnail": "https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg&quality=90&w=320&h=174&mode=crop&format=jpg&v=4",
+        "state": true,
+        "address": "322 Spring St",
+        "lat": 40.7077779,
+        "lng": -74.013832,
+        "badge": "badge",
+        "food_type": "American",
+        "description": "description",
+        "city": "New York",
+        "favorit": 50
+        
+      }],
+      "nearby": [
+        {
+          "id": 0,
+          "name": "Near By Store Title",
+          "delivery": true,
+          "pickup": true,
+          "delivery_price": 30,
+          "estimated_prep_time": 40,
+          "is_partner": true,
+          "thumbnail": "https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/3e9aaa57-5437-48f4-93a9-67bc16750706/orig.jpg&quality=90&w=320&h=174&mode=crop&format=jpg&v=4",
+          "state": true,
+          "address": "322 Spring St",
+          "lat": 40.7077779,
+          "lng": -74.013832,
+          "badge": "badge",
+          "food_type": "American",
+          "description": "description",
+          "city": "New York",
+          "favorit": 50
+          
+        }],
   "place": [
     {
       "id": 0,
@@ -2171,6 +2253,7 @@
       ]
     }
   ],
+  
   "user": {
     "id": 0,
     "user_name": "",

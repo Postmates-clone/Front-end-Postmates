@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
-import feedReducer from './feedReducer';
-import { itemReducer } from './ItemReducer';
-import UserReducer from './userReducer';
+import FeedReducer from './FeedReducer';
+import ItemReducer from './ItemReducer';
+import UserReducer from './UserReducer';
 
 const RootReducer = combineReducers({
-  Feed: feedReducer,
-  Item: itemReducer,
+  Feed: FeedReducer,
+  Item: ItemReducer,
   User: UserReducer,
 });
 
-// const sotre = createStore(RootReducer);
+// const store = createStore(RootReducer);
 // console.log(store.getState());
 
 export default RootReducer;
