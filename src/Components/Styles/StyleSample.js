@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import GreenOrderNowBtn from './Button';
 
 const ColorPalette = styled.div`
   display: flex;
@@ -59,8 +60,8 @@ const Fonts = styled.div`
   color: #000000;
 `;
 const PostmatesStd = styled.div`
-  width: 511px;
-  height: 82px;
+  width: 34.43rem;
+  height: 7.56rem;
   font-family: Postmates Std;
   font-style: normal;
   font-weight: 500;
@@ -69,8 +70,8 @@ const PostmatesStd = styled.div`
   color: #000000;
 `;
 const BoldPostmatesStd = styled.div`
-  width: 551px;
-  height: 121px;
+  width: 34.43rem;
+  height: 7.56rem;
   font-family: Postmates Std;
   font-style: normal;
   font-weight: bold;
@@ -86,7 +87,6 @@ const Postmates = styled.div`
   margin: 0 auto;
   min-height: 72px;
   background: #ffdf18;
-  position: relative;
   transition: min-height 0.2s ease-in-out;
   width: 100%;
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
@@ -96,41 +96,36 @@ const Postmates = styled.div`
   line-height: normal;
   text-rendering: optimizelegibility;
 `;
-const GreenOrderNowBtn = styled.button`
-  padding: 0;
-  margin: 0;
-  appearance: none;
-  border: none;
-  outline: none;
-  font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
-  font-size: 12px;
-  letter-spacing: 0.72px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: normal;
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  border-radius: 28px;
-  background-color: #00cc99;
-  color: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3rem;
-  width: 10.5rem;
-`;
+// const GreenOrderNowBtn = styled.button`
+//   padding: 0;
+//   margin: 0;
+//   border: none;
+//   outline: none;
+//   font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
+//   font-size: 0.75rem;
+//   letter-spacing: 0.72px;
+//   font-weight: 600;
+//   text-transform: uppercase;
+//   line-height: normal;
+//   cursor: pointer;
+//   text-align: center;
+//   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+//   border-radius: 28px;
+//   background-color: #00cc99;
+//   color: #fff;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 3rem;
+//   width: 10.5rem;
+// `;
 const GrayOrderNowBtn = styled.button`
   padding: 0;
   margin: 0;
-  appearance: none;
   border: none;
   outline: none;
   font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
-  font-size: 0.8;
+  font-size: 0.75rem;
   letter-spacing: 0.72px;
   font-weight: 600;
   text-transform: uppercase;
@@ -141,9 +136,6 @@ const GrayOrderNowBtn = styled.button`
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   border-radius: 28px;
   color: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +147,7 @@ const LoginBtn = styled.button`
   justify-content: center;
   align-items: center;
   font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.72px;
   font-weight: 600;
   text-transform: uppercase;
@@ -168,7 +160,6 @@ const LoginBtn = styled.button`
   padding-right: 16px;
   border-radius: 16px;
   cursor: pointer;
-  white-space: nowrap;
   transition: background-color 0.1s ease-in-out;
   min-width: 86px;
   margin-right: 10px;
@@ -181,7 +172,7 @@ const SignInBtn = styled.button`
   justify-content: center;
   align-items: center;
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.72px;
   font-weight: 600;
   text-transform: uppercase;
@@ -204,7 +195,7 @@ const SignInBtn = styled.button`
 `;
 const AddToCart = styled.button`
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.72px;
   text-transform: uppercase;
   line-height: normal;
@@ -213,9 +204,8 @@ const AddToCart = styled.button`
   height: 3.7rem;
   background-color: rgb(0, 204, 153);
   color: rgb(255, 255, 255);
-  width: 15%;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
   font-weight: 600;
   align-items: center;
   margin: 0px;
@@ -237,7 +227,6 @@ const CartCount = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   background-color: rgb(255, 255, 255);
   width: 11rem;
   max-width: 10.5rem;
@@ -262,7 +251,6 @@ const CountDecrease = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   background-color: rgb(255, 255, 255);
   width: 11rem;
   max-width: 10.5rem;
@@ -288,7 +276,7 @@ const CountIncrease = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+
   background-color: rgb(255, 255, 255);
   width: 11rem;
   max-width: 10.5rem;
@@ -314,7 +302,6 @@ const CartCountWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   background-color: rgb(255, 255, 255);
   width: 11rem;
   max-width: 10.5rem;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import { getUsersAsync, patchUsersAsync } from '../Modules/userReducer';
+import { getUsersAsync, patchUsersAsync } from '../Modules/UserReducer';
 
 const CustomButton = styled.button`
   width: 200px;
