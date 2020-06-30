@@ -126,7 +126,7 @@ const initialState = {
     favorite: [], // favorite 은 매장 정보 객체를 배열로 저장
     cart: {
       totalPrice: 0,
-      orderList: [],
+      orderList: [], // cart에 담긴 물품 List
     },
     history: [], // 구매이력
   },

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import FeedReducer from './FeedReducer';
-import { ItemReducer } from './ItemReducer';
+import ItemReducer from './ItemReducer';
 import UserReducer from './UserReducer';
 
 const RootReducer = combineReducers({
