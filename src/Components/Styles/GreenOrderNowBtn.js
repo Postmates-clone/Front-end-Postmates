@@ -7,7 +7,6 @@ const GreenOrderNow = styled.button`
   border: none;
   outline: none;
   font-family: 'PostmatesStd', Helvetica Neue, Helvetica;
-  font-size: 0.75rem;
   letter-spacing: 0.72px;
   font-weight: 600;
   text-transform: uppercase;
@@ -16,13 +15,16 @@ const GreenOrderNow = styled.button`
   text-align: center;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   border-radius: 28px;
-  background-color: #00cc99;
-  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* 크기 */
   height: 3rem;
   width: 10.5rem;
+  font-size: 0.75rem;
+  /* 색상 */
+  background-color: #00cc99;
+  color: #fff;
 `;
 
 function GreenOrderNowBtn() {
