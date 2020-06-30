@@ -6,7 +6,11 @@ const api = axios.create({
 
 // eslint-disable-next-line import/prefer-default-export
 export const DevApi = {
-  getFeed: () => api.get('/place', { responseType: 'json' }),
+  getNearBy: () => api.get('/nearby/', { responseType: 'json' }),
+  getOrderBy: () => api.get('/orderby/', { responseType: 'json' }),
+  getFavorite: () => api.get('/favorite/', { responseType: 'json' }),
+  getInFast: () => api.get('/getinfast/', { responseType: 'json' }),
 };
 
+// console.log(DevApi.getNearBy());
 // json-server --watch db.json --port 5000
