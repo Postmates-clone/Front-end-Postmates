@@ -23,7 +23,7 @@ const ItemNode = styled.li`
 `;
 
 const Content = styled.div`
-  width: 100%;
+  width: 80%;
 `;
 
 const Image = styled.div`
@@ -36,10 +36,10 @@ const MenuItem = ({ item }) => {
   return (
     <ItemNode>
       <Content>
-        <div>{item.food_name}</div>
+        <div>{item.name}</div>
         <div>{item.description}</div>
       </Content>
-      <Image>image</Image>
+      <Image />
     </ItemNode>
   );
 };
