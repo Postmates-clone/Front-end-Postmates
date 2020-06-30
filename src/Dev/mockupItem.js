@@ -4,7 +4,8 @@ export const mockup = {
     {
       category: 'Anti Pasto',
       food_name: 'pasta',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -53,7 +54,8 @@ export const mockup = {
     {
       category: 'Anti Pasto',
       food_name: 'pasta',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -102,7 +104,8 @@ export const mockup = {
     {
       category: 'Anti Pasto',
       food_name: 'pasta',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -151,7 +154,8 @@ export const mockup = {
     {
       category: 'Anti Pasto',
       food_name: 'pasta',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -200,7 +204,8 @@ export const mockup = {
     {
       category: 'Anti Pasto',
       food_name: 'pasta',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -249,7 +254,8 @@ export const mockup = {
     {
       category: 'primo',
       food_name: 'aaaaaa',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -298,7 +304,8 @@ export const mockup = {
     {
       category: 'primo',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -347,7 +354,8 @@ export const mockup = {
     {
       category: 'primo',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -396,7 +404,8 @@ export const mockup = {
     {
       category: 'primo',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -445,7 +454,8 @@ export const mockup = {
     {
       category: 'primo',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -494,7 +504,8 @@ export const mockup = {
     {
       category: 'primo',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -543,7 +554,8 @@ export const mockup = {
     {
       category: 'cccc',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -592,7 +604,8 @@ export const mockup = {
     {
       category: 'cccc',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -641,7 +654,8 @@ export const mockup = {
     {
       category: 'cccc',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -690,7 +704,8 @@ export const mockup = {
     {
       category: 'cccc',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
@@ -739,7 +754,8 @@ export const mockup = {
     {
       category: 'cccc',
       food_name: 'bbbbb',
-      description: 'description',
+      description:
+        'Bagel with scallion cream cheese, bagel with vegetable cream cheese.',
       cost: 50,
       image: '',
       option_group: [
