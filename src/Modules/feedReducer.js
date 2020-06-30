@@ -1,80 +1,60 @@
-import Api from '../Utils/feedApi';
-import { createPromiseThunk, reducerUtils } from '../lib/asyncUtils';
+import { DevApi } from '../Dev/DevApi';
+import {
+  createPromiseThunk,
+  reducerUtils,
+  handlerAsyncActions,
+} from '../lib/asyncUtils';
 
-// stores 조회하기
-const GET_STORES = 'GET_STORES';
-const GET_STORES_SUCCESS = 'GET_STORES_SUCCESS';
-const GET_STORES_ERROR = 'GET_STORES_ERROR';
+const GET_NEAR = 'GET_NEAR';
+const GET_NEAR_SUCCESS = 'GET_NEAR_SUCCESS';
+const GET_NEAR_ERROR = 'GET_NEAR_ERROR';
 
-// store individual 조회하기
-// const GET_STORE = 'GET_STORE';
-// const GET_STORE_SUCCESS = 'GET_STORE_SUCCESS';
-// const GET_STOR_ERROR = 'GET_STORE_ERROR';
+const GET_ORDER = 'GET_ORDER';
+const GET_ORDER_SUCCESS = 'GET_ORDER_SUCCESS';
+const GET_ORDER_ERROR = 'GET_ORDER_ERROR';
 
-export const getStores = createPromiseThunk(GET_STORES, Api.getStores);
-// export const getStores = () => async (dispatch) => {
-//   dispatch({ type: 'GET_STORES' });
-//   try {
-//     const storeList = await Api.get('/place');
-//     console.log('GET_STORES', storeList);
-//     dispatch({ type: GET_STORES_SUCCESS, storeList });
-//   } catch (e) {
-//     dispatch({ type: GET_STORES_ERROR, error: e });
-//   }
-// };
+const GET_FAV = 'GET_FAV';
+const GET_FAV_SUCCESS = 'GET_FAV_SUCCESS';
+const GET_FAV_ERROR = 'GET_FAV_ERROR';
+
+const GET_FAST = 'GET_FAST';
+const GET_FAST_SUCCESS = 'GET_FAST_SUCCESS';
+const GET_FAST_ERROR = 'GET_FAST_ERROR';
+
+export const getNearBy = createPromiseThunk(GET_NEAR, DevApi.getNearBy);
+export const getOrderBy = createPromiseThunk(GET_ORDER, DevApi.getOrderBy);
+export const getFavorite = createPromiseThunk(GET_FAV, DevApi.getFavorite);
+export const getInFast = createPromiseThunk(GET_FAST, DevApi.getInFast);
 
 const initialState = {
-  stores: reducerUtils.initial(),
+  nearby: reducerUtils.initial(),
+  orderby: reducerUtils.initial(),
+  favorite: reducerUtils.initial(),
+  getinfast: reducerUtils.initial(),
 };
 
-export default function feedReducer(state = initialState, action) {
+export default function nearby(state = initialState, action) {
   switch (action.type) {
-    case GET_STORES:
-      return {
-        ...state,
-        stores: reducerUtils.loading(),
-      };
-    case GET_STORES_SUCCESS:
-      return {
-        ...state,
-        stores: reducerUtils.success(action.payload),
-      };
-    case GET_STORES_ERROR:
-      return {
-        ...state,
-        stores: reducerUtils.error(action.error),
-      };
+    case GET_NEAR:
+    case GET_NEAR_SUCCESS:
+    case GET_NEAR_ERROR:
+      return handlerAsyncActions(GET_NEAR, 'nearby')(state, action);
+
+    case GET_ORDER:
+    case GET_ORDER_SUCCESS:
+    case GET_ORDER_ERROR:
+      return handlerAsyncActions(GET_ORDER, 'orderby')(state, action);
+
+    case GET_FAV:
+    case GET_FAV_SUCCESS:
+    case GET_FAV_ERROR:
+      return handlerAsyncActions(GET_FAV, 'favorite')(state, action);
+
+    case GET_FAST:
+    case GET_FAST_SUCCESS:
+    case GET_FAST_ERROR:
+      return handlerAsyncActions(GET_FAST, 'getinfast')(state, action);
     default:
       return state;
   }
 }
-
-// export const FEED_SET_LOADING = 'FEED_SET_LOADING';
-// export const FEED_HAS_ERROR = 'FEED_HAS_ERROR';
-// export const FEED_SET_DATA = 'FEED_SET_DATA';
-// export const FEED_DETAIL_SET_DATA = 'FEED_DETAIL_SET_DATA';
-
-// const initialState = {
-//   stores: [],
-//   store: {},
-//   status: 'idle',
-// };
-
-// export default function feedReducer(state = initialState, action) {
-//   switch (action.type) {
-//     case FEED_SET_LOADING:
-//       return { ...state, status: 'loading' };
-//     case FEED_HAS_ERROR:
-//       return { ...state, status: 'error' };
-//     case FEED_SET_DATA:
-//       return {
-//         ...state,
-//         stores: action.payload,
-//         status: 'completed',
-//       };
-//     case FEED_DETAIL_SET_DATA:
-//       return { ...state, store: action.payload, status: 'completed' };
-//     default:
-//       return state;
-//   }
-// }

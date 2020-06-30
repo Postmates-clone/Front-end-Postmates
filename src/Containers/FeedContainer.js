@@ -1,22 +1,56 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable import/no-unresolved */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import FeedPage from '../Components/Pages/Feed';
-import { getStores } from '../Modules/FeedReducer';
+import Feed from '../Components/Pages/Feed';
+// eslint-disable-next-line no-unused-vars
+import {
+  getNearBy,
+  getOrderBy,
+  getFavorite,
+  getInFast,
+} from '../Modules/FeedReducer';
 
 const FeedContainer = () => {
-  const { data, loading, error } = useSelector((state) => state.Feed.stores);
+  const { nearby, orderby, favorite, getinfast } = useSelector((state) => ({
+    nearby: state.Feed.nearby,
+    orderby: state.Feed.orderby,
+    favorite: state.Feed.favorite,
+    getinfast: state.Feed.getinfast,
+  }));
+
   const dispatch = useDispatch();
 
-  // 컴포넌트 마운트 후 포스트 목록 요청
   useEffect(() => {
-    dispatch(getStores);
+    dispatch(getNearBy());
+    dispatch(getOrderBy());
+    dispatch(getFavorite());
+    dispatch(getInFast());
   }, [dispatch]);
 
-  if (loading) return <div>로딩중...</div>;
-  if (error) return <div>에러 발생!</div>;
-  if (!data) return null;
-  return <FeedPage stores={data} />;
+  if (nearby.loading) return <div>로딩중...</div>;
+  if (nearby.error) return <div>에러 발생!</div>;
+
+  if (orderby.loading) return <div>로딩중...</div>;
+  if (orderby.error) return <div>에러 발생!</div>;
+
+  if (favorite.loading) return <div>로딩중...</div>;
+  if (favorite.error) return <div>에러 발생!</div>;
+
+  if (getinfast.loading) return <div>로딩중...</div>;
+  if (getinfast.error) return <div>에러 발생!</div>;
+
+  if (!nearby.data && !orderby.data && !favorite.data && !getinfast.data) {
+    return null;
+  }
+
+  return (
+    <Feed
+      nearby={nearby.data}
+      orderby={orderby.data}
+      favorite={favorite.data}
+      getinfast={getinfast.data}
+    />
+  );
 };
 
 export default FeedContainer;
