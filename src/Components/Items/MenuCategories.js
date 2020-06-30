@@ -9,9 +9,7 @@ const MenuCategories = ({ list }) => {
       <MenuCategoryTitle title={list[0].category} />
       <ul>
         {list.map((item) => (
-          <li>
-            <MenuItem item={item} />
-          </li>
+          <MenuItem item={item} />
         ))}
       </ul>
     </div>

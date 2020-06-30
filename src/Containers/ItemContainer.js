@@ -21,7 +21,7 @@ const ItemContainer = () => {
     return categoryList;
   };
 
-  return <ItemPage categoryList={generateList} />;
+  return <ItemPage generateList={generateList} />;
 };
 
 export default ItemContainer;
