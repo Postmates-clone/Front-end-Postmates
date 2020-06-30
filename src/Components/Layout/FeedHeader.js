@@ -2,7 +2,7 @@
 import React from 'react';
 
 const FeedHeader = () => {
-  return <div />;
+  return <div>Header</div>;
 };
 
 export default FeedHeader;

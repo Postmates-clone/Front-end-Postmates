@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CategoryTitle from '../Items/CategoryTitle';
-import CategoryInfo from '../Items/CategoryInfo';
+
 import Stores from '../Items/Stores';
 
 const StoreList = styled.ul`
@@ -13,10 +13,10 @@ const StoreList = styled.ul`
 `;
 
 const StoreCategory = ({ data, title, info }) => {
+  // console.log(data);
   return (
     <div>
-      <CategoryTitle title={title} />
-      <CategoryInfo info={info} />
+      <CategoryTitle title={title} info={info} />
       <StoreList>
         {data.map(() => (
           <Stores data={data} />

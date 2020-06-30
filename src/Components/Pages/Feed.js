@@ -30,6 +30,7 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
       <FeedHeader />
       <SubBanner />
       <SubHeader />
+
       <FeedWrapper>
         <EventSection />
 
@@ -56,6 +57,7 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
 
         <CategoryList />
       </FeedWrapper>
+
       <div>
         <ul>
           {favorite.data.map((store) => (
