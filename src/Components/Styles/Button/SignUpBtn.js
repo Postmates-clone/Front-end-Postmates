@@ -16,7 +16,6 @@ const StyleSignUp = styled.button`
   height: 32px;
   padding-left: 16px;
   padding-right: 16px;
-  cursor: pointer;
   white-space: nowrap;
   min-width: 86px;
   margin-right: 10px;
@@ -25,7 +24,7 @@ const StyleSignUp = styled.button`
   border-color: rgba(45, 49, 56, 0.15);
   border-image: initial;
   border-radius: 16px;
-  transition: background-color 0.1s ease-in-out 0s;
+  cursor: pointer;
 `;
 function SignUpBtn() {
   return <StyleSignUp>signup</StyleSignUp>;
