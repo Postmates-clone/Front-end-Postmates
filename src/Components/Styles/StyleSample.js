@@ -4,6 +4,7 @@ import GreenOrderNowBtn from './Button/GreenOrderNowBtn';
 import GrayOrderNowBtn from './Button/GrayOrderNowBtn';
 import LoginBtn from './Button/LogInBtn';
 import SignUpBtn from './Button/SignUpBtn';
+import AddCartBtn from './Button/AddCartBtn';
 
 const ColorPalette = styled.div`
   display: flex;
@@ -83,7 +84,7 @@ const BoldPostmatesStd = styled.div`
   color: #000000;
 `;
 const Postmates = styled.div`
-  max-width: 1024px;
+  max-width: 992px;
   cursor: pointer;
   align-items: center;
   display: flex;
@@ -98,31 +99,6 @@ const Postmates = styled.div`
   font-weight: 400;
   line-height: normal;
   text-rendering: optimizelegibility;
-`;
-const AddToCart = styled.button`
-  font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
-  font-size: 0.75rem;
-  letter-spacing: 0.72px;
-  text-transform: uppercase;
-  line-height: normal;
-  cursor: pointer;
-  text-align: center;
-  height: 3.7rem;
-  background-color: rgb(0, 204, 153);
-  color: rgb(255, 255, 255);
-  width: 100%;
-  display: flex;
-  font-weight: 600;
-  align-items: center;
-  margin: 0px;
-  border-width: initial;
-  border-style: none;
-  border-color: initial;
-  border-image: initial;
-  outline: none;
-  transition: background-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s;
-  padding: 0px 16px;
-  border-radius: 28px;
 `;
 const CartCount = styled.div`
   font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
@@ -254,10 +230,10 @@ const StyleSample = () => {
       <GrayOrderNowBtn>ORDER NOW</GrayOrderNowBtn>
       <LoginBtn>LOG IN</LoginBtn>
       <SignUpBtn>SIGN UP</SignUpBtn>
-      <AddToCart>
+      <AddCartBtn>
         <span>ADD TO CART</span>
         <span>$5.80</span>
-      </AddToCart>
+      </AddCartBtn>
       <CartCountWrapper>
         <CountDecrease>-</CountDecrease>
         <CartCount>1</CartCount>
