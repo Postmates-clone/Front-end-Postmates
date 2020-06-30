@@ -5,6 +5,7 @@ const sizes = {
   tablet: 768,
   phone: 600,
 };
+
 export default Object.keys(sizes).reduce((acc, label) => {
   if (label === 'desktop') {
     acc[label] = (...args) => css`
