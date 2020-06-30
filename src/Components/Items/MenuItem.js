@@ -4,17 +4,20 @@ import styled from 'styled-components';
 import Media from '../../Style/Media';
 
 const ItemNode = styled.li`
-  max-width: 496.5px;
   height: 128px;
+  padding: 16px 0 16px 0;
   display: flex;
   list-style: none;
   ${Media.desktop`
+  max-width: 496.5px;
   background-color: tomato;
   `}
   ${Media.tablet`
+  width: 100%;
   background-color: green;
   `}
   ${Media.phone`
+  width: 100%;
   background-color: red;
   `}
 `;
@@ -24,7 +27,9 @@ const Content = styled.div`
 `;
 
 const Image = styled.div`
-  max-width: 128px;
+  width: 128px;
+  height: 128px;
+  background-color: blue;
 `;
 
 const MenuItem = ({ item }) => {
