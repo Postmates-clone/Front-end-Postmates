@@ -8,17 +8,19 @@ const ItemBlock = styled.li`
   display: flex;
   justify-content: space-between;
   height: 128px;
-  padding: 16px 0 16px 0;
+  box-sizing: content-box;
 
   ${Media.desktop`
   width: 496.5px;
   background-color: tomato;
-  
   `}
+
   ${Media.tablet`
   width: 100%;
+  padding: 20px 0 20px 0;
   background-color: green;
   `}
+
   ${Media.phone`
   width: 100%;
   background-color: red;
@@ -27,13 +29,21 @@ const ItemBlock = styled.li`
 
 const ContentBlock = styled.div`
   padding: 20px 20px 15px 20px;
+
+  ${Media.desktop`
+  padding-right: 128px;
+  `}
+
   div {
     h3 {
+      margin-bottom: 5px;
       overflow: hidden;
-      text-overflow: ellipsis;
-      font-weight: 500;
       font-size: 16px;
       white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    span {
     }
   }
 `;
@@ -54,7 +64,8 @@ const MenuItem = ({ item }) => {
           <span>{description}</span>
         </div>
       </ContentBlock>
-      <ImageBlock src={img_url} />
+      {img_url ? <ImageBlock src={img_url} /> : ''}
+      {/* <ImageBlock src={img_url} /> */}
     </ItemBlock>
   );
 };
