@@ -11,7 +11,7 @@ const ProductInfoBlock = styled.div`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   background-color: #00cc99;
   height: 48px;
   width: 200px;
