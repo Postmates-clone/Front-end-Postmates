@@ -7,7 +7,7 @@
       "delivery_time": "Order Delivery until 4:00 AM",
       "name": "near by - Jack in the Box",
       "delivery_fee_badge": 2.99,
-      "estimated_prep_time": 0,
+      "estimated_prep_time": 45,
       "is_partner": false,
       "food_type": "fast-food",
       "badges": [

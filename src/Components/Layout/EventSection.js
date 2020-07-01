@@ -1,14 +1,19 @@
 // 0630 seungeun
 import React from 'react';
+import styled from 'styled-components';
 import CategoryTitle from '../Items/CategoryTitle';
 import EventItem from '../Items/EventItem';
 
+const EventSectionBlock = styled.div`
+  margin: 0 0 45px 0;
+`;
+
 const EventSection = () => {
   return (
-    <div>
+    <EventSectionBlock>
       <CategoryTitle title="Featured" />
       <EventItem />
-    </div>
+    </EventSectionBlock>
   );
 };
 

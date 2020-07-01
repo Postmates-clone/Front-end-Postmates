@@ -17,7 +17,7 @@ const ItemBlock = styled.li`
   width: 100%;
   background-color: green;
   `}
-  ${Media.phone`
+  ${Media.mobile`
   width: 100%;
   background-color: red;
   `}
