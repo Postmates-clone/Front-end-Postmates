@@ -12,14 +12,13 @@ const StoreList = styled.ul`
   background-color: #f4f4f4;
 `;
 
-const StoreCategory = ({ data, title, info }) => {
-  // console.log(data);
+const StoreCategory = ({ title, info, data }) => {
   return (
     <div>
       <CategoryTitle title={title} info={info} />
       <StoreList>
-        {data.map(() => (
-          <Stores data={data} />
+        {data.map((store) => (
+          <Stores id={store.id} name={store.name} image={store.store_img} />
         ))}
       </StoreList>
     </div>
