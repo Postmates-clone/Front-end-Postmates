@@ -1,15 +1,16 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 
-const ItemNode = styled.li`
+const ItemBlock = styled.li`
+  display: flex;
   height: 128px;
   padding: 16px 0 16px 0;
-  display: flex;
   list-style: none;
   ${Media.desktop`
-  max-width: 496.5px;
+  width: 496.5px;
   background-color: tomato;
   `}
   ${Media.tablet`
@@ -22,25 +23,27 @@ const ItemNode = styled.li`
   `}
 `;
 
-const Content = styled.div`
-  width: 80%;
+const ContentBlock = styled.div`
+  width: 100%;
+  display: block;
 `;
 
-const Image = styled.div`
+const ImageBlock = styled.img`
   width: 128px;
   height: 128px;
   background-color: blue;
 `;
 
 const MenuItem = ({ item }) => {
+  const { name, description, img_url } = item;
   return (
-    <ItemNode>
-      <Content>
-        <div>{item.name}</div>
-        <div>{item.description}</div>
-      </Content>
-      <Image />
-    </ItemNode>
+    <ItemBlock>
+      <ContentBlock>
+        <div>{name}</div>
+        <div>{description}</div>
+      </ContentBlock>
+      <ImageBlock src={img_url} />
+    </ItemBlock>
   );
 };
 
