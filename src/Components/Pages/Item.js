@@ -14,7 +14,7 @@ const StorePageBlock = styled.main`
 const ItemPage = ({ storeData }) => {
   return (
     <StorePageBlock>
-      <StoreIndividual />
+      <StoreIndividual storeData={storeData} />
       <MenuList storeData={storeData} />
     </StorePageBlock>
   );
