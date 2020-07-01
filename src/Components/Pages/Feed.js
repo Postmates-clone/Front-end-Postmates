@@ -2,6 +2,8 @@
 // 0630 seungeun
 import React from 'react';
 import styled from 'styled-components';
+import Media from '../../Style/Media';
+
 import FeedHeader from '../Layout/FeedHeader';
 import SubBanner from '../Layout/SubBanner';
 import SubHeader from '../Layout/SubHeader';
@@ -12,12 +14,25 @@ import CategoryList from '../Layout/CategoryList';
 const FeedWrapperBlock = styled.div`
   width: 100%;
 
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
 `;
 const FeedWrapper = styled.div`
-  width: 100%;
 
-  background-color: #ccc;
+  margin: 0 auto;
+
+  /* background-color: #ccc; */
+
+  ${Media.desktop`
+  width: 1024px;
+  `}
+
+  ${Media.tablet`
+  width: 100%;
+  `}
+
+  ${Media.mobile`
+  width: 100%;
+  `}
 `;
 const Feed = ({ nearby, orderby, favorite, getinfast }) => {
   // console.log(nearby.data);
@@ -49,15 +64,17 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
           title="Order By"
           info="order by category"
         />
+
+        <CategoryList />
+
         <StoreCategory
           data={nearby.data}
           title="Near By"
           info="near by category"
         />
-
-        <CategoryList />
       </FeedWrapper>
 
+      {/*
       <div>
         <ul>
           {favorite.data.map((store) => (
@@ -87,7 +104,7 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </FeedWrapperBlock>
   );
 };

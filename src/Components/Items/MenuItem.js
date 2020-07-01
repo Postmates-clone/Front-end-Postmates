@@ -17,8 +17,7 @@ const ItemBlock = styled.li`
   ${Media.tablet`
   width: 100%;
   `}
-
-  ${Media.phone`
+  ${Media.mobile`
   width: 100%;
   `}
 `;

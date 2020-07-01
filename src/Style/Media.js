@@ -7,7 +7,7 @@ import { css } from 'styled-components';
 const sizes = {
   desktop: 1060,
   tablet: 1059,
-  phone: 767,
+  mobile: 767,
 };
 
 // 미디어쿼리 객체 생성 함수

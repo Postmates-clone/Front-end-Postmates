@@ -32,6 +32,10 @@ const CategoryItemBanner = styled.li`
   padding: 20px;
 
   background-image: url(${(props) => props.image || null});
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
   color: black;
 
   h4 {
