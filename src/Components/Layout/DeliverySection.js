@@ -8,8 +8,8 @@ import {
   InputButton,
   IconImage,
   Input,
-  MainTextWrapper,
-  MainBannerContainer,
+  Title,
+  Specification,
 } from './MainBanner';
 
 export const DeliverySectionBlock = styled.div`
@@ -39,23 +39,13 @@ export const DeliveryBannerContainer = styled.div`
   padding: 20px;
 `;
 
-export default function DeliverySection() {
+export default function DeliverySection({ title, text }) {
   return (
     <DeliverySectionBlock>
       <DeliveryBannerContainer>
         <DeliveryTextWrapper>
-          <h2 style={{ fontSize: '56px', marginBottom: '20px' }}>
-            Ready to order?
-          </h2>
-          <p
-            style={{
-              fontSize: '17px',
-              marginBottom: '20px',
-            }}
-          >
-            Browse local restaurants and businesses for delivery by entering
-            your address below.
-          </p>
+          <Title>{title}</Title>
+          <Specification>{text}</Specification>
           <InputWrapper>
             <InputInner>
               <IconImage src={mapMaker} />

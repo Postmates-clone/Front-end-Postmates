@@ -1,7 +1,7 @@
 /* eslint-disable import/no-duplicates */
 import React from 'react';
 // import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
+import globalStyles from '../../Style/GlobalStyles';
 import MainSection from '../Layout/MainSection';
 import MainBanner from '../Layout/MainBanner';
 import DeliverySection from '../Layout/DeliverySection';
@@ -11,9 +11,13 @@ import MainProducts from '../../Assets/mainProducts.png';
 const MainPage = () => {
   return (
     <div>
+      <globalStyles />
       <h1>Main page header</h1>
       <hr />
-      <MainBanner />
+      <MainBanner
+        title="Want Burgers?"
+        text="Food, drinks, groceries, and more available for delivery and pickup."
+      />
       <MainSection
         title="Save big on every order. Join Unlimited."
         text="Unlimited free deliveries. Reduced fees on eligible orders. Exclusive deals. Try Postmates Unlimited now for free, cancel anytime."
@@ -33,7 +37,10 @@ const MainPage = () => {
         src={MainProducts}
         buttonText="ORDER NOW"
       />
-      <DeliverySection />
+      <DeliverySection
+        title="Ready to order?"
+        text="Browse local restaurants and businesses for delivery by entering your address below."
+      />
       <Footer />
     </div>
   );

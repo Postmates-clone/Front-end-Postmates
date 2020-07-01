@@ -17,7 +17,7 @@ const Button = styled.button`
   width: 200px;
   border-radius: 28px;
   letter-spacing: 0.72px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
   text-align: center;
   color: #fff;
@@ -29,7 +29,7 @@ const Button = styled.button`
 
 const Title = styled.div`
   font-size: 48px;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 50px;
   letter-spacing: -2.6px;
   color: #000;

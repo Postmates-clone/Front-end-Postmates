@@ -27,6 +27,7 @@ export const MainTextWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   line-height: 40px;
+  font-weight: bold;
 `;
 
 export const InputWrapper = styled.div`
@@ -65,17 +66,27 @@ export const Input = styled.input`
   padding: 0;
 `;
 
-export default function MainBanner() {
+export const Title = styled.div`
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 50px;
+  letter-spacing: -2.6px;
+  margin-bottom: 17px;
+`;
+export const Specification = styled.div`
+  font-weight: 200;
+  letter-spacing: 0.14px;
+  font-size: 16px;
+  margin-bottom: 17px;
+`;
+
+export default function MainBanner({ title, text }) {
   return (
     <MainBannerBlock>
       <MainBannerContainer>
         <MainTextWrapper>
-          <h2 style={{ fontSize: '56px', marginBottom: '20px' }}>
-            Want burgers?
-          </h2>
-          <p style={{ fontSize: '17px', marginBottom: '20px' }}>
-            Food, drinks, groceries, and more available for delivery and pickup.
-          </p>
+          <Title>{title}</Title>
+          <Specification>{text}</Specification>
           <InputWrapper>
             <InputInner>
               <IconImage src={mapMaker} />
