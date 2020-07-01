@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import mapMaker from '../../Assets/mapMaker.png';
 import rightArrow from '../../Assets/rightArrow.png';
 
-const MainBannerBlock = styled.div`
+export const MainBannerBlock = styled.div`
   background-size: cover;
   height: 700px;
   background-repeat: no-repeat;
@@ -11,8 +11,8 @@ const MainBannerBlock = styled.div`
   background-color: #ffdf18;
 `;
 
-const MainBannerContainer = styled.div`
-  width: 900px;
+export const MainBannerContainer = styled.div`
+  width: 1000px;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -20,7 +20,7 @@ const MainBannerContainer = styled.div`
   padding: 20px;
 `;
 
-const MainTextWrapper = styled.div`
+export const MainTextWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 20px;
@@ -29,13 +29,13 @@ const MainTextWrapper = styled.div`
   line-height: 40px;
 `;
 
-const InputWrapper = styled.div`
+export const InputWrapper = styled.div`
   width: 400px;
   height: 60px;
   display: flex;
 `;
 
-const InputInner = styled.div`
+export const InputInner = styled.div`
   display: flex;
   align-items: center;
   width: 340px;
@@ -43,7 +43,7 @@ const InputInner = styled.div`
   background: #fff;
 `;
 
-const InputButton = styled.div`
+export const InputButton = styled.div`
   width: 60px;
   height: 100%;
   background-color: black;
@@ -53,13 +53,12 @@ const InputButton = styled.div`
   cursor: pointer;
 `;
 
-const IconImage = styled.img`
+export const IconImage = styled.img`
   width: 15px;
   height: 20px;
-  padding: 10px;
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   border: none;
   width: 80%;
   height: 80%;
