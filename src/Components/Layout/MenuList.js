@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import FavoritesCategory from './FavoritesCategory';
 import MenuCategory from './MenuCategory';
 
 const MenuList = ({ storeData }) => {
-  console.log(storeData);
   return (
     <>
       <FavoritesCategory />

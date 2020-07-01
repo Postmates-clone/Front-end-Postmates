@@ -4,13 +4,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 
-const ItemNode = styled.li`
+const ItemBlock = styled.li`
+  display: flex;
   height: 128px;
   padding: 16px 0 16px 0;
-  display: flex;
   list-style: none;
   ${Media.desktop`
-  max-width: 496.5px;
+  width: 496.5px;
   background-color: tomato;
   `}
   ${Media.tablet`
@@ -23,11 +23,12 @@ const ItemNode = styled.li`
   `}
 `;
 
-const Content = styled.div`
-  width: 80%;
+const ContentBlock = styled.div`
+  width: 100%;
+  display: block;
 `;
 
-const Image = styled.img`
+const ImageBlock = styled.img`
   width: 128px;
   height: 128px;
   background-color: blue;
@@ -36,13 +37,13 @@ const Image = styled.img`
 const MenuItem = ({ item }) => {
   const { name, description, img_url } = item;
   return (
-    <ItemNode>
-      <Content>
+    <ItemBlock>
+      <ContentBlock>
         <div>{name}</div>
         <div>{description}</div>
-      </Content>
-      <Image src={img_url} />
-    </ItemNode>
+      </ContentBlock>
+      <ImageBlock src={img_url} />
+    </ItemBlock>
   );
 };
 
