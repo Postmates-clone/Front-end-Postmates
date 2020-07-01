@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-const MenuCategoryTitle = ({ title }) => {
-  return <div>{title}</div>;
+const MenuCategoryTitle = ({ category }) => {
+  return <div>{category}</div>;
 };
 
 export default MenuCategoryTitle;
