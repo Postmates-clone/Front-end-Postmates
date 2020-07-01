@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProductInfo from '../../Components/Items/ProductInfo';
+import ProductInfo from '../Items/ProductInfo';
+import ProductImage from '../Items/ProductImage';
 
-const MainSectionLayout = styled.div`
+const MainSectionBlock = styled.div`
   border: 1px solid blue;
   display: flex;
   box-sizing: border-box;
@@ -14,21 +15,15 @@ const MainSectionLayout = styled.div`
   margin-right: auto;
   margin-top: 30px;
 
-  /* flex-direction: ${({ isRowReverse }) =>
-    isRowReverse ? 'row-reverse' : 'row'}; */
-`;
-
-const Image = styled.div`
-  width: 300px;
-  height: 300px;
-  background-color: blue;
+  flex-direction: ${({ isRowReverse }) =>
+    isRowReverse ? 'row-reverse' : 'row'};
 `;
 
 export default function MainSection({ title, text, buttonText, isRowReverse }) {
   return (
-    <MainSectionLayout isRowReverse={isRowReverse}>
+    <MainSectionBlock isRowReverse={isRowReverse}>
       <ProductInfo title={title} text={text} buttonText={buttonText} />
-      <Image>ll</Image>
-    </MainSectionLayout>
+      <ProductImage url="https://raster-static.postmates.com?url=https://buyer-static-gcp.postmates.com/dist/prod/home-refresh-unlimited.57d8331d158bb94edb70729c70f519fce1c2760fa24073e95cba6b87ceb7874124910e5fe208c01652e06032b4ef079b772d30931bb5755dfe8edf99cbe01047.png&quality=85&w=1328&h=0&mode=auto&format=webp&v=4" />
+    </MainSectionBlock>
   );
 }
