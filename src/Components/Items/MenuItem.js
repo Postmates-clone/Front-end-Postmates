@@ -20,11 +20,13 @@ const ItemBlock = styled.li`
   width: 100%;
   padding: 16px 0;
   box-sizing: content-box;
+  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
   `}
   ${Media.mobile`
   width: 100%;
   padding: 16px 0;
   box-sizing: content-box;
+  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
   `}
 `;
 
