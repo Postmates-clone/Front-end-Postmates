@@ -125,7 +125,7 @@ const StyleSample = () => {
       <AddCartBtn />
       <br />
       <CountBtn />
-      <LargeButtonUi>Sample Button</LargeButtonUi>
+      <LargeButtonUi>Large Btn</LargeButtonUi>
       <SmallButtonUi>SmallBtn</SmallButtonUi>
       <Fonts>
         Fonts
