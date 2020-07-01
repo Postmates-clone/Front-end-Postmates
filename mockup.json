@@ -25,10 +25,10 @@
     "lng": -118.2492018,
     "food_type": "fast-food",
     "city": "Los Angeles",
-    "badges": {
+    "badges": [{
       "text": "POPULAR",
       "text_color": "#979CA6"
-    },
+    }],
     "menu": [{
         "category": "Featured Items",
         "list": [{
