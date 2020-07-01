@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
@@ -26,20 +27,21 @@ const Content = styled.div`
   width: 80%;
 `;
 
-const Image = styled.div`
+const Image = styled.img`
   width: 128px;
   height: 128px;
   background-color: blue;
 `;
 
 const MenuItem = ({ item }) => {
+  const { name, description, img_url } = item;
   return (
     <ItemNode>
       <Content>
-        <div>{item.name}</div>
-        <div>{item.description}</div>
+        <div>{name}</div>
+        <div>{description}</div>
       </Content>
-      <Image />
+      <Image src={img_url} />
     </ItemNode>
   );
 };
