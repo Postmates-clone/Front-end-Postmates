@@ -47,7 +47,7 @@
           },
           {
             "name": "Classic Popcorn Chicken Combo (Large)",
-            "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2F4a043bb6-3527-47a7-af6a-371069b03679%2Foriginal.jpg%3Fv%3D63760427627&width=1280",
+            "img_url": "",
             "description": "Our Classic Popcorn Chicken, served with large fries, and a large drink.",
             "base_price": 10.35,
             "options": [{
@@ -452,7 +452,7 @@
           },
           {
             "name": "Double Southwest Cheddar Cheeseburger A La Carte",
-            "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2F2b52d225-75c8-43a7-85a7-d6612ccd88b7%2Foriginal.jpg%3Fv%3D63760426773&width=1280",
+            "img_url": "",
             "description": "",
             "base_price": 7.89,
             "options": []
