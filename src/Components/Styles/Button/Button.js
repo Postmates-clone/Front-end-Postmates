@@ -3,7 +3,7 @@ import { Green, White, DimGray } from '../Variables';
 
 export const ButtonUi = styled.button`
   display: flex;
-  width: 10.5rem;
+  width: 10.5rem; /*padding*/
   height: 3rem;
   margin: 0;
   padding: 0;

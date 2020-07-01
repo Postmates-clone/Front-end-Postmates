@@ -24,7 +24,7 @@ const AddToCart = styled.button`
 function AddCartBtn() {
   return (
     <AddToCart>
-      <span>add to cart</span> <span>$18.99</span>
+      <span>add to cart</span> <span />
     </AddToCart>
   );
 }

@@ -7,6 +7,7 @@ import SignUpBtn from './Button/SignUpBtn';
 import AddCartBtn from './Button/AddCartBtn';
 import CountBtn from './Button/CountBtn';
 import { SmallButtonUi, LargeButtonUi } from './Button/Button';
+import { PostmatesStd, BoldPostmatesStd } from './Font';
 
 export const ColorPalette = styled.div`
   display: flex;
@@ -65,26 +66,7 @@ export const Fonts = styled.div`
   line-height: 42px;
   color: #000000;
 `;
-export const PostmatesStd = styled.div`
-  width: 34.43rem;
-  height: 7.56rem;
-  font-family: Postmates Std;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 75px;
-  line-height: 88px;
-  color: #000000;
-`;
-export const BoldPostmatesStd = styled.div`
-  width: 34.43rem;
-  height: 7.56rem;
-  font-family: Postmates Std;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 75px;
-  line-height: 88px;
-  color: #000000;
-`;
+
 export const Postmates = styled.div`
   max-width: 1024px;
   cursor: pointer;
