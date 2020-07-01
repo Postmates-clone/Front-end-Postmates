@@ -6,7 +6,7 @@ import LoginBtn from './Button/LogInBtn';
 import SignUpBtn from './Button/SignUpBtn';
 import AddCartBtn from './Button/AddCartBtn';
 import CountBtn from './Button/CountBtn';
-import { ButtonUi } from './Button/Button';
+import { SmallButtonUi, LargeButtonUi } from './Button/Button';
 
 export const ColorPalette = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ export const Black = styled.div`
   background: #000000;
   border-radius: 10px;
 `;
-export const Dimgray = styled.div`
+export const DimGray = styled.div`
   width: 62px;
   height: 62px;
   background: #2d3138;
@@ -101,7 +101,6 @@ export const Postmates = styled.div`
   line-height: normal;
   text-rendering: optimizelegibility;
 `;
-
 export const LoginButton = () => {
   return <LoginBtn />;
 };
@@ -115,7 +114,7 @@ const StyleSample = () => {
         <Blue />
         <Green />
         <Black />
-        <Dimgray />
+        <DimGray />
         <Gray />
         <White />
       </ColorPalette>
@@ -126,7 +125,8 @@ const StyleSample = () => {
       <AddCartBtn />
       <br />
       <CountBtn />
-      <ButtonUi>Sample Button</ButtonUi>
+      <LargeButtonUi>Sample Button</LargeButtonUi>
+      <SmallButtonUi>SmallBtn</SmallButtonUi>
       <Fonts>
         Fonts
         <PostmatesStd>Postmates Std</PostmatesStd>
