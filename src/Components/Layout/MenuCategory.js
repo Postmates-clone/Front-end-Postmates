@@ -14,7 +14,7 @@ const StoreListBlock = styled.ul`
   ${Media.tablet`
   width: 100%;
   `}
-  ${Media.phone`
+  ${Media.mobile`
   width: 100%;
   `}
 `;
