@@ -1,9 +1,13 @@
 import { css } from 'styled-components';
 
+// screen and (min-width: 1060px)
+// screen and (max-width: 1059px) and (min-width: 768px)
+// screen and (max-width: 767px)
+
 const sizes = {
-  desktop: 992,
-  tablet: 992,
-  phone: 600,
+  desktop: 1060,
+  tablet: 1059,
+  phone: 767,
 };
 
 // 미디어쿼리 객체 생성 함수

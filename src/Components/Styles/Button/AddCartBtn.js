@@ -22,6 +22,10 @@ const AddToCart = styled.button`
   cursor: pointer;
 `;
 function AddCartBtn() {
-  return <AddToCart>add to cart $18.99</AddToCart>;
+  return (
+    <AddToCart>
+      <span>add to cart</span> <span />
+    </AddToCart>
+  );
 }
 export default AddCartBtn;

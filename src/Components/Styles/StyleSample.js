@@ -6,47 +6,49 @@ import LoginBtn from './Button/LogInBtn';
 import SignUpBtn from './Button/SignUpBtn';
 import AddCartBtn from './Button/AddCartBtn';
 import CountBtn from './Button/CountBtn';
+import { SmallButtonUi, LargeButtonUi } from './Button/Button';
+import { PostmatesStd, BoldPostmatesStd } from './Font';
 
-const ColorPalette = styled.div`
+export const ColorPalette = styled.div`
   display: flex;
 `;
-const Yellow = styled.div`
+export const Yellow = styled.div`
   width: 62px;
   height: 63px;
   background: #ffdf18;
   border-radius: 10px;
 `;
-const Blue = styled.div`
+export const Blue = styled.div`
   width: 62px;
   height: 63px;
   background: #1c50ee;
   border-radius: 10px;
 `;
-const Green = styled.div`
+export const Green = styled.div`
   width: 62px;
   height: 63px;
   background: #00cc99;
   border-radius: 10px;
 `;
-const Black = styled.div`
+export const Black = styled.div`
   width: 62px;
   height: 62px;
   background: #000000;
   border-radius: 10px;
 `;
-const Dimgray = styled.div`
+export const DimGray = styled.div`
   width: 62px;
   height: 62px;
   background: #2d3138;
   border-radius: 10px;
 `;
-const Gray = styled.div`
+export const Gray = styled.div`
   width: 63px;
   height: 62px;
   background: #8f95a3;
   border-radius: 10px;
 `;
-const White = styled.div`
+export const White = styled.div`
   width: 62px;
   height: 62px;
   background: #ffffff;
@@ -54,7 +56,7 @@ const White = styled.div`
   box-sizing: border-box;
   border-radius: 10px;
 `;
-const Fonts = styled.div`
+export const Fonts = styled.div`
   width: 177px;
   height: 51px;
   font-family: Roboto;
@@ -64,27 +66,8 @@ const Fonts = styled.div`
   line-height: 42px;
   color: #000000;
 `;
-const PostmatesStd = styled.div`
-  width: 34.43rem;
-  height: 7.56rem;
-  font-family: Postmates Std;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 75px;
-  line-height: 88px;
-  color: #000000;
-`;
-const BoldPostmatesStd = styled.div`
-  width: 34.43rem;
-  height: 7.56rem;
-  font-family: Postmates Std;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 75px;
-  line-height: 88px;
-  color: #000000;
-`;
-const Postmates = styled.div`
+
+export const Postmates = styled.div`
   max-width: 1024px;
   cursor: pointer;
   align-items: center;
@@ -100,6 +83,9 @@ const Postmates = styled.div`
   line-height: normal;
   text-rendering: optimizelegibility;
 `;
+export const LoginButton = () => {
+  return <LoginBtn />;
+};
 const StyleSample = () => {
   return (
     <div>
@@ -110,7 +96,7 @@ const StyleSample = () => {
         <Blue />
         <Green />
         <Black />
-        <Dimgray />
+        <DimGray />
         <Gray />
         <White />
       </ColorPalette>
@@ -119,7 +105,10 @@ const StyleSample = () => {
       <LoginBtn />
       <SignUpBtn />
       <AddCartBtn />
+      <br />
       <CountBtn />
+      <LargeButtonUi>Large Btn</LargeButtonUi>
+      <SmallButtonUi>SmallBtn</SmallButtonUi>
       <Fonts>
         Fonts
         <PostmatesStd>Postmates Std</PostmatesStd>

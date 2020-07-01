@@ -1,17 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 
-// eslint-disable-next-line react/prop-types
-const Stores = ({ store }) => {
-  // eslint-disable-next-line react/prop-types
-  const { city, address, id, favorit } = store;
+const Store = styled.li`
+  width: 317px;
+  height: 193px;
+
+  background-image: url(${(props) => props.image || null});
+`;
+
+const Stores = ({ id, name, image }) => {
+  console.log(image);
 
   return (
-    <div style={{ border: '1px solid black' }}>
-      <div>도시:{city}</div>
-      <div>주소:{address}</div>
-      <div>id:{id}</div>
-      <div>좋아요:{favorit}</div>
-    </div>
+    <Store key={id} image={image}>
+      {name}
+    </Store>
   );
 };
 
