@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { combineReducers } from 'redux';
 import FeedReducer from './FeedReducer';
 import ItemReducer from './ItemReducer';
