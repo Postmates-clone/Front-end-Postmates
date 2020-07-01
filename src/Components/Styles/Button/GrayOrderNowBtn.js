@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const GrayOrderNow = styled.button`
   display: flex;
-  width: 10.5rem; /* minwidht*/
+  width: 10.5rem;
   height: 3rem;
   margin: 0;
   padding: 0;
