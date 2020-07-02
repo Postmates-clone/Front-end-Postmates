@@ -1,8 +1,11 @@
 /* eslint-disable camelcase */
 
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
+
+// FIXME: 희진 -itemPopup 작업
+import ItemPopup from './ItemPopup';
 
 const ItemBlock = styled.li`
   display: flex;
@@ -83,18 +86,41 @@ const ImageBlock = styled.img`
 
 const MenuItem = ({ item }) => {
   const { name, description, img_url, base_price } = item;
+
+  const [dialog, setDialog] = useState(false);
+
+  const onClick = () => {
+    setDialog(true);
+  };
+
+  const onCancel = () => {
+    setDialog(false);
+  };
+
   return (
-    <ItemBlock>
-      <ContentBlock>
-        <div>
-          <h3>{name}</h3>
-          <span className="menu-caption">{description}</span>
-        </div>
-        <strong>${base_price}</strong>
-      </ContentBlock>
-      {/* img가 있을경우 img component 생성, 없을경우 미생성 */}
-      {img_url ? <ImageBlock src={img_url} /> : ''}
-    </ItemBlock>
+    <>
+      <ItemBlock>
+        <ContentBlock onClick={onClick}>
+          <div>
+            <h3>{name}</h3>
+            <span className="menu-caption">{description}</span>
+          </div>
+          <strong>${base_price}</strong>
+        </ContentBlock>
+        {/* img가 있을경우 img component 생성, 없을경우 미생성 */}
+        {img_url ? <ImageBlock src={img_url} /> : ''}
+      </ItemBlock>
+
+      <ItemPopup
+        item={item}
+        title="test"
+        // eslint-disable-next-line react/no-children-prop
+        children="testtesttest"
+        buttonText="ADD TO CART"
+        visible={dialog}
+        onCancel={onCancel}
+      />
+    </>
   );
 };
 
