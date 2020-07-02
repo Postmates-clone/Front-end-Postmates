@@ -9,4 +9,4 @@ export const DevApi = {
   getItem: (url) => api.get(`/${url}`, { responseType: 'json' }),
 };
 
-// 신규 json-server --watch mockup.json --port 5000
+// json-server --watch mockup.json --port 5000

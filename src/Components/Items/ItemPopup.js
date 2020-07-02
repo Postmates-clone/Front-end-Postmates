@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useState, useEffect } from 'react';
@@ -108,9 +110,18 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `;
 
-const ItemPopup = ({ title, children, buttonText, visible, onCancel }) => {
+const ItemPopup = ({
+  item,
+  title,
+  children,
+  buttonText,
+  visible,
+  onCancel,
+}) => {
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
+
+  const { name, description, img_url, base_price, options } = item;
 
   useEffect(() => {
     if (localVisible && !visible) {
