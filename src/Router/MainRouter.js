@@ -5,6 +5,7 @@ import FeedContainer from '../Containers/FeedContainer';
 import ItemContainer from '../Containers/ItemContainer';
 import DevComponent from '../Dev/DevComponent';
 import DevUserComponent from '../Dev/DevUserComponent';
+import DesignSystem from '../Style/DesignSystem';
 
 const MainRouter = () => {
   return (
@@ -14,6 +15,7 @@ const MainRouter = () => {
       <Route path="/item" component={ItemContainer} />
       <Route path="/dev" component={DevComponent} />
       <Route path="/devuser" component={DevUserComponent} />
+      <Route path="/design" component={DesignSystem} />
     </Switch>
   );
 };
