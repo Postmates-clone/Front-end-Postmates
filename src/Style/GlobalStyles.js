@@ -43,9 +43,6 @@ const globalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: "Postmates Std", 'Helvetica Neue', sans-serif;
-    font-weight: 200;
-    font-size: 16px;
-    letter-spacing: -0.48px
     }
 
     /* CLEAR FIX */
@@ -53,6 +50,10 @@ const globalStyles = createGlobalStyle`
     display: block;
     content: '';
     clear: both;
+    }
+
+    button {
+    cursor: pointer;
     }
 
     /* reset css */
