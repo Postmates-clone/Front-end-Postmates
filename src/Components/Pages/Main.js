@@ -1,7 +1,6 @@
 /* eslint-disable import/no-duplicates */
 import React from 'react';
 // import styled from 'styled-components';
-import globalStyles from '../../Style/GlobalStyles';
 import MainSection from '../Layout/MainSection';
 import MainBanner from '../Layout/MainBanner';
 import DeliverySection from '../Layout/DeliverySection';
@@ -11,7 +10,6 @@ import MainProducts from '../../Assets/mainProducts.png';
 const MainPage = () => {
   return (
     <div>
-      <globalStyles />
       <h1>Main page header</h1>
       <hr />
       <MainBanner

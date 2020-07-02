@@ -1,5 +1,6 @@
+/* eslint-disable implicit-arrow-linebreak */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import mapMaker from '../../Assets/mapMaker.png';
 import rightArrow from '../../Assets/rightArrow.png';
 
@@ -57,6 +58,11 @@ export const InputButton = styled.div`
 export const IconImage = styled.img`
   width: 15px;
   height: 20px;
+  ${({ cursor }) =>
+    cursor &&
+    css`
+      cursor: pointer;
+    `}
 `;
 
 export const Input = styled.input`
