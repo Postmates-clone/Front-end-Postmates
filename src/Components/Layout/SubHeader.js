@@ -5,6 +5,8 @@ import Media from '../../Style/Media';
 import BreadCrumbs from '../Items/BreadCrumbs';
 import SubLocation from '../Items/SubLocation';
 import MenuCategories from '../Items/MenuCategories';
+import SearchItems from '../Items/SearchItems';
+import Cart from '../Items/Cart';
 
 const SubHeaderBlock = styled.div`
   height: 50px;
@@ -17,14 +19,22 @@ const SubHeaderBlock = styled.div`
   ${Media.mobile`
   background-color: #F79700;
   `}
+
+  .wrap-subheader-item {
+    display: flex;
+  }
 `;
 
 const SubHeader = () => {
   return (
     <SubHeaderBlock>
-      <BreadCrumbs />
-      <SubLocation />
-      <MenuCategories />
+      <div className="wrap-subheader-item">
+        <BreadCrumbs />
+        <SubLocation />
+        <MenuCategories />
+        <SearchItems />
+        <Cart />
+      </div>
     </SubHeaderBlock>
   );
 };
