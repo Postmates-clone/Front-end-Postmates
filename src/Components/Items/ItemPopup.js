@@ -132,16 +132,19 @@ const ItemPopup = ({
     setLocalVisible(visible);
   }, [localVisible, visible]);
 
+  const prices = options.map((option) => option);
   if (!animate && !localVisible) return null;
   return (
     <OpacityBackground disappear={!visible}>
       <DialogBlock disappear={!visible}>
         <IconImage cursor src={xIcon} onClick={onCancel} />
-        <h1>{title}</h1>
-        <p>{children}</p>
+        <h1>{name}</h1>
+        <p>{description}</p>
+        <text>${base_price}</text>
+        <p>옵션</p>
         <ButtonGroup>
           <Button>count자리</Button>
-          <Button>{buttonText}</Button>
+          <Button>Add TO CART</Button>
         </ButtonGroup>
       </DialogBlock>
     </OpacityBackground>
