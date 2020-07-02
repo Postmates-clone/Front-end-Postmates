@@ -15,3 +15,4 @@ export const DevApi = {
 
 // console.log(DevApi.getNearBy());
 // json-server --watch db.json --port 5000
+// json-server --watch mockup.json --port 5000
