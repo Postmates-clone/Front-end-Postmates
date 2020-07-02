@@ -5,6 +5,18 @@ import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 
+const DeliveryCostBlock = styled.div`
+${Media.desktop`
+  
+`}
+${Media.tablet`
+  
+`}
+${Media.mobile`
+  
+`}
+`;
+
 const StoreIndividualBlock = styled.div`
   ${Media.desktop`
     width: 1024px;
@@ -21,6 +33,7 @@ const StoreIndividualBlock = styled.div`
 
   .wrap-title {
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 `;
@@ -48,6 +61,17 @@ const Badge = styled.div`
 
 const WrapButtonBlock = styled.div`
   display: flex;
+  margin-top: 16px;
+  button {
+    padding: 0 14px;
+    margin: 0 8px 8px 0;
+    height: 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(217, 219, 224, 0.5);
+    background-color: rgb(255, 255, 255);
+    font-size: 11px;
+    cursor: pointer;
+  }
 `;
 
 const StoreIndividual = ({ storeData }) => {
@@ -58,9 +82,11 @@ const StoreIndividual = ({ storeData }) => {
     address,
     food_type,
     is_pickup,
+    delivery_fee_badge,
   } = storeData;
   return (
     <StoreIndividualBlock>
+      <DeliveryCostBlock>${delivery_fee_badge}</DeliveryCostBlock>
       <div className="wrap-title">
         <StoreTitle>{name}</StoreTitle>
         <Badge>{food_type}</Badge>
