@@ -10,6 +10,7 @@ export const DevApi = {
   getOrderBy: () => api.get('/orderby/', { responseType: 'json' }),
   getFavorite: () => api.get('/favorite/', { responseType: 'json' }),
   getInFast: () => api.get('/getinfast/', { responseType: 'json' }),
+  getItem: (url) => api.get(`/${url}`, { responseType: 'json' }),
 };
 
 // console.log(DevApi.getNearBy());

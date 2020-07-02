@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { DevApi } from '../Dev/DevItemApi';
+import { DevApi } from '../Dev/DevApi';
 
 // store 정보 취득 action
 const GET_STORE = 'GET_STORE';
@@ -9,7 +9,6 @@ const GET_STORE_ERROR = 'GET_STORE_ERROR';
 // user 정보 취득 action 생성 함수
 export const getStoreAsync = (url) => async (dispatch, state) => {
   dispatch({ type: GET_STORE });
-  console.log(111);
   try {
     const { data } = await DevApi.getItem(url); // API 호출 - API 제작 해야 함
     dispatch({ type: GET_STORE_SUCCESS, data });
