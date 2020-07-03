@@ -45,6 +45,7 @@ const globalStyles = createGlobalStyle`
     font-family: "Postmates Std", 'Helvetica Neue', sans-serif;
     }
 
+
     /* CLEAR FIX */
     .clearfix::after {
     display: block;
