@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 // import Media from '../../Style/Media';
-import { location } from '../../Style/IconStyles';
+import { locationIconLarge } from '../../Style/IconStyles';
 
 const SubLocationBlock = styled.div`
   background-color: yellow;
 `;
 
 const SubLocation = () => {
-  return <SubLocationBlock>{location}</SubLocationBlock>;
+  return <SubLocationBlock>{locationIconLarge}</SubLocationBlock>;
 };
 
 export default SubLocation;
