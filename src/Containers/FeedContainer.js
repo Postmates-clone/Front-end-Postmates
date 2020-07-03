@@ -9,6 +9,7 @@ import {
   getFavorite,
   getInFast,
 } from '../Modules/FeedReducer';
+import { setPage } from '../Modules/MainReducer';
 
 const FeedContainer = () => {
   const { nearby, orderby, favorite, getinfast } = useSelector((state) => ({
@@ -21,6 +22,7 @@ const FeedContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(setPage('feed'));
     dispatch(getNearBy());
     dispatch(getOrderBy());
     dispatch(getFavorite());
