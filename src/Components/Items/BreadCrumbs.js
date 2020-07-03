@@ -4,10 +4,20 @@ import Media from '../../Style/Media';
 
 const BreadCrumbsBlock = styled.div`
   display: flex;
-  background-color: yellow;
+  font-size: 14px;
+  font-family: 'Postmates Std';
+
   ${Media.mobile`
   display: none;
   `}
+  button {
+    border: none;
+    background: none;
+  }
+  span {
+    padding: 0 8px;
+    color: rgb(143, 149, 163);
+  }
 `;
 
 const BreadCrumbs = () => {

@@ -12,24 +12,32 @@ const SubHeaderBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  align-items: center;
+
   ${Media.desktop`
   height: 69px;
-  background-color: #0079FA;
   `}
   ${Media.tablet`
   height: 69px;
-  background-color: #A8FA00;
+  padding: 0 24px;
   `}
   ${Media.mobile`
   height: 55px;
-  padding: 20px 0;
+  padding: 20px 24px;
   box-sizing: content-box;
-  background-color: #F79700;
   `}
 
   .wrap-subheader-item {
     display: flex;
+    ${Media.desktop`
+      width: 1024px;
+    `}
+    ${Media.tablet`
+      width: 100%;
+    `}
+    ${Media.mobile`
+      width: 100%;
+    `}
   }
 `;
 
