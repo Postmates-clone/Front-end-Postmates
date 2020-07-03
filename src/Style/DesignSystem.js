@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BasicBtn, IconBtn } from './BasicBtn';
+import { BasicBtn, IconBtn, LoginBtn } from './BasicBtn';
+import { Counter, AddToCart } from './BasicCounter';
 
 const DesignSystemBlock = styled.div`
   padding: 50px;
@@ -17,12 +18,29 @@ const DesignSystem = () => {
       {/* 기본 여백과 다른 버튼의 경우 width="000px" */}
       {/* 미디어쿼리 타블렛 twidth="000px" mwidth="000px" */}
       <IconBtn active text="GET NOW" icon="android" />
-      <Empty />
       <IconBtn active text="GET NOW" icon="apple" />
+
       <Empty />
+
       <BasicBtn active text="ORDER NOW" mwidth="265px" />
-      <Empty />
       <BasicBtn active={false} text="ORDER NOW" twidth="500px" />
+
+      <Empty />
+
+      <BasicBtn
+        active={false}
+        text="ORDER NOWORDER NOWORDER NOWORDER NOWORDER NOWORDER NOW"
+      />
+
+      <Empty />
+
+      <LoginBtn active text="LOG IN" />
+      <LoginBtn active={false} text="SIGN UP" />
+
+      <Empty />
+
+      <Counter active={false} />
+      <AddToCart active text="ADD TO CART" totalprice="$5.99" />
     </DesignSystemBlock>
   );
 };
