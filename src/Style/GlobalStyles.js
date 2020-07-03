@@ -43,6 +43,7 @@ const globalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: "Postmates Std", 'Helvetica Neue', sans-serif;
+    outline: none;
     }
 
 
