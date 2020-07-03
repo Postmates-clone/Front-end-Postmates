@@ -10,6 +10,7 @@ import styled, { keyframes, css } from 'styled-components';
 import { Button } from './ProductInfo';
 import { IconImage } from '../Layout/MainBanner';
 import xIcon from '../../Assets/xicon.png';
+import { Counter } from '../../Style/BasicCounter';
 
 const fadeIn = keyframes`
 from{
@@ -110,14 +111,7 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `;
 
-const ItemPopup = ({
-  item,
-  title,
-  children,
-  buttonText,
-  visible,
-  onCancel,
-}) => {
+const ItemPopup = ({ item, visible, onCancel }) => {
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
 
@@ -143,8 +137,8 @@ const ItemPopup = ({
         <text>${base_price}</text>
         <p>옵션</p>
         <ButtonGroup>
-          <Button>count자리</Button>
-          <Button>Add TO CART</Button>
+          <Counter />
+          <Button>Add To Cart</Button>
         </ButtonGroup>
       </DialogBlock>
     </OpacityBackground>

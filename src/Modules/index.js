@@ -5,12 +5,14 @@ import MainReducer from './MainReducer';
 import FeedReducer from './FeedReducer';
 import ItemReducer from './ItemReducer';
 import UserReducer from './UserReducer';
+import CartReducer from './CartReducer';
 
 const RootReducer = combineReducers({
   Main: MainReducer,
   Feed: FeedReducer,
   Item: ItemReducer,
   User: UserReducer,
+  Cart: CartReducer,
 });
 
 // const store = createStore(RootReducer);
