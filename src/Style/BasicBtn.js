@@ -3,10 +3,13 @@ import styled from 'styled-components';
 import Media from './Media';
 
 const BasicButton = styled.button`
+  display: inline-block;
+
   min-width: 120px;
   width: ${(props) => props.width || null};
   height: 48px;
 
+  margin: 0 5px 0 0;
   padding: 0 47px;
 
   border: 0px;
@@ -18,7 +21,7 @@ const BasicButton = styled.button`
     color: #fff;
     font-size: 12px;
     font-weight: bold;
-    letter-spacing: 0.72;
+    letter-spacing: 0.72px;
   }
 
   /* ${Media.desktop`
@@ -35,10 +38,13 @@ const BasicButton = styled.button`
 `;
 
 const IconButton = styled.button`
+  display: inline-block;
+
   min-width: 120px;
   width: ${(props) => props.width || null};
   height: 48px;
 
+  margin: 0 5px 0 0;
   padding: 0 24px;
 
   border: 0px;
@@ -56,10 +62,47 @@ const IconButton = styled.button`
     color: #fff;
     font-size: 12px;
     font-weight: bold;
-    letter-spacing: 0.72;
+    letter-spacing: 0.72px;
     line-height: 48px;
   }
 `;
+
+const LoginButton = styled.button`
+  display: inline-block;
+  min-width: 86px;
+  width: ${(props) => props.width || null};
+  height: 32px;
+
+  margin: 0 5px 0 0;
+  padding: 0 16px;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 28px;
+
+  color: ${(props) => (props.active ? '#2D3138' : '#FFF')};
+  background-color: ${(props) => (props.active ? 'transparent' : '#2D3138')};
+
+  span {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.72px;
+  }
+
+  /* ${Media.desktop`
+
+  `} */
+
+  ${Media.tablet`
+  width: ${(props) => props.twidth || null};
+  `}
+
+  ${Media.mobile`
+  min-width: 76px;
+  height: 34px;
+  width: ${(props) => props.mwidth || null};
+  `}
+`;
+
 export function BasicBtn({ active, width, twidth, mwidth, text }) {
   return (
     <BasicButton active={active} width={width} twidth={twidth} mwidth={mwidth}>
@@ -99,5 +142,13 @@ export function IconBtn({ active, width, text, icon }) {
       </div>
       <span>{text}</span>
     </IconButton>
+  );
+}
+
+export function LoginBtn({ active, width, twidth, mwidth, text }) {
+  return (
+    <LoginButton active={active} width={width} twidth={twidth} mwidth={mwidth}>
+      <span>{text}</span>
+    </LoginButton>
   );
 }
