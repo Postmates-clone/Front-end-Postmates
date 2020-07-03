@@ -20,11 +20,7 @@ export const getOptions = () => async (dispatch) => {
 
 //초기상태
 const initialState = {
-  options: {
-    loading: false,
-    data: null,
-    error: null,
-  },
+  cart: [],
 };
 
 export default function CartReducer(state = initialState, action) {

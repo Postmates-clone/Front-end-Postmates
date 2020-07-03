@@ -11,7 +11,6 @@ import { Button } from './ProductInfo';
 import { IconImage } from '../Layout/MainBanner';
 import xIcon from '../../Assets/xicon.png';
 import { Counter } from '../../Style/BasicCounter';
-import Cart from './Cart';
 
 const fadeIn = keyframes`
 from{
@@ -112,16 +111,9 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `;
 
-const ItemPopup = ({ item, visible, onCancel }) => {
+const CartPopup = ({ visible, onCancel }) => {
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
-  const [dialog, setDialog] = useState(false);
-
-  const onClick = () => {
-    setDialog(true);
-  };
-
-  const { name, description, img_url, base_price, options } = item;
 
   useEffect(() => {
     if (localVisible && !visible) {
@@ -132,17 +124,13 @@ const ItemPopup = ({ item, visible, onCancel }) => {
     setLocalVisible(visible);
   }, [localVisible, visible]);
 
-  const prices = options.map((option) => option);
   if (!animate && !localVisible) return null;
   return (
     <OpacityBackground disappear={!visible}>
       <DialogBlock disappear={!visible}>
         <IconImage cursor src={xIcon} onClick={onCancel} />
-        <h1>{name}</h1>
-        <p>{description}</p>
-        <text>${base_price}</text>
+
         <p>옵션</p>
-        <Cart />
         <ButtonGroup>
           <Counter />
           <Button>Add To Cart</Button>
@@ -152,4 +140,4 @@ const ItemPopup = ({ item, visible, onCancel }) => {
   );
 };
 
-export default ItemPopup;
+export default CartPopup;
