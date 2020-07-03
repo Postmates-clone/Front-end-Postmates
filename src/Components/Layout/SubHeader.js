@@ -9,19 +9,35 @@ import SearchItems from '../Items/SearchItems';
 import Cart from '../Items/Cart';
 
 const SubHeaderBlock = styled.div`
-  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   ${Media.desktop`
-  background-color: #0079FA;
+  height: 69px;
   `}
   ${Media.tablet`
-  background-color: #A8FA00;
+  height: 69px;
+  padding: 0 24px;
   `}
   ${Media.mobile`
-  background-color: #F79700;
+  height: 55px;
+  padding: 20px 24px;
+  box-sizing: content-box;
   `}
 
   .wrap-subheader-item {
     display: flex;
+    ${Media.desktop`
+      width: 1024px;
+    `}
+    ${Media.tablet`
+      width: 100%;
+    `}
+    ${Media.mobile`
+      width: 100%;
+    `}
   }
 `;
 
