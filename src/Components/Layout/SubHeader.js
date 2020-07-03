@@ -9,14 +9,22 @@ import SearchItems from '../Items/SearchItems';
 import Cart from '../Items/Cart';
 
 const SubHeaderBlock = styled.div`
-  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
   ${Media.desktop`
+  height: 69px;
   background-color: #0079FA;
   `}
   ${Media.tablet`
+  height: 69px;
   background-color: #A8FA00;
   `}
   ${Media.mobile`
+  height: 55px;
+  padding: 20px 0;
+  box-sizing: content-box;
   background-color: #F79700;
   `}
 
