@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
-import { BasicBtn } from '../../Style/BasicBtn';
+import { LoginBtn } from '../../Style/BasicBtn';
 import CartPopup from './CartPopup';
 
 const Cart = () => {
-  const [dialog, setDialog] = useState(false);
+  const [cartDialog, setCartDialog] = useState(false);
 
   const onClick = () => {
-    setDialog(true);
+    setCartDialog(true);
   };
 
   const onCancel = () => {
-    setDialog(false);
+    setCartDialog(false);
   };
   return (
-    <div>
-      <BasicBtn onClick={onClick} active text="cart" />
+    <div style={{ position: 'relative' }}>
+      <LoginBtn onClick={onClick} active text="ITEMS" />
       <CartPopup
         title="test"
         // eslint-disable-next-line react/no-children-prop
         children="testtesttest"
-        visible={dialog}
+        visible={cartDialog}
         onCancel={onCancel}
       />
     </div>

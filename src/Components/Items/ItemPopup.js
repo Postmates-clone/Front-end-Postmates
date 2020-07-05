@@ -4,14 +4,11 @@
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-// import { DevApi } from '../Dev/DevItemApi';
-// import { options } from '../../Dev/DevOptionMockup';
-// import { useSelector, useDispatch } from 'react-redux';
 import { Button } from './ProductInfo';
 import { IconImage } from '../Layout/MainBanner';
 import xIcon from '../../Assets/xicon.png';
 import { Counter } from '../../Style/BasicCounter';
-import Cart from './Cart';
+import CartPopup from './CartPopup';
 
 const fadeIn = keyframes`
 from{
@@ -115,10 +112,10 @@ const ButtonGroup = styled.div`
 const ItemPopup = ({ item, visible, onCancel }) => {
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
-  const [dialog, setDialog] = useState(false);
+  const [cartPopup, setCartPopup] = useState(false);
 
   const onClick = () => {
-    setDialog(true);
+    setCartPopup(true);
   };
 
   const { name, description, img_url, base_price, options } = item;
@@ -142,10 +139,10 @@ const ItemPopup = ({ item, visible, onCancel }) => {
         <p>{description}</p>
         <text>${base_price}</text>
         <p>옵션</p>
-        <Cart />
         <ButtonGroup>
           <Counter />
-          <Button>Add To Cart</Button>
+          <Button onClick={onClick}>Add To Cart</Button>
+          <CartPopup item={item} visible={cartPopup} />
         </ButtonGroup>
       </DialogBlock>
     </OpacityBackground>

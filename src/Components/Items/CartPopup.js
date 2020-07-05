@@ -4,13 +4,7 @@
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-// import { DevApi } from '../Dev/DevItemApi';
-// import { options } from '../../Dev/DevOptionMockup';
-// import { useSelector, useDispatch } from 'react-redux';
 import { Button } from './ProductInfo';
-import { IconImage } from '../Layout/MainBanner';
-import xIcon from '../../Assets/xicon.png';
-import { Counter } from '../../Style/BasicCounter';
 
 const fadeIn = keyframes`
 from{
@@ -78,6 +72,9 @@ const DialogBlock = styled.div`
   height: 512px;
   padding-left: 1.5rem;
   background: #fff;
+  position: absolute;
+
+  background-color: aqua;
 
   h1 {
     margin: 0;
@@ -111,9 +108,10 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `;
 
-const CartPopup = ({ visible, onCancel }) => {
+const CartPopup = ({ item, visible, onCancel }) => {
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
+  const [onDialog, setOnDialog] = useState(false);
 
   useEffect(() => {
     if (localVisible && !visible) {
@@ -126,17 +124,15 @@ const CartPopup = ({ visible, onCancel }) => {
 
   if (!animate && !localVisible) return null;
   return (
-    <OpacityBackground disappear={!visible}>
-      <DialogBlock disappear={!visible}>
-        <IconImage cursor src={xIcon} onClick={onCancel} />
-
-        <p>옵션</p>
-        <ButtonGroup>
-          <Counter />
-          <Button>Add To Cart</Button>
-        </ButtonGroup>
-      </DialogBlock>
-    </OpacityBackground>
+    <>
+      {!onDialog && (
+        <DialogBlock disappear={!visible}>
+          <ButtonGroup>
+            <Button>CHECKOUT</Button>
+          </ButtonGroup>
+        </DialogBlock>
+      )}
+    </>
   );
 };
 
