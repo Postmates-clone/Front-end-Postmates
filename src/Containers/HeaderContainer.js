@@ -1,13 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import SubHeader from '../Components/Layout/SubHeader';
 import SubBanner from '../Components/Layout/SubBanner';
+import { openCategories } from '../Modules/MainReducer';
 
 const HeaderContainer = () => {
-  const { page, storeUrl } = useSelector((state) => ({
-    page: state.Main.page,
-    storeUrl: state.Item.store.store_img,
-  }));
+  const dispatch = useDispatch();
+  const { page, storeUrl, menuList, isOpenCategories } = useSelector(
+    (state) => ({
+      page: state.Main.page,
+      storeUrl: state.Item.store.store_img,
+      menuList: state.Item.store.menu,
+      isOpenCategories: state.Main.isOpenCategories,
+    }),
+  );
 
   const getBackground = () => {
     // eslint-disable-next-line operator-linebreak
@@ -17,11 +23,21 @@ const HeaderContainer = () => {
     return url;
   };
 
+  const handleClickCategories = () => {
+    console.log(isOpenCategories);
+    dispatch(openCategories(!isOpenCategories));
+  };
+
   const generateSubHeader = () => {
     return (
       <>
         <SubBanner page={page} getBackground={getBackground} />
-        <SubHeader page={page} />
+        <SubHeader
+          page={page}
+          menuList={menuList}
+          handleClickCategories={handleClickCategories}
+          isOpenCategories={isOpenCategories}
+        />
       </>
     );
   };

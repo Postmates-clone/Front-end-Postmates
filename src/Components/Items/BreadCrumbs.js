@@ -5,8 +5,6 @@ import Media from '../../Style/Media';
 const BreadCrumbsBlock = styled.div`
   display: flex;
   align-items: center;
-  font-size: 14px;
-  font-family: 'Postmates Std';
   padding-right: 24px;
 
   ${Media.mobile`

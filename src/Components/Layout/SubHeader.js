@@ -13,13 +13,20 @@ const SubHeaderBlock = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
+  font-family: 'Postmates Std';
 
   ${Media.desktop`
   height: 69px;
+
+  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
+  
   `}
   ${Media.tablet`
   height: 69px;
   padding: 0 24px;
+
+  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
   `}
   ${Media.mobile`
   height: 55px;
@@ -47,9 +54,17 @@ const Bulkhead = styled.div`
   width: 1px;
   margin-right: 17px;
   background: rgba(217, 219, 224, 0.5);
+  ${Media.mobile`
+     display: none;
+  `}
 `;
 
-const SubHeader = ({ page }) => {
+const SubHeader = ({
+  page,
+  menuList,
+  handleClickCategories,
+  isOpenCategories,
+}) => {
   return (
     <SubHeaderBlock>
       <div className="wrap-subheader-item">
@@ -57,8 +72,16 @@ const SubHeader = ({ page }) => {
         <Bulkhead />
         <SubLocation />
         {page === 'item' && <Bulkhead />}
-        {page === 'item' && <MenuCategories />}
+        {page === 'item' && (
+          <MenuCategories
+            menuList={menuList}
+            handleClickCategories={handleClickCategories}
+            isOpenCategories={isOpenCategories}
+          />
+        )}
+        {page === 'item' && <Bulkhead />}
         {page === 'item' && <SearchItems />}
+        {page === 'item' && <Bulkhead />}
         {page === 'item' && <Cart />}
       </div>
     </SubHeaderBlock>

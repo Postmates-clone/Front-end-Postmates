@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import Media from '../../Style/Media';
+import Media from '../../Style/Media';
 import { locationIconLarge } from '../../Style/IconStyles';
 
 const SubLocationBlock = styled.div`
@@ -17,6 +17,14 @@ const SubLocationBlock = styled.div`
     div {
       display: flex;
       align-items: center;
+    }
+    .icon {
+      ${Media.tablet`
+        display: none;
+      `}
+      ${Media.mobile`
+        display: none;
+      `}
     }
   }
   svg {
