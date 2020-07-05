@@ -21,7 +21,7 @@ const HeaderContainer = () => {
     return (
       <>
         <SubBanner page={page} getBackground={getBackground} />
-        <SubHeader />
+        <SubHeader page={page} />
       </>
     );
   };

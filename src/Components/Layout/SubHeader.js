@@ -29,6 +29,7 @@ const SubHeaderBlock = styled.div`
 
   .wrap-subheader-item {
     display: flex;
+    align-items: center;
     ${Media.desktop`
       width: 1024px;
     `}
@@ -41,15 +42,24 @@ const SubHeaderBlock = styled.div`
   }
 `;
 
-const SubHeader = () => {
+const Bulkhead = styled.div`
+  height: 30px;
+  width: 1px;
+  margin-right: 17px;
+  background: rgba(217, 219, 224, 0.5);
+`;
+
+const SubHeader = ({ page }) => {
   return (
     <SubHeaderBlock>
       <div className="wrap-subheader-item">
         <BreadCrumbs />
+        <Bulkhead />
         <SubLocation />
-        <MenuCategories />
-        <SearchItems />
-        <Cart />
+        {page === 'item' && <Bulkhead />}
+        {page === 'item' && <MenuCategories />}
+        {page === 'item' && <SearchItems />}
+        {page === 'item' && <Cart />}
       </div>
     </SubHeaderBlock>
   );
