@@ -15,13 +15,7 @@ const Cart = () => {
   return (
     <div style={{ position: 'relative' }}>
       <LoginBtn onClick={onClick} active text="ITEMS" />
-      <CartPopup
-        title="test"
-        // eslint-disable-next-line react/no-children-prop
-        children="testtesttest"
-        visible={cartDialog}
-        onCancel={onCancel}
-      />
+      <CartPopup title="test" visible={cartDialog} onCancel={onCancel} />
     </div>
   );
 };

@@ -4,11 +4,15 @@
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from './ProductInfo';
 import { IconImage } from '../Layout/MainBanner';
 import xIcon from '../../Assets/xicon.png';
 import { Counter } from '../../Style/BasicCounter';
-import CartPopup from './CartPopup';
+import {
+  ADD_TO_CART,
+  ADD_INSTRUCTION_TO_CART,
+} from '../../Modules/CartReducer';
 
 const fadeIn = keyframes`
 from{
@@ -110,12 +114,24 @@ const ButtonGroup = styled.div`
 `;
 
 const ItemPopup = ({ item, visible, onCancel }) => {
+  const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
-  const [cartPopup, setCartPopup] = useState(false);
+
+  const [addInstruction, setAddInstruction] = useState('');
 
   const onClick = () => {
-    setCartPopup(true);
+    /** @todo: add count support */
+    dispatch({
+      type: ADD_TO_CART,
+      payload: { ...item, count: 1, instruction: addInstruction },
+    });
+    onCancel();
+  };
+
+  const onChange = (e) => {
+    console.log(e.target.value);
+    setAddInstruction(e.target.value);
   };
 
   const { name, description, img_url, base_price, options } = item;
@@ -139,10 +155,17 @@ const ItemPopup = ({ item, visible, onCancel }) => {
         <p>{description}</p>
         <text>${base_price}</text>
         <p>옵션</p>
+        <hr />
+        <h2>SPECIAL INSTRUCTIONS</h2>
+        <textarea
+          placeholder="Add Instructions..."
+          value={addInstruction}
+          onChange={onChange}
+        />
+        <hr />
         <ButtonGroup>
           <Counter />
           <Button onClick={onClick}>Add To Cart</Button>
-          <CartPopup item={item} visible={cartPopup} />
         </ButtonGroup>
       </DialogBlock>
     </OpacityBackground>

@@ -1,10 +1,15 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable no-shadow */
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
 import { Button } from './ProductInfo';
+import { REMOVE_FROM_CART } from '../../Modules/CartReducer';
 
 const fadeIn = keyframes`
 from{
@@ -109,9 +114,16 @@ const ButtonGroup = styled.div`
 `;
 
 const CartPopup = ({ item, visible, onCancel }) => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.Cart.cart);
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
   const [onDialog, setOnDialog] = useState(false);
+
+  const onRemove = (name) => {
+    console.log('WHAT IS THE NAME', name);
+    dispatch({ type: REMOVE_FROM_CART, payload: name });
+  };
 
   useEffect(() => {
     if (localVisible && !visible) {
@@ -127,6 +139,21 @@ const CartPopup = ({ item, visible, onCancel }) => {
     <>
       {!onDialog && (
         <DialogBlock disappear={!visible}>
+          {cart.map((item) => (
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                margin: '10px 0',
+              }}
+            >
+              <span onClick={() => onRemove(item.name)}>X</span>
+              <span>{item.name}</span>
+              <span>{item.base_price}</span>
+              <span>{item.instruction}</span>
+              <hr />
+            </div>
+          ))}
           <ButtonGroup>
             <Button>CHECKOUT</Button>
           </ButtonGroup>
