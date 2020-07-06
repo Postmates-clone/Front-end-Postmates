@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import SubHeader from '../Components/Layout/SubHeader';
 import SubBanner from '../Components/Layout/SubBanner';
 import { openCategories } from '../Modules/MainReducer';
+import MainHeader from '../Components/Layout/MainHeader';
 
 const HeaderContainer = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const HeaderContainer = () => {
     const yaxis = categoryRef.filter(({ itemKey }) => itemKey === id)[0].ref
       .offsetTop;
     window.scrollTo({ top: yaxis - 60, behavior: 'smooth' });
-    console.log(window.pageYOffset);
+    // console.log(window.pageYOffset);
   };
 
   const generateSubHeader = () => {
@@ -56,7 +57,12 @@ const HeaderContainer = () => {
       </>
     );
   };
-  return <>{page === 'feed' || page === 'item' ? generateSubHeader() : ''}</>;
+  return (
+    <>
+      <MainHeader />
+      {page === 'feed' || page === 'item' ? generateSubHeader() : ''}
+    </>
+  );
 };
 
 export default HeaderContainer;
