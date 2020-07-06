@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SubHeader from '../Components/Layout/SubHeader';
 import SubBanner from '../Components/Layout/SubBanner';
-import { openCategories } from '../Modules/MainReducer';
+import { openCategories, changeSubInput } from '../Modules/MainReducer';
 
 const HeaderContainer = () => {
   const dispatch = useDispatch();
@@ -52,6 +52,8 @@ const HeaderContainer = () => {
           handleClickCategories={handleClickCategories}
           isOpenCategories={isOpenCategories}
           handleClickScrollTo={handleClickScrollTo}
+          changeSubInput={changeSubInput}
+          dispatch={dispatch}
         />
       </>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { searchIconLight } from '../../Style/IconStyles';
 
@@ -15,11 +15,20 @@ const InputBlock = styled.input`
   font-size: 14px;
 `;
 
-const SearchItems = () => {
+const SearchItems = ({ changeSubInput, dispatch }) => {
+  const inputRef = useRef();
+  const changeInput = () => {
+    dispatch(changeSubInput(inputRef.current.value));
+  };
+
   return (
     <WrapperInputBlock>
       {searchIconLight}
-      <InputBlock placeholder="Search items" />
+      <InputBlock
+        placeholder="Search items"
+        ref={inputRef}
+        onChange={changeInput}
+      />
     </WrapperInputBlock>
   );
 };

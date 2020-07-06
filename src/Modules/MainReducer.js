@@ -3,19 +3,20 @@
 const SET_PAGE = 'SET_PAGE';
 const OPEN_CATEGORIES = 'SET_CATEGORIES';
 const SELECT_SERVICE = 'SELECT_SERVICE';
+const CHANGE_SUB_INPUT = 'CHANGE_SUB_INPUT';
 
 // Action 생성 함수
 export const setPage = (page) => ({ type: SET_PAGE, page });
 export const selectService = (service) => ({ type: SELECT_SERVICE, service });
 export const openCategories = (isOpen) => ({ type: OPEN_CATEGORIES, isOpen });
+export const changeSubInput = (value) => ({ type: CHANGE_SUB_INPUT, value });
 
 // 초기 상태
 const initialState = {
   page: '',
   service: 'delivery',
   isOpenCategories: false,
-  findAddress: { input: '', data: '' },
-  finditem: { input: '', data: '' },
+  subHeaderInput: '',
 };
 
 export default function MainReducer(state = initialState, action) {
@@ -34,6 +35,11 @@ export default function MainReducer(state = initialState, action) {
       return {
         ...state,
         service: action.service,
+      };
+    case CHANGE_SUB_INPUT:
+      return {
+        ...state,
+        subHeaderInput: action.value,
       };
     default:
       return state;

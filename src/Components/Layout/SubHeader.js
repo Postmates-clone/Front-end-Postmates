@@ -69,6 +69,8 @@ const SubHeader = ({
   handleClickCategories,
   isOpenCategories,
   handleClickScrollTo,
+  changeSubInput,
+  dispatch,
 }) => {
   return (
     <SubHeaderBlock>
@@ -86,7 +88,9 @@ const SubHeader = ({
           />
         )}
         {page === 'item' && <Bulkhead />}
-        {page === 'item' && <SearchItems />}
+        {page === 'item' && (
+          <SearchItems changeSubInput={changeSubInput} dispatch={dispatch} />
+        )}
         {page === 'item' && <Bulkhead />}
         {page === 'item' && <Cart />}
       </div>
