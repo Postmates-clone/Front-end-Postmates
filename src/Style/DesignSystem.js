@@ -10,6 +10,8 @@ import {
   arrowIconSmall,
   watchIcon,
 } from './IconStyles';
+import ItemPopup from '../Components/Items/ItemPopup'
+
 
 const DesignSystemBlock = styled.div`
   padding: 50px;
@@ -54,6 +56,7 @@ const DesignSystem = () => {
 
         <Counter active={false} />
         <AddToCart active text="ADD TO CART" totalprice="$5.99" />
+        <ItemPopup active/>
       </DesignSystemBlock>
       <IconSystemBlock>
         {locationIconLarge} {locationIconSmall} {watchIcon} {checkIcon}

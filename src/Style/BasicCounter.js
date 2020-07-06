@@ -77,7 +77,7 @@ const AddToCartBlock = styled.button`
   }
 `;
 
-export const AddToCart = ({ active, text, totalprice }) => {
+export const AddToCart = ({ active, text, totalprice, ...rest }) => {
   return (
     <AddToCartBlock active={active}>
       <div className="textWrapper">

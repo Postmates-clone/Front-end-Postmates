@@ -5,13 +5,11 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from './ProductInfo';
 import { IconImage } from '../Layout/MainBanner';
 import xIcon from '../../Assets/xicon.png';
-import { Counter } from '../../Style/BasicCounter';
+import { AddToCart } from '../../Style/BasicCounter';
 import {
-  ADD_TO_CART,
-  ADD_INSTRUCTION_TO_CART,
+  ADD_TO_CART, SET_DIFF, INCREASE, DECREASE, increase, decrease, setDiff
 } from '../../Modules/CartReducer';
 
 const fadeIn = keyframes`
@@ -113,8 +111,75 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `;
 
-const ItemPopup = ({ item, visible, onCancel }) => {
+
+// couter button
+const itemColor = {
+  fontBlack: 'rgb(45, 49, 56)',
+  fontGray: 'rgba(143, 149, 163, 0.9)',
+  pointGreen: 'rgb(0, 204, 153)',
+  lineGray: 'rgba(217, 219, 224, 0.5)',
+};
+
+const CounterBlock = styled.div`
+  display: inline-block;
+  height: 54px;
+
+  border: 1px solid ${itemColor.lineGray};
+  border-radius: 30px;
+
+  * {
+    display: inline-block;
+    height: 52px;
+    padding: 10px;
+    border: 0px;
+    color: ${itemColor.fontBlack};
+    font-family: 'Postmates Std', 'Helvetica Neue', sans-serif;
+  }
+
+  button {
+    width: 61px;
+    background-color: #fff;
+    outline: none;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+`;
+
+const Increase = styled.button``;
+const Decrease = styled.button`
+  color: ${(props) => (props.active ? null : itemColor.fontGray)};
+  /* color: ${itemColor.fontGray}; */
+`;
+const Value = styled.div`
+  width: 30px;
+`;
+
+export const Counter = ({ active }) => {
+  return (
+    <CounterBlock>
+      <Decrease active={active}>-</Decrease>
+      <Value>1</Value>
+      <Increase>+</Increase>
+    </CounterBlock>
+  );
+};
+
+const ItemPopup = ({ item, visible, onCancel, active }) => {
   const dispatch = useDispatch();
+
+  const {number, diff} = useSelector(state => ({
+    number: state.Cart.number,
+    diff: state.Cart.diff
+  }))
+
+  const onIncrease = () => dispatch(increase());
+  const onDecrease = () => {
+    if(number <=1) return;
+    dispatch(decrease());
+  }
+  const onSetDiff = diff => dispatch(setDiff(diff));
+
+
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
 
@@ -145,7 +210,7 @@ const ItemPopup = ({ item, visible, onCancel }) => {
     setLocalVisible(visible);
   }, [localVisible, visible]);
 
-  const prices = options.map((option) => option);
+  // const prices = options.map((option) => option);
   if (!animate && !localVisible) return null;
   return (
     <OpacityBackground disappear={!visible}>
@@ -164,8 +229,13 @@ const ItemPopup = ({ item, visible, onCancel }) => {
         />
         <hr />
         <ButtonGroup>
-          <Counter />
-          <Button onClick={onClick}>Add To Cart</Button>
+          {/* counter */}
+          <CounterBlock>
+          <Decrease active={active} onClick={onDecrease}>-</Decrease>
+            <Value>{number}</Value>
+            <Increase onClick={onIncrease}>+</Increase>
+          </CounterBlock>
+          <AddToCart active text='Add To Cart' totalprice={`$${base_price}`} onClick={onClick}/>
         </ButtonGroup>
       </DialogBlock>
     </OpacityBackground>
