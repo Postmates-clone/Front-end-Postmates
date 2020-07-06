@@ -6,15 +6,21 @@ import { openCategories } from '../Modules/MainReducer';
 
 const HeaderContainer = () => {
   const dispatch = useDispatch();
-  const { page, storeUrl, menuList, isOpenCategories } = useSelector(
-    (state) => ({
-      page: state.Main.page,
-      storeUrl: state.Item.store.store_img,
-      menuList: state.Item.store.menu,
-      isOpenCategories: state.Main.isOpenCategories,
-    }),
-  );
+  const {
+    page,
+    storeUrl,
+    menuList,
+    isOpenCategories,
+    categoryRef,
+  } = useSelector((state) => ({
+    page: state.Main.page,
+    storeUrl: state.Item.store.store_img,
+    menuList: state.Item.store.menu,
+    isOpenCategories: state.Main.isOpenCategories,
+    categoryRef: state.Ref.categoryRef,
+  }));
 
+  // 페이지에 따라 sub-banner 배경 변경
   const getBackground = () => {
     // eslint-disable-next-line operator-linebreak
     const feedUrl =
@@ -23,8 +29,16 @@ const HeaderContainer = () => {
     return url;
   };
 
+  // 카테고리 list open
   const handleClickCategories = () => {
     dispatch(openCategories(!isOpenCategories));
+  };
+
+  // 카테고리 click시 스트롤 해당 지점으로 이동
+  const handleClickScrollTo = (id) => {
+    const yaxis = categoryRef.filter(({ itemKey }) => itemKey === id)[0].ref
+      .offsetTop;
+    window.scrollTo({ top: yaxis, behavior: 'smooth' });
   };
 
   const generateSubHeader = () => {
@@ -36,6 +50,7 @@ const HeaderContainer = () => {
           menuList={menuList}
           handleClickCategories={handleClickCategories}
           isOpenCategories={isOpenCategories}
+          handleClickScrollTo={handleClickScrollTo}
         />
       </>
     );

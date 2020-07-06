@@ -64,6 +64,7 @@ const SubHeader = ({
   menuList,
   handleClickCategories,
   isOpenCategories,
+  handleClickScrollTo,
 }) => {
   return (
     <SubHeaderBlock>
@@ -77,6 +78,7 @@ const SubHeader = ({
             menuList={menuList}
             handleClickCategories={handleClickCategories}
             isOpenCategories={isOpenCategories}
+            handleClickScrollTo={handleClickScrollTo}
           />
         )}
         {page === 'item' && <Bulkhead />}
