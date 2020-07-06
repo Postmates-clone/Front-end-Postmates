@@ -38,7 +38,8 @@ const HeaderContainer = () => {
   const handleClickScrollTo = (id) => {
     const yaxis = categoryRef.filter(({ itemKey }) => itemKey === id)[0].ref
       .offsetTop;
-    window.scrollTo({ top: yaxis, behavior: 'smooth' });
+    window.scrollTo({ top: yaxis - 60, behavior: 'smooth' });
+    console.log(window.pageYOffset);
   };
 
   const generateSubHeader = () => {
