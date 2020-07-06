@@ -4,8 +4,8 @@ import Media from '../../Style/Media';
 
 const BreadCrumbsBlock = styled.div`
   display: flex;
-  font-size: 14px;
-  font-family: 'Postmates Std';
+  align-items: center;
+  padding-right: 24px;
 
   ${Media.mobile`
   display: none;
@@ -13,10 +13,14 @@ const BreadCrumbsBlock = styled.div`
   button {
     border: none;
     background: none;
+    font-size: 14px;
+    font-weight: 400;
   }
   span {
     padding: 0 8px;
     color: rgb(143, 149, 163);
+    font-size: 14px;
+    font-weight: 400;
   }
 `;
 
