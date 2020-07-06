@@ -17,6 +17,7 @@ const SubHeaderBlock = styled.div`
   font-family: 'Postmates Std';
   position: sticky;
   top: 0;
+  z-index: 9;
   background-color: rgb(255, 255, 255);
 
   ${Media.desktop`
