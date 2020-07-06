@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
 import Media from './Media';
@@ -103,9 +104,15 @@ const LoginButton = styled.button`
   `}
 `;
 
-export function BasicBtn({ active, width, twidth, mwidth, text }) {
+export function BasicBtn({ active, width, twidth, mwidth, text, ...rest }) {
   return (
-    <BasicButton active={active} width={width} twidth={twidth} mwidth={mwidth}>
+    <BasicButton
+      active={active}
+      width={width}
+      twidth={twidth}
+      mwidth={mwidth}
+      {...rest}
+    >
       <span>{text}</span>
     </BasicButton>
   );
@@ -134,9 +141,11 @@ const svgIconList = {
   ),
 };
 
-export function IconBtn({ active, width, text, icon }) {
+// 희진: rest 추가
+
+export function IconBtn({ active, width, text, icon, ...rest }) {
   return (
-    <IconButton active={active} width={width}>
+    <IconButton active={active} width={width} {...rest}>
       <div className="svg">
         {icon === 'android' ? svgIconList.android : svgIconList.apple}
       </div>
@@ -145,9 +154,15 @@ export function IconBtn({ active, width, text, icon }) {
   );
 }
 
-export function LoginBtn({ active, width, twidth, mwidth, text }) {
+export function LoginBtn({ active, width, twidth, mwidth, text, ...rest }) {
   return (
-    <LoginButton active={active} width={width} twidth={twidth} mwidth={mwidth}>
+    <LoginButton
+      active={active}
+      width={width}
+      twidth={twidth}
+      mwidth={mwidth}
+      {...rest}
+    >
       <span>{text}</span>
     </LoginButton>
   );

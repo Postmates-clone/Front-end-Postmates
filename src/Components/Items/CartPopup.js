@@ -1,18 +1,15 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable no-shadow */
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Button } from './ProductInfo';
-import { IconImage } from '../Layout/MainBanner';
-import xIcon from '../../Assets/xicon.png';
-import { Counter } from '../../Style/BasicCounter';
-import {
-  ADD_TO_CART,
-  ADD_INSTRUCTION_TO_CART,
-} from '../../Modules/CartReducer';
+import { REMOVE_FROM_CART } from '../../Modules/CartReducer';
 
 const fadeIn = keyframes`
 from{
@@ -80,6 +77,9 @@ const DialogBlock = styled.div`
   height: 512px;
   padding-left: 1.5rem;
   background: #fff;
+  position: absolute;
+
+  background-color: aqua;
 
   h1 {
     margin: 0;
@@ -113,28 +113,17 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `;
 
-const ItemPopup = ({ item, visible, onCancel }) => {
+const CartPopup = ({ item, visible, onCancel }) => {
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.Cart.cart);
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
+  const [onDialog, setOnDialog] = useState(false);
 
-  const [addInstruction, setAddInstruction] = useState('');
-
-  const onClick = () => {
-    /** @todo: add count support */
-    dispatch({
-      type: ADD_TO_CART,
-      payload: { ...item, count: 1, instruction: addInstruction },
-    });
-    onCancel();
+  const onRemove = (name) => {
+    console.log('WHAT IS THE NAME', name);
+    dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
-
-  const onChange = (e) => {
-    console.log(e.target.value);
-    setAddInstruction(e.target.value);
-  };
-
-  const { name, description, img_url, base_price, options } = item;
 
   useEffect(() => {
     if (localVisible && !visible) {
@@ -145,31 +134,33 @@ const ItemPopup = ({ item, visible, onCancel }) => {
     setLocalVisible(visible);
   }, [localVisible, visible]);
 
-  const prices = options.map((option) => option);
   if (!animate && !localVisible) return null;
   return (
-    <OpacityBackground disappear={!visible}>
-      <DialogBlock disappear={!visible}>
-        <IconImage cursor src={xIcon} onClick={onCancel} />
-        <h1>{name}</h1>
-        <p>{description}</p>
-        <text>${base_price}</text>
-        <p>옵션</p>
-        <hr />
-        <h2>SPECIAL INSTRUCTIONS</h2>
-        <textarea
-          placeholder="Add Instructions..."
-          value={addInstruction}
-          onChange={onChange}
-        />
-        <hr />
-        <ButtonGroup>
-          <Counter />
-          <Button onClick={onClick}>Add To Cart</Button>
-        </ButtonGroup>
-      </DialogBlock>
-    </OpacityBackground>
+    <>
+      {!onDialog && (
+        <DialogBlock disappear={!visible}>
+          {cart.map((item) => (
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                margin: '10px 0',
+              }}
+            >
+              <span onClick={() => onRemove(item.name)}>X</span>
+              <span>{item.name}</span>
+              <span>{item.base_price}</span>
+              <span>{item.instruction}</span>
+              <hr />
+            </div>
+          ))}
+          <ButtonGroup>
+            <Button>CHECKOUT</Button>
+          </ButtonGroup>
+        </DialogBlock>
+      )}
+    </>
   );
 };
 
-export default ItemPopup;
+export default CartPopup;
