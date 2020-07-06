@@ -10,8 +10,6 @@ import MainProducts from '../../Assets/mainProducts.png';
 const MainPage = () => {
   return (
     <div>
-      <h1>Main page header</h1>
-      <hr />
       <MainBanner
         title="Want Burgers?"
         text="Food, drinks, groceries, and more available for delivery and pickup."
