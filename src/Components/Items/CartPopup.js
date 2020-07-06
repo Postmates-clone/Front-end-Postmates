@@ -96,6 +96,7 @@ const CartPopup = ({ item, visible, onCancel }) => {
 
   const onRemove = (name) => {
     console.log('WHAT IS THE NAME', name);
+    console.log('husky testing');
     dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
 
