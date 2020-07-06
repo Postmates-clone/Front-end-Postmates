@@ -20,7 +20,6 @@
     "redux-logger": "^3.0.6",
     "redux-saga": "^1.1.3",
     "redux-thunk": "^2.3.0",
-    "spdx-license-ids": "^3.0.5",
     "styled-components": "^5.1.1",
     "styled-reset": "^4.2.0"
   },
@@ -56,8 +55,6 @@
     ]
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.1.0",
     "eslint": "^6.6.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.4",
@@ -74,17 +71,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "description": "- Postmates clone service\r - https://postmates.com",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/heejinlee07/Front-end-Postmates.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/heejinlee07/Front-end-Postmates/issues"
-  },
-  "homepage": "https://github.com/heejinlee07/Front-end-Postmates#readme"
+  }
 }
