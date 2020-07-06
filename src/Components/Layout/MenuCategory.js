@@ -47,7 +47,7 @@ const MenuCategory = ({
                 -1,
           )
           .map((item) => (
-            <MenuItem item={item} />
+            <MenuItem item={item} subInput={subInput} />
           ))}
       </StoreListBlock>
     </li>
