@@ -21,6 +21,7 @@ const GET_FAST = 'GET_FAST';
 const GET_FAST_SUCCESS = 'GET_FAST_SUCCESS';
 const GET_FAST_ERROR = 'GET_FAST_ERROR';
 
+
 export const getNearBy = createPromiseThunk(GET_NEAR, DevApi.getNearBy);
 export const getOrderBy = createPromiseThunk(GET_ORDER, DevApi.getOrderBy);
 export const getFavorite = createPromiseThunk(GET_FAV, DevApi.getFavorite);
