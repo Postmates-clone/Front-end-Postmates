@@ -8,15 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IconImage } from '../Layout/MainBanner';
 import xIcon from '../../Assets/xicon.png';
 import { AddToCart } from '../../Style/BasicCounter';
-import {
-  ADD_TO_CART,
-  SET_DIFF,
-  INCREASE,
-  DECREASE,
-  increase,
-  decrease,
-  setDiff,
-} from '../../Modules/CartReducer';
+import { ADD_TO_CART } from '../../Modules/CartReducer';
+import CartPopup from './CartPopup';
 
 const fadeIn = keyframes`
 from{
@@ -181,17 +174,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
 
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
-
   const [addInstruction, setAddInstruction] = useState('');
-
-  const onClick = () => {
-    /** @todo: add count support */
-    dispatch({
-      type: ADD_TO_CART,
-      payload: { ...item, count, instruction: addInstruction },
-    });
-    onCancel();
-  };
 
   const onChange = (e) => {
     console.log(e.target.value);
@@ -199,6 +182,14 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   };
 
   const { name, description, img_url, base_price, options } = item;
+
+  const onClick = () => {
+    dispatch({
+      type: ADD_TO_CART,
+      payload: { ...item, count, instruction: addInstruction },
+    });
+    onCancel();
+  };
 
   useEffect(() => {
     if (localVisible && !visible) {
@@ -239,7 +230,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
           <AddToCart
             active
             text="Add To Cart"
-            totalprice={`$${Number(base_price) * count}`}
+            totalprice={base_price * count}
             onClick={onClick}
           />
         </ButtonGroup>

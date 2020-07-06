@@ -1,3 +1,5 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-param-reassign */
 /* eslint-disable operator-linebreak */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -52,7 +54,7 @@ const DialogBlock = styled.div`
   width: 350px;
   height: 350px;
   padding-left: 1.5rem;
-  background: aqua;
+  background: #fff;
   position: absolute;
 
   h1 {
@@ -96,7 +98,6 @@ const CartPopup = ({ item, visible, onCancel }) => {
 
   const onRemove = (name) => {
     console.log('WHAT IS THE NAME', name);
-    console.log('husky testing');
     dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
 
@@ -122,13 +123,19 @@ const CartPopup = ({ item, visible, onCancel }) => {
                 margin: '10px 0',
               }}
             >
-              <span onClick={() => onRemove(item.name)}>X</span>
               <span>{item.name}</span>
-              <span>{item.base_price}</span>
+              <span>{item.count}</span>
+              <span>{item.base_price * item.count}</span>
+              <span>선택한 옵션</span>
               <span>{item.instruction}</span>
+              <span onClick={() => onRemove(item.name)}>X</span>
               <hr />
             </div>
           ))}
+          <div>Subtotal</div>
+          {cart.reduce((prev, curr) => {
+            return prev + curr.base_price * curr.count;
+          }, 0)}
           <ButtonGroup>
             <Button>CHECKOUT</Button>
           </ButtonGroup>

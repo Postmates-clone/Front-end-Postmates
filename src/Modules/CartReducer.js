@@ -1,3 +1,5 @@
+/* eslint-disable no-fallthrough */
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
 /* eslint-disable no-lonely-if */
 /* eslint-disable no-else-return */
@@ -37,8 +39,6 @@ export const decrease = () => ({ type: DECREASE });
 //초기상태
 const initialState = {
   cart: [],
-  number: 1,
-  diff: 1,
 };
 
 export default function CartReducer(state = initialState, action) {
@@ -49,47 +49,47 @@ export default function CartReducer(state = initialState, action) {
       );
 
       // TODO: option에 대한 분기처리 어떻게 할지?
-      // if (!cartItem) {
-      //   return {
-      //     ...state,
-      //     cart: state.cart.concat(action.payload),
-      //   };
-      // } else {
-      //   if (cartItem.options.length !== action.payload.options.length) {
-      //     return {
-      //       ...state,
-      //       cart: state.cart.concat(action.payload),
-      //     };
-      //   } else {
-      //     let isInCart = true;
+      if (!cartItem) {
+        return {
+          ...state,
+          cart: state.cart.concat(action.payload),
+        };
+      } else {
+        if (cartItem.options.length !== action.payload.options.length) {
+          return {
+            ...state,
+            cart: state.cart.concat(action.payload),
+          };
+        } else {
+          let isInCart = true;
 
-      //     cartItem.options.forEach((option, idx) => {
-      //       if (option.id !== action.payload.options[idx]) {
-      //         isInCart = false;
-      //       }
-      //     });
+          cartItem.options.forEach((option, idx) => {
+            if (option.id !== action.payload.options[idx]) {
+              isInCart = false;
+            }
+          });
 
-      //     if (!isInCart) {
-      //       return {
-      //         ...state,
-      //         cart: state.cart.concat(action.payload),
-      //       };
-      //     } else {
-      //       return {
-      //         ...state,
-      //         cart: state.cart.map((_cartItem) => {
-      //           if (_cartItem.name === action.payload.name) {
-      //             return {
-      //               ..._cartItem,
-      //               count: _cartItem.count + action.payload.count,
-      //             };
-      //           }
-      //           return _cartItem;
-      //         }),
-      //       };
-      //     }
-      //   }
-      // }
+          if (!isInCart) {
+            return {
+              ...state,
+              cart: state.cart.concat(action.payload),
+            };
+          } else {
+            return {
+              ...state,
+              cart: state.cart.map((_cartItem) => {
+                if (_cartItem.name === action.payload.name) {
+                  return {
+                    ..._cartItem,
+                    count: _cartItem.count + action.payload.count,
+                  };
+                }
+                return _cartItem;
+              }),
+            };
+          }
+        }
+      }
     }
 
     // special instruction -삭제 예정
@@ -103,22 +103,6 @@ export default function CartReducer(state = initialState, action) {
     //       return cart;
     //     }),
     //   };
-
-    case SET_DIFF:
-      return {
-        ...state,
-        diff: action.diff,
-      };
-    case INCREASE:
-      return {
-        ...state,
-        number: state.number + state.diff,
-      };
-    case DECREASE:
-      return {
-        ...state,
-        number: state.number - state.diff,
-      };
 
     case REMOVE_FROM_CART:
       console.log('WHAT IS THIS PAYLOAD', action.payload);
