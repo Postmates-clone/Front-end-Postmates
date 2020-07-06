@@ -8,6 +8,10 @@ const SubLocationBlock = styled.div`
   align-items: center;
   padding-right: 24px;
   font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
   button {
     display: flex;
     border: none;
@@ -25,6 +29,8 @@ const SubLocationBlock = styled.div`
       ${Media.mobile`
         display: none;
       `}
+    }
+    .address {
     }
   }
   svg {
