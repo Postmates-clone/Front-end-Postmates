@@ -4,8 +4,16 @@ import PopUp from '../../Style/PopUp';
 
 const LoginPopUpBlock = styled.div``;
 const LoginForm = styled.form`
-  padding: 30px;
+  padding: 48px 36px 0 0;
+
+  color: rgb(45, 49, 56);
   text-align: center;
+
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -1.16px;
+  }
 `;
 
 const LoginPopUp = ({ setState, openState }) => {
@@ -17,7 +25,10 @@ const LoginPopUp = ({ setState, openState }) => {
         setState={setState}
         openState={openState}
       >
-        <LoginForm>Login</LoginForm>
+        <LoginForm>
+          <h3>Log in</h3>
+          <em>Enter your</em>
+        </LoginForm>
       </PopUp>
     </LoginPopUpBlock>
   );
