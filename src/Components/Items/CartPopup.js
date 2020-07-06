@@ -51,7 +51,7 @@ const DialogBlock = styled.div`
   width: 350px;
   height: 350px;
   padding-left: 1.5rem;
-  background: #fff;
+  background: aqua;
   position: absolute;
 
   h1 {
