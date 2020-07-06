@@ -5,7 +5,7 @@ import CategoryTitle from '../Items/CategoryTitle';
 import EventItem from '../Items/EventItem';
 
 const EventSectionBlock = styled.div`
-  margin: 0 0 45px 0;
+  margin: 30px 0 45px 0;
 `;
 
 const EventSection = () => {

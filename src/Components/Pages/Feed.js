@@ -7,8 +7,9 @@ import EventSection from '../Layout/EventSection';
 import StoreCategory from '../Layout/StoreCategory';
 import CategoryList from '../Layout/CategoryList';
 
-const FeedWrapperBlock = styled.div`
+const FeedMainBlock = styled.main`
   width: 100%;
+  padding: 30px 36px 0 36px;
 
   /* background-color: #f4f4f4; */
 `;
@@ -37,7 +38,7 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
   // console.log(getinfast.data);
 
   return (
-    <FeedWrapperBlock>
+    <FeedMainBlock>
       <FeedWrapper>
         <EventSection />
 
@@ -97,7 +98,7 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
           ))}
         </ul>
       </div> */}
-    </FeedWrapperBlock>
+    </FeedMainBlock>
   );
 };
 
