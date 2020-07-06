@@ -17,7 +17,7 @@ const StoreBlock = styled.div`
   `}
 `;
 
-const MenuList = ({ storeData }) => {
+const MenuList = ({ storeData, subInput }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(initCategoryRef());
@@ -34,6 +34,7 @@ const MenuList = ({ storeData }) => {
             list={item.list}
             setCategoryRef={setCategoryRef}
             dispatch={dispatch}
+            subInput={subInput}
           />
         ))}
       </ul>
