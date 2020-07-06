@@ -6,6 +6,7 @@ const api = axios.create({
 
 // eslint-disable-next-line import/prefer-default-export
 export const DevUserApi = {
+  createUser: (payload) => api.post('/users', payload),
   getUser: () => api.get('/user', { responseType: 'json' }),
   patchUser: (payload) => api.patch('/user', payload),
   putFavorite: (payload) => api.put('/user', payload),

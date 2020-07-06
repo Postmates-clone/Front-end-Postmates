@@ -119,7 +119,7 @@ const initialState = {
   token: '',
   userInfo: {
     id: 0,
-    user_name: '',
+    username: '',
     email: '',
     phone: '',
     address: '',
