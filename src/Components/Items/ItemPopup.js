@@ -9,7 +9,13 @@ import { IconImage } from '../Layout/MainBanner';
 import xIcon from '../../Assets/xicon.png';
 import { AddToCart } from '../../Style/BasicCounter';
 import {
-  ADD_TO_CART, SET_DIFF, INCREASE, DECREASE, increase, decrease, setDiff
+  ADD_TO_CART,
+  SET_DIFF,
+  INCREASE,
+  DECREASE,
+  increase,
+  decrease,
+  setDiff,
 } from '../../Modules/CartReducer';
 
 const fadeIn = keyframes`
@@ -111,7 +117,6 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `;
 
-
 // couter button
 const itemColor = {
   fontBlack: 'rgb(45, 49, 56)',
@@ -165,20 +170,14 @@ export const Counter = ({ active }) => {
 };
 
 const ItemPopup = ({ item, visible, onCancel, active }) => {
+  const [count, setCount] = useState(1);
   const dispatch = useDispatch();
 
-  const {number, diff} = useSelector(state => ({
-    number: state.Cart.number,
-    diff: state.Cart.diff
-  }))
-
-  const onIncrease = () => dispatch(increase());
+  const onIncrease = () => setCount((_count) => _count + 1);
   const onDecrease = () => {
-    if(number <=1) return;
-    dispatch(decrease());
-  }
-  const onSetDiff = diff => dispatch(setDiff(diff));
-
+    if (count <= 1) return;
+    setCount((_count) => _count - 1);
+  };
 
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
@@ -189,7 +188,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     /** @todo: add count support */
     dispatch({
       type: ADD_TO_CART,
-      payload: { ...item, count: 1, instruction: addInstruction },
+      payload: { ...item, count, instruction: addInstruction },
     });
     onCancel();
   };
@@ -209,7 +208,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     // visible 값이 바뀔 때마다 localvisible 동기화
     setLocalVisible(visible);
   }, [localVisible, visible]);
-
+  console.log('baseprice', base_price);
   // const prices = options.map((option) => option);
   if (!animate && !localVisible) return null;
   return (
@@ -231,11 +230,18 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
         <ButtonGroup>
           {/* counter */}
           <CounterBlock>
-          <Decrease active={active} onClick={onDecrease}>-</Decrease>
-            <Value>{number}</Value>
+            <Decrease active={active} onClick={onDecrease}>
+              -
+            </Decrease>
+            <Value>{count}</Value>
             <Increase onClick={onIncrease}>+</Increase>
           </CounterBlock>
-          <AddToCart active text='Add To Cart' totalprice={`$${base_price}`} onClick={onClick}/>
+          <AddToCart
+            active
+            text="Add To Cart"
+            totalprice={`$${Number(base_price) * count}`}
+            onClick={onClick}
+          />
         </ButtonGroup>
       </DialogBlock>
     </OpacityBackground>
