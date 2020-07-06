@@ -2,6 +2,7 @@
 // 0630 seungeun
 import React from 'react';
 import styled from 'styled-components';
+import Slider from '../../lib/Slider';
 import CategoryTitle from '../Items/CategoryTitle';
 
 import Stores from '../Items/Stores';
@@ -22,17 +23,19 @@ const StoreCategory = ({ title, info, data }) => {
   return (
     <div>
       <CategoryTitle title={title} info={info} view={data.length} />
-      <StoreList>
-        {data.map((store) => (
-          <Stores
-            id={store.id}
-            name={store.name}
-            image={store.store_img}
-            fee={store.delivery_fee_badge}
-            time={store.estimated_prep_time}
-          />
-        ))}
-      </StoreList>
+      <Slider list={data}>
+        <StoreList>
+          {data.map((store) => (
+            <Stores
+              id={store.id}
+              name={store.name}
+              image={store.store_img}
+              fee={store.delivery_fee_badge}
+              time={store.estimated_prep_time}
+            />
+          ))}
+        </StoreList>
+      </Slider>
     </div>
   );
 };

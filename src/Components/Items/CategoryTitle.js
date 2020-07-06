@@ -5,33 +5,32 @@ import ViewAll from './ViewAll';
 
 const CategoryTitle = ({ title, info, view }) => {
   const CategoryTitleBlock = styled.div`
-    display: flex;
+    margin: 0 0 42px 0;
+    padding: 0 0 20px 0;
 
-    height: 45px;
-
-    margin: 0 0 40px 0;
-    /* padding: 18px 0; */
-
-    /* border-bottom: 1px solid #ccc; */
+    border-bottom: 1px solid #eee;
 
     /* background-color: #d3d3d3; */
+    em {
+      margin: 0 0 2px 0;
+      color: #8f95a3;
+      font-size: 14px;
+      font-weight: 200;
+    }
   `;
 
   const CategoryTitleText = styled.div`
-    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
-    * {
-      margin: 0 0 10px 0;
-    }
+    width: 100%;
+    margin: 0 0 10px 0;
     h3 {
+      /* margin: 0 0 12px 0; */
       font-size: 24px;
       font-weight: bold;
       letter-spacing: -1.16px;
-    }
-
-    em {
-      color: #8f95a3;
-      font-size: 16px;
     }
   `;
   // console.log(title);
@@ -40,9 +39,9 @@ const CategoryTitle = ({ title, info, view }) => {
       <CategoryTitleBlock>
         <CategoryTitleText>
           <h3>{title}</h3>
-          <em>{info}</em>
+          {view && <ViewAll view={view} />}
         </CategoryTitleText>
-        <ViewAll view={view} />
+        <em>{info}</em>
       </CategoryTitleBlock>
     </>
   );
