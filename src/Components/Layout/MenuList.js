@@ -22,6 +22,7 @@ const MenuList = ({ storeData }) => {
       <ul>
         {storeData.menu.map((item) => (
           <MenuCategory
+            key={`itemKey-${item.id}`}
             itemKey={item.id}
             category={item.category}
             list={item.list}
