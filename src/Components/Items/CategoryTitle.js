@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ViewAll from './ViewAll';
 
-const CategoryTitle = ({ title, info, view }) => {
+const CategoryTitle = ({ title, info, view, category }) => {
   const CategoryTitleBlock = styled.div`
     margin: 0 0 42px 0;
     padding: 0 0 20px 0;
@@ -39,7 +39,7 @@ const CategoryTitle = ({ title, info, view }) => {
       <CategoryTitleBlock>
         <CategoryTitleText>
           <h3>{title}</h3>
-          {view && <ViewAll view={view} />}
+          {category !== 'nearby' && view && <ViewAll view={view} />}
         </CategoryTitleText>
         <em>{info}</em>
       </CategoryTitleBlock>

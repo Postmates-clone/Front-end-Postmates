@@ -43,16 +43,19 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
         <EventSection />
 
         <StoreCategory
+          category="getinfast"
           data={getinfast.data}
           title="Get in Fast"
           info="get in fast category"
         />
         <StoreCategory
+          category="favorite"
           data={favorite.data}
           title="Favorite"
           info="favorite category"
         />
         <StoreCategory
+          category="orderby"
           data={orderby.data}
           title="Order By"
           info="order by category"
@@ -61,6 +64,7 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
         <CategoryList />
 
         <StoreCategory
+          category="nearby"
           data={nearby.data}
           title="Near By"
           info="near by category"
