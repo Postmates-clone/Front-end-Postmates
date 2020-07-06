@@ -18,10 +18,9 @@ export const SET_DIFF = 'SET_DIFF';
 export const INCREASE = 'INCREASE';
 export const DECREASE = 'DECREASE';
 
-export const setDiff = diff => ({ type: SET_DIFF, diff });
+export const setDiff = (diff) => ({ type: SET_DIFF, diff });
 export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });
-
 
 //thunk 생성함수
 // export const getOptions = () => async (dispatch) => {
@@ -48,8 +47,8 @@ export default function CartReducer(state = initialState, action) {
       const cartItem = state.cart.find(
         (item) => item.name === action.payload.name,
       );
-      
-// TODO: option에 대한 분기처리 어떻게 할지?
+
+      // TODO: option에 대한 분기처리 어떻게 할지?
       // if (!cartItem) {
       //   return {
       //     ...state,
@@ -91,7 +90,7 @@ export default function CartReducer(state = initialState, action) {
       //     }
       //   }
       // }
-    };
+    }
 
     // special instruction -삭제 예정
     // case ADD_INSTRUCTION_TO_CART:
@@ -107,16 +106,20 @@ export default function CartReducer(state = initialState, action) {
 
     case SET_DIFF:
       return {
-        ...state, diff: action.diff
+        ...state,
+        diff: action.diff,
       };
     case INCREASE:
       return {
-        ...state, number: state.number + state.diff
+        ...state,
+        number: state.number + state.diff,
       };
     case DECREASE:
-        return {
-          ...state, number: state.number - state.diff
-        };
+      return {
+        ...state,
+        number: state.number - state.diff,
+      };
+
     case REMOVE_FROM_CART:
       console.log('WHAT IS THIS PAYLOAD', action.payload);
       return {
