@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Cart from '../Components/Items/Cart';
-import { getOptions } from '../Modules/CartReducer';
+// import { getOptions } from '../Modules/CartReducer';
 
 export default function CartContainer() {
   const { data, loading, error } = useSelector((state) => state.Cart.options);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getOptions());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getOptions());
+  // }, [dispatch]);
 
   if (loading) return <div>로딩중...</div>;
   if (error) return <div>에러 발생!</div>;

@@ -21,13 +21,17 @@ const CategoriyItem = styled.li`
   border-bottom: 1px solid rgb(239, 239, 239);
 `;
 
-const MenuCategoriesList = ({ menuList }) => {
+const MenuCategoriesList = ({ menuList, handleClickScrollTo }) => {
   return (
     <CategoriyListBlock>
       <ul>
         {menuList.map((menu) => (
           // 유니크값 받아야 함
-          <CategoriyItem key={`ct-${menu.id}`} id={`ctitem-${menu.id}`}>
+          <CategoriyItem
+            key={`ct-${menu.id}`}
+            id={`ctitem-${menu.id}`}
+            onClick={() => handleClickScrollTo(menu.id)}
+          >
             {menu.category}
           </CategoriyItem>
         ))}
