@@ -19,9 +19,10 @@ const StoreListBlock = styled.ul`
   `}
 `;
 
-const MenuCategory = ({ key, category, list }) => {
+const MenuCategory = ({ itemKey, category, list }) => {
+  console.log(itemKey, 'key');
   return (
-    <li key={key}>
+    <li key={`itemkey-${itemKey}`} id={`item-${itemKey}`}>
       <MenuCategoryTitle category={category} />
       <StoreListBlock>
         {list.map((item) => (
