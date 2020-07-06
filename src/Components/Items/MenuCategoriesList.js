@@ -27,7 +27,7 @@ const MenuCategoriesList = ({ menuList }) => {
       <ul>
         {menuList.map((menu) => (
           // 유니크값 받아야 함
-          <CategoriyItem>{menu.category}</CategoriyItem>
+          <CategoriyItem key={`ct-${menu.id}`}>{menu.category}</CategoriyItem>
         ))}
       </ul>
     </CategoriyListBlock>

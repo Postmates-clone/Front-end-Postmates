@@ -24,7 +24,6 @@ const HeaderContainer = () => {
   };
 
   const handleClickCategories = () => {
-    console.log(isOpenCategories);
     dispatch(openCategories(!isOpenCategories));
   };
 

@@ -14,6 +14,8 @@ const initialState = {
   page: '',
   service: 'delivery',
   isOpenCategories: false,
+  findAddress: { input: '', data: '' },
+  finditem: { input: '', data: '' },
   status: {
     loading: false,
     success: true,
