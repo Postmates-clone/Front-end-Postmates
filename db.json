@@ -59,6 +59,66 @@
         "text": "POPULAR",
         "text_color": "#979CA6"
       }]
+    },
+    {
+      "id": 3,
+      "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
+      "store_img": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fc7443191-e2a8-4ba0-8aa4-b55040a69c9b%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=webp&v=4",
+      "delivery_time": "Order Delivery until 4:00 AM",
+      "name": "order by - Jack in the Box",
+      "delivery_fee_badge": 2.99,
+      "estimated_prep_time": 0,
+      "is_partner": false,
+      "food_type": "fast-food",
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
+    },
+    {
+      "id": 4,
+      "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
+      "store_img": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fc7443191-e2a8-4ba0-8aa4-b55040a69c9b%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=webp&v=4",
+      "delivery_time": "Order Delivery until 4:00 AM",
+      "name": "order by - Jack in the Box",
+      "delivery_fee_badge": 2.99,
+      "estimated_prep_time": 0,
+      "is_partner": false,
+      "food_type": "fast-food",
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
+    },
+    {
+      "id": 5,
+      "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
+      "store_img": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fc7443191-e2a8-4ba0-8aa4-b55040a69c9b%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=webp&v=4",
+      "delivery_time": "Order Delivery until 4:00 AM",
+      "name": "order by - Jack in the Box",
+      "delivery_fee_badge": 2.99,
+      "estimated_prep_time": 0,
+      "is_partner": false,
+      "food_type": "fast-food",
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
+    },
+    {
+      "id": 6,
+      "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
+      "store_img": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fc7443191-e2a8-4ba0-8aa4-b55040a69c9b%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=webp&v=4",
+      "delivery_time": "Order Delivery until 4:00 AM",
+      "name": "order by - Jack in the Box",
+      "delivery_fee_badge": 2.99,
+      "estimated_prep_time": 0,
+      "is_partner": false,
+      "food_type": "fast-food",
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     }
   ],
   "favorite": [{
