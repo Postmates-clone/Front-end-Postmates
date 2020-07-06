@@ -47,39 +47,12 @@ to{
 }
 `;
 
-const OpacityBackground = styled.div`
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(0%);
-  transition: transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
-  background: rgba(0, 0, 0, 0.1);
-
-  animation-duration: 0.2s;
-  animation-timing-function: ease-out;
-  animation-name: ${fadeIn};
-  animation-fill-mode: forwards;
-
-  ${(props) =>
-    props.disappear &&
-    css`
-      animation-name: ${fadeOut};
-    `}
-`;
-
 const DialogBlock = styled.div`
-  width: 524px;
-  height: 512px;
+  width: 350px;
+  height: 350px;
   padding-left: 1.5rem;
   background: #fff;
   position: absolute;
-
-  background-color: aqua;
 
   h1 {
     margin: 0;
