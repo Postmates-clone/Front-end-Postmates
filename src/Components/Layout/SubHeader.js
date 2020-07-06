@@ -15,6 +15,9 @@ const SubHeaderBlock = styled.div`
   align-items: center;
   font-size: 14px;
   font-family: 'Postmates Std';
+  position: sticky;
+  top: 0;
+  background-color: rgb(255, 255, 255);
 
   ${Media.desktop`
   height: 69px;
@@ -64,6 +67,7 @@ const SubHeader = ({
   menuList,
   handleClickCategories,
   isOpenCategories,
+  handleClickScrollTo,
 }) => {
   return (
     <SubHeaderBlock>
@@ -77,6 +81,7 @@ const SubHeader = ({
             menuList={menuList}
             handleClickCategories={handleClickCategories}
             isOpenCategories={isOpenCategories}
+            handleClickScrollTo={handleClickScrollTo}
           />
         )}
         {page === 'item' && <Bulkhead />}

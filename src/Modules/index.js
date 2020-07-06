@@ -5,6 +5,7 @@ import MainReducer from './MainReducer';
 import FeedReducer from './FeedReducer';
 import ItemReducer from './ItemReducer';
 import UserReducer from './UserReducer';
+import RefReducer from './RefReducer';
 import CartReducer from './CartReducer';
 
 const RootReducer = combineReducers({
@@ -12,6 +13,7 @@ const RootReducer = combineReducers({
   Feed: FeedReducer,
   Item: ItemReducer,
   User: UserReducer,
+  Ref: RefReducer,
   Cart: CartReducer,
 });
 
@@ -19,9 +21,3 @@ const RootReducer = combineReducers({
 // console.log(store.getState());
 
 export default RootReducer;
-
-
-
-
-
-
