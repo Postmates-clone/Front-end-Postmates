@@ -19,11 +19,19 @@ const StoreListBlock = styled.ul`
   `}
 `;
 
-const MenuCategory = ({ itemKey, category, list }) => {
+const MenuCategory = ({
+  itemKey,
+  category,
+  list,
+  setCategoryRef,
+  dispatch,
+}) => {
   const categoryRef = useRef();
+
   useEffect(() => {
-    console.log(categoryRef);
-  }, [categoryRef]);
+    dispatch(setCategoryRef({ itemKey, category, ref: categoryRef.current }));
+  }, [category, dispatch, itemKey, setCategoryRef]);
+
   return (
     <li key={`itemkey-${itemKey}`} id={`item-${itemKey}`} ref={categoryRef}>
       <MenuCategoryTitle category={category} categoryRef={categoryRef} />

@@ -22,7 +22,7 @@ export default function MainReducer(state = initialState, action) {
     case SET_CATEGORY_REF:
       return {
         ...state,
-        categoryRef: [...action.ref],
+        categoryRef: [...state.categoryRef, action.ref],
       };
     default:
       return state;

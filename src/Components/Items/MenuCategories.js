@@ -27,6 +27,7 @@ const MenuCategories = ({
   menuList,
   handleClickCategories,
   isOpenCategories,
+  handleClickScrollTo,
 }) => {
   return (
     <MenuCategoriesBlock>
@@ -34,7 +35,14 @@ const MenuCategories = ({
         <span>Category</span>
         {arrowIconLarge}
       </button>
-      {!isOpenCategories ? '' : <MenuCategoriesList menuList={menuList} />}
+      {!isOpenCategories ? (
+        ''
+      ) : (
+        <MenuCategoriesList
+          menuList={menuList}
+          handleClickScrollTo={handleClickScrollTo}
+        />
+      )}
     </MenuCategoriesBlock>
   );
 };
