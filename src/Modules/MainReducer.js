@@ -16,14 +16,6 @@ const initialState = {
   isOpenCategories: false,
   findAddress: { input: '', data: '' },
   finditem: { input: '', data: '' },
-  status: {
-    loading: false,
-    success: true,
-    error: {
-      error: false,
-      massage: null,
-    },
-  },
 };
 
 export default function MainReducer(state = initialState, action) {
