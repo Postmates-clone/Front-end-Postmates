@@ -125,7 +125,7 @@ const CartPopup = ({ item, visible, onCancel }) => {
             >
               <span>{item.name}</span>
               <span>{item.count}</span>
-              <span>{item.base_price * item.count}</span>
+              <span>{Number(item.base_price * item.count).toFixed(2)}</span>
               <span>선택한 옵션</span>
               <span>{item.instruction}</span>
               <span onClick={() => onRemove(item.name)}>X</span>
@@ -133,9 +133,11 @@ const CartPopup = ({ item, visible, onCancel }) => {
             </div>
           ))}
           <div>Subtotal</div>
-          {cart.reduce((prev, curr) => {
-            return prev + curr.base_price * curr.count;
-          }, 0)}
+          {cart
+            .reduce((prev, curr) => {
+              return prev + curr.base_price * curr.count;
+            }, 0)
+            .toFixed(2)}
           <ButtonGroup>
             <Button>CHECKOUT</Button>
           </ButtonGroup>

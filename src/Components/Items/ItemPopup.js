@@ -56,6 +56,7 @@ const OpacityBackground = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   transform: translateY(0%);
   transition: transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
   background: rgba(0, 0, 0, 0.1);
@@ -69,6 +70,29 @@ const OpacityBackground = styled.div`
     props.disappear &&
     css`
       animation-name: ${fadeOut};
+    `}
+`;
+
+const ImageBlock = styled.div`
+  background-size: cover;
+  width: 524px;
+  height: 512px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(${(props) => props.image || null});
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-name: ${slideUp};
+  animation-fill-mode: forwards;
+
+  ${(props) =>
+    props.disappear &&
+    css`
+      animation-name: ${slideDown};
     `}
 `;
 
@@ -165,6 +189,7 @@ export const Counter = ({ active }) => {
 const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [count, setCount] = useState(1);
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.Cart.cart);
 
   const onIncrease = () => setCount((_count) => _count + 1);
   const onDecrease = () => {
@@ -176,11 +201,6 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [localVisible, setLocalVisible] = useState(visible);
   const [addInstruction, setAddInstruction] = useState('');
 
-  const onChange = (e) => {
-    console.log(e.target.value);
-    setAddInstruction(e.target.value);
-  };
-
   const { name, description, img_url, base_price, options } = item;
 
   const onClick = () => {
@@ -188,7 +208,14 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
       type: ADD_TO_CART,
       payload: { ...item, count, instruction: addInstruction },
     });
+    if (addInstruction.lenght > 200) return;
+    setAddInstruction('');
     onCancel();
+  };
+
+  const onChange = (e) => {
+    console.log(e.target.value);
+    setAddInstruction(e.target.value);
   };
 
   useEffect(() => {
@@ -199,24 +226,25 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     // visible 값이 바뀔 때마다 localvisible 동기화
     setLocalVisible(visible);
   }, [localVisible, visible]);
-  console.log('baseprice', base_price);
   // const prices = options.map((option) => option);
   if (!animate && !localVisible) return null;
   return (
     <OpacityBackground disappear={!visible}>
+      {img_url !== '' ? <ImageBlock image={img_url} /> : null}
       <DialogBlock disappear={!visible}>
         <IconImage cursor src={xIcon} onClick={onCancel} />
         <h1>{name}</h1>
         <p>{description}</p>
-        <text>${base_price}</text>
         <p>옵션</p>
         <hr />
         <h2>SPECIAL INSTRUCTIONS</h2>
         <textarea
+          maxLength={200}
           placeholder="Add Instructions..."
           value={addInstruction}
           onChange={onChange}
         />
+        <p>{addInstruction.length}/200</p>
         <hr />
         <ButtonGroup>
           {/* counter */}
@@ -230,7 +258,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
           <AddToCart
             active
             text="Add To Cart"
-            totalprice={base_price * count}
+            totalprice={(Number(base_price) * count).toFixed(2)}
             onClick={onClick}
           />
         </ButtonGroup>
