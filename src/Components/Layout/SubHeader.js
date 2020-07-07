@@ -1,5 +1,5 @@
 // 0701 seungeun
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 import BreadCrumbs from '../Items/BreadCrumbs';
@@ -7,6 +7,7 @@ import SubLocation from '../Items/SubLocation';
 import MenuCategories from '../Items/MenuCategories';
 import SearchItems from '../Items/SearchItems';
 import Cart from '../Items/Cart';
+// import { setSubheaderRef } from '../../Modules/RefReducer';
 
 const SubHeaderBlock = styled.div`
   display: flex;
@@ -16,11 +17,11 @@ const SubHeaderBlock = styled.div`
   font-size: 14px;
   font-family: 'Postmates Std';
   position: sticky;
-  top: 0;
-  z-index: 9;
+  z-index: 102;
   background-color: rgb(255, 255, 255);
 
   &.subHeader-feed {
+    top: 72px;
     ${Media.desktop`
       height: 69px;
       margin-top: 308px;
@@ -41,6 +42,7 @@ const SubHeaderBlock = styled.div`
   }
 
   &.subHeader-item {
+    top: 0px;
     ${Media.desktop`
       height: 69px;
       margin-top: 260px;
@@ -94,8 +96,20 @@ const SubHeader = ({
   changeSubInput,
   dispatch,
 }) => {
+  const subHeaderRef = useRef();
+
+  useEffect(() => {
+    if (subHeaderRef.current) {
+      console.log(subHeaderRef.current.offsetTop);
+    }
+  }, []);
+
   return (
-    <SubHeaderBlock className={`subHeader-${page}`}>
+    <SubHeaderBlock
+      className={`subHeader-${page}`}
+      ref={subHeaderRef}
+      onClick={() => console.log(subHeaderRef)}
+    >
       <div className="wrap-subheader-item">
         <BreadCrumbs />
         <Bulkhead />

@@ -8,12 +8,16 @@ import SignUpPopUp from '../Items/SignUpPopUp';
 const MainHeaderBlock = styled.div`
   width: 100%;
   height: 72px;
-  top: 0px;
   background: #ffdf18;
 
   &.mainHeader-feed {
     position: sticky;
   }
+  &.mainHeader-item {
+    position: sticky;
+  }
+  top: 0px;
+  z-index: 101;
 `;
 
 const MainHeaderWrapper = styled.div`
