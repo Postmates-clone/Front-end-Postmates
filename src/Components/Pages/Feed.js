@@ -10,14 +10,16 @@ import CategoryList from '../Layout/CategoryList';
 const FeedMainBlock = styled.main`
   width: 100%;
   padding: 30px 36px 0 36px;
+<<<<<<< HEAD
 
   background-color: #fff;
+=======
+>>>>>>> 6b747dc8acecc3e871021642b4dbbc3225543799
 `;
 const FeedWrapper = styled.div`
 
   margin: 0 auto;
 
-  /* background-color: #ccc; */
 
   ${Media.desktop`
   width: 1024px;
@@ -32,10 +34,10 @@ const FeedWrapper = styled.div`
   `}
 `;
 const Feed = ({ nearby, orderby, favorite, getinfast }) => {
-  // console.log(nearby.data);
-  // console.log(orderby.data);
-  // console.log(favorite.data);
-  // console.log(getinfast.data);
+  // console.log(nearby);
+  // console.log(orderby);
+  // console.log(favorite);
+  // console.log(getinfast);
 
   return (
     <FeedMainBlock>
@@ -44,19 +46,19 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
 
         <StoreCategory
           category="getinfast"
-          data={getinfast.data}
+          data={getinfast}
           title="Get in Fast"
           info="get in fast category"
         />
         <StoreCategory
           category="favorite"
-          data={favorite.data}
+          data={favorite}
           title="Favorite"
           info="favorite category"
         />
         <StoreCategory
           category="orderby"
-          data={orderby.data}
+          data={orderby}
           title="Order By"
           info="order by category"
         />
@@ -65,7 +67,7 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
 
         <StoreCategory
           category="nearby"
-          data={nearby.data}
+          data={nearby}
           title="Near By"
           info="near by category"
         />
