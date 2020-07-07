@@ -53,6 +53,9 @@ const ContentBlock = styled.div`
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      span {
+        color: #00cc99;
+      }
     }
 
     span {
@@ -85,11 +88,15 @@ const ImageBlock = styled.img`
   margin-right: 0;
 `;
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, subInput }) => {
   const { name, description, img_url, base_price } = item;
 
   const [dialog, setDialog] = useState(false);
 
+  const getHighlight = () => {
+    const regex = new RegExp(subInput, 'g');
+    return <h3>{name.replace(regex, `<span>${subInput}</span>`)}</h3>;
+  };
   const onClick = () => {
     setDialog(true);
   };
@@ -103,7 +110,8 @@ const MenuItem = ({ item }) => {
       <ItemBlock>
         <ContentBlock onClick={onClick}>
           <div>
-            <h3>{name}</h3>
+            {getHighlight()}
+            {/* <h3>{name}</h3> */}
             <span className="menu-caption">{description}</span>
           </div>
           <strong>${base_price}</strong>
