@@ -23,10 +23,10 @@ const FeedContainer = () => {
 
   useEffect(() => {
     dispatch(setPage('feed'));
-    dispatch(getNearBy());
     dispatch(getOrderBy());
     dispatch(getFavorite());
     dispatch(getInFast());
+    dispatch(getNearBy('2'));
   }, [dispatch]);
 
   if (nearby.loading) return <div>로딩중...</div>;
@@ -44,13 +44,14 @@ const FeedContainer = () => {
   if (!nearby.data && !orderby.data && !favorite.data && !getinfast.data) {
     return null;
   }
-  // console.log(nearby);
+  // console.log(nearby.data);
+  // console.log(orderby);
   return (
     <Feed
       nearby={nearby.data}
-      orderby={orderby.data}
-      favorite={favorite.data}
-      getinfast={getinfast.data}
+      orderby={orderby.data.results}
+      favorite={favorite.data.results}
+      getinfast={getinfast.data.results}
     />
   );
 };
