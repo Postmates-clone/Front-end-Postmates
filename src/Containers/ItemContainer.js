@@ -11,6 +11,7 @@ const ItemContainer = () => {
   }));
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(setPage('item'));
     dispatch(getStoreAsync('jack-in-the-box-los-angeles-516-n-beaudry-ave'));

@@ -1,3 +1,6 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-param-reassign */
+/* eslint-disable operator-linebreak */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-shadow */
@@ -10,6 +13,8 @@ import styled, { keyframes, css } from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from './ProductInfo';
 import { REMOVE_FROM_CART } from '../../Modules/CartReducer';
+import { IconImage } from '../Layout/MainBanner';
+import xIcon from '../../Assets/xicon.png';
 
 const fadeIn = keyframes`
 from{
@@ -47,39 +52,12 @@ to{
 }
 `;
 
-const OpacityBackground = styled.div`
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(0%);
-  transition: transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
-  background: rgba(0, 0, 0, 0.1);
-
-  animation-duration: 0.2s;
-  animation-timing-function: ease-out;
-  animation-name: ${fadeIn};
-  animation-fill-mode: forwards;
-
-  ${(props) =>
-    props.disappear &&
-    css`
-      animation-name: ${fadeOut};
-    `}
-`;
-
 const DialogBlock = styled.div`
-  width: 524px;
-  height: 512px;
+  width: 350px;
+  height: 350px;
   padding-left: 1.5rem;
   background: #fff;
   position: absolute;
-
-  background-color: aqua;
 
   h1 {
     margin: 0;
@@ -147,13 +125,27 @@ const CartPopup = ({ item, visible, onCancel }) => {
                 margin: '10px 0',
               }}
             >
-              <span onClick={() => onRemove(item.name)}>X</span>
               <span>{item.name}</span>
-              <span>{item.base_price}</span>
+              <span>{item.count}</span>
+              <span>
+                {`$${Number(item.base_price * item.count).toFixed(2)}`}
+              </span>
+              <span>선택한 옵션</span>
               <span>{item.instruction}</span>
+              <IconImage
+                cursor
+                src={xIcon}
+                onClick={() => onRemove(item.name)}
+              />
               <hr />
             </div>
           ))}
+          <div>Subtotal</div>
+          {`$${cart
+            .reduce((prev, curr) => {
+              return prev + curr.base_price * curr.count;
+            }, 0)
+            .toFixed(2)}`}
           <ButtonGroup>
             <Button>CHECKOUT</Button>
           </ButtonGroup>

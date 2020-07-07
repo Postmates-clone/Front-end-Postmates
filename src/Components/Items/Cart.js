@@ -15,7 +15,7 @@ const Cart = () => {
   return (
     <div style={{ position: 'relative' }}>
       <LoginBtn onClick={onClick} active text="ITEMS" />
-      <CartPopup title="test" visible={cartDialog} onCancel={onCancel} />
+      <CartPopup visible={cartDialog} onCancel={onCancel} />
     </div>
   );
 };
