@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import PopUp from '../../Style/PopUp';
+import { BasicBtn } from '../../Style/BasicBtn';
+import { createUsersAsync } from '../../Modules/UserReducer';
 
 const SignUpPopUpBlock = styled.div``;
 const SignUpForm = styled.form`
-  padding: 48px 36px 0 0;
+  padding: 48px 36px 0 36px;
 
   color: rgb(45, 49, 56);
   text-align: center;
 
   h3 {
+    margin: 0 0 10px 0;
     font-size: 24px;
     font-weight: bold;
     letter-spacing: -1.16px;
   }
   input {
-    max-width: 335px;
+    width: 335px;
 
     margin-left: 14px;
     margin-right: 14px;
@@ -26,26 +30,32 @@ const SignUpForm = styled.form`
     font-size: 16px;
     letter-spacing: 0.14px;
     text-align: center;
+    font-weight: 200;
 
     border: 0;
     border-bottom: 1px solid rgb(217, 219, 224);
   }
+  button {
+    margin: 20px 0 0 0;
+  }
 `;
 
 const SignUpPopUp = ({ setState, openState }) => {
-  const [inputs, setInputs] = useState({
+  const initialState = {
+    id: '',
     username: '',
     email: '',
     password: '',
     phone: '',
     address: '',
-  });
+  };
+  const [inputs, setInputs] = useState(initialState);
 
   const { username, email, password, phone, address } = inputs;
+  const dispatch = useDispatch();
 
   const onChange = ({ target }) => {
     const { name, value } = target;
-    // console.log(target);
 
     setInputs({
       ...inputs,
@@ -55,11 +65,9 @@ const SignUpPopUp = ({ setState, openState }) => {
 
   const onCreate = (e) => {
     e.preventDefault();
+    dispatch(createUsersAsync(inputs));
+    setInputs(initialState);
   };
-
-  const SignUpBtn = styled.button`
-    padding: 5px;
-  `;
 
   return (
     <SignUpPopUpBlock>
@@ -101,7 +109,13 @@ const SignUpPopUp = ({ setState, openState }) => {
             value={address}
             onChange={onChange}
           />
-          <SignUpBtn onClick={onCreate}>SUBMIT</SignUpBtn>
+          <BasicBtn
+            active={false}
+            text="SIGN UP"
+            width="363px"
+            twidth="363px"
+            onClick={onCreate}
+          />
         </SignUpForm>
       </PopUp>
     </SignUpPopUpBlock>
