@@ -7,7 +7,6 @@ import SubLocation from '../Items/SubLocation';
 import MenuCategories from '../Items/MenuCategories';
 import SearchItems from '../Items/SearchItems';
 import Cart from '../Items/Cart';
-// import { setSubheaderRef } from '../../Modules/RefReducer';
 
 const SubHeaderBlock = styled.div`
   display: flex;
