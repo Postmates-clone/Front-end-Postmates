@@ -33,7 +33,7 @@ const initialState = {
   getinfast: reducerUtils.initial(),
 };
 
-export default function nearby(state = initialState, action) {
+export default function FeedReducer(state = initialState, action) {
   switch (action.type) {
     case GET_NEAR:
     case GET_NEAR_SUCCESS:

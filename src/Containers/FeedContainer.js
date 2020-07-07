@@ -44,7 +44,7 @@ const FeedContainer = () => {
   if (!nearby.data && !orderby.data && !favorite.data && !getinfast.data) {
     return null;
   }
-
+  // console.log(nearby);
   return (
     <Feed
       nearby={nearby.data}

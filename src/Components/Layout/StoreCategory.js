@@ -19,7 +19,10 @@ const StoreList = styled.ul`
 `;
 
 const StoreCategory = ({ category, title, info, data }) => {
-  // console.log(data.length);
+  const deleteURL = '54.180.102.1/media/';
+  // data.map((store) => console.log(store.store_img.replace(deleteURL, '')));
+  data.map((store) => console.log(store));
+
   return (
     <StoreCategoryBlock>
       <CategoryTitle
@@ -28,15 +31,17 @@ const StoreCategory = ({ category, title, info, data }) => {
         view={data.length}
         category={category}
       />
+
       <StoreListBlock>
         {category === 'nearby' ? (
           <StoreList>
             {data.map((store) => (
               <Stores
+                key={store.id}
                 id={store.id}
                 name={store.name}
-                image={store.store_img}
-                fee={store.delivery_fee_badge}
+                image={store.store_img.replace(deleteURL, '')}
+                fee={store.delivery_fee}
                 time={store.estimated_prep_time}
               />
             ))}
@@ -45,10 +50,11 @@ const StoreCategory = ({ category, title, info, data }) => {
           <Slider list={data} category={category}>
             {data.map((store) => (
               <Stores
+                key={store.id}
                 id={store.id}
                 name={store.name}
-                image={store.store_img}
-                fee={store.delivery_fee_badge}
+                image={store.store_img.replace(deleteURL, '')}
+                fee={store.delivery_fee}
                 time={store.estimated_prep_time}
               />
             ))}
