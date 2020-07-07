@@ -13,6 +13,8 @@ import styled, { keyframes, css } from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from './ProductInfo';
 import { REMOVE_FROM_CART } from '../../Modules/CartReducer';
+import { IconImage } from '../Layout/MainBanner';
+import xIcon from '../../Assets/xicon.png';
 
 const fadeIn = keyframes`
 from{
@@ -125,19 +127,25 @@ const CartPopup = ({ item, visible, onCancel }) => {
             >
               <span>{item.name}</span>
               <span>{item.count}</span>
-              <span>{Number(item.base_price * item.count).toFixed(2)}</span>
+              <span>
+                {`$${Number(item.base_price * item.count).toFixed(2)}`}
+              </span>
               <span>선택한 옵션</span>
               <span>{item.instruction}</span>
-              <span onClick={() => onRemove(item.name)}>X</span>
+              <IconImage
+                cursor
+                src={xIcon}
+                onClick={() => onRemove(item.name)}
+              />
               <hr />
             </div>
           ))}
           <div>Subtotal</div>
-          {cart
+          {`$${cart
             .reduce((prev, curr) => {
               return prev + curr.base_price * curr.count;
             }, 0)
-            .toFixed(2)}
+            .toFixed(2)}`}
           <ButtonGroup>
             <Button>CHECKOUT</Button>
           </ButtonGroup>

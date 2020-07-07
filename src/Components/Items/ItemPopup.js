@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
@@ -5,11 +6,11 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
+import Textarea from 'react-textarea-autosize';
 import { IconImage } from '../Layout/MainBanner';
 import xIcon from '../../Assets/xicon.png';
 import { AddToCart } from '../../Style/BasicCounter';
 import { ADD_TO_CART } from '../../Modules/CartReducer';
-import CartPopup from './CartPopup';
 
 const fadeIn = keyframes`
 from{
@@ -185,6 +186,21 @@ export const Counter = ({ active }) => {
     </CounterBlock>
   );
 };
+const InstructionBorder = styled.div`
+  width: 100%;
+  height: 20%;
+  border-top: 2px solid ${itemColor.lineGray};
+  border-bottom: 2px solid ${itemColor.lineGray};
+`;
+const InstructionBlock = styled(Textarea)`
+  width: 80%;
+  height: 80%;
+  border: none;
+  outline: none;
+  font-weight: 200;
+  margin-top: 1rem;
+  resize: none;
+`;
 
 const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [count, setCount] = useState(1);
@@ -235,17 +251,20 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
         <IconImage cursor src={xIcon} onClick={onCancel} />
         <h1>{name}</h1>
         <p>{description}</p>
-        <p>옵션</p>
-        <hr />
-        <h2>SPECIAL INSTRUCTIONS</h2>
-        <textarea
-          maxLength={200}
-          placeholder="Add Instructions..."
-          value={addInstruction}
-          onChange={onChange}
-        />
+        <p>example: Cut Rolls (4 pc each) Toro, Scallop, Cucumber Crab</p>
+        <h2 style={{ paddingTop: '10px' }}>SPECIAL INSTRUCTIONS</h2>
+        <InstructionBorder>
+          <InstructionBlock
+            placeholder="Add Instructions..."
+            minRows={3}
+            maxRows={5}
+            maxLength={200}
+            name="body"
+            value={addInstruction}
+            onChange={onChange}
+          />
+        </InstructionBorder>
         <p>{addInstruction.length}/200</p>
-        <hr />
         <ButtonGroup>
           {/* counter */}
           <CounterBlock>
@@ -258,7 +277,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
           <AddToCart
             active
             text="Add To Cart"
-            totalprice={(Number(base_price) * count).toFixed(2)}
+            totalprice={`$${(Number(base_price) * count).toFixed(2)}`}
             onClick={onClick}
           />
         </ButtonGroup>
