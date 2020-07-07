@@ -8,8 +8,12 @@ import SignUpPopUp from '../Items/SignUpPopUp';
 const MainHeaderBlock = styled.div`
   width: 100%;
   height: 72px;
-
+  top: 0px;
   background: #ffdf18;
+
+  &.mainHeader-feed {
+    position: sticky;
+  }
 `;
 
 const MainHeaderWrapper = styled.div`
@@ -34,7 +38,7 @@ const Member = styled.div`
   width: 20%;
 `;
 
-const MainHeader = () => {
+const MainHeader = ({ page }) => {
   const [openLogIn, setOpenLogIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
 
@@ -42,7 +46,7 @@ const MainHeader = () => {
   const openSignUpPopUp = () => setOpenSignUp(!openSignUp);
 
   return (
-    <MainHeaderBlock>
+    <MainHeaderBlock className={`mainHeader-${page}`}>
       <MainHeaderWrapper>
         <Logo>Postmates</Logo>
         <Member>

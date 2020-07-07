@@ -61,7 +61,7 @@ const HeaderContainer = () => {
   };
   return (
     <>
-      <MainHeader />
+      <MainHeader page={page} />
       {page === 'feed' || page === 'item' ? generateSubHeader() : ''}
     </>
   );

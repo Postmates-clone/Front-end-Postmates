@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import Media from '../../Style/Media';
 
 const SubBannerBlock = styled.div`
+  position: fixed;
+  width: 100%;
+  z-index: -1;
   &.feed {
     ${Media.desktop`
     height: 308px;
