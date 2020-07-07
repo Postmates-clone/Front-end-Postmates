@@ -21,7 +21,7 @@ const StoreList = styled.ul`
 const StoreCategory = ({ category, title, info, data }) => {
   const deleteURL = '54.180.102.1/media/';
   // data.map((store) => console.log(store.store_img.replace(deleteURL, '')));
-  data.map((store) => console.log(store));
+  // data.map((store) => console.log(store));
 
   return (
     <StoreCategoryBlock>
