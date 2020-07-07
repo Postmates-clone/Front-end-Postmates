@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 
@@ -88,15 +88,22 @@ const ImageBlock = styled.img`
   margin-right: 0;
 `;
 
+// eslint-disable-next-line no-unused-vars
 const MenuItem = ({ item, subInput }) => {
+  const textRef = useRef();
+
   const { name, description, img_url, base_price } = item;
 
   const [dialog, setDialog] = useState(false);
 
-  const getHighlight = () => {
-    const regex = new RegExp(subInput, 'g');
-    return <h3>{name.replace(regex, `<span>${subInput}</span>`)}</h3>;
-  };
+  // const getHighlight = () => {
+  //   if (!subInput) {
+  //     return name;
+  //   }
+  //   const regex = new RegExp(subInput, 'g');
+  //   const highlight = name.replace(regex, `<span>${subInput}</span>`);
+  //   textRef.current.innerHTML = name;
+  // };
   const onClick = () => {
     setDialog(true);
   };
@@ -104,14 +111,12 @@ const MenuItem = ({ item, subInput }) => {
   const onCancel = () => {
     setDialog(false);
   };
-
   return (
     <>
       <ItemBlock>
         <ContentBlock onClick={onClick}>
           <div>
-            {getHighlight()}
-            {/* <h3>{name}</h3> */}
+            <h3 ref={textRef}>{name}</h3>
             <span className="menu-caption">{description}</span>
           </div>
           <strong>${base_price}</strong>
