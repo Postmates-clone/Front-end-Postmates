@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -77,9 +78,9 @@ const AddToCartBlock = styled.button`
   }
 `;
 
-export const AddToCart = ({ active, text, totalprice }) => {
+export const AddToCart = ({ active, text, totalprice, ...rest }) => {
   return (
-    <AddToCartBlock active={active}>
+    <AddToCartBlock active={active} {...rest}>
       <div className="textWrapper">
         <span className="text">{text}</span>
         <span className="total">{totalprice}</span>

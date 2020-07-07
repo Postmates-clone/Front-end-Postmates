@@ -1,3 +1,5 @@
+/* eslint-disable no-fallthrough */
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
 /* eslint-disable no-lonely-if */
 /* eslint-disable no-else-return */
@@ -12,6 +14,15 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const CLEAR_CART = 'CLEAR_CART';
 export const ADD_INSTRUCTION_TO_CART = 'ADD_INSTRUCTION_TO_CART';
+
+// count
+export const SET_DIFF = 'SET_DIFF';
+export const INCREASE = 'INCREASE';
+export const DECREASE = 'DECREASE';
+
+export const setDiff = (diff) => ({ type: SET_DIFF, diff });
+export const increase = () => ({ type: INCREASE });
+export const decrease = () => ({ type: DECREASE });
 
 //thunk 생성함수
 // export const getOptions = () => async (dispatch) => {
@@ -37,6 +48,7 @@ export default function CartReducer(state = initialState, action) {
         (item) => item.name === action.payload.name,
       );
 
+      // TODO: option에 대한 분기처리 어떻게 할지?
       if (!cartItem) {
         return {
           ...state,
@@ -79,6 +91,8 @@ export default function CartReducer(state = initialState, action) {
         }
       }
     }
+
+    // special instruction -삭제 예정
     // case ADD_INSTRUCTION_TO_CART:
     //   return {
     //     ...state,
@@ -89,6 +103,7 @@ export default function CartReducer(state = initialState, action) {
     //       return cart;
     //     }),
     //   };
+
     case REMOVE_FROM_CART:
       console.log('WHAT IS THIS PAYLOAD', action.payload);
       return {

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
@@ -5,14 +6,11 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from './ProductInfo';
+import Textarea from 'react-textarea-autosize';
 import { IconImage } from '../Layout/MainBanner';
 import xIcon from '../../Assets/xicon.png';
-import { Counter } from '../../Style/BasicCounter';
-import {
-  ADD_TO_CART,
-  ADD_INSTRUCTION_TO_CART,
-} from '../../Modules/CartReducer';
+import { AddToCart } from '../../Style/BasicCounter';
+import { ADD_TO_CART } from '../../Modules/CartReducer';
 
 const fadeIn = keyframes`
 from{
@@ -59,6 +57,7 @@ const OpacityBackground = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   transform: translateY(0%);
   transition: transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
   background: rgba(0, 0, 0, 0.1);
@@ -72,6 +71,29 @@ const OpacityBackground = styled.div`
     props.disappear &&
     css`
       animation-name: ${fadeOut};
+    `}
+`;
+
+const ImageBlock = styled.div`
+  background-size: cover;
+  width: 524px;
+  height: 512px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(${(props) => props.image || null});
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-name: ${slideUp};
+  animation-fill-mode: forwards;
+
+  ${(props) =>
+    props.disappear &&
+    css`
+      animation-name: ${slideDown};
     `}
 `;
 
@@ -113,19 +135,97 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `;
 
-const ItemPopup = ({ item, visible, onCancel }) => {
+// couter button
+const itemColor = {
+  fontBlack: 'rgb(45, 49, 56)',
+  fontGray: 'rgba(143, 149, 163, 0.9)',
+  pointGreen: 'rgb(0, 204, 153)',
+  lineGray: 'rgba(217, 219, 224, 0.5)',
+};
+
+const CounterBlock = styled.div`
+  display: inline-block;
+  height: 54px;
+
+  border: 1px solid ${itemColor.lineGray};
+  border-radius: 30px;
+
+  * {
+    display: inline-block;
+    height: 52px;
+    padding: 10px;
+    border: 0px;
+    color: ${itemColor.fontBlack};
+    font-family: 'Postmates Std', 'Helvetica Neue', sans-serif;
+  }
+
+  button {
+    width: 61px;
+    background-color: #fff;
+    outline: none;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+`;
+
+const Increase = styled.button``;
+const Decrease = styled.button`
+  color: ${(props) => (props.active ? null : itemColor.fontGray)};
+  /* color: ${itemColor.fontGray}; */
+`;
+const Value = styled.div`
+  width: 30px;
+`;
+
+export const Counter = ({ active }) => {
+  return (
+    <CounterBlock>
+      <Decrease active={active}>-</Decrease>
+      <Value>1</Value>
+      <Increase>+</Increase>
+    </CounterBlock>
+  );
+};
+const InstructionBorder = styled.div`
+  width: 100%;
+  height: 20%;
+  border-top: 2px solid ${itemColor.lineGray};
+  border-bottom: 2px solid ${itemColor.lineGray};
+`;
+const InstructionBlock = styled(Textarea)`
+  width: 80%;
+  height: 80%;
+  border: none;
+  outline: none;
+  font-weight: 200;
+  margin-top: 1rem;
+  resize: none;
+`;
+
+const ItemPopup = ({ item, visible, onCancel, active }) => {
+  const [count, setCount] = useState(1);
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.Cart.cart);
+
+  const onIncrease = () => setCount((_count) => _count + 1);
+  const onDecrease = () => {
+    if (count <= 1) return;
+    setCount((_count) => _count - 1);
+  };
+
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
-
   const [addInstruction, setAddInstruction] = useState('');
 
+  const { name, description, img_url, base_price, options } = item;
+
   const onClick = () => {
-    /** @todo: add count support */
     dispatch({
       type: ADD_TO_CART,
-      payload: { ...item, count: 1, instruction: addInstruction },
+      payload: { ...item, count, instruction: addInstruction },
     });
+    if (addInstruction.lenght > 200) return;
+    setAddInstruction('');
     onCancel();
   };
 
@@ -133,8 +233,6 @@ const ItemPopup = ({ item, visible, onCancel }) => {
     console.log(e.target.value);
     setAddInstruction(e.target.value);
   };
-
-  const { name, description, img_url, base_price, options } = item;
 
   useEffect(() => {
     if (localVisible && !visible) {
@@ -144,28 +242,44 @@ const ItemPopup = ({ item, visible, onCancel }) => {
     // visible 값이 바뀔 때마다 localvisible 동기화
     setLocalVisible(visible);
   }, [localVisible, visible]);
-
-  const prices = options.map((option) => option);
+  // const prices = options.map((option) => option);
   if (!animate && !localVisible) return null;
   return (
     <OpacityBackground disappear={!visible}>
+      {img_url !== '' ? <ImageBlock image={img_url} /> : null}
       <DialogBlock disappear={!visible}>
         <IconImage cursor src={xIcon} onClick={onCancel} />
         <h1>{name}</h1>
         <p>{description}</p>
-        <text>${base_price}</text>
-        <p>옵션</p>
-        <hr />
-        <h2>SPECIAL INSTRUCTIONS</h2>
-        <textarea
-          placeholder="Add Instructions..."
-          value={addInstruction}
-          onChange={onChange}
-        />
-        <hr />
+        <p>example: Cut Rolls (4 pc each) Toro, Scallop, Cucumber Crab</p>
+        <h2 style={{ paddingTop: '10px' }}>SPECIAL INSTRUCTIONS</h2>
+        <InstructionBorder>
+          <InstructionBlock
+            placeholder="Add Instructions..."
+            minRows={3}
+            maxRows={5}
+            maxLength={200}
+            name="body"
+            value={addInstruction}
+            onChange={onChange}
+          />
+        </InstructionBorder>
+        <p>{addInstruction.length}/200</p>
         <ButtonGroup>
-          <Counter />
-          <Button onClick={onClick}>Add To Cart</Button>
+          {/* counter */}
+          <CounterBlock>
+            <Decrease active={active} onClick={onDecrease}>
+              -
+            </Decrease>
+            <Value>{count}</Value>
+            <Increase onClick={onIncrease}>+</Increase>
+          </CounterBlock>
+          <AddToCart
+            active
+            text="Add To Cart"
+            totalprice={`$${(Number(base_price) * count).toFixed(2)}`}
+            onClick={onClick}
+          />
         </ButtonGroup>
       </DialogBlock>
     </OpacityBackground>
