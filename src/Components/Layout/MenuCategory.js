@@ -1,3 +1,5 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable implicit-arrow-linebreak */
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import MenuCategoryTitle from '../Items/MenuCategoryTitle';
@@ -25,6 +27,7 @@ const MenuCategory = ({
   list,
   setCategoryRef,
   dispatch,
+  subInput,
 }) => {
   const categoryRef = useRef();
 
@@ -36,9 +39,14 @@ const MenuCategory = ({
     <li key={`itemkey-${itemKey}`} id={`item-${itemKey}`} ref={categoryRef}>
       <MenuCategoryTitle category={category} categoryRef={categoryRef} />
       <StoreListBlock>
-        {list.map((item) => (
-          <MenuItem item={item} />
-        ))}
+        {list
+          .filter(
+            (item) =>
+              item.name.toLowerCase().indexOf(subInput.toLowerCase()) !== -1,
+          )
+          .map((item) => (
+            <MenuItem item={item} subInput={subInput} />
+          ))}
       </StoreListBlock>
     </li>
   );

@@ -17,6 +17,7 @@ const SubHeaderBlock = styled.div`
   font-family: 'Postmates Std';
   position: sticky;
   top: 0;
+  z-index: 9;
   background-color: rgb(255, 255, 255);
 
   ${Media.desktop`
@@ -68,6 +69,8 @@ const SubHeader = ({
   handleClickCategories,
   isOpenCategories,
   handleClickScrollTo,
+  changeSubInput,
+  dispatch,
 }) => {
   return (
     <SubHeaderBlock>
@@ -85,7 +88,9 @@ const SubHeader = ({
           />
         )}
         {page === 'item' && <Bulkhead />}
-        {page === 'item' && <SearchItems />}
+        {page === 'item' && (
+          <SearchItems changeSubInput={changeSubInput} dispatch={dispatch} />
+        )}
         {page === 'item' && <Bulkhead />}
         {page === 'item' && <Cart />}
       </div>

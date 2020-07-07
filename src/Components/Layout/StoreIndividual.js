@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Media from '../../Style/Media';
 
 const DeliveryCostBlock = styled.div`
+color: #00cc99;
 ${Media.desktop`
   
 `}

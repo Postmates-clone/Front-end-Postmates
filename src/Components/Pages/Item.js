@@ -12,11 +12,11 @@ const StorePageBlock = styled.main`
   align-items: center;
 `;
 
-const ItemPage = ({ storeData }) => {
+const ItemPage = ({ storeData, subInput }) => {
   return (
     <StorePageBlock>
       <StoreIndividual storeData={storeData} />
-      <MenuList storeData={storeData} />
+      <MenuList storeData={storeData} subInput={subInput} />
     </StorePageBlock>
   );
 };

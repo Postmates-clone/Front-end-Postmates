@@ -31,11 +31,7 @@ const SubBannerBlock = styled.div`
 `;
 
 const SubBanner = ({ page, getBackground }) => {
-  return (
-    <SubBannerBlock background={() => getBackground()} className={page}>
-      SubBanner
-    </SubBannerBlock>
-  );
+  return <SubBannerBlock background={() => getBackground()} className={page} />;
 };
 
 export default SubBanner;
