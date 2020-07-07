@@ -1,6 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { DevUserApi } from '../Dev/DevUserApi';
 
+// user 가입 action
+const CREATE_USER = 'CREATE_USER';
+const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+const CREATE_USER_ERROR = 'CREATE_USER_ERROR';
+
 // user 정보 취득 action
 const GET_USER = 'GET_USER';
 const GET_USER_SUCCESS = 'GET_USER_SUCCESS';
@@ -35,6 +40,17 @@ const REMOVE_CART_ERROR = 'REMOVE_CART_ERROR';
 const PATCH_CART = 'REMOVE_CART';
 const PATCH_CART_SUCCESS = 'REMOVE_CART_SUCCESS';
 const PATCH_CART_ERROR = 'REMOVE_CART_ERROR';
+
+// user 가입 action 생성 함수
+export const createUsersAsync = (payload) => async (dispatch, state) => {
+  dispatch({ type: CREATE_USER });
+  try {
+    const { data } = await DevUserApi.createUser(payload);
+    dispatch({ type: CREATE_USER_SUCCESS, data });
+  } catch (e) {
+    dispatch({ type: CREATE_USER_ERROR, error: e });
+  }
+};
 
 // user 정보 취득 action 생성 함수
 export const getUsersAsync = () => async (dispatch, state) => {
@@ -142,6 +158,43 @@ const initialState = {
 
 export default function userReducer(state = initialState, action) {
   switch (action.type) {
+    case CREATE_USER:
+      return {
+        ...state,
+        status: {
+          loading: true,
+          success: false,
+          error: {
+            error: false,
+            massage: null,
+          },
+        },
+      };
+    case CREATE_USER_SUCCESS:
+      return {
+        ...state,
+        userInfo: { ...action.data },
+        status: {
+          loading: false,
+          success: true,
+          error: {
+            error: false,
+            massage: null,
+          },
+        },
+      };
+    case CREATE_USER_ERROR:
+      return {
+        ...state,
+        status: {
+          loading: false,
+          success: true,
+          error: {
+            error: true,
+            massage: action.error,
+          },
+        },
+      };
     case GET_USER:
       return {
         ...state,
