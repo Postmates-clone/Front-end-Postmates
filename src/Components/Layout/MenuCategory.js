@@ -42,9 +42,7 @@ const MenuCategory = ({
         {list
           .filter(
             (item) =>
-              item.name.toLowerCase().indexOf(subInput.toLowerCase()) !== -1 ||
-              item.description.toLowerCase().indexOf(subInput.toLowerCase()) !==
-                -1,
+              item.name.toLowerCase().indexOf(subInput.toLowerCase()) !== -1,
           )
           .map((item) => (
             <MenuItem item={item} subInput={subInput} />

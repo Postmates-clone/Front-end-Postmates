@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 
@@ -53,8 +53,11 @@ const ContentBlock = styled.div`
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      span {
+      .titleHighlight {
         color: #00cc99;
+        display: inline;
+        font-size: 16px;
+        line-height: inherit;
       }
     }
 
@@ -90,20 +93,28 @@ const ImageBlock = styled.img`
 
 // eslint-disable-next-line no-unused-vars
 const MenuItem = ({ item, subInput }) => {
-  const textRef = useRef();
+  const titleRef = useRef();
 
   const { name, description, img_url, base_price } = item;
 
+  useEffect(() => {
+    let title = name;
+    const regex = new RegExp(subInput, 'ig');
+    const findArray = name.match(regex);
+    if (findArray && subInput) {
+      findArray.forEach((text) => {
+        const regexAll = new RegExp(text, 'g');
+        title = name.replace(
+          regexAll,
+          `<span class="titleHighlight">${text}</span>`,
+        );
+      });
+    }
+    titleRef.current.innerHTML = title;
+  }, [description, name, subInput]);
+
   const [dialog, setDialog] = useState(false);
 
-  // const getHighlight = () => {
-  //   if (!subInput) {
-  //     return name;
-  //   }
-  //   const regex = new RegExp(subInput, 'g');
-  //   const highlight = name.replace(regex, `<span>${subInput}</span>`);
-  //   textRef.current.innerHTML = name;
-  // };
   const onClick = () => {
     setDialog(true);
   };
@@ -116,7 +127,7 @@ const MenuItem = ({ item, subInput }) => {
       <ItemBlock>
         <ContentBlock onClick={onClick}>
           <div>
-            <h3 ref={textRef}>{name}</h3>
+            <h3 ref={titleRef}>{name}</h3>
             <span className="menu-caption">{description}</span>
           </div>
           <strong>${base_price}</strong>
