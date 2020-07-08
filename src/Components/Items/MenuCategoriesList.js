@@ -12,6 +12,7 @@ const CategoriyListBlock = styled.div`
   box-shadow: rgba(34, 34, 34, 0.08) 0px 2px 8px 0px;
   overflow-y: scroll;
   overflow-x: auto;
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
 `;
 
 const CategoriyItem = styled.li`
@@ -21,12 +22,11 @@ const CategoriyItem = styled.li`
   border-bottom: 1px solid rgb(239, 239, 239);
 `;
 
-const MenuCategoriesList = ({ menuList, handleClickScrollTo }) => {
+const MenuCategoriesList = ({ menuList, handleClickScrollTo, isOpen }) => {
   return (
-    <CategoriyListBlock>
+    <CategoriyListBlock isOpen={isOpen}>
       <ul>
         {menuList.map((menu) => (
-          // 유니크값 받아야 함
           <CategoriyItem
             key={`ct-${menu.id}`}
             id={`ctitem-${menu.id}`}
