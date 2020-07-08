@@ -6,8 +6,8 @@ const api = axios.create({
 
 // eslint-disable-next-line import/prefer-default-export
 export const DevApi = {
-  getNearBy: () => {
-    return api.get('/nearby/?city=San Francisco&page=1', {
+  getNearBy: (page) => {
+    return api.get(`/nearby/?city=San Francisco&page=${page}`, {
       responseType: 'json',
     });
   },

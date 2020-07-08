@@ -64,43 +64,12 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
 
         <StoreCategory
           category="nearby"
-          data={nearby}
+          dataAll={nearby}
+          data={nearby.results}
           title="Near By"
           info="near by category"
         />
       </FeedWrapper>
-
-      {/*
-      <div>
-        <ul>
-          {favorite.data.map((store) => (
-            <li key={store.id}>
-              {store.name} - <strong>{store.food_type}</strong>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {orderby.data.map((store) => (
-            <li key={store.id}>
-              {store.name} - <strong>{store.food_type}</strong>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {getinfast.data.map((store) => (
-            <li key={store.id}>
-              {store.name} - <strong>{store.food_type}</strong>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {nearby.data.map((store) => (
-            <li key={store.id}>
-              {store.name} - <strong>{store.food_type}</strong>
-            </li>
-          ))}
-        </ul>
-      </div> */}
     </FeedMainBlock>
   );
 };
