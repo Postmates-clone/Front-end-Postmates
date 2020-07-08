@@ -47,6 +47,14 @@
       "password": "dsfsdf",
       "phone": "dsfsdf",
       "address": "dsfsdf"
+    },
+    {
+      "id": 7,
+      "username": "dsads",
+      "email": "asdsadsa",
+      "password": "sadsad",
+      "phone": "asdsad",
+      "address": "asdsadsa"
     }
   ],
   "nearby": [

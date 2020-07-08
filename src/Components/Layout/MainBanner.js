@@ -85,8 +85,42 @@ export const Specification = styled.div`
   font-size: 16px;
   margin-bottom: 17px;
 `;
+// const initialState = {
+//   inputState: {
+//     name: '',
+//   },
+// };
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case 'INPUTCHANGE':
+//       return {
+//         title: state.current.value,
+//       };
+//     default:
+//       return state;
+//   }
+// }
+// const reducerAction = {
+//   getChange: {
+//     type: 'INPUTCHANGE',
+//   },
+// };
 
 export default function MainBanner({ title, text }) {
+  //   const [state, dispatch] = useReducer(reducer, initialState);
+  //   const makeChange = () => {
+  //     dispatch(reducerAction.getChange);
+  //   };
+
+  // const inputRef = useRef();
+  // const initInput = () => {
+  //   inputRef.current.value = '';
+  //   inputRef.current.focus();
+  // };
+  // const changeTitle = () => {
+  //   setTitle(inputRef.current.value);
+  // };
+
   return (
     <MainBannerBlock>
       <MainBannerContainer>

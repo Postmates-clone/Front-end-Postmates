@@ -1,6 +1,6 @@
 /* eslint-disable import/no-duplicates */
 import React from 'react';
-// import styled from 'styled-components';
+
 import MainSection from '../Layout/MainSection';
 import MainBanner from '../Layout/MainBanner';
 import DeliverySection from '../Layout/DeliverySection';
