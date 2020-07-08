@@ -19,7 +19,7 @@ const StoreCategory = ({ category, title, info, data, dataAll }) => {
   // data.map((store) => console.log(store.store_img.replace(deleteURL, '')));
   // data.map((store) => console.log(store));
 
-  if (dataAll === undefined) return null;
+  // if (dataAll === undefined) return null;
   return (
     <StoreCategoryBlock>
       <CategoryTitle

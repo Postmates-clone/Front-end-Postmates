@@ -60,6 +60,7 @@ const InfinityScroll = ({ data, dataAll }) => {
       dispatch(getNearBy(page));
     }
   };
+
   return (
     <>
       <StoreList>
