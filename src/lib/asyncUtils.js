@@ -26,9 +26,10 @@ export const reducerUtils = {
   }),
 
   success: (payload) => {
+    // console.log(payload.data);
     return {
       loading: false,
-      data: payload.data.results,
+      data: payload.data,
       error: null,
     };
   },
