@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import FavoritesCategory from './FavoritesCategory';
+// import FavoritesCategory from './FavoritesCategory';
 import MenuCategory from './MenuCategory';
 import Media from '../../Style/Media';
 import { initCategoryRef, setCategoryRef } from '../../Modules/RefReducer';
@@ -24,14 +24,14 @@ const MenuList = ({ storeData, subInput }) => {
   }, [dispatch]);
   return (
     <StoreBlock>
-      <FavoritesCategory />
+      {/* <FavoritesCategory /> */}
       <ul>
-        {storeData.menu.map((item) => (
+        {storeData.menu_category.map((item) => (
           <MenuCategory
             key={`itemKey-${item.id}`}
             itemKey={item.id}
-            category={item.category}
-            list={item.list}
+            category={item.name}
+            list={item.menu}
             setCategoryRef={setCategoryRef}
             dispatch={dispatch}
             subInput={subInput}

@@ -7,10 +7,10 @@ const GET_STORE_SUCCESS = 'GET_STORE_SUCCESS';
 const GET_STORE_ERROR = 'GET_STORE_ERROR';
 
 // user 정보 취득 action 생성 함수
-export const getStoreAsync = (url) => async (dispatch, state) => {
+export const getStoreAsync = (id) => async (dispatch, state) => {
   dispatch({ type: GET_STORE });
   try {
-    const { data } = await DevApi.getItem(url); // API 호출 - API 제작 해야 함
+    const { data } = await DevApi.getItem(id); // API 호출 - API 제작 해야 함
     dispatch({ type: GET_STORE_SUCCESS, data });
   } catch (e) {
     dispatch({ type: GET_STORE_ERROR, error: e });
@@ -21,24 +21,23 @@ export const getStoreAsync = (url) => async (dispatch, state) => {
 const initialState = {
   store: {
     address: '',
-    badges: { text: '', text_color: '' },
+    badges: [],
     city: '',
-    delivery_fee_badge: 0,
+    delivery_fee: 0,
     delivery_time: '',
     description: '',
     estimated_prep_time: 0,
     food_type: '',
     id: 0,
-    is_delivery: '',
-    is_partner: false,
+    is_delivery: true,
+    is_partner: true,
     is_pickup: false,
     lat: 0,
     lng: 0,
-    menu: [],
+    menu_category: [],
     name: '',
     open_hour: {},
     store_img: '',
-    url: '',
   },
   status: {
     loading: false,
@@ -67,7 +66,7 @@ export default function ItemReducer(state = initialState, action) {
     case GET_STORE_SUCCESS:
       return {
         ...state,
-        store: { ...action.data },
+        store: { ...action.data.results[0] },
         status: {
           loading: false,
           success: true,

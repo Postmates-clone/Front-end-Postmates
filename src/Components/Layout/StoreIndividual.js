@@ -6,16 +6,11 @@ import styled from 'styled-components';
 import Media from '../../Style/Media';
 
 const DeliveryCostBlock = styled.div`
-color: #00cc99;
-${Media.desktop`
-  
-`}
-${Media.tablet`
-  
-`}
-${Media.mobile`
-  
-`}
+  color: #00cc99;
+  margin-bottom: 8px;
+  ${Media.desktop``};
+  ${Media.tablet``};
+  ${Media.mobile``};
 `;
 
 const StoreIndividualBlock = styled.div`
@@ -83,11 +78,11 @@ const StoreIndividual = ({ storeData }) => {
     address,
     food_type,
     is_pickup,
-    delivery_fee_badge,
+    delivery_fee,
   } = storeData;
   return (
     <StoreIndividualBlock>
-      <DeliveryCostBlock>${delivery_fee_badge}</DeliveryCostBlock>
+      <DeliveryCostBlock>${delivery_fee} Delivery</DeliveryCostBlock>
       <div className="wrap-title">
         <StoreTitle>{name}</StoreTitle>
         <Badge>{food_type}</Badge>

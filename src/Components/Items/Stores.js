@@ -1,5 +1,6 @@
 // 0701 seungeun
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 
@@ -59,18 +60,20 @@ const Stores = ({ id, name, image, fee, time }) => {
 
   return (
     <Store key={id}>
-      <StoreImage image={image} />
-      <h3>
-        {name}
-        <svg width="14" height="14" viewBox="0 0 14 14">
-          <g fill="none" fillRule="evenodd">
-            <rect fill="#0C9" width="14" height="14" rx="7" />
-            <path fill="#FFF" d="M3 7l3 3 4.5-4.5-1-1L6 8 4 6" />
-          </g>
-        </svg>
-      </h3>
-      <strong>${fee} Delivery</strong>
-      <em> · {time} min</em>
+      <Link to={`/item/${id}`}>
+        <StoreImage image={image} />
+        <h3>
+          {name}
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <g fill="none" fillRule="evenodd">
+              <rect fill="#0C9" width="14" height="14" rx="7" />
+              <path fill="#FFF" d="M3 7l3 3 4.5-4.5-1-1L6 8 4 6" />
+            </g>
+          </svg>
+        </h3>
+        <strong>${fee} Delivery</strong>
+        <em> · {time} min</em>
+      </Link>
     </Store>
   );
 };

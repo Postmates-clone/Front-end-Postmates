@@ -10,6 +10,7 @@ const StorePageBlock = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fff;
 `;
 
 const ItemPage = ({ storeData, subInput }) => {
