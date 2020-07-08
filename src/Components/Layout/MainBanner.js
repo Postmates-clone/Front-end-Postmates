@@ -3,6 +3,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import mapMaker from '../../Assets/mapMaker.png';
 import rightArrow from '../../Assets/rightArrow.png';
+import AddressList from '../Items/AddressList';
 
 export const MainBannerBlock = styled.div`
   background-size: cover;
@@ -35,6 +36,7 @@ export const InputWrapper = styled.div`
   width: 400px;
   height: 60px;
   display: flex;
+  position: relative;
 `;
 
 export const InputInner = styled.div`
@@ -102,6 +104,7 @@ export default function MainBanner({ title, text }) {
             <InputButton>
               <IconImage src={rightArrow} />
             </InputButton>
+            <AddressList />
           </InputWrapper>
         </MainTextWrapper>
       </MainBannerContainer>

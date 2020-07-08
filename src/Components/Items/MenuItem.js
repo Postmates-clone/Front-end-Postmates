@@ -9,7 +9,7 @@ import ItemPopup from './ItemPopup';
 
 const ItemBlock = styled.li`
   display: flex;
-  height: 128px;
+  height: 130px;
   cursor: pointer;
 
   ${Media.desktop`
@@ -36,13 +36,19 @@ const ItemBlock = styled.li`
 const ContentBlock = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 100%;
+  justify-content: space-between;
   padding: 20px 20px 15px 20px;
   overflow: hidden;
 
   ${Media.desktop`
-  padding-right: 128px;
+    width: ${(props) => (props.width ? '366.5px' : '100%')};
+    padding-right: 128px;
+  `}
+
+  ${Media.tablet`
+  width: ${(props) => (props.width ? 'calc(100% - 128px)' : '100%')};
+    /* width: calc(100% - 128px); */
   `}
 
   div {
@@ -85,10 +91,12 @@ const ContentBlock = styled.div`
   }
 `;
 
-const ImageBlock = styled.img`
+const ImageBlock = styled.div`
   width: 128px;
   height: 128px;
   margin-right: 0;
+  background: no-repeat center url(${(props) => props.background});
+  background-size: cover;
 `;
 
 // eslint-disable-next-line no-unused-vars
@@ -125,7 +133,7 @@ const MenuItem = ({ item, subInput }) => {
   return (
     <>
       <ItemBlock>
-        <ContentBlock onClick={onClick}>
+        <ContentBlock onClick={onClick} width={image_url}>
           <div>
             <h3 ref={titleRef}>{name}</h3>
             <span className="menu-caption">{description}</span>
@@ -133,7 +141,7 @@ const MenuItem = ({ item, subInput }) => {
           <strong>${base_price}</strong>
         </ContentBlock>
         {/* img가 있을경우 img component 생성, 없을경우 미생성 */}
-        {image_url ? <ImageBlock src={image_url} /> : ''}
+        {image_url ? <ImageBlock background={image_url} /> : ''}
       </ItemBlock>
 
       <ItemPopup
