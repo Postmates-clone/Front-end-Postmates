@@ -27,7 +27,7 @@ const PopUpBlock = styled.div`
   box-shadow: rgba(34, 34, 34, 0.15) 0px 2px 20px 0px;
 `;
 
-const CloseBtn = styled.div`
+export const CloseBtn = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;

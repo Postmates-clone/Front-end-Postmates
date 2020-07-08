@@ -11,10 +11,13 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional
 import { Button } from './ProductInfo';
 import { REMOVE_FROM_CART } from '../../Modules/CartReducer';
-import { IconImage } from '../Layout/MainBanner';
-import xIcon from '../../Assets/xicon.png';
+import { CloseBtn } from '../../Style/PopUp';
+import { closeIcon } from '../../Style/IconStyles';
+import { itemColor } from './ItemPopup';
 
 const fadeIn = keyframes`
 from{
@@ -53,11 +56,14 @@ to{
 `;
 
 const DialogBlock = styled.div`
-  width: 350px;
+  width: 450px;
   height: 350px;
-  padding-left: 1.5rem;
+  padding: 1.5rem;
   background: #fff;
   position: absolute;
+  right: 0;
+  margin-top: 10px;
+  overflow-y: scroll;
 
   h1 {
     margin: 0;
@@ -85,13 +91,69 @@ const DialogBlock = styled.div`
     `}
 `;
 
-const ButtonGroup = styled.div`
-  margin-top: 3rem;
+const ContentBlock = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 10px 0 160px 0;
+  width: 100%;
 `;
 
-const CartPopup = ({ item, visible, onCancel }) => {
+const CountBlock = styled.div`
+  min-width: 10%;
+  max-width: 10%;
+  text-align: left;
+`;
+
+const DetailBlock = styled.div`
+  min-width: 60%;
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+`;
+const DetailNameBlock = styled.div`
+  white-space: normal;
+  word-break: break-all;
+`;
+
+const DetailOptionBlock = styled.div``;
+
+const PriceBlock = styled.div`
+  min-width: 20%;
+  max-width: 20%;
+  color: rgb(0, 204, 153);
+`;
+
+const RemoveBlock = styled.div`
+  min-width: 10%;
+  max-width: 10%;
+  text-align: right;
+`;
+
+const RemoveBtn = styled.div`
+  cursor: pointer;
+`;
+
+const SubTotalBlock = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-height: 80%;
+  padding-top: 10px;
+  border-top: 2px solid rgba(217, 219, 224, 0.5);
+`;
+
+const TotalPriceBlock = styled.div`
+  color: rgb(0, 204, 153);
+`;
+
+const ButtonGroup = styled.div`
+  margin-top: 30px;
+  text-align: center;
+  max-height: 80%;
+`;
+
+const CartPopup = ({ item, visible }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
   const [animate, setAnimate] = useState(false);
@@ -113,39 +175,42 @@ const CartPopup = ({ item, visible, onCancel }) => {
   }, [localVisible, visible]);
 
   if (!animate && !localVisible) return null;
+
   return (
     <>
       {!onDialog && (
         <DialogBlock disappear={!visible}>
-          {cart.map((item) => (
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                margin: '10px 0',
-              }}
-            >
-              <span>{item.name}</span>
-              <span>{item.count}</span>
-              <span>
-                {`$${Number(item.base_price * item.count).toFixed(2)}`}
-              </span>
-              <span>선택한 옵션</span>
-              <span>{item.instruction}</span>
-              <IconImage
-                cursor
-                src={xIcon}
-                onClick={() => onRemove(item.name)}
-              />
-              <hr />
-            </div>
-          ))}
-          <div>Subtotal</div>
-          {`$${cart
-            .reduce((prev, curr) => {
-              return prev + curr.base_price * curr.count;
-            }, 0)
-            .toFixed(2)}`}
+          <h2>Order</h2>
+          <ContentBlock>
+            {cart.map((item) => (
+              <>
+                <CountBlock>{item.count}</CountBlock>
+                <DetailBlock>
+                  <DetailNameBlock>{item.name}</DetailNameBlock>
+                  <DetailOptionBlock>선택한 옵션</DetailOptionBlock>
+                  <div>{item.instruction}</div>
+                </DetailBlock>
+                <PriceBlock>
+                  {`$${Number(item.base_price * item.count).toFixed(2)}`}
+                </PriceBlock>
+                <RemoveBlock>
+                  <RemoveBtn onClick={() => onRemove(item.name)}>
+                    {closeIcon}
+                  </RemoveBtn>
+                </RemoveBlock>
+              </>
+            ))}
+          </ContentBlock>
+          <SubTotalBlock>
+            <div>Subtotal</div>
+            <TotalPriceBlock>
+              {`$${cart
+                .reduce((prev, curr) => {
+                  return prev + curr.base_price * curr.count;
+                }, 0)
+                .toFixed(2)}`}
+            </TotalPriceBlock>
+          </SubTotalBlock>
           <ButtonGroup>
             <Button>CHECKOUT</Button>
           </ButtonGroup>
