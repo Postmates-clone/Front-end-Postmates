@@ -16,7 +16,7 @@ const HeaderContainer = () => {
   } = useSelector((state) => ({
     page: state.Main.page,
     storeUrl: state.Item.store.store_img,
-    menuList: state.Item.store.menu,
+    menuList: state.Item.store.menu_category,
     isOpenCategories: state.Main.isOpenCategories,
     categoryRef: state.Ref.categoryRef,
   }));

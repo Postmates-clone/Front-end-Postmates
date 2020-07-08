@@ -10,7 +10,7 @@ const CategoriyListBlock = styled.div`
   left: -17px;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(34, 34, 34, 0.08) 0px 2px 8px 0px;
-  overflow-y: hidden;
+  overflow-y: scroll;
   overflow-x: auto;
 `;
 
@@ -32,7 +32,7 @@ const MenuCategoriesList = ({ menuList, handleClickScrollTo }) => {
             id={`ctitem-${menu.id}`}
             onClick={() => handleClickScrollTo(menu.id)}
           >
-            {menu.category}
+            {menu.name}
           </CategoriyItem>
         ))}
       </ul>
