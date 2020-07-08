@@ -59,6 +59,7 @@ export const IconImage = styled.img`
   width: 15px;
   height: 20px;
   ${({ cursor }) =>
+    // eslint-disable-next-line operator-linebreak
     cursor &&
     css`
       cursor: pointer;

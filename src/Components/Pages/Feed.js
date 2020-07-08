@@ -10,6 +10,8 @@ import CategoryList from '../Layout/CategoryList';
 const FeedMainBlock = styled.main`
   width: 100%;
   padding: 30px 36px 0 36px;
+
+  background-color: #fff;
 `;
 const FeedWrapper = styled.div`
 

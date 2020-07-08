@@ -2,6 +2,7 @@
 // action
 const SET_CATEGORY_REF = 'SET_CATEGORY_REF';
 const INIT_CATEGORY_REF = 'INIT_CATEGORY_REF';
+const SET_SUBHEADER_REF = 'SET_SUBHEADER_REF';
 
 // Action 생성 함수
 export const setCategoryRef = (ref) => ({ type: SET_CATEGORY_REF, ref });

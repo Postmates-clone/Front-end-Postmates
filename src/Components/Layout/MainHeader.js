@@ -9,7 +9,16 @@ const MainHeaderBlock = styled.div`
   width: 100%;
   height: 72px;
 
-  background: #ffdf18;
+  &.mainHeader-feed {
+    position: sticky;
+    background: #ffdf18;
+  }
+  &.mainHeader-item {
+    position: sticky;
+    background: #fff;
+  }
+  top: 0px;
+  z-index: 101;
 `;
 
 const MainHeaderWrapper = styled.div`
@@ -34,7 +43,7 @@ const Member = styled.div`
   width: 20%;
 `;
 
-const MainHeader = () => {
+const MainHeader = ({ page }) => {
   const [openLogIn, setOpenLogIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
 
@@ -42,7 +51,7 @@ const MainHeader = () => {
   const openSignUpPopUp = () => setOpenSignUp(!openSignUp);
 
   return (
-    <MainHeaderBlock>
+    <MainHeaderBlock className={`mainHeader-${page}`}>
       <MainHeaderWrapper>
         <Logo>Postmates</Logo>
         <Member>

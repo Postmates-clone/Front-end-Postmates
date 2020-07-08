@@ -95,7 +95,7 @@ const ImageBlock = styled.img`
 const MenuItem = ({ item, subInput }) => {
   const titleRef = useRef();
 
-  const { name, description, img_url, base_price } = item;
+  const { name, description, image_url, base_price } = item;
 
   useEffect(() => {
     let title = name;
@@ -133,7 +133,7 @@ const MenuItem = ({ item, subInput }) => {
           <strong>${base_price}</strong>
         </ContentBlock>
         {/* img가 있을경우 img component 생성, 없을경우 미생성 */}
-        {img_url ? <ImageBlock src={img_url} /> : ''}
+        {image_url ? <ImageBlock src={image_url} /> : ''}
       </ItemBlock>
 
       <ItemPopup
