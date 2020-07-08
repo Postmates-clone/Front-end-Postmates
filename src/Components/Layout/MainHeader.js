@@ -8,13 +8,14 @@ import SignUpPopUp from '../Items/SignUpPopUp';
 const MainHeaderBlock = styled.div`
   width: 100%;
   height: 72px;
-  background: #ffdf18;
 
   &.mainHeader-feed {
     position: sticky;
+    background: #ffdf18;
   }
   &.mainHeader-item {
     position: sticky;
+    background: #fff;
   }
   top: 0px;
   z-index: 101;
