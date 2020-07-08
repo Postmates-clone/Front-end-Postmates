@@ -22,16 +22,17 @@ const MenuList = ({ storeData, subInput }) => {
   useEffect(() => {
     dispatch(initCategoryRef());
   }, [dispatch]);
+  console.log(storeData.menu_category.length);
   return (
     <StoreBlock>
       <FavoritesCategory />
       <ul>
-        {storeData.menu.map((item) => (
+        {storeData.menu_category.map((item) => (
           <MenuCategory
             key={`itemKey-${item.id}`}
             itemKey={item.id}
-            category={item.category}
-            list={item.list}
+            category={item.name}
+            list={item.menu}
             setCategoryRef={setCategoryRef}
             dispatch={dispatch}
             subInput={subInput}

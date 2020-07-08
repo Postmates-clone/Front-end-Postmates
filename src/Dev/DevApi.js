@@ -26,7 +26,7 @@ export const DevApi = {
       responseType: 'json',
     });
   },
-  getItem: (url) => api.get(`/detail?id=${url}`, { responseType: 'json' }),
+  getItem: (id) => api.get(`/detail?id=${id}`, { responseType: 'json' }),
 };
 
 // console.log(DevApi.getNearBy());
