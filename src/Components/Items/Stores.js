@@ -1,10 +1,8 @@
 // 0701 seungeun
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
-import { getStoreAsync } from '../../Modules/ItemReducer';
 
 const Store = styled.li`
 
@@ -59,14 +57,10 @@ const StoreImage = styled.div`
 
 const Stores = ({ id, name, image, fee, time }) => {
   // console.log(image);
-  const dispatch = useDispatch();
-  const getItemAsync = () => {
-    dispatch(getStoreAsync(id));
-  };
 
   return (
-    <Store key={id} onClick={getItemAsync}>
-      <Link to="/item">
+    <Store key={id}>
+      <Link to={`/item/${id}`}>
         <StoreImage image={image} />
         <h3>
           {name}
