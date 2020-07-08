@@ -12,6 +12,7 @@ const MainHeaderBlock = styled.div`
 
   &.mainHeader-feed {
     position: sticky;
+    background: rgb(243, 217, 0);
   }
   &.mainHeader-item {
     position: sticky;

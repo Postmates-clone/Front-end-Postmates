@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import MenuCategoriesList from './MenuCategoriesList';
 import Media from '../../Style/Media';
@@ -23,26 +23,19 @@ const MenuCategoriesBlock = styled.div`
   `}
 `;
 
-const MenuCategories = ({
-  menuList,
-  handleClickCategories,
-  isOpenCategories,
-  handleClickScrollTo,
-}) => {
+const MenuCategories = ({ menuList, handleClickScrollTo }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <MenuCategoriesBlock>
-      <button type="button" onClick={handleClickCategories}>
+      <button type="button" onClick={() => setIsOpen(!isOpen)}>
         <span>Category</span>
         {arrowIconLarge}
       </button>
-      {!isOpenCategories ? (
-        ''
-      ) : (
-        <MenuCategoriesList
-          menuList={menuList}
-          handleClickScrollTo={handleClickScrollTo}
-        />
-      )}
+      <MenuCategoriesList
+        menuList={menuList}
+        handleClickScrollTo={handleClickScrollTo}
+        isOpen={isOpen}
+      />
     </MenuCategoriesBlock>
   );
 };

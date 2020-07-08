@@ -1,5 +1,5 @@
 // 0701 seungeun
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 import BreadCrumbs from '../Items/BreadCrumbs';
@@ -95,20 +95,8 @@ const SubHeader = ({
   changeSubInput,
   dispatch,
 }) => {
-  const subHeaderRef = useRef();
-
-  useEffect(() => {
-    if (subHeaderRef.current) {
-      console.log(subHeaderRef.current.offsetTop);
-    }
-  }, []);
-
   return (
-    <SubHeaderBlock
-      className={`subHeader-${page}`}
-      ref={subHeaderRef}
-      onClick={() => console.log(subHeaderRef)}
-    >
+    <SubHeaderBlock className={`subHeader-${page}`}>
       <div className="wrap-subheader-item">
         <BreadCrumbs />
         <Bulkhead />

@@ -2,21 +2,15 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SubHeader from '../Components/Layout/SubHeader';
 import SubBanner from '../Components/Layout/SubBanner';
-import { openCategories, changeSubInput } from '../Modules/MainReducer';
+import { changeSubInput } from '../Modules/MainReducer';
 import MainHeader from '../Components/Layout/MainHeader';
 
 const HeaderContainer = () => {
   const dispatch = useDispatch();
-  const {
-    page,
-    storeUrl,
-    menuList,
-    isOpenCategories,
-    categoryRef,
-  } = useSelector((state) => ({
+  const { page, storeUrl, menuList, categoryRef } = useSelector((state) => ({
     page: state.Main.page,
     storeUrl: state.Item.store.store_img,
-    menuList: state.Item.store.menu,
+    menuList: state.Item.store.menu_category,
     isOpenCategories: state.Main.isOpenCategories,
     categoryRef: state.Ref.categoryRef,
   }));
@@ -30,17 +24,11 @@ const HeaderContainer = () => {
     return url;
   };
 
-  // 카테고리 list open
-  const handleClickCategories = () => {
-    dispatch(openCategories(!isOpenCategories));
-  };
-
   // 카테고리 click시 스트롤 해당 지점으로 이동
   const handleClickScrollTo = (id) => {
     const yaxis = categoryRef.filter(({ itemKey }) => itemKey === id)[0].ref
       .offsetTop;
     window.scrollTo({ top: yaxis - 60, behavior: 'smooth' });
-    // console.log(window.pageYOffset);
   };
 
   const generateSubHeader = () => {
@@ -50,8 +38,6 @@ const HeaderContainer = () => {
         <SubHeader
           page={page}
           menuList={menuList}
-          handleClickCategories={handleClickCategories}
-          isOpenCategories={isOpenCategories}
           handleClickScrollTo={handleClickScrollTo}
           changeSubInput={changeSubInput}
           dispatch={dispatch}
