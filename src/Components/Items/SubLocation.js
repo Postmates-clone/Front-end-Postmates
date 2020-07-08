@@ -43,7 +43,7 @@ const SubLocation = () => {
     <SubLocationBlock>
       <button type="button">
         <div className="icon">{locationIconLarge}</div>
-        <div className="address">main reducer 주소값</div>
+        <div className="address">Address</div>
       </button>
     </SubLocationBlock>
   );
