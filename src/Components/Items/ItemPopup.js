@@ -7,10 +7,14 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import Textarea from 'react-textarea-autosize';
-import { IconImage } from '../Layout/MainBanner';
-import xIcon from '../../Assets/xicon.png';
+// import { IconImage } from '../Layout/MainBanner';
+// import xIcon from '../../Assets/xicon.png';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional
 import { AddToCart } from '../../Style/BasicCounter';
 import { ADD_TO_CART } from '../../Modules/CartReducer';
+import { CloseBtn } from '../../Style/PopUp';
+import { closeIcon } from '../../Style/IconStyles';
 
 const fadeIn = keyframes`
 from{
@@ -102,12 +106,14 @@ const DialogBlock = styled.div`
   height: 512px;
   padding-left: 1.5rem;
   background: #fff;
+  justify-content: space-between;
 
   h1 {
     margin: 0;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 8px;
+    padding-top: 30px;
   }
 
   p {
@@ -129,19 +135,20 @@ const DialogBlock = styled.div`
     `}
 `;
 
-const ButtonGroup = styled.div`
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-`;
-
 // couter button
-const itemColor = {
+export const itemColor = {
   fontBlack: 'rgb(45, 49, 56)',
   fontGray: 'rgba(143, 149, 163, 0.9)',
   pointGreen: 'rgb(0, 204, 153)',
   lineGray: 'rgba(217, 219, 224, 0.5)',
 };
+
+const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid ${itemColor.lineGray};
+  padding-top: 10px;
+`;
 
 const CounterBlock = styled.div`
   display: inline-block;
@@ -194,7 +201,7 @@ const InstructionBorder = styled.div`
 `;
 const InstructionBlock = styled(Textarea)`
   width: 80%;
-  height: 80%;
+  height: 100%;
   border: none;
   outline: none;
   font-weight: 200;
@@ -248,11 +255,12 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     <OpacityBackground disappear={!visible}>
       {img_url !== '' ? <ImageBlock image={img_url} /> : null}
       <DialogBlock disappear={!visible}>
-        <IconImage cursor src={xIcon} onClick={onCancel} />
+        <CloseBtn onClick={onCancel}>{closeIcon}</CloseBtn>
+        {/* <IconImage cursor src={xIcon} onClick={onCancel} /> */}
         <h1>{name}</h1>
         <p>{description}</p>
         <p>example: Cut Rolls (4 pc each) Toro, Scallop, Cucumber Crab</p>
-        <h2 style={{ paddingTop: '10px' }}>SPECIAL INSTRUCTIONS</h2>
+        <h2 style={{ marginTop: '50px' }}>SPECIAL INSTRUCTIONS</h2>
         <InstructionBorder>
           <InstructionBlock
             placeholder="Add Instructions..."
@@ -264,7 +272,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
             onChange={onChange}
           />
         </InstructionBorder>
-        <p>{addInstruction.length}/200</p>
+        <div style={{ marginBottom: '10%' }}>{addInstruction.length}/200</div>
         <ButtonGroup>
           {/* counter */}
           <CounterBlock>
