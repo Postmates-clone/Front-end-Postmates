@@ -7,6 +7,7 @@ import ItemReducer from './ItemReducer';
 import UserReducer from './UserReducer';
 import RefReducer from './RefReducer';
 import CartReducer from './CartReducer';
+import LocationReducer from './LocationReducer';
 
 const RootReducer = combineReducers({
   Main: MainReducer,
@@ -15,6 +16,7 @@ const RootReducer = combineReducers({
   User: UserReducer,
   Ref: RefReducer,
   Cart: CartReducer,
+  Location: LocationReducer,
 });
 
 // const store = createStore(RootReducer);

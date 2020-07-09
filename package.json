@@ -74,5 +74,5 @@
       "git add"
     ]
   },
-  "proxy": "http://54.180.102.1"
+  "proxy": "https://maps.googleapis.com"
 }
