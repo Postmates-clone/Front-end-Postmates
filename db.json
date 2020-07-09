@@ -55,6 +55,14 @@
       "password": "sadsad",
       "phone": "asdsad",
       "address": "asdsadsa"
+    },
+    {
+      "id": 8,
+      "username": "asdas",
+      "email": "dasd",
+      "password": "sad",
+      "phone": "asd",
+      "address": "adsd"
     }
   ],
   "nearby": [
