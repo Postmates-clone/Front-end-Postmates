@@ -1,28 +1,28 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api/v1/feed',
+  baseURL: 'http://localhost:5000/',
 });
 
 // eslint-disable-next-line import/prefer-default-export
 export const DevApi = {
-  getNearBy: (page) => {
-    return api.get(`/nearby/?city=San Francisco&page=${page}`, {
+  getNearBy: () => {
+    return api.get('/nearby/', {
       responseType: 'json',
     });
   },
   getOrderBy: () => {
-    return api.get('?category=delivery&city=San Francisco', {
+    return api.get('/delivery/', {
       responseType: 'json',
     });
   },
   getFavorite: () => {
-    return api.get('?category=favorite&city=San Francisco', {
+    return api.get('/favorite/', {
       responseType: 'json',
     });
   },
   getInFast: () => {
-    return api.get('?category=time&city=San Francisco', {
+    return api.get('/category/', {
       responseType: 'json',
     });
   },

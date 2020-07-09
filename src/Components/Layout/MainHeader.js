@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import { LoginBtn } from '../../Style/BasicBtn';
 import LoginPopUp from '../Items/LoginPopUp';
 import SignUpPopUp from '../Items/SignUpPopUp';
+import Search from '../Items/Search';
+import MainMenu from '../Items/MainMenu';
+import Logo from '../Items/Logo';
 
 const MainHeaderBlock = styled.div`
   width: 100%;
@@ -31,14 +34,13 @@ const MainHeaderWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Logo = styled.h1`
-  width: 20%;
-  font-size: 26px;
-  font-weight: 200;
-  letter-spacing: -1px;
-
-  line-height: 72px;
-`;
+// const Logo = styled.h1`
+//   width: 13%;
+//   font-size: 24px;
+//   font-weight: 400;
+//   letter-spacing: -1px;
+//   line-height: 72px;
+// `;
 
 const Member = styled.div`
   width: 20%;
@@ -54,7 +56,9 @@ const MainHeader = ({ page }) => {
   return (
     <MainHeaderBlock className={`mainHeader-${page}`}>
       <MainHeaderWrapper>
-        <Logo>Postmates</Logo>
+        <Logo />
+        {page !== 'main' && <Search />}
+        {page !== 'main' && <MainMenu />}
         <Member>
           <LoginBtn active text="LOG IN" onClick={openLogInPopUp} />
           <LoginBtn active={false} text="SIGN UP" onClick={openSignUpPopUp} />

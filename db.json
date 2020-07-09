@@ -9,6 +9,7 @@
       "id": 1
     },
     {
+<<<<<<< HEAD
       "username": "asdf",
       "email": "dsdsffds",
       "password": "fdsf",
@@ -63,6 +64,14 @@
       "password": "sad",
       "phone": "asd",
       "address": "adsd"
+=======
+      "id": 2,
+      "username": "aaa",
+      "email": "bbb",
+      "password": "ccc",
+      "phone": "ddd",
+      "address": "eee"
+>>>>>>> 10231c9329e9a4bf0b3839901d3cee802dd5aa2c
     }
   ],
   "nearby": [
