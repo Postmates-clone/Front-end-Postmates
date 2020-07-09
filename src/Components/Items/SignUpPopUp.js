@@ -1,9 +1,13 @@
+/* eslint-disable no-const-assign */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import PopUp from '../../Style/PopUp';
 import { BasicBtn } from '../../Style/BasicBtn';
 import { createUsersAsync } from '../../Modules/UserReducer';
+import SHA256 from '../../lib/sha256';
 
 const SignUpPopUpBlock = styled.div``;
 const SignUpForm = styled.form`
@@ -65,6 +69,13 @@ const SignUpPopUp = ({ setState, openState }) => {
 
   const onCreate = (e) => {
     e.preventDefault();
+
+    for (const [key, value] of Object.entries(inputs)) {
+      if (key === 'password') {
+        inputs.password = SHA256(value);
+      }
+    }
+
     dispatch(createUsersAsync(inputs));
     setInputs(initialState);
   };
