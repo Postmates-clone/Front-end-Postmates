@@ -1,20 +1,12 @@
 {
   "users": [
     {
-      "username": "dsafdsfds",
-      "email": "dsffsd",
+      "username": "Seungeun Song",
+      "email": "abc@gmail.com",
       "password": "dsffsd",
-      "phone": "sdfsfdsdf",
-      "address": "fsdsfd",
+      "phone": "+82-10-4623-4682",
+      "address": "aaabbbccccddd",
       "id": 1
-    },
-    {
-      "id": 2,
-      "username": "aaa",
-      "email": "bbb",
-      "password": "ccc",
-      "phone": "ddd",
-      "address": "eee"
     }
   ],
   "nearby": [
