@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// 0630 seungeun
 import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';

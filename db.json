@@ -1,44 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "",
-      "email": "",
-      "password": "fff",
-      "phone": "",
-      "address": ""
-    },
-    {
-      "id": 2,
-      "username": "",
-      "email": "",
-      "password": "fff",
-      "phone": "",
-      "address": ""
-    },
-    {
-      "id": 3,
-      "username": "",
-      "email": "",
-      "password": "fffff",
-      "phone": "",
-      "address": ""
-    },
-    {
-      "id": 4,
-      "username": "",
-      "email": "",
-      "password": "99834619b3c160248b69c7f42ba868f945a0ea04cd31cf2f60dc4bc8f7d13b8a",
-      "phone": "",
-      "address": ""
-    },
-    {
-      "id": 5,
-      "username": "",
-      "email": "",
-      "password": "f29a448b780745bf2e10667f46c442b102e75e76a46a1fff969641866225ab56",
-      "phone": "",
-      "address": ""
+      "username": "Seungeun Song",
+      "email": "abc@gmail.com",
+      "password": "dsffsd",
+      "phone": "+82-10-4623-4682",
+      "address": "aaabbbccccddd",
+      "id": 1
     }
   ],
   "nearby": [
