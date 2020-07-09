@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://maps.googleapis.com',
+  baseURL: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com',
   // headers: {
   //   'Access-Control-Allow-Origin': '*',
   //   'Access-Control-Expose-Headers': 'Content-Type',
@@ -10,11 +10,11 @@ const api = axios.create({
 });
 const API_KEY = process.env.REACT_APP_GEOCODE_API_KEY;
 
+// eslint-disable-next-line import/prefer-default-export
 export const geocode = {
   getGeocode: (address) => {
-    return api.get(`/maps/api/geocode/json?address=${address}&key=${API_KEY}`, {
-      responseType: 'json',
-    });
+    console.log('get geocode', address);
+    return api.get(`/maps/api/geocode/json?address=${address}&key=${API_KEY}`);
   },
   getPlace: (input) => {
     return api.get(
@@ -22,5 +22,3 @@ export const geocode = {
     );
   },
 };
-
-export default geocode;

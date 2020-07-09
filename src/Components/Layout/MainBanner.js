@@ -1,10 +1,12 @@
 /* eslint-disable implicit-arrow-linebreak */
-import React from 'react';
+import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import styled, { css } from 'styled-components';
+import { getPlaceAsync, getGeocodeAsync } from '../../Modules/LocationReducer';
 import mapMaker from '../../Assets/mapMaker.png';
 import rightArrow from '../../Assets/rightArrow.png';
 import AddressList from '../Items/AddressList';
-import { geocode } from '../../Utils/GeocoderAPI';
+// import { getStoreAsync } from '../../Modules/ItemReducer';
 
 export const MainBannerBlock = styled.div`
   background-size: cover;
@@ -90,11 +92,14 @@ export const Specification = styled.div`
   margin-bottom: 17px;
 `;
 
-export default function MainBanner({ title, text }) {
-  const getLocation = async () => {
-    const { data } = await geocode.getPlace('new');
-    console.log(data);
+// eslint-disable-next-line no-unused-vars
+export default function MainBanner({ title, text, place, geoCode }) {
+  const inputRef = useRef();
+  const dispatch = useDispatch();
+  const getPlace = () => {
+    dispatch(getPlaceAsync(inputRef.current.value));
   };
+
   return (
     <MainBannerBlock>
       <MainBannerContainer>
@@ -104,12 +109,20 @@ export default function MainBanner({ title, text }) {
           <InputWrapper>
             <InputInner>
               <IconImage src={mapMaker} />
-              <Input placeholder="Enter your address..." />
+              <Input
+                placeholder="Enter your address..."
+                ref={inputRef}
+                onChange={getPlace}
+              />
             </InputInner>
-            <InputButton onClick={getLocation}>
+            <InputButton onClick={getPlace}>
               <IconImage src={rightArrow} />
             </InputButton>
-            <AddressList />
+            <AddressList
+              place={place}
+              getGeocodeAsync={getGeocodeAsync}
+              dispatch={dispatch}
+            />
           </InputWrapper>
         </MainTextWrapper>
       </MainBannerContainer>
