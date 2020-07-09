@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import mapMaker from '../../Assets/mapMaker.png';
 import rightArrow from '../../Assets/rightArrow.png';
 import AddressList from '../Items/AddressList';
+import { geocode } from '../../Utils/GeocoderAPI';
 
 export const MainBannerBlock = styled.div`
   background-size: cover;
@@ -90,6 +91,10 @@ export const Specification = styled.div`
 `;
 
 export default function MainBanner({ title, text }) {
+  const getLocation = async () => {
+    const { data } = await geocode.getPlace('new');
+    console.log(data);
+  };
   return (
     <MainBannerBlock>
       <MainBannerContainer>
@@ -101,7 +106,7 @@ export default function MainBanner({ title, text }) {
               <IconImage src={mapMaker} />
               <Input placeholder="Enter your address..." />
             </InputInner>
-            <InputButton>
+            <InputButton onClick={getLocation}>
               <IconImage src={rightArrow} />
             </InputButton>
             <AddressList />
