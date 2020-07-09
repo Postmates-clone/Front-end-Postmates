@@ -86,6 +86,7 @@ const SignUpPopUp = ({ setState, openState }) => {
             onChange={onChange}
           />
           <input
+            type="password"
             name="email"
             placeholder="email"
             value={email}
