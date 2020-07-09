@@ -3,17 +3,18 @@ import styled from 'styled-components';
 
 const MainMenuWrap = styled.div`
   display: flex;
-  width: 450px;
+  width: 250px;
   height: 100%;
   align-items: center;
   justify-content: center;
 `;
 const StyleMenu = styled.a`
-  margin-right: 24px;
+  margin-right: 20px;
   color: #2d3138;
   text-transform: uppercase;
   font-size: 0.75rem;
-  letter-spacing: 1.3px;
+  font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
+  letter-spacing: 1px;
   line-height: normal;
   justify-content: center;
   cursor: pointer;

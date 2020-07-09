@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 const LogoStyle = styled.h1`
   width: 13%;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   letter-spacing: -1px;
   line-height: 72px;
+  cursor: pointer;
 `;
 const Logo = () => {
   return <LogoStyle>Postmates</LogoStyle>;

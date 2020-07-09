@@ -1,12 +1,13 @@
 // 0701 seungeun
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { LoginBtn } from '../../Style/BasicBtn';
-import LoginPopUp from '../Items/LoginPopUp';
-import SignUpPopUp from '../Items/SignUpPopUp';
+// import { LoginBtn } from '../../Style/BasicBtn';
+// import LoginPopUp from '../Items/LoginPopUp';
+// import SignUpPopUp from '../Items/SignUpPopUp';
 import Search from '../Items/Search';
 import MainMenu from '../Items/MainMenu';
 import Logo from '../Items/Logo';
+import Member from '../Items/Member';
 
 const MainHeaderBlock = styled.div`
   width: 100%;
@@ -42,16 +43,16 @@ const MainHeaderWrapper = styled.div`
 //   line-height: 72px;
 // `;
 
-const Member = styled.div`
-  width: 20%;
-`;
+// const Member = styled.div`
+//   width: 20%;
+// `;
 
 const MainHeader = ({ page }) => {
-  const [openLogIn, setOpenLogIn] = useState(false);
-  const [openSignUp, setOpenSignUp] = useState(false);
+  // const [openLogIn, setOpenLogIn] = useState(false);
+  // const [openSignUp, setOpenSignUp] = useState(false);
 
-  const openLogInPopUp = () => setOpenLogIn(!openLogIn);
-  const openSignUpPopUp = () => setOpenSignUp(!openSignUp);
+  // const openLogInPopUp = () => setOpenLogIn(!openLogIn);
+  // const openSignUpPopUp = () => setOpenSignUp(!openSignUp);
 
   return (
     <MainHeaderBlock className={`mainHeader-${page}`}>
@@ -59,7 +60,8 @@ const MainHeader = ({ page }) => {
         <Logo />
         {page !== 'main' && <Search />}
         {page !== 'main' && <MainMenu />}
-        <Member>
+        <Member />
+        {/* <Member>
           <LoginBtn active text="LOG IN" onClick={openLogInPopUp} />
           <LoginBtn active={false} text="SIGN UP" onClick={openSignUpPopUp} />
           {openLogIn && (
@@ -68,7 +70,7 @@ const MainHeader = ({ page }) => {
           {openSignUp && (
             <SignUpPopUp setState={setOpenSignUp} openState={openSignUp} />
           )}
-        </Member>
+        </Member> */}
       </MainHeaderWrapper>
     </MainHeaderBlock>
   );
