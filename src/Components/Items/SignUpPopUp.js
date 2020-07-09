@@ -73,29 +73,29 @@ const SignUpPopUp = ({ setState, openState }) => {
     <SignUpPopUpBlock>
       <PopUp
         width="435px"
-        height="512px"
+        height="600px"
         setState={setState}
         openState={openState}
       >
         <SignUpForm>
           <h3>Sign Up</h3>
           <input
-            name="username"
-            placeholder="name"
-            value={username}
-            onChange={onChange}
-          />
-          <input
-            type="password"
             name="email"
-            placeholder="email"
+            placeholder="e-mail"
             value={email}
             onChange={onChange}
           />
           <input
+            type="password"
             name="password"
             placeholder="password"
             value={password}
+            onChange={onChange}
+          />
+          <input
+            name="username"
+            placeholder="name"
+            value={username}
             onChange={onChange}
           />
           <input
