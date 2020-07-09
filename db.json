@@ -9,44 +9,12 @@
       "id": 1
     },
     {
-      "username": "asdf",
-      "email": "dsdsffds",
-      "password": "fdsf",
-      "phone": "sdf",
-      "address": "greg",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "username": "asdfsdf",
-      "email": "dsfadfs",
-      "password": "dsfdsfa",
-      "phone": "dsfadfas",
-      "address": "dfsfdas"
-    },
-    {
-      "id": 4,
-      "username": "sdf",
-      "email": "sdf",
-      "password": "sdf",
-      "phone": "fsd",
-      "address": "sdfsdfsfd"
-    },
-    {
-      "id": 5,
-      "username": "sdf",
-      "email": "sdf",
-      "password": "sdf",
-      "phone": "sdf",
-      "address": "sdf"
-    },
-    {
-      "id": 6,
-      "username": "sdffsd",
-      "email": "sdffds",
-      "password": "dsfsdf",
-      "phone": "dsfsdf",
-      "address": "dsfsdf"
+      "id": 2,
+      "username": "aaa",
+      "email": "bbb",
+      "password": "ccc",
+      "phone": "ddd",
+      "address": "eee"
     }
   ],
   "nearby": [
