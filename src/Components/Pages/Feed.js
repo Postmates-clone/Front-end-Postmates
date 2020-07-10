@@ -1,5 +1,5 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-// 0630 seungeun
 import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
@@ -10,6 +10,8 @@ import CategoryList from '../Layout/CategoryList';
 const FeedMainBlock = styled.main`
   width: 100%;
   padding: 30px 36px 0 36px;
+
+  background-color: #fff;
 `;
 const FeedWrapper = styled.div`
 
@@ -29,7 +31,7 @@ const FeedWrapper = styled.div`
   `}
 `;
 const Feed = ({ nearby, orderby, favorite, getinfast }) => {
-  // console.log(nearby);
+  console.log(nearby);
   // console.log(orderby);
   // console.log(favorite);
   // console.log(getinfast);
@@ -39,12 +41,12 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
       <FeedWrapper>
         <EventSection />
 
-        <StoreCategory
+        {/* <StoreCategory
           category="getinfast"
           data={getinfast}
           title="Get in Fast"
           info="get in fast category"
-        />
+        /> */}
         <StoreCategory
           category="favorite"
           data={favorite}
@@ -62,43 +64,12 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
 
         <StoreCategory
           category="nearby"
-          data={nearby}
+          dataAll={nearby}
+          data={nearby.results}
           title="Near By"
           info="near by category"
         />
       </FeedWrapper>
-
-      {/*
-      <div>
-        <ul>
-          {favorite.data.map((store) => (
-            <li key={store.id}>
-              {store.name} - <strong>{store.food_type}</strong>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {orderby.data.map((store) => (
-            <li key={store.id}>
-              {store.name} - <strong>{store.food_type}</strong>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {getinfast.data.map((store) => (
-            <li key={store.id}>
-              {store.name} - <strong>{store.food_type}</strong>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {nearby.data.map((store) => (
-            <li key={store.id}>
-              {store.name} - <strong>{store.food_type}</strong>
-            </li>
-          ))}
-        </ul>
-      </div> */}
     </FeedMainBlock>
   );
 };

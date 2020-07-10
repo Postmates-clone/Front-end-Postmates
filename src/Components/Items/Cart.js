@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// import Tippy from '@tippyjs/react';
+// import 'tippy.js/dist/tippy.css';
 import { LoginBtn } from '../../Style/BasicBtn';
 import CartPopup from './CartPopup';
 

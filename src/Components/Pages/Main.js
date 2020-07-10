@@ -1,18 +1,19 @@
 /* eslint-disable import/no-duplicates */
 import React from 'react';
-// import styled from 'styled-components';
 import MainSection from '../Layout/MainSection';
 import MainBanner from '../Layout/MainBanner';
 import DeliverySection from '../Layout/DeliverySection';
 import Footer from '../Layout/Footer';
 import MainProducts from '../../Assets/mainProducts.png';
 
-const MainPage = () => {
+const MainPage = ({ place, geoCode }) => {
   return (
     <div>
       <MainBanner
         title="Want Burgers?"
         text="Food, drinks, groceries, and more available for delivery and pickup."
+        place={place}
+        geoCode={geoCode}
       />
       <MainSection
         title="Save big on every order. Join Unlimited."

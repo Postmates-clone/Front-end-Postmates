@@ -9,12 +9,12 @@ const ItemContainer = () => {
     storeData: state.Item.store,
     subInput: state.Main.subHeaderInput,
   }));
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setPage('item'));
-    dispatch(getStoreAsync('jack-in-the-box-los-angeles-516-n-beaudry-ave'));
+    dispatch(getStoreAsync(window.location.href.substring(27)));
+    console.log(window.location.href);
   }, [dispatch]);
 
   return <ItemPage storeData={storeData} subInput={subInput} />;

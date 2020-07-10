@@ -16,27 +16,50 @@ const SubHeaderBlock = styled.div`
   font-size: 14px;
   font-family: 'Postmates Std';
   position: sticky;
-  top: 0;
-  z-index: 9;
+  z-index: 102;
   background-color: rgb(255, 255, 255);
 
-  ${Media.desktop`
-  height: 69px;
+  &.subHeader-feed {
+    top: 72px;
+    ${Media.desktop`
+      height: 69px;
+      margin-top: 308px;
+      border-bottom: 1px solid rgba(217, 219, 224, 0.5);
+    `}
+    ${Media.tablet`
+      height: 69px;
+      margin-top: 248px;
+      padding: 0 24px;
+      border-bottom: 1px solid rgba(217, 219, 224, 0.5);
+    `}
+    ${Media.mobile`
+      height: 55px;
+      margin-top: 248px;
+      padding: 20px 24px;
+      box-sizing: content-box;
+    `}
+  }
 
-  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
-  
-  `}
-  ${Media.tablet`
-  height: 69px;
-  padding: 0 24px;
-
-  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
-  `}
-  ${Media.mobile`
-  height: 55px;
-  padding: 20px 24px;
-  box-sizing: content-box;
-  `}
+  &.subHeader-item {
+    top: 0px;
+    ${Media.desktop`
+      height: 69px;
+      margin-top: 260px;
+      border-bottom: 1px solid rgba(217, 219, 224, 0.5);
+    `}
+    ${Media.tablet`
+      height: 69px;
+      margin-top: 130px;
+      padding: 0 24px;
+      border-bottom: 1px solid rgba(217, 219, 224, 0.5);
+    `}
+    ${Media.mobile`
+      height: 55px;
+      margin-top: 130px;
+      padding: 20px 24px;
+      box-sizing: content-box;
+    `}
+  }
 
   .wrap-subheader-item {
     display: flex;
@@ -73,7 +96,7 @@ const SubHeader = ({
   dispatch,
 }) => {
   return (
-    <SubHeaderBlock>
+    <SubHeaderBlock className={`subHeader-${page}`}>
       <div className="wrap-subheader-item">
         <BreadCrumbs />
         <Bulkhead />

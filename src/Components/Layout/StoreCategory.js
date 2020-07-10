@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-// 0630 seungeun
 import React from 'react';
 import styled from 'styled-components';
 import Slider from '../../lib/Slider';
 import CategoryTitle from '../Items/CategoryTitle';
 import Stores from '../Items/Stores';
+import InfinityScroll from './InfinityScroll';
 
 const StoreCategoryBlock = styled.div`
   margin: 0 0 60px 0;
@@ -14,15 +14,12 @@ const StoreListBlock = styled.div`
   position: relative;
 `;
 
-const StoreList = styled.ul`
-  display: flex;
-`;
-
-const StoreCategory = ({ category, title, info, data }) => {
-  const deleteURL = '54.180.102.1/media/';
+const StoreCategory = ({ category, title, info, data, dataAll }) => {
+  // const deleteURL = '54.180.102.1/media/';
   // data.map((store) => console.log(store.store_img.replace(deleteURL, '')));
   // data.map((store) => console.log(store));
 
+  // if (dataAll === undefined) return null;
   return (
     <StoreCategoryBlock>
       <CategoryTitle
@@ -34,26 +31,16 @@ const StoreCategory = ({ category, title, info, data }) => {
 
       <StoreListBlock>
         {category === 'nearby' ? (
-          <StoreList>
-            {data.map((store) => (
-              <Stores
-                key={store.id}
-                id={store.id}
-                name={store.name}
-                image={store.store_img.replace(deleteURL, '')}
-                fee={store.delivery_fee}
-                time={store.estimated_prep_time}
-              />
-            ))}
-          </StoreList>
+          <InfinityScroll data={data} dataAll={dataAll} />
         ) : (
           <Slider list={data} category={category}>
             {data.map((store) => (
               <Stores
                 key={store.id}
                 id={store.id}
+                url={store.url}
                 name={store.name}
-                image={store.store_img.replace(deleteURL, '')}
+                image={store.store_img}
                 fee={store.delivery_fee}
                 time={store.estimated_prep_time}
               />

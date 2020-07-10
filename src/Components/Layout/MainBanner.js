@@ -1,8 +1,12 @@
 /* eslint-disable implicit-arrow-linebreak */
-import React from 'react';
+import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import styled, { css } from 'styled-components';
+import { getPlaceAsync, getGeocodeAsync } from '../../Modules/LocationReducer';
 import mapMaker from '../../Assets/mapMaker.png';
 import rightArrow from '../../Assets/rightArrow.png';
+import AddressList from '../Items/AddressList';
+// import { getStoreAsync } from '../../Modules/ItemReducer';
 
 export const MainBannerBlock = styled.div`
   background-size: cover;
@@ -35,6 +39,7 @@ export const InputWrapper = styled.div`
   width: 400px;
   height: 60px;
   display: flex;
+  position: relative;
 `;
 
 export const InputInner = styled.div`
@@ -59,6 +64,7 @@ export const IconImage = styled.img`
   width: 15px;
   height: 20px;
   ${({ cursor }) =>
+    // eslint-disable-next-line operator-linebreak
     cursor &&
     css`
       cursor: pointer;
@@ -85,8 +91,35 @@ export const Specification = styled.div`
   font-size: 16px;
   margin-bottom: 17px;
 `;
+// const initialState = {
+//   inputState: {
+//     name: '',
+//   },
+// };
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case 'INPUTCHANGE':
+//       return {
+//         title: state.current.value,
+//       };
+//     default:
+//       return state;
+//   }
+// }
+// const reducerAction = {
+//   getChange: {
+//     type: 'INPUTCHANGE',
+//   },
+// };
 
-export default function MainBanner({ title, text }) {
+// eslint-disable-next-line no-unused-vars
+export default function MainBanner({ title, text, place, geoCode }) {
+  const inputRef = useRef();
+  const dispatch = useDispatch();
+  const getPlace = () => {
+    dispatch(getPlaceAsync(inputRef.current.value));
+  };
+
   return (
     <MainBannerBlock>
       <MainBannerContainer>
@@ -96,11 +129,20 @@ export default function MainBanner({ title, text }) {
           <InputWrapper>
             <InputInner>
               <IconImage src={mapMaker} />
-              <Input placeholder="Enter your address..." />
+              <Input
+                placeholder="Enter your address..."
+                ref={inputRef}
+                onChange={getPlace}
+              />
             </InputInner>
-            <InputButton>
+            <InputButton onClick={getPlace}>
               <IconImage src={rightArrow} />
             </InputButton>
+            <AddressList
+              place={place}
+              getGeocodeAsync={getGeocodeAsync}
+              dispatch={dispatch}
+            />
           </InputWrapper>
         </MainTextWrapper>
       </MainBannerContainer>

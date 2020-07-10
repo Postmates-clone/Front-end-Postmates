@@ -1,32 +1,56 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: '/api/v1/feed',
-});
-
+const api = axios.create();
+// getNearBy: () => {
+//   return api.get('/nearby/', {
+//     responseType: 'json',
+//     headers: {
+//       'access-control-allow-origin': '*',
+//     },
+//   });
+// },
 // eslint-disable-next-line import/prefer-default-export
 export const DevApi = {
   getNearBy: () => {
-    return api.get('/nearby/?city=San Francisco&page=1', {
+    return api.get('/api/v1/feed/nearby?lat=40.6413151&lng=-73.7803278', {
       responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
+      },
     });
   },
   getOrderBy: () => {
-    return api.get('?category=delivery&city=San Francisco', {
+    return api.get('/api/v1/feed?category=delivery', {
       responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
+      },
     });
   },
   getFavorite: () => {
-    return api.get('?category=favorite&city=San Francisco', {
+    return api.get('/api/v1/feed?category=favorite', {
       responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
+      },
     });
   },
-  getInFast: () => {
-    return api.get('?category=time&city=San Francisco', {
+  // getInFast: () => {
+  //   return api.get('/api/v1/feed?category=item', {
+  //     responseType: 'json',
+  //     headers: {
+  //       'access-control-allow-origin': '*',
+  //     },
+  //   });
+  // },
+  getItem: (url) => {
+    return api.get(`/api/v1/store/${url}`, {
       responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
+      },
     });
   },
-  getItem: (url) => api.get(`/detail?id=${url}`, { responseType: 'json' }),
 };
 
 // console.log(DevApi.getNearBy());
