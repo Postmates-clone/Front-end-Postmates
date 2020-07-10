@@ -34,7 +34,7 @@ const initialState = {
     is_pickup: false,
     lat: 0,
     lng: 0,
-    menu_category: [],
+    all_menus: [],
     name: '',
     open_hour: {},
     store_img: '',
@@ -64,9 +64,10 @@ export default function ItemReducer(state = initialState, action) {
         },
       };
     case GET_STORE_SUCCESS:
+      console.log(action.data);
       return {
         ...state,
-        store: { ...action.data.results[0] },
+        store: { ...action.data },
         status: {
           loading: false,
           success: true,
