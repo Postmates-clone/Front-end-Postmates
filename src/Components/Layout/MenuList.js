@@ -26,12 +26,12 @@ const MenuList = ({ storeData, subInput }) => {
     <StoreBlock>
       {/* <FavoritesCategory /> */}
       <ul>
-        {storeData.menu_category.map((item) => (
+        {storeData.all_menus.map((item) => (
           <MenuCategory
             key={`itemKey-${item.id}`}
             itemKey={item.id}
             category={item.name}
-            list={item.menu}
+            list={item.menus}
             setCategoryRef={setCategoryRef}
             dispatch={dispatch}
             subInput={subInput}
