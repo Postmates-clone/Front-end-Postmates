@@ -74,9 +74,5 @@
       "git add"
     ]
   },
-  "proxy": "http://54.180.102.1",
-  "main": "index.js",
-  "repository": "https://github.com/Postmates-clone/Front-end-Postmates.git",
-  "author": "pkt0831 <pkt0831@naver.com>",
-  "license": "MIT"
+  "proxy": "http://13.209.22.4:8001"
 }

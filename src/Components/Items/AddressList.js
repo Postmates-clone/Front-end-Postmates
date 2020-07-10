@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+// import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 // import Media from '../../Style/Media';
 import { locationIconLarge } from '../../Style/IconStyles';
@@ -28,24 +28,25 @@ const AddressListItem = styled.li`
   }
 `;
 
-const AddressList = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [list, setList] = useState([
-    { id: 1, address: 'San Francisco', description: '캘리포니아 미국' },
-    { id: 2, address: 'New York', description: '뉴욕 미국' },
-    { id: 3, address: 'Los Angeles', description: '캘리포니아 미국' },
-  ]);
+const AddressList = ({ place, getGeocodeAsync, dispatch }) => {
+  const getGeocode = (address) => {
+    dispatch(getGeocodeAsync(address));
+  };
   return (
     <AddressListBlock>
-      {list.map((item) => (
-        <Link to="/feed">
-          <AddressListItem key={`add-${item.id}`}>
-            {locationIconLarge}
-            <span>
-              {item.address}, {item.description}
-            </span>
-          </AddressListItem>
-        </Link>
+      {place.map((item) => (
+        // <Link to="/feed">
+        <AddressListItem
+          key={item.id}
+          onClick={() => getGeocode(item.structured_formatting.main_text)}
+        >
+          {locationIconLarge}
+          <span>
+            {item.structured_formatting.main_text},{' '}
+            {item.structured_formatting.secondary_text}
+          </span>
+        </AddressListItem>
+        // </Link>
       ))}
     </AddressListBlock>
   );
