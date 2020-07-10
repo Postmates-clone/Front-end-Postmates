@@ -9,6 +9,9 @@ export const DevApi = {
   getNearBy: () => {
     return api.get('/nearby/', {
       responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
+      },
     });
   },
   getOrderBy: () => {
