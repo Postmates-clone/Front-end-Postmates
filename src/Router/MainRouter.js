@@ -6,6 +6,7 @@ import ItemContainer from '../Containers/ItemContainer';
 import DevComponent from '../Dev/DevComponent';
 import DevUserComponent from '../Dev/DevUserComponent';
 import DesignSystem from '../Style/DesignSystem';
+import UserContainer from '../Containers/UserContainer';
 
 const MainRouter = () => {
   return (
@@ -13,6 +14,7 @@ const MainRouter = () => {
       <Route exact path="/" component={MainContainer} />
       <Route path="/feed" component={FeedContainer} />
       <Route path="/item" component={ItemContainer} />
+      <Route path="/account" component={UserContainer} />
       <Route path="/dev" component={DevComponent} />
       <Route path="/devuser" component={DevUserComponent} />
       <Route path="/design" component={DesignSystem} />

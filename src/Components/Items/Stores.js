@@ -48,19 +48,20 @@ const StoreImage = styled.div`
   width: 100%;
   padding-top: 65%;
   margin-bottom: 15px;
+  background-color: #fff;
 
-  background-image: url(${(props) => props.image || null});
+  /* background-image: url(${(props) => props.image || null});
   background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 `;
 
-const Stores = ({ id, name, image, fee, time }) => {
+const Stores = ({ id, name, image, fee, time, url }) => {
   // console.log(image);
 
   return (
     <Store key={id}>
-      <Link to={`/item/${id}`}>
+      <Link to={`/item/${url}`}>
         <StoreImage image={image} />
         <h3>
           {name}

@@ -1,13 +1,18 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'http://localhost:5000/',
-});
-
+const api = axios.create();
+// getNearBy: () => {
+//   return api.get('/nearby/', {
+//     responseType: 'json',
+//     headers: {
+//       'access-control-allow-origin': '*',
+//     },
+//   });
+// },
 // eslint-disable-next-line import/prefer-default-export
 export const DevApi = {
   getNearBy: () => {
-    return api.get('/nearby/', {
+    return api.get('/api/v1/feed/nearby?lat=40.6413151&lng=-73.7803278', {
       responseType: 'json',
       headers: {
         'access-control-allow-origin': '*',
@@ -15,21 +20,37 @@ export const DevApi = {
     });
   },
   getOrderBy: () => {
-    return api.get('/delivery/', {
+    return api.get('/api/v1/feed?category=delivery', {
       responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
+      },
     });
   },
   getFavorite: () => {
-    return api.get('/favorite/', {
+    return api.get('/api/v1/feed?category=favorite', {
       responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
+      },
     });
   },
-  getInFast: () => {
-    return api.get('/category/', {
+  // getInFast: () => {
+  //   return api.get('/api/v1/feed?category=item', {
+  //     responseType: 'json',
+  //     headers: {
+  //       'access-control-allow-origin': '*',
+  //     },
+  //   });
+  // },
+  getItem: (url) => {
+    return api.get(`/api/v1/store/${url}`, {
       responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
+      },
     });
   },
-  getItem: (id) => api.get(`/detail?id=${id}`, { responseType: 'json' }),
 };
 
 // console.log(DevApi.getNearBy());
