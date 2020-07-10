@@ -82,7 +82,7 @@ const UserImage = styled.div`
   border: 1px dashed rgb(217, 219, 224);
 
   background-color: rgb(236, 237, 239);
-  background-image: url(${(props) => props.imgurl || null}});
+  background-image: url(${(props) => props.imgurl || null});
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -200,7 +200,6 @@ const User = ({ user }) => {
   const uploadPhoto = (file) => {
     const reader = new FileReader();
     reader.addEventListener('load', () => setImgurl(reader.result), false);
-
     if (file) {
       reader.readAsDataURL(file);
     }
