@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -25,7 +26,7 @@ const FeedContainer = () => {
     dispatch(setPage('feed'));
     dispatch(getOrderBy());
     dispatch(getFavorite());
-    dispatch(getInFast());
+    // dispatch(getInFast());
     dispatch(getNearBy('2'));
   }, [dispatch]);
 
@@ -38,10 +39,10 @@ const FeedContainer = () => {
   if (favorite.loading) return <div>로딩중...</div>;
   if (favorite.error) return <div>에러 발생!</div>;
 
-  if (getinfast.loading) return <div>로딩중...</div>;
-  if (getinfast.error) return <div>에러 발생!</div>;
+  // if (getinfast.loading) return <div>로딩중...</div>;
+  // if (getinfast.error) return <div>에러 발생!</div>;
 
-  if (!nearby.data && !orderby.data && !favorite.data && !getinfast.data) {
+  if (!nearby.data && !orderby.data && !favorite.data) {
     return null;
   }
   // console.log(nearby.data);
@@ -51,7 +52,7 @@ const FeedContainer = () => {
       nearby={nearby.data}
       orderby={orderby.data.results}
       favorite={favorite.data.results}
-      getinfast={getinfast.data.results}
+      // getinfast={getinfast.data.results}
     />
   );
 };
