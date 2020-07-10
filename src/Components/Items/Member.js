@@ -6,11 +6,13 @@ import SignUpPopUp from './SignUpPopUp';
 
 const MemberWrap = styled.div`
   display: flex;
-  width: 18%;
+  min-width: 200px;
   height: 100%;
   align-items: center;
   justify-content: center;
-  margin-left: 100px;
+  button {
+    padding: 0 15px;
+  }
 `;
 const Member = () => {
   const [openLogIn, setOpenLogIn] = useState(false);
