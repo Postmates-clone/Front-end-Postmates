@@ -36,9 +36,9 @@ const InfinityScroll = ({ data, dataAll }) => {
   const dispatch = useDispatch();
   // console.log(data);
 
-  const deleteURL = '54.180.102.1/media/';
-  const deleteURL2 =
-    'http://54.180.102.1/api/v1/feed/nearby/?city=San+Francisco&page=';
+  // const deleteURL = '54.180.102.1/media/';
+  // const deleteURL2 =
+  //   'http://54.180.102.1/api/v1/feed/nearby/?city=San+Francisco&page=';
 
   const handleScroll = () => {
     const { innerHeight } = window;
@@ -56,7 +56,7 @@ const InfinityScroll = ({ data, dataAll }) => {
       // if (dataAll === undefined) return null;
       // console.log(dataAll.next.replace(deleteURL2, ''));
       // console.log(dataAll);
-      const page = dataAll.next.replace(deleteURL2, '');
+      const page = dataAll.next;
       dispatch(getNearBy(page));
     }
   };
@@ -69,7 +69,7 @@ const InfinityScroll = ({ data, dataAll }) => {
             key={store.id}
             id={store.id}
             name={store.name}
-            image={store.store_img.replace(deleteURL, '')}
+            image={store.store_img}
             fee={store.delivery_fee}
             time={store.estimated_prep_time}
           />

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
@@ -30,7 +31,7 @@ const FeedWrapper = styled.div`
   `}
 `;
 const Feed = ({ nearby, orderby, favorite, getinfast }) => {
-  // console.log(nearby);
+  console.log(nearby);
   // console.log(orderby);
   // console.log(favorite);
   // console.log(getinfast);
@@ -40,12 +41,12 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
       <FeedWrapper>
         <EventSection />
 
-        <StoreCategory
+        {/* <StoreCategory
           category="getinfast"
           data={getinfast}
           title="Get in Fast"
           info="get in fast category"
-        />
+        /> */}
         <StoreCategory
           category="favorite"
           data={favorite}
