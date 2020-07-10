@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { searchIconDeep } from '../../Style/IconStyles';
-import Media from '../../Style/Media';
 
 const SearchWrap = styled.div`
   display: flex;
@@ -10,9 +9,6 @@ const SearchWrap = styled.div`
   align-items: center;
   margin-right: 100px;
   margin-left: 35px;
-  ${Media.tablet`
-      display:none;
-    `}
 `;
 const SearchInput = styled.input`
   max-width: 380px;

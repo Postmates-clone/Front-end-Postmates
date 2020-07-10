@@ -6,10 +6,10 @@ import SignUpPopUp from './SignUpPopUp';
 
 const MemberWrap = styled.div`
   display: flex;
-  min-width: 200px;
+  min-width: 185px;
   height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   button {
     padding: 0 15px;
   }
@@ -23,7 +23,7 @@ const Member = () => {
   return (
     <MemberWrap>
       <LoginBtn active text="LOG IN" onClick={openLogInPopUp} />
-      <LoginBtn active={false} text="SIGN UP" onClick={openSignUpPopUp} />
+      <LoginBtn text="SIGN UP" onClick={openSignUpPopUp} />
       {openLogIn && (
         <LoginPopUp setState={setOpenLogIn} openState={openLogIn} />
       )}
