@@ -1,9 +1,13 @@
+/* eslint-disable no-const-assign */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import PopUp from '../../Style/PopUp';
 import { BasicBtn } from '../../Style/BasicBtn';
 import { createUsersAsync } from '../../Modules/UserReducer';
+import SHA256 from '../../lib/sha256';
 
 const SignUpPopUpBlock = styled.div``;
 const SignUpForm = styled.form`
@@ -65,6 +69,13 @@ const SignUpPopUp = ({ setState, openState }) => {
 
   const onCreate = (e) => {
     e.preventDefault();
+
+    for (const [key, value] of Object.entries(inputs)) {
+      if (key === 'password') {
+        inputs.password = SHA256(value);
+      }
+    }
+
     dispatch(createUsersAsync(inputs));
     setInputs(initialState);
   };
@@ -73,29 +84,29 @@ const SignUpPopUp = ({ setState, openState }) => {
     <SignUpPopUpBlock>
       <PopUp
         width="435px"
-        height="512px"
+        height="600px"
         setState={setState}
         openState={openState}
       >
         <SignUpForm>
           <h3>Sign Up</h3>
           <input
-            name="username"
-            placeholder="name"
-            value={username}
-            onChange={onChange}
-          />
-          <input
-            type="password"
             name="email"
-            placeholder="email"
+            placeholder="e-mail"
             value={email}
             onChange={onChange}
           />
           <input
+            type="password"
             name="password"
             placeholder="password"
             value={password}
+            onChange={onChange}
+          />
+          <input
+            name="username"
+            placeholder="name"
+            value={username}
             onChange={onChange}
           />
           <input
