@@ -57,7 +57,7 @@ const StoreImage = styled.div`
 `;
 
 const Stores = ({ id, name, image, fee, time, url }) => {
-  // console.log(image);
+  console.log(id, name, image, fee, time, url);
 
   return (
     <Store key={id}>
