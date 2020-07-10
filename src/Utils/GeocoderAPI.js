@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com',
+  // https://cors-anywhere.herokuapp.com/
   // headers: {
   //   'Access-Control-Allow-Origin': '*',
   //   'Access-Control-Expose-Headers': 'Content-Type',

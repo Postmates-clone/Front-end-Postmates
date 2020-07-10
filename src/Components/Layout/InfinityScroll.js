@@ -72,6 +72,7 @@ const InfinityScroll = ({ data, dataAll }) => {
             image={store.store_img}
             fee={store.delivery_fee}
             time={store.estimated_prep_time}
+            url={store.url}
           />
         ))}
       </StoreList>
