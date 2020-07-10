@@ -15,7 +15,7 @@ const StoreListBlock = styled.div`
 `;
 
 const StoreCategory = ({ category, title, info, data, dataAll }) => {
-  const deleteURL = '54.180.102.1/media/';
+  // const deleteURL = '54.180.102.1/media/';
   // data.map((store) => console.log(store.store_img.replace(deleteURL, '')));
   // data.map((store) => console.log(store));
 
@@ -38,8 +38,9 @@ const StoreCategory = ({ category, title, info, data, dataAll }) => {
               <Stores
                 key={store.id}
                 id={store.id}
+                url={store.url}
                 name={store.name}
-                image={store.store_img.replace(deleteURL, '')}
+                image={store.store_img}
                 fee={store.delivery_fee}
                 time={store.estimated_prep_time}
               />
