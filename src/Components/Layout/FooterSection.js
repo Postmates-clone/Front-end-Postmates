@@ -3,37 +3,47 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from '../Items/Logo';
 
-const FooterTopWraper = styled.div`
+export const FooterTopWraper = styled.div`
   display: grid;
   height: 483px;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 24px;
   padding-bottom: 48px;
-  margin-bottom: 45px;
+  margin-bottom: 65px;
   border-bottom: 1px solid rgba(151, 151, 151, 0.21);
   & ul {
     margin-bottom: 26px;
   }
 `;
-const FooterLogoSection = styled.div`
+export const FooterLogoSection = styled.div`
   grid-column: span 2;
 `;
-const FooterSectionWrap = styled.div`
+export const FooterSectionWrap = styled.div`
   grid-column: span 3;
 `;
-const FooterLastSection = styled.div`
+export const FooterLastSection = styled.div`
   grid-column: span 1;
   width: 74px;
 `;
-const FooterBottomWrap = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
-  font-size: 16px;
-  letter-spacing: 0.14px;
-  font-weight: 400;
-  line-height: normal;
-  text-rendering: optimizelegibility;
+
+export const FooterBottomWrap = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 24px;
+  height: 234px;
+  margin: 0 0 45px 0;
+  padding: 0 0 18px 0;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.21);
+`;
+export const BottomSecionWrap = styled.div`
+  grid-column: span 1;
+  & h3 {
+    margin-top: -26px;
+  }
+`;
+
+export const FooterLink = styled.div`
+  display: flex;
 `;
 
 export default function FooterSection() {
@@ -158,23 +168,27 @@ export default function FooterSection() {
         </FooterLastSection>
       </FooterTopWraper>
       <FooterBottomWrap>
-        <h3>OUR TOP CITIES</h3>
+        <BottomSecionWrap>
+          <h3>OUR TOP CITIES</h3>
+          <ul>
+            <li>
+              <a>San Francisco</a>
+            </li>
+            <li>
+              <a>Miami</a>
+            </li>
+            <li>
+              <a>San Diego</a>
+            </li>
+            <li>
+              <a>East Bay</a>
+            </li>
+            <li>
+              <a>Long Beach</a>
+            </li>
+          </ul>
+        </BottomSecionWrap>
         <ul>
-          <li>
-            <a>San Francisco</a>
-          </li>
-          <li>
-            <a>Miami</a>
-          </li>
-          <li>
-            <a>San Diego</a>
-          </li>
-          <li>
-            <a>East Bay</a>
-          </li>
-          <li>
-            <a>Long Beach</a>
-          </li>
           <li>
             <a>Los Angeles</a>
           </li>
@@ -190,6 +204,9 @@ export default function FooterSection() {
           <li>
             <a>Nashville</a>
           </li>
+        </ul>
+
+        <ul>
           <li>
             <a>New York City</a>
           </li>
@@ -205,6 +222,8 @@ export default function FooterSection() {
           <li>
             <a>Denver</a>
           </li>
+        </ul>
+        <ul>
           <li>
             <a>Chicago</a>
           </li>
@@ -222,6 +241,21 @@ export default function FooterSection() {
           </li>
         </ul>
       </FooterBottomWrap>
+      <h4>
+        Postmates is the largest, most reliable on-demand delivery and pickup
+        platform.
+      </h4>
+      <p>
+        Able to deliver anything from anywhere, Postmates is the food delivery,
+        grocery delivery, whatever-you-can-think-of delivery app to bring what
+        you crave right to your door.
+        <span>Read More</span>
+      </p>
+      <FooterLink>
+        <span>©2020 POSTMATES INC</span>
+        <span>TERMS</span>
+        <span>PRIVACY</span>
+      </FooterLink>
     </div>
   );
 }
