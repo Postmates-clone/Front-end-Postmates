@@ -8,6 +8,7 @@ import PopUp from '../../Style/PopUp';
 import { BasicBtn } from '../../Style/BasicBtn';
 import { createUsersAsync } from '../../Modules/UserReducer';
 import SHA256 from '../../lib/sha256';
+import SignUpInput from './SignUpInput';
 
 const SignUpPopUpBlock = styled.div``;
 const SignUpForm = styled.form`
@@ -53,6 +54,7 @@ const SignUpPopUp = ({ setState, openState }) => {
     phone: '',
     address: '',
   };
+
   const [inputs, setInputs] = useState(initialState);
 
   const { username, email, password, phone, address } = inputs;
@@ -76,6 +78,7 @@ const SignUpPopUp = ({ setState, openState }) => {
       }
     }
 
+    // console.log(inputs);
     dispatch(createUsersAsync(inputs));
     setInputs(initialState);
   };
@@ -90,32 +93,32 @@ const SignUpPopUp = ({ setState, openState }) => {
       >
         <SignUpForm>
           <h3>Sign Up</h3>
-          <input
+          <SignUpInput
             name="email"
             placeholder="e-mail"
             value={email}
             onChange={onChange}
           />
-          <input
+          <SignUpInput
             type="password"
             name="password"
             placeholder="password"
             value={password}
             onChange={onChange}
           />
-          <input
+          <SignUpInput
             name="username"
             placeholder="name"
             value={username}
             onChange={onChange}
           />
-          <input
+          <SignUpInput
             name="phone"
             placeholder="phone"
             value={phone}
             onChange={onChange}
           />
-          <input
+          <SignUpInput
             name="address"
             placeholder="address"
             value={address}
