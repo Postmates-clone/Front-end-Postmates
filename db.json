@@ -1,12 +1,22 @@
 {
-  "users": [{
-    "username": "Seungeun Song",
-    "email": "abc@gmail.com",
-    "password": "dsffsd",
-    "phone": "+82-10-4623-4682",
-    "address": "aaabbbccccddd",
-    "id": 1
-  }],
+  "users": [
+    {
+      "username": "Seungeun Song",
+      "email": "abc@gmail.com",
+      "password": "dsffsd",
+      "phone": "+82-10-4623-4682",
+      "address": "aaabbbccccddd",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "username": "",
+      "email": "",
+      "password": "e46240714b5db3a23eee60479a623efba4d633d27fe4f03c904b9e219a7fbe60",
+      "phone": "",
+      "address": ""
+    }
+  ],
   "nearby": [{
       "id": 1,
       "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
