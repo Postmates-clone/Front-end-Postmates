@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
+/* eslint-disable no-unneeded-ternary */
+/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
 import PopUp from '../../Style/PopUp';
 import { BasicBtn } from '../../Style/BasicBtn';
+import api from '../../Utils/LoginApi';
 
 const LoginPopUpBlock = styled.div``;
 const LoginForm = styled.form`
@@ -38,30 +44,31 @@ const LoginForm = styled.form`
   }
 `;
 
+const Input = ({ label, register, validation, ...rest }) => (
+  <>
+    <input name={label} ref={register(validation)} {...rest} />
+  </>
+);
+
 const LoginPopUp = ({ setState, openState }) => {
-  const initialState = {
-    email: '',
-    password: '',
-  };
-  const [inputs, setInputs] = useState(initialState);
+  const { register, handleSubmit, errors, reset, watch } = useForm();
 
-  const { email, password } = inputs;
-  // const dispatch = useDispatch();
+  const onSubmit = async (_data) => {
+    console.log(_data);
 
-  const onChange = ({ target }) => {
-    const { name, value } = target;
-
-    setInputs({
-      ...inputs,
-      [name]: value,
-    });
+    try {
+      const { data } = await api.post('/api/v1/members/login', {
+        id: _data.email,
+        password: _data.password,
+      });
+      // /api/v1/members/login/
+    } finally {
+      reset();
+    }
   };
 
-  const onCreate = (e) => {
-    e.preventDefault();
-    // dispatch(createUsersAsync(inputs));
-    setInputs(initialState);
-  };
+  const watchEmail = watch('email');
+  const watchPassword = watch('password');
 
   return (
     <LoginPopUpBlock>
@@ -71,27 +78,28 @@ const LoginPopUp = ({ setState, openState }) => {
         setState={setState}
         openState={openState}
       >
-        <LoginForm>
+        <LoginForm onSubmit={handleSubmit(onSubmit)}>
           <h3>Log in</h3>
           <em>Enter your</em>
-          <input
-            name="email"
+          <Input
+            label="email"
             placeholder="email"
-            value={email}
-            onChange={onChange}
+            register={register}
+            validation={{ required: true, minLength: 5 }}
           />
-          <input
-            name="password"
+          {errors.email && <p>this is required.</p>}
+          <Input
+            label="password"
             placeholder="password"
-            value={password}
-            onChange={onChange}
+            register={register}
+            validation={{ required: true }}
           />
+          {errors.password && <p>this is required.</p>}
           <BasicBtn
-            active={false}
-            text="SIGN UP"
+            active={watchEmail && watchPassword ? true : false}
+            text="SIGN IN"
             width="363px"
             twidth="363px"
-            onClick={onCreate}
           />
         </LoginForm>
       </PopUp>
