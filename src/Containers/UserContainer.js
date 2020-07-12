@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUsersAsync, patchUsersAsync } from '../Modules/UserReducer';
 import User from '../Components/Pages/User';
+import OrderHistory from '../Components/Pages/OrderHistory';
 
 const UserContainer = () => {
   const store = useSelector(({ User }) => User);
@@ -31,7 +32,12 @@ const UserContainer = () => {
 
   // console.log(user);
 
-  return <User user={user} />;
+  return (
+    <>
+      {/* <User user={user} /> */}
+      <OrderHistory />
+    </>
+  );
 };
 
 export default UserContainer;
