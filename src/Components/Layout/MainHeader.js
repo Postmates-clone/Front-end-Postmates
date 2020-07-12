@@ -10,6 +10,7 @@ const MainHeaderBlock = styled.div`
   width: 100%;
   height: 72px;
   background: #ffdf18;
+  line-height: 72px;
 
   &.mainHeader-feed {
     position: sticky;
