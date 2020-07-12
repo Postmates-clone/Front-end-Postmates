@@ -91,6 +91,26 @@ export const Specification = styled.div`
   font-size: 16px;
   margin-bottom: 17px;
 `;
+// const initialState = {
+//   inputState: {
+//     name: '',
+//   },
+// };
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case 'INPUTCHANGE':
+//       return {
+//         title: state.current.value,
+//       };
+//     default:
+//       return state;
+//   }
+// }
+// const reducerAction = {
+//   getChange: {
+//     type: 'INPUTCHANGE',
+//   },
+// };
 
 // eslint-disable-next-line no-unused-vars
 export default function MainBanner({ title, text, place, geoCode }) {
