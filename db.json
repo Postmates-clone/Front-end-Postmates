@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "users": [
     {
       "username": "Seungeun Song",
@@ -8,89 +7,17 @@
       "phone": "+82-10-4623-4682",
       "address": "aaabbbccccddd",
       "id": 1
-<<<<<<< HEAD
     },
     {
-<<<<<<< HEAD
-      "username": "asdf",
-      "email": "dsdsffds",
-      "password": "fdsf",
-      "phone": "sdf",
-      "address": "greg",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "username": "asdfsdf",
-      "email": "dsfadfs",
-      "password": "dsfdsfa",
-      "phone": "dsfadfas",
-      "address": "dfsfdas"
-    },
-    {
-      "id": 4,
-      "username": "sdf",
-      "email": "sdf",
-      "password": "sdf",
-      "phone": "fsd",
-      "address": "sdfsdfsfd"
-    },
-    {
-      "id": 5,
-      "username": "sdf",
-      "email": "sdf",
-      "password": "sdf",
-      "phone": "sdf",
-      "address": "sdf"
-    },
-    {
-      "id": 6,
-      "username": "sdffsd",
-      "email": "sdffds",
-      "password": "dsfsdf",
-      "phone": "dsfsdf",
-      "address": "dsfsdf"
-    },
-    {
-      "id": 7,
-      "username": "dsads",
-      "email": "asdsadsa",
-      "password": "sadsad",
-      "phone": "asdsad",
-      "address": "asdsadsa"
-    },
-    {
-      "id": 8,
-      "username": "asdas",
-      "email": "dasd",
-      "password": "sad",
-      "phone": "asd",
-      "address": "adsd"
-=======
       "id": 2,
-      "username": "aaa",
-      "email": "bbb",
-      "password": "ccc",
-      "phone": "ddd",
-      "address": "eee"
->>>>>>> 10231c9329e9a4bf0b3839901d3cee802dd5aa2c
-=======
->>>>>>> aeea0a74c283bda0ec2ebb0134887cfdbac2b2c0
+      "username": "",
+      "email": "",
+      "password": "e46240714b5db3a23eee60479a623efba4d633d27fe4f03c904b9e219a7fbe60",
+      "phone": "",
+      "address": ""
     }
   ],
-  "nearby": [
-    {
-=======
-  "users": [{
-    "username": "Seungeun Song",
-    "email": "abc@gmail.com",
-    "password": "dsffsd",
-    "phone": "+82-10-4623-4682",
-    "address": "aaabbbccccddd",
-    "id": 1
-  }],
   "nearby": [{
->>>>>>> 54547788eb06a51b1d389b8a8e54602c6667d725
       "id": 1,
       "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
       "store_img": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fc7443191-e2a8-4ba0-8aa4-b55040a69c9b%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=webp&v=4",
