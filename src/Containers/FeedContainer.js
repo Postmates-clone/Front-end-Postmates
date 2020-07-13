@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Feed from '../Components/Pages/Feed';
+
 // eslint-disable-next-line no-unused-vars
 import {
   getNearBy,

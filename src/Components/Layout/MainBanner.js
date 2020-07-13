@@ -120,6 +120,10 @@ export default function MainBanner({ title, text, place, geoCode }) {
     dispatch(getPlaceAsync(inputRef.current.value));
   };
 
+  const getGeocode = (address) => {
+    dispatch(getGeocodeAsync(address));
+  };
+
   return (
     <MainBannerBlock>
       <MainBannerContainer>
@@ -135,7 +139,7 @@ export default function MainBanner({ title, text, place, geoCode }) {
                 onChange={getPlace}
               />
             </InputInner>
-            <InputButton onClick={getPlace}>
+            <InputButton onClick={() => getGeocode()}>
               <IconImage src={rightArrow} />
             </InputButton>
             <AddressList

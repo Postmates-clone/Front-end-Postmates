@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com',
+  baseURL: 'https://maps.googleapis.com',
   // https://cors-anywhere.herokuapp.com/
   // headers: {
   //   'Access-Control-Allow-Origin': '*',
@@ -20,6 +20,11 @@ export const geocode = {
   getPlace: (input) => {
     return api.get(
       `/maps/api/place/autocomplete/json?input=${input}&key=${API_KEY}`,
+      {
+        headers: {
+          'access-control-allow-origin': '*',
+        },
+      },
     );
   },
 };

@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { put, takeLatest } from 'redux-saga/effects';
 import { geocode } from '../Utils/GeocoderAPI';
 
 // place 정보 취득 action
@@ -22,6 +23,17 @@ export const getPlaceAsync = (input) => async (dispatch, state) => {
   }
 };
 
+// export const getPlace = (input) => ({ type: GET_PLACE, input });
+
+// const getPlaceAsync = (input) => async (dispatch) => {
+//   const { data } = await geocode.getPlace(input);
+//   try {
+//     dispatch({ type: GET_PLACE_SUCCESS, data });
+//   } catch (e) {
+//     dispatch({ type: GET_PLACE_ERROR, error: e });
+//   }
+// };
+
 // place 정보 취득 action 생성 함수
 export const getGeocodeAsync = (address) => async (dispatch, state) => {
   dispatch({ type: GET_GEOCODE });
@@ -32,6 +44,14 @@ export const getGeocodeAsync = (address) => async (dispatch, state) => {
     dispatch({ type: GET_GEOCODE_ERROR, error: e });
   }
 };
+
+// function* Place() {
+//   yield put(getPlaceAsync());
+// }
+
+// export function* PlaceSaga() {
+//   yield takeLatest(GET_PLACE, Place);
+// }
 
 // 초기 상태
 const initialState = {
