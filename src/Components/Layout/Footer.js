@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FooterSection from './FooterSection';
+import Media from '../../Style/Media';
 
 export const FooterBlock = styled.div`
   width: 100%;
@@ -10,7 +11,6 @@ export const FooterBlock = styled.div`
   background-color: #000;
   & h1 {
     color: #fff;
-    /* grid-column: span2; */
   }
   & h2,
   h3 {
@@ -59,6 +59,15 @@ export const FooterBlock = styled.div`
     font-weight: 500;
     margin: 0 15px 0 0;
   }
+  /* ${Media.desktop`
+    min-width:1024px;
+    `}
+    ${Media.tablet`
+    min-width:768px;
+    `}
+    ${Media.mobile`
+    max-width:767px;
+    `} */
 `;
 export const FooterWrap = styled.div`
   max-width: 1024px;

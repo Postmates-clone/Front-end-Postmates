@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from '../Items/Logo';
+import Media from '../../Style/Media';
 
 export const FooterTopWraper = styled.div`
   display: grid;
@@ -14,6 +15,11 @@ export const FooterTopWraper = styled.div`
   & ul {
     margin-bottom: 26px;
   }
+  /* & ${Media.tablet`
+  grid-template-columns: repeat(2,1fr);
+  padding-bottom: 48px;
+  margin-bottom: 45px;
+    `} */
 `;
 export const FooterLogoSection = styled.div`
   grid-column: span 2;
@@ -44,6 +50,7 @@ export const BottomSecionWrap = styled.div`
 
 export const FooterLink = styled.div`
   display: flex;
+  padding: 15px 0 0 0;
 `;
 
 export default function FooterSection() {
