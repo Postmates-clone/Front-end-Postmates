@@ -18,7 +18,7 @@ const MainHeaderBlock = styled.div`
     background: #fed928;
   }
   &.mainHeader-item {
-    position: sticky;
+    /* position: sticky; */
     background: #fff;
   }
   top: 0px;

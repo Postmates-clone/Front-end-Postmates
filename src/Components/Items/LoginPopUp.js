@@ -1,7 +1,11 @@
+/* eslint-disable */
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
 import PopUp from '../../Style/PopUp';
 import { BasicBtn } from '../../Style/BasicBtn';
+import api from '../../Utils/LoginApi';
 
 const LoginPopUpBlock = styled.div``;
 const LoginForm = styled.form`
@@ -38,63 +42,81 @@ const LoginForm = styled.form`
   }
 `;
 
+const Alert = styled.div`
+  color: rgb(0, 204, 153);
+`;
+
+const Input = ({ label, register, validation, pattern, ...rest }) => (
+  <>
+    <input name={label} ref={register(validation, pattern)} {...rest} />
+  </>
+);
+
 const LoginPopUp = ({ setState, openState }) => {
-  const initialState = {
-    email: '',
-    password: '',
+  const [isLoggedIn, setLoggedIn] = useState(true);
+  const { register, handleSubmit, errors, reset, watch } = useForm();
+
+  const onSubmit = async (_data) => {
+    console.log(_data);
+
+    try {
+      const { data } = await api.post('/api/v1/members/login', {
+        id: _data.email,
+        password: _data.password,
+      });
+      // /api/v1/members/login/
+    } finally {
+      reset();
+    }
   };
-  const [inputs, setInputs] = useState(initialState);
 
-  const { email, password } = inputs;
-  // const dispatch = useDispatch();
-
-  const onChange = ({ target }) => {
-    const { name, value } = target;
-
-    setInputs({
-      ...inputs,
-      [name]: value,
-    });
-  };
-
-  const onCreate = (e) => {
-    e.preventDefault();
-    // dispatch(createUsersAsync(inputs));
-    setInputs(initialState);
-  };
+  const watchEmail = watch('email');
+  const watchPassword = watch('password');
 
   return (
     <LoginPopUpBlock>
-      <PopUp
-        width="435px"
-        height="512px"
-        setState={setState}
-        openState={openState}
-      >
-        <LoginForm>
-          <h3>Log in</h3>
-          <em>Enter your</em>
-          <input
-            name="email"
-            placeholder="email"
-            value={email}
-            onChange={onChange}
-          />
-          <input
-            name="password"
-            placeholder="password"
-            value={password}
-            onChange={onChange}
-          />
-          <BasicBtn
-            active={false}
-            text="SIGN UP"
-            width="363px"
-            twidth="363px"
-            onClick={onCreate}
-          />
-        </LoginForm>
-      </PopUp>
+      {isLoggedIn && (
+        <>
+          <PopUp
+            width="435px"
+            height="512px"
+            setState={setState}
+            openState={openState}
+          >
+            <LoginForm onSubmit={handleSubmit(onSubmit)}>
+              <h3>Log in</h3>
+              <em>Enter your</em>
+              <Input
+                label="email"
+                placeholder="email"
+                register={register}
+                validation={{
+                  required: true,
+                  minLength: 5,
+                  pattern: /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
+                }}
+              />
+              {errors.email && <Alert>Not a valid email.</Alert>}
+              <Input
+                label="password"
+                placeholder="password"
+                register={register}
+                validation={{ required: true, minLength: 8 }}
+              />
+              {errors.password && (
+                <Alert>The password must be at least 8 characters long.</Alert>
+              )}
+              <BasicBtn
+                active={watchEmail && watchPassword ? true : false}
+                text="SIGN IN"
+                width="363px"
+                twidth="363px"
+              />
+            </LoginForm>
+          </PopUp>
+        </>
+      )}
+      {!isLoggedIn && <button>hello</button>}
     </LoginPopUpBlock>
   );
 };
