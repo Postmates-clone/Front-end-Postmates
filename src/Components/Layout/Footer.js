@@ -12,6 +12,15 @@ export const FooterBlock = styled.div`
   & h1 {
     color: #fff;
   }
+  & h1 > a {
+    height: 19px;
+    width: auto;
+    font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
+    font-size: 22px;
+    letter-spacing: 0.14px;
+    font-weight: 400;
+    color: #fff;
+  }
   & h2,
   h3 {
     grid-column: span3;
