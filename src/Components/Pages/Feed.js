@@ -31,7 +31,7 @@ const FeedWrapper = styled.div`
   `}
 `;
 const Feed = ({ nearby, orderby, favorite, getinfast }) => {
-  console.log(nearby);
+  // console.log(nearby);
   // console.log(orderby);
   // console.log(favorite);
   // console.log(getinfast);
@@ -61,14 +61,14 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
         />
 
         <CategoryList />
-
+        {/*
         <StoreCategory
           category="nearby"
           dataAll={nearby}
           data={nearby.results}
           title="Near By"
           info="near by category"
-        />
+        /> */}
       </FeedWrapper>
     </FeedMainBlock>
   );

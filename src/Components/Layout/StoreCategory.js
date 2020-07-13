@@ -18,7 +18,6 @@ const StoreCategory = ({ category, title, info, data, dataAll }) => {
   // const deleteURL = '54.180.102.1/media/';
   // data.map((store) => console.log(store.store_img.replace(deleteURL, '')));
   // data.map((store) => console.log(store));
-
   // if (dataAll === undefined) return null;
   return (
     <StoreCategoryBlock>
@@ -36,8 +35,6 @@ const StoreCategory = ({ category, title, info, data, dataAll }) => {
           <Slider list={data} category={category}>
             {data.map((store) => (
               <Stores
-                key={store.id}
-                id={store.id}
                 url={store.url}
                 name={store.name}
                 image={store.store_img}
