@@ -47,7 +47,6 @@ const SignUpForm = styled.form`
 
 const SignUpPopUp = ({ setState, openState }) => {
   const initialState = {
-    id: '',
     username: '',
     email: '',
     password: '',
@@ -78,7 +77,6 @@ const SignUpPopUp = ({ setState, openState }) => {
       }
     }
 
-    // console.log(inputs);
     dispatch(createUsersAsync(inputs));
     setInputs(initialState);
   };

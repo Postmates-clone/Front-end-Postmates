@@ -1,47 +1,47 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 
-const SignUpInputBlock = styled.div`
-  input {
-    width: 335px;
+const Input = styled.input`
+  width: 335px;
 
-    margin-left: 14px;
-    margin-right: 14px;
-    padding: 22px 0;
+  margin-left: 14px;
+  margin-right: 14px;
+  padding: 22px 0;
 
-    color: rgb(45, 49, 56);
+  color: rgb(45, 49, 56);
 
-    font-size: 16px;
-    letter-spacing: 0.14px;
-    text-align: center;
-    font-weight: 200;
+  font-size: 16px;
+  letter-spacing: 0.14px;
+  text-align: center;
+  font-weight: 200;
 
-    border: 0;
-    border-bottom: 1px solid rgb(217, 219, 224);
-  }
+  border: 0;
+  border-bottom: 1px solid rgb(217, 219, 224);
 `;
 
-const SignUpInput = ({ name, placeholder, type }) => {
-  const Input = useRef(null);
+const SignUpInput = ({ name, placeholder, type, onChange }) => {
+  const InputRef = useRef(null);
 
   const onFocus = () => {
-    Input.current.style.borderBottom = '2px solid rgb(0, 204, 153)';
+    InputRef.current.style.borderBottom = '2px solid rgb(0, 204, 153)';
   };
   const onBlur = () => {
-    Input.current.style.borderBottom = '1px solid rgb(217, 219, 224)';
+    InputRef.current.style.borderBottom = '1px solid rgb(217, 219, 224)';
   };
 
   return (
-    <SignUpInputBlock>
-      <input
+    <>
+      <Input
         name={name}
         placeholder={placeholder}
+        autoComplete="off"
         type={type || 'text'}
-        ref={Input}
+        ref={InputRef}
+        onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
       />
-    </SignUpInputBlock>
+    </>
   );
 };
 
