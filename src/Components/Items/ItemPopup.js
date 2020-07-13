@@ -224,7 +224,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [localVisible, setLocalVisible] = useState(visible);
   const [addInstruction, setAddInstruction] = useState('');
 
-  const { name, description, image_url, price, options } = item;
+  const { name, description, image_url, price, option_groups, options } = item;
 
   const onClick = () => {
     dispatch({
