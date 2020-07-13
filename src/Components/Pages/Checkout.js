@@ -13,6 +13,7 @@ const InnerBlock = styled.div`
   ${Media.desktop`
     width: 1024px;
     display: flex;
+    justify-content: space-between;
   `}
 `;
 
