@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 
 const api = axios.create();
@@ -9,15 +10,21 @@ const api = axios.create();
 //     },
 //   });
 // },
-// eslint-disable-next-line import/prefer-default-export
+
+// '/api/v1/feed/nearby?lat=40.6413151&lng=-73.7803278'
+// http://13.209.22.4:8001/api/v1/feed/?category=favorite&page=2
+
 export const DevApi = {
-  getNearBy: () => {
-    return api.get('/api/v1/feed/nearby?lat=40.6413151&lng=-73.7803278', {
-      responseType: 'json',
-      headers: {
-        'access-control-allow-origin': '*',
+  getNearBy: (page) => {
+    return api.get(
+      `/api/v1/feed/nearby?lat=40.6413151&lng=-73.7803278&page=${page}`,
+      {
+        responseType: 'json',
+        headers: {
+          'access-control-allow-origin': '*',
+        },
       },
-    });
+    );
   },
   getOrderBy: () => {
     return api.get('/api/v1/feed?category=delivery', {
