@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import Feed from '../Components/Pages/Feed';
+import Feed from '../Components/Pages/Feed';
 
 // eslint-disable-next-line no-unused-vars
 import {
@@ -12,8 +12,6 @@ import {
   getInFast,
 } from '../Modules/FeedReducer';
 import { setPage } from '../Modules/MainReducer';
-
-const Feed = lazy(() => import('../Components/Pages/Feed'));
 
 const FeedContainer = () => {
   const { nearby, orderby, favorite, getinfast } = useSelector((state) => ({
