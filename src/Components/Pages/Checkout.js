@@ -7,6 +7,7 @@ import Media from '../../Style/Media';
 const WapperCheckout = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 `;
 
 const InnerBlock = styled.div`

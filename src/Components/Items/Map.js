@@ -28,7 +28,7 @@ const Map = () => {
       <WrappedMap
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GEOCODE_API_KEY}`}
         loadingElement={<div style={{ height: '100%' }} />}
-        containerElement={<div style={{ height: '300px' }} />}
+        containerElement={<div style={{ height: '200px' }} />}
         mapElement={<div style={{ height: '100%' }} />}
       />
     </MapBox>
