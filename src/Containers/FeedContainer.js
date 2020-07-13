@@ -17,7 +17,7 @@ const Feed = lazy(() => import('../Components/Pages/Feed'));
 
 const FeedContainer = () => {
   const { nearby, orderby, favorite, getinfast } = useSelector((state) => ({
-    nearby: state.Feed.nearby,
+    // nearby: state.Feed.nearby,
     orderby: state.Feed.orderby,
     favorite: state.Feed.favorite,
     getinfast: state.Feed.getinfast,
@@ -30,11 +30,11 @@ const FeedContainer = () => {
     dispatch(getOrderBy());
     dispatch(getFavorite());
     // dispatch(getInFast());
-    dispatch(getNearBy('2'));
+    // dispatch(getNearBy('2'));
   }, [dispatch]);
 
-  if (nearby.loading) return <div>로딩중...</div>;
-  if (nearby.error) return <div>에러 발생!</div>;
+  // if (nearby.loading) return <div>로딩중...</div>;
+  // if (nearby.error) return <div>에러 발생!</div>;
 
   if (orderby.loading) return <div>로딩중...</div>;
   if (orderby.error) return <div>에러 발생!</div>;
@@ -45,22 +45,18 @@ const FeedContainer = () => {
   // if (getinfast.loading) return <div>로딩중...</div>;
   // if (getinfast.error) return <div>에러 발생!</div>;
 
-  if (!nearby.data && !orderby.data && !favorite.data) {
+  if (!orderby.data && !favorite.data) {
     return null;
   }
   // console.log(nearby.data);
   // console.log(orderby);
   return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Feed
-          nearby={nearby.data}
-          orderby={orderby.data.results}
-          favorite={favorite.data.results}
-          // getinfast={getinfast.data.results}
-        />
-      </Suspense>
-    </div>
+    <Feed
+      // nearby={nearby.data}
+      orderby={orderby.data.results}
+      favorite={favorite.data.results}
+      // getinfast={getinfast.data.results}
+    />
   );
 };
 
