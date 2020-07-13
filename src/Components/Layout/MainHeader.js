@@ -10,13 +10,14 @@ const MainHeaderBlock = styled.div`
   width: 100%;
   height: 72px;
   background: #ffdf18;
+  line-height: 72px;
 
   &.mainHeader-feed {
     position: sticky;
     background: rgb(243, 217, 0);
   }
   &.mainHeader-item {
-    position: sticky;
+    /* position: sticky; */
     background: #fff;
   }
   top: 0px;

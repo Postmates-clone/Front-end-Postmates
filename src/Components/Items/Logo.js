@@ -6,7 +6,6 @@ const LogoStyle = styled.h1`
   font-size: 22px;
   font-weight: 400;
   letter-spacing: -1px;
-  line-height: 72px;
   cursor: pointer;
 `;
 const Logo = () => {
