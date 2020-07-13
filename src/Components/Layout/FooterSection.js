@@ -15,11 +15,23 @@ export const FooterTopWraper = styled.div`
   & ul {
     margin-bottom: 26px;
   }
-  /* & ${Media.tablet`
-  grid-template-columns: repeat(2,1fr);
-  padding-bottom: 48px;
-  margin-bottom: 45px;
-    `} */
+  ${Media.desktop`
+  width:1024px;
+    `}
+    ${Media.tablet`
+    max-width:994px;
+    height:610px;
+    padding: 0 0 48px 0;
+    margin: 0 0 45px 0;
+    grid-template-columns: repeat(8, 1fr);
+    & div {
+      grid-column: span 2;
+    }
+    `}
+    ${Media.mobile`
+      margin: 0 25px 0 25px;
+      padding:0;
+    `}
 `;
 export const FooterLogoSection = styled.div`
   grid-column: span 2;
@@ -30,6 +42,11 @@ export const FooterSectionWrap = styled.div`
 export const FooterLastSection = styled.div`
   grid-column: span 1;
   width: 74px;
+  ${Media.tablet`
+  width:103px;
+  grid-column: span 2;
+  grid-column-start:3;
+    `}
 `;
 
 export const FooterBottomWrap = styled.div`
@@ -40,6 +57,12 @@ export const FooterBottomWrap = styled.div`
   margin: 0 0 45px 0;
   padding: 0 0 18px 0;
   border-bottom: 1px solid rgba(151, 151, 151, 0.21);
+  ${Media.tablet`
+  width:990px;
+  height:205px;
+  padding:8px 0 18px 0;
+  margin:0 0 35px 0;
+    `}
 `;
 export const BottomSecionWrap = styled.div`
   grid-column: span 1;
