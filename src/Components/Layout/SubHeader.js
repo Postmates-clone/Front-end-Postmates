@@ -16,7 +16,7 @@ const SubHeaderBlock = styled.div`
   font-size: 14px;
   font-family: 'Postmates Std';
   position: sticky;
-  z-index: 102;
+  /* z-index: 102; */
   background-color: rgb(255, 255, 255);
 
   &.subHeader-feed {

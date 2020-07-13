@@ -17,8 +17,7 @@
       "address": ""
     }
   ],
-  "nearby": [
-    {
+  "nearby": [{
       "id": 1,
       "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
       "store_img": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fc7443191-e2a8-4ba0-8aa4-b55040a69c9b%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=webp&v=4",
@@ -28,12 +27,10 @@
       "estimated_prep_time": 45,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     },
     {
       "id": 2,
@@ -45,16 +42,13 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     }
   ],
-  "orderby": [
-    {
+  "orderby": [{
       "id": 1,
       "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
       "store_img": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fc7443191-e2a8-4ba0-8aa4-b55040a69c9b%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=webp&v=4",
@@ -64,12 +58,10 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     },
     {
       "id": 2,
@@ -81,12 +73,10 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     },
     {
       "id": 3,
@@ -98,12 +88,10 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     },
     {
       "id": 4,
@@ -115,12 +103,10 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     },
     {
       "id": 5,
@@ -132,12 +118,10 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     },
     {
       "id": 6,
@@ -149,16 +133,13 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     }
   ],
-  "favorite": [
-    {
+  "favorite": [{
       "id": 1,
       "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
       "store_img": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fc7443191-e2a8-4ba0-8aa4-b55040a69c9b%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=webp&v=4",
@@ -168,12 +149,10 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     },
     {
       "id": 2,
@@ -185,16 +164,13 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     }
   ],
-  "getinfast": [
-    {
+  "getinfast": [{
       "id": 1,
       "url": "jack-in-the-box-los-angeles-516-n-beaudry-ave",
       "store_img": "https://raster-static.postmates.com/?url=https%3A%2F%2Fd1725r39asqzt3.cloudfront.net%2Fc7443191-e2a8-4ba0-8aa4-b55040a69c9b%2Forig.jpg&quality=85&w=640&h=0&mode=auto&format=webp&v=4",
@@ -204,12 +180,10 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     },
     {
       "id": 2,
@@ -221,12 +195,10 @@
       "estimated_prep_time": 0,
       "is_partner": false,
       "food_type": "fast-food",
-      "badges": [
-        {
-          "text": "POPULAR",
-          "text_color": "#979CA6"
-        }
-      ]
+      "badges": [{
+        "text": "POPULAR",
+        "text_color": "#979CA6"
+      }]
     }
   ],
   "jack-in-the-box-los-angeles-516-n-beaudry-ave": {
@@ -255,18 +227,14 @@
     "lng": -118.2492018,
     "food_type": "fast-food",
     "city": "Los Angeles",
-    "badges": [
-      {
-        "text": "POPULAR",
-        "text_color": "#979CA6"
-      }
-    ],
-    "menu": [
-      {
+    "badges": [{
+      "text": "POPULAR",
+      "text_color": "#979CA6"
+    }],
+    "menu": [{
         "id": "01",
         "category": "Featured Items",
-        "list": [
-          {
+        "list": [{
             "id": "01",
             "name": "Tiny Tacos",
             "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2Fbfacadf9-600d-4edb-b32f-067b936fe5ea%2Foriginal.jpg%3Fv%3D63760427548&width=1280",
@@ -288,10 +256,8 @@
             "img_url": "",
             "description": "Our Classic Popcorn Chicken, served with large fries, and a large drink.",
             "base_price": 10.35,
-            "options": [
-              {
-                "Choose Drink": [
-                  {
+            "options": [{
+                "Choose Drink": [{
                     "name": "Barq's Root Beer",
                     "option_price": 0
                   },
@@ -323,8 +289,7 @@
                 "is_required": true
               },
               {
-                "Choose Side": [
-                  {
+                "Choose Side": [{
                     "name": "Fries",
                     "option_price": 0
                   },
@@ -336,8 +301,7 @@
                 "is_required": true
               },
               {
-                "Choose Dipping Sauce": [
-                  {
+                "Choose Dipping Sauce": [{
                     "name": "BBQ Dipping Sauce",
                     "option_price": 0.15,
                     "select": false
@@ -380,8 +344,7 @@
                 "is_required": false
               },
               {
-                "Choose Ice Level": [
-                  {
+                "Choose Ice Level": [{
                     "name": "Extra Ice",
                     "option_price": 0
                   },
@@ -404,10 +367,8 @@
             "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2F11af102a-126c-411f-961f-01f994ea739d%2Foriginal.jpg%3Fv%3D63760427634&width=1280",
             "description": "Our Spicy Popcorn Chicken, served with large fries, and a large drink.",
             "base_price": 10.35,
-            "options": [
-              {
-                "Choose Drink": [
-                  {
+            "options": [{
+                "Choose Drink": [{
                     "name": "Barq's Root Beer",
                     "option_price": 0,
                     "select": false
@@ -440,8 +401,7 @@
                 "is_required": true
               },
               {
-                "Choose Side": [
-                  {
+                "Choose Side": [{
                     "name": "Fries",
                     "option_price": 0
                   },
@@ -453,8 +413,7 @@
                 "is_required": true
               },
               {
-                "Choose Dipping Sauce": [
-                  {
+                "Choose Dipping Sauce": [{
                     "name": "BBQ Dipping Sauce",
                     "option_price": 0.15,
                     "select": false
@@ -497,8 +456,7 @@
                 "is_required": false
               },
               {
-                "Choose Ice Level": [
-                  {
+                "Choose Ice Level": [{
                     "name": "Extra Ice",
                     "option_price": 0
                   },
@@ -529,10 +487,8 @@
             "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2F05036e30-57ae-4e43-8fe0-be99f9a42dd5%2Foriginal.jpg%3Fv%3D63760426710&width=1280",
             "description": "",
             "base_price": 8.65,
-            "options": [
-              {
-                "* Choose Size": [
-                  {
+            "options": [{
+                "* Choose Size": [{
                     "name": "Small Combo",
                     "option_price": 0
                   },
@@ -549,8 +505,7 @@
                 "is_required": true
               },
               {
-                "Choose Drink": [
-                  {
+                "Choose Drink": [{
                     "name": "Barq's Root Beer",
                     "option_price": 0,
                     "select": false
@@ -583,8 +538,7 @@
                 "is_required": true
               },
               {
-                "Choose Side": [
-                  {
+                "Choose Side": [{
                     "name": "Fries",
                     "option_price": 0
                   },
@@ -596,8 +550,7 @@
                 "is_required": true
               },
               {
-                "Choose Ice Level": [
-                  {
+                "Choose Ice Level": [{
                     "name": "Extra Ice",
                     "option_price": 0
                   },
@@ -613,8 +566,7 @@
                 "is_required": false
               },
               {
-                "Customize Your Item": [
-                  {
+                "Customize Your Item": [{
                     "name": "No Cheese",
                     "option_price": 0
                   },
@@ -654,8 +606,7 @@
                 "is_required": false
               },
               {
-                "Extra Add-Ons": [
-                  {
+                "Extra Add-Ons": [{
                     "name": "Add Jalapeños",
                     "option_price": 0.45,
                     "select": false
@@ -673,8 +624,7 @@
                 "is_required": false
               },
               {
-                "Extra Sauce": [
-                  {
+                "Extra Sauce": [{
                     "name": "Add BBQ Sauce on the Side",
                     "option_price": 0,
                     "select": false
@@ -723,10 +673,8 @@
             "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2Fee8d7167-67c4-48b7-9fb0-a08946cfd9a1%2Foriginal.jpg%3Fv%3D63760426837&width=1280",
             "description": "",
             "base_price": 9.89,
-            "options": [
-              {
-                "* Choose Size": [
-                  {
+            "options": [{
+                "* Choose Size": [{
                     "name": "Small Combo",
                     "option_price": 0
                   },
@@ -743,8 +691,7 @@
                 "is_required": true
               },
               {
-                "Choose Drink": [
-                  {
+                "Choose Drink": [{
                     "name": "Barq's Root Beer",
                     "option_price": 0,
                     "select": false
@@ -777,8 +724,7 @@
                 "is_required": true
               },
               {
-                "Choose Side": [
-                  {
+                "Choose Side": [{
                     "name": "Fries",
                     "option_price": 0
                   },
@@ -790,8 +736,7 @@
                 "is_required": true
               },
               {
-                "Choose Ice Level": [
-                  {
+                "Choose Ice Level": [{
                     "name": "Extra Ice",
                     "option_price": 0
                   },
@@ -807,8 +752,7 @@
                 "is_required": false
               },
               {
-                "Customize Your Item": [
-                  {
+                "Customize Your Item": [{
                     "name": "No Cheese",
                     "option_price": 0
                   },
@@ -848,8 +792,7 @@
                 "is_required": false
               },
               {
-                "Extra Add-Ons": [
-                  {
+                "Extra Add-Ons": [{
                     "name": "Add Jalapeños",
                     "option_price": 0.45,
                     "select": false
@@ -867,8 +810,7 @@
                 "is_required": false
               },
               {
-                "Extra Sauce": [
-                  {
+                "Extra Sauce": [{
                     "name": "Add BBQ Sauce on the Side",
                     "option_price": 0,
                     "select": false
@@ -908,32 +850,28 @@
       {
         "id": "02",
         "category": "Breakfast a la Carte",
-        "list": [
-          {
+        "list": [{
             "id": "09",
             "name": "Breakfast Jack",
             "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2Fd9ad4e86-a046-41e2-91b3-edd25b9f6ebe%2Foriginal.jpg%3Fv%3D63728349289&width=1280",
             "description": "The name speaks for itself. This is breakfast, Jack-style. Think ham, a freshly cracked egg, and American cheese—all on a bun. Now, try to think of something else. That’s right. You can’t.",
             "base_price": 2.69,
-            "options": [
-              {
-                "Choose Protein": [
-                  {
-                    "name": "No Meat",
-                    "option_price": 0
-                  },
-                  {
-                    "name": "Bacon",
-                    "option_price": 0.39
-                  },
-                  {
-                    "name": "Sausage",
-                    "option_price": 0.4
-                  }
-                ],
-                "is_required": true
-              }
-            ]
+            "options": [{
+              "Choose Protein": [{
+                  "name": "No Meat",
+                  "option_price": 0
+                },
+                {
+                  "name": "Bacon",
+                  "option_price": 0.39
+                },
+                {
+                  "name": "Sausage",
+                  "option_price": 0.4
+                }
+              ],
+              "is_required": true
+            }]
           },
           {
             "id": "10",
@@ -941,26 +879,23 @@
             "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2Ff678f445-2f32-4991-b4dc-4f375a44358b%2Foriginal.jpg%3Fv%3D63731739428&width=1280",
             "description": "Breakfast doesn’t come shaped in a bar. Or in a fancy juice. Real breakfast is served on a platter—a jumbo platter with tasty scrambled eggs, hash browns, eight mini pancakes, and your choice of country grilled sausage or three slices of bacon. Checkmate, fancy juice.",
             "base_price": 5.25,
-            "options": [
-              {
-                "Choose Protein": [
-                  {
-                    "name": "Bacon",
-                    "option_price": 0
-                  },
-                  {
-                    "name": "Sausage",
-                    "option_price": 0
-                  },
-                  {
-                    "name": "Bacon & Sausage",
-                    "option_price": 0.45,
-                    "select": false
-                  }
-                ],
-                "is_required": true
-              }
-            ]
+            "options": [{
+              "Choose Protein": [{
+                  "name": "Bacon",
+                  "option_price": 0
+                },
+                {
+                  "name": "Sausage",
+                  "option_price": 0
+                },
+                {
+                  "name": "Bacon & Sausage",
+                  "option_price": 0.45,
+                  "select": false
+                }
+              ],
+              "is_required": true
+            }]
           },
           {
             "id": "11",
@@ -1039,17 +974,14 @@
       {
         "id": "03",
         "category": "Breakfast Combos",
-        "list": [
-          {
+        "list": [{
             "id": "20",
             "name": "Supreme Croissant Combo",
             "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2F74ea8314-b14f-45f8-8b73-cc34a5ec3184%2Foriginal.jpg%3Fv%3D63728349494&width=1280",
             "description": "This breakfast croissant is more than good. Heck, it’s more than great. This flaky piece of heaven is supreme. Because it’s got grilled bacon, ham, a freshly cracked egg, and American cheese. And when you take a bite, you’re supreme, too. Those are the rules. Served with Hot Coffee & a Hash Brown.",
             "base_price": 6.89,
-            "options": [
-              {
-                "Choose Drink": [
-                  {
+            "options": [{
+                "Choose Drink": [{
                     "name": "Small Hot Coffee",
                     "option_price": 0,
                     "select": false
@@ -1083,8 +1015,7 @@
                 "is_required": true
               },
               {
-                "Choose Side": [
-                  {
+                "Choose Side": [{
                     "name": "Hash Browns",
                     "option_price": 0
                   },
@@ -1109,10 +1040,8 @@
             "img_url": "https://raster-static.postmates.com?height=1280&url=https%3A%2F%2Fitems-static.postmates.com%2Fuploads%2Fmedia%2F6e31486d-d5c8-46dd-a08d-6adaf407a8e7%2Foriginal.jpg%3Fv%3D63728349511&width=1280",
             "description": "The name speaks for itself. This is breakfast, Jack-style. Think ham, a freshly cracked egg, and American cheese—all on a bun. Now, try to think of something else. That’s right. You can’t. Served with Hot Coffee & a Hash Brown.",
             "base_price": 4.95,
-            "options": [
-              {
-                "Choose Drink": [
-                  {
+            "options": [{
+                "Choose Drink": [{
                     "name": "Small Hot Coffee",
                     "option_price": 0,
                     "select": false
@@ -1146,8 +1075,7 @@
                 "is_required": true
               },
               {
-                "Choose Protein": [
-                  {
+                "Choose Protein": [{
                     "name": "Ham",
                     "option_price": 0
                   },
@@ -1166,8 +1094,7 @@
                 ]
               },
               {
-                "Choose Side": [
-                  {
+                "Choose Side": [{
                     "name": "Hash Browns",
                     "option_price": 0
                   },
