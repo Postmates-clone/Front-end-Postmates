@@ -224,7 +224,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [localVisible, setLocalVisible] = useState(visible);
   const [addInstruction, setAddInstruction] = useState('');
 
-  const { name, description, image_url, price, options } = item;
+  const { name, description, image_url, price, option_groups, options } = item;
 
   const onClick = () => {
     dispatch({
@@ -259,7 +259,6 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
         {/* <IconImage cursor src={xIcon} onClick={onCancel} /> */}
         <h1>{name}</h1>
         <p>{description}</p>
-        <p>example: Cut Rolls (4 pc each) Toro, Scallop, Cucumber Crab</p>
         <h2 style={{ marginTop: '50px' }}>SPECIAL INSTRUCTIONS</h2>
         <InstructionBorder>
           <InstructionBlock
