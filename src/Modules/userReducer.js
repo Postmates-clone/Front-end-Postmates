@@ -137,6 +137,7 @@ const initialState = {
     id: 0,
     username: '',
     email: '',
+    password: '',
     phone: '',
     address: '',
     orderhistory: [{}, {}], // check out 했던 주문. 구매이력.

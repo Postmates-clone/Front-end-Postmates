@@ -44,6 +44,9 @@ const LoginForm = styled.form`
 
 const Alert = styled.div`
   color: rgb(0, 204, 153);
+
+  font-size: 12px;
+  line-height: 20px;
 `;
 
 const Input = ({ label, register, validation, pattern, ...rest }) => (
@@ -54,7 +57,17 @@ const Input = ({ label, register, validation, pattern, ...rest }) => (
 
 const LoginPopUp = ({ setState, openState }) => {
   const [isLoggedIn, setLoggedIn] = useState(true);
-  const { register, handleSubmit, errors, reset, watch } = useForm();
+  const { register, handleSubmit, errors, reset, watch } = useForm({
+    mode: 'all',
+  });
+
+  const onFocus = (e) => {
+    e.target.style.borderBottom = '2px solid rgb(0, 204, 153)';
+  };
+
+  const onBlur = (e) => {
+    e.target.style.borderBottom = '1px solid rgb(217, 219, 224)';
+  };
 
   const onSubmit = async (_data) => {
     console.log(_data);
@@ -77,15 +90,10 @@ const LoginPopUp = ({ setState, openState }) => {
     <LoginPopUpBlock>
       {isLoggedIn && (
         <>
-          <PopUp
-            width="435px"
-            height="512px"
-            setState={setState}
-            openState={openState}
-          >
+          <PopUp width="435px" setState={setState} openState={openState}>
             <LoginForm onSubmit={handleSubmit(onSubmit)}>
               <h3>Log in</h3>
-              <em>Enter your</em>
+              <em>Enter your e-mail, password</em>
               <Input
                 label="email"
                 placeholder="email"
@@ -95,6 +103,8 @@ const LoginPopUp = ({ setState, openState }) => {
                   minLength: 5,
                   pattern: /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
                 }}
+                onFocus={onFocus}
+                onBlur={onBlur}
               />
               {errors.email && <Alert>Not a valid email.</Alert>}
               <Input
@@ -102,6 +112,8 @@ const LoginPopUp = ({ setState, openState }) => {
                 placeholder="password"
                 register={register}
                 validation={{ required: true, minLength: 8 }}
+                onFocus={onFocus}
+                onBlur={onBlur}
               />
               {errors.password && (
                 <Alert>The password must be at least 8 characters long.</Alert>
