@@ -1,9 +1,8 @@
 /* eslint-disable */
 
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { render } from 'react-dom';
 import SlidingPane from 'react-sliding-pane';
 import { REMOVE_FROM_CART } from '../../Modules/CartReducer';
 import { closeIcon } from '../../Style/IconStyles';
@@ -20,16 +19,25 @@ const DialogBlock = styled.div`
   margin: 0 auto;
 `;
 
+const HeaderBlock = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
 const CartName = styled.div`
-  color: #8f95a3;
+  color: rgb(143, 149, 163);
   text-align: center;
+  justify-content: center;
+  min-width: 20%;
+  max-width: 90%;
+  margin: 0 auto;
 `;
 
 const ContentBlock = styled.div`
   width: 345px;
   height: 104px;
   /* margin: 0 auto; */
-  background-color: #d9dbe0;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -43,7 +51,7 @@ const CountBlock = styled.div`
   max-height: 30%;
   text-align: center;
   padding: 1%;
-  background-color: #8f95a3;
+  background-color: rgb(246, 246, 248);
 `;
 
 const DetailBlock = styled.div`
@@ -64,7 +72,7 @@ const DetailOptionBlock = styled.div``;
 const PriceBlock = styled.div`
   min-width: 20%;
   max-width: 20%;
-  color: #8f95a3;
+  color: rgb(143, 149, 163);
 `;
 
 const RemoveBlock = styled.div`
@@ -85,18 +93,18 @@ const SubTotalBlock = styled.div`
   padding: 10px;
   width: 100%;
   border-top: 2px solid rgba(217, 219, 224, 0.5);
-  margin-top: 180px;
+  margin-top: 230px;
 `;
 
 const TotalPriceBlock = styled.div`
-  color: ${(props) => (props.active ? '#00CC99' : '#8F95A3')};
+  color: ${(props) => (props.active ? '#00CC99' : 'rgb(143, 149, 163)')};
   min-width: 50%;
   max-width: 50%;
   text-align: right;
 `;
 
 const PriceText = styled.div`
-  color: ${(props) => (props.active ? '#000000' : '#8F95A3')};
+  color: ${(props) => (props.active ? '#000000' : 'rgb(143, 149, 163)')};
   min-width: 50%;
   max-width: 50%;
 `;
@@ -111,6 +119,7 @@ const Cart = () => {
   // const [cartDialog, setCartDialog] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
+  const storeData = useSelector((state) => state.Item.store);
 
   const [state, setState] = useState({
     isPaneOpen: false,
@@ -152,38 +161,49 @@ const Cart = () => {
         }}
       >
         <DialogBlock>
-          <CartName>Cart - 가게이름</CartName>
-          <ContentBlock>
-            <CountBlock>1</CountBlock>
-            <DetailBlock>
-              <DetailNameBlock>
-                Peppermint MochaPeppermint MochaPeppermint Mocha
-              </DetailNameBlock>
-              <DetailOptionBlock>선택한 옵션</DetailOptionBlock>
-              <div>item instruction</div>
-              <PriceBlock>$555</PriceBlock>
-            </DetailBlock>
+          <HeaderBlock>
             <RemoveBlock>
-              <RemoveBtn onClick={() => onRemove()}>{closeIcon}</RemoveBtn>
+              <RemoveBtn
+                onClick={() => {
+                  setState({ isPaneOpen: false });
+                }}
+              >
+                {closeIcon}
+              </RemoveBtn>
             </RemoveBlock>
-          </ContentBlock>
-          <ContentBlock>
-            <CountBlock>1</CountBlock>
-            <DetailBlock>
-              <DetailNameBlock>
-                Peppermint MochaPeppermint MochaPeppermint Mocha
-              </DetailNameBlock>
-              <DetailOptionBlock>선택한 옵션</DetailOptionBlock>
-              <div>item instruction</div>
-              <PriceBlock>$555</PriceBlock>
-            </DetailBlock>
-            <RemoveBlock>
-              <RemoveBtn onClick={() => onRemove()}>{closeIcon}</RemoveBtn>
-            </RemoveBlock>
-          </ContentBlock>
+            <CartName>Cart - {storeData.name}</CartName>
+          </HeaderBlock>
+          {cart.map((item) => (
+            <>
+              <ContentBlock>
+                <CountBlock>{item.count}</CountBlock>
+                <DetailBlock>
+                  <DetailNameBlock>{item.name}</DetailNameBlock>
+                  <DetailOptionBlock>{item.option_groups}</DetailOptionBlock>
+                  <div>{item.instruction}</div>
+                  <PriceBlock>
+                    {' '}
+                    {`$${Number(item.price * item.count).toFixed(2)}`}
+                  </PriceBlock>
+                </DetailBlock>
+                <RemoveBlock>
+                  <RemoveBtn onClick={() => onRemove(item.name)}>
+                    {closeIcon}
+                  </RemoveBtn>
+                </RemoveBlock>
+              </ContentBlock>
+            </>
+          ))}
           <SubTotalBlock>
             <PriceText>Subtotal</PriceText>
-            <TotalPriceBlock>$11.97</TotalPriceBlock>
+            <TotalPriceBlock>
+              {' '}
+              {`$${cart
+                .reduce((prev, curr) => {
+                  return prev + curr.price * curr.count;
+                }, 0)
+                .toFixed(2)}`}
+            </TotalPriceBlock>
             <PriceText>Delivery</PriceText>
             <TotalPriceBlock>$11.97</TotalPriceBlock>
             <PriceText active>Total</PriceText>

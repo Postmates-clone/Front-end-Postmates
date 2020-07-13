@@ -80,6 +80,7 @@ const LoginPopUp = ({ setState, openState }) => {
       // /api/v1/members/login/
     } finally {
       reset();
+      setLoggedIn(false);
     }
   };
 
@@ -129,6 +130,7 @@ const LoginPopUp = ({ setState, openState }) => {
         </>
       )}
       {!isLoggedIn && <button>hello</button>}
+      {!isLoggedIn && <span>human</span>}
     </LoginPopUpBlock>
   );
 };
