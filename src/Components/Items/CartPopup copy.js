@@ -1,13 +1,4 @@
-/* eslint-disable no-return-assign */
-/* eslint-disable no-param-reassign */
-/* eslint-disable operator-linebreak */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-shadow */
-/* eslint-disable camelcase */
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
@@ -55,13 +46,9 @@ to{
 }
 `;
 
-const PopupBlock = styled.div`
-  height: 100%;
-`;
-
 const DialogBlock = styled.div`
   width: 450px;
-  height: 100%;
+  height: 350px;
   padding: 1.5rem;
   background: #fff;
   position: absolute;
@@ -165,7 +152,7 @@ const CartPopup = ({ item, visible }) => {
   const [onDialog, setOnDialog] = useState(false);
 
   const onRemove = (name) => {
-    // console.log('WHAT IS THE NAME', name);
+    console.log('WHAT IS THE NAME', name);
     dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
 
@@ -181,13 +168,13 @@ const CartPopup = ({ item, visible }) => {
   if (!animate && !localVisible) return null;
 
   return (
-    <PopupBlock>
+    <>
       {!onDialog && (
         <DialogBlock disappear={!visible}>
+          <h2>Order</h2>
           <ContentBlock>
             {cart.map((item) => (
               <>
-                <h2>Cart - {item.name}</h2>
                 <CountBlock>{item.count}</CountBlock>
                 <DetailBlock>
                   <DetailNameBlock>{item.name}</DetailNameBlock>
@@ -220,7 +207,7 @@ const CartPopup = ({ item, visible }) => {
           </ButtonGroup>
         </DialogBlock>
       )}
-    </PopupBlock>
+    </>
   );
 };
 
