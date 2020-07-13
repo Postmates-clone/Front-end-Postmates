@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -19,27 +20,36 @@ const Input = styled.input`
   border-bottom: 1px solid rgb(217, 219, 224);
 `;
 
-const SignUpInput = ({ name, placeholder, type, onChange }) => {
-  const InputRef = useRef(null);
-
-  const onFocus = () => {
-    InputRef.current.style.borderBottom = '2px solid rgb(0, 204, 153)';
+const SignUpInput = ({
+  name,
+  placeholder,
+  type,
+  onChange,
+  label,
+  register,
+  validation,
+  pattern,
+  ...rest
+}) => {
+  const onFocus = (e) => {
+    e.target.style.borderBottom = '2px solid rgb(0, 204, 153)';
   };
-  const onBlur = () => {
-    InputRef.current.style.borderBottom = '1px solid rgb(217, 219, 224)';
+  const onBlur = (e) => {
+    e.target.style.borderBottom = '1px solid rgb(217, 219, 224)';
   };
 
   return (
     <>
       <Input
-        name={name}
+        name={label}
         placeholder={placeholder}
         autoComplete="off"
         type={type || 'text'}
-        ref={InputRef}
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
+        ref={register(validation, pattern)}
+        {...rest}
       />
     </>
   );

@@ -1,14 +1,18 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-useless-escape */
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-const-assign */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
+import { useForm } from 'react-hook-form';
 import PopUp from '../../Style/PopUp';
 import { BasicBtn } from '../../Style/BasicBtn';
 import { createUsersAsync } from '../../Modules/UserReducer';
 import SHA256 from '../../lib/sha256';
-import SignUpInput from './SignUpInput';
 
 const SignUpPopUpBlock = styled.div``;
 const SignUpForm = styled.form`
@@ -45,89 +49,157 @@ const SignUpForm = styled.form`
   }
 `;
 
+const Alert = styled.div`
+  color: rgb(0, 204, 153);
+
+  font-size: 12px;
+  line-height: 20px;
+`;
+
+const Input = ({ label, register, validation, pattern, ...rest }) => (
+  <>
+    <input name={label} ref={register(validation, pattern)} {...rest} />
+  </>
+);
+
+// const initialState = {
+//   username: '',
+//   email: '',
+//   password: '',
+//   phone: '',
+//   address: '',
+// };
+
 const SignUpPopUp = ({ setState, openState }) => {
-  const initialState = {
-    username: '',
-    email: '',
-    password: '',
-    phone: '',
-    address: '',
-  };
+  const { register, handleSubmit, errors, reset, watch } = useForm({
+    mode: 'all',
+  });
 
-  const [inputs, setInputs] = useState(initialState);
+  // const [inputs, setInputs] = useState(initialState);
 
-  const { username, email, password, phone, address } = inputs;
+  // const { username, email, password, phone, address } = inputs;
   const dispatch = useDispatch();
 
-  const onChange = ({ target }) => {
-    const { name, value } = target;
-
-    setInputs({
-      ...inputs,
-      [name]: value,
-    });
+  const onFocus = (e) => {
+    e.target.style.borderBottom = '2px solid rgb(0, 204, 153)';
   };
 
-  const onCreate = (e) => {
-    e.preventDefault();
-
-    for (const [key, value] of Object.entries(inputs)) {
-      if (key === 'password') {
-        inputs.password = SHA256(value);
-      }
+  const onBlur = (e) => {
+    e.target.style.borderBottom = '1px solid rgb(217, 219, 224)';
+  };
+  // const onCreate = (e) => {
+  //   e.preventDefault();
+  //   for (const [key, value] of Object.entries(inputs)) {
+  //     if (key === 'password') {
+  //       inputs.password = SHA256(value);
+  //     }
+  //   }
+  //   dispatch(createUsersAsync(inputs));
+  //   setInputs(initialState);
+  // };
+  const onSubmit = async (_data) => {
+    const { password } = _data;
+    _data.password = SHA256(password);
+    // console.log(_data);
+    try {
+      await dispatch(createUsersAsync(_data));
+    } catch (error) {
+      console.log(error);
+    } finally {
+      reset();
     }
-
-    dispatch(createUsersAsync(inputs));
-    setInputs(initialState);
   };
+
+  const watchEmail = watch('email');
+  const watchPassword = watch('password');
+  const watchName = watch('username');
+  const watchPhone = watch('phone');
+  const watchAddress = watch('address');
 
   return (
     <SignUpPopUpBlock>
-      <PopUp
-        width="435px"
-        height="600px"
-        setState={setState}
-        openState={openState}
-      >
-        <SignUpForm>
+      <PopUp width="435px" setState={setState} openState={openState}>
+        <SignUpForm onSubmit={handleSubmit(onSubmit)}>
           <h3>Sign Up</h3>
-          <SignUpInput
+          <Input
             name="email"
+            label="email"
             placeholder="e-mail"
-            value={email}
-            onChange={onChange}
+            autoComplete="off"
+            register={register}
+            validation={{
+              required: true,
+              minLength: 5,
+              pattern: /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
+            }}
+            onFocus={onFocus}
+            onBlur={onBlur}
           />
-          <SignUpInput
+          {errors.email && <Alert>Not a valid email.</Alert>}
+          <Input
             type="password"
+            label="password"
             name="password"
             placeholder="password"
-            value={password}
-            onChange={onChange}
+            register={register}
+            validation={{ required: true, minLength: 8 }}
+            onFocus={onFocus}
+            onBlur={onBlur}
           />
-          <SignUpInput
+          {errors.password && (
+            <Alert>The password must be at least 8 characters long.</Alert>
+          )}
+          <Input
+            label="username"
             name="username"
             placeholder="name"
-            value={username}
-            onChange={onChange}
+            register={register}
+            validation={{ required: true, minLength: 2 }}
+            onFocus={onFocus}
+            onBlur={onBlur}
           />
-          <SignUpInput
+          {errors.username && (
+            <Alert>The name must be at least 2 characters long.</Alert>
+          )}
+          <Input
+            label="phone"
             name="phone"
-            placeholder="phone"
-            value={phone}
-            onChange={onChange}
+            placeholder="phone number"
+            register={register}
+            validation={{
+              required: true,
+              minLength: 2,
+              pattern: /^\d{3}-\d{3,4}-\d{4}$/,
+            }}
+            onFocus={onFocus}
+            onBlur={onBlur}
           />
-          <SignUpInput
+          {errors.phone && <Alert>Not a valid phone number.</Alert>}
+          <Input
+            label="address"
             name="address"
             placeholder="address"
-            value={address}
-            onChange={onChange}
+            register={register}
+            validation={{ required: true, minLength: 8 }}
+            onFocus={onFocus}
+            onBlur={onBlur}
           />
+          {errors.address && (
+            <Alert>The address must be at least 8 characters long.</Alert>
+          )}
           <BasicBtn
-            active={false}
+            active={
+              !!(
+                watchEmail &&
+                watchPassword &&
+                watchName &&
+                watchPhone &&
+                watchAddress
+              )
+            }
             text="SIGN UP"
             width="363px"
             twidth="363px"
-            onClick={onCreate}
           />
         </SignUpForm>
       </PopUp>
