@@ -9,6 +9,7 @@ import UserReducer from './UserReducer';
 import RefReducer from './RefReducer';
 import CartReducer from './CartReducer';
 import LocationReducer from './LocationReducer';
+import CheckoutReducer from './CheckoutReducer';
 
 const RootReducer = combineReducers({
   Main: MainReducer,
@@ -18,6 +19,7 @@ const RootReducer = combineReducers({
   Ref: RefReducer,
   Cart: CartReducer,
   Location: LocationReducer,
+  Checkout: CheckoutReducer,
 });
 
 // export function* rootSaga() {
