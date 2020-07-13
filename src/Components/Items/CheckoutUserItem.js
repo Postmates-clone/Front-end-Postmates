@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 // import Media from '../../Style/Media';
 
@@ -28,20 +28,32 @@ const InfoInput = styled.input`
   height: 50px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 16px;
+  text-indent: 30px;
+  position: relative;
+  z-index: ${(props) => props.zindex};
 `;
 
 const CheckoutUserItem = ({ title, itemprops }) => {
+  const [change, setChange] = useState(false);
   const inputRef = useRef();
-  useEffect(() => {}, []);
+  useEffect(() => {
+    inputRef.current.value = itemprops;
+  }, [itemprops]);
+
+  const possibleChange = () => {
+    setChange(!change);
+  };
 
   return (
     <WrapperInfo>
       <WrapperFlex>
         <InfoTitle>{title}</InfoTitle>
-        <ChangeButton type="button">CHANGE</ChangeButton>
+        <ChangeButton type="button" onClick={possibleChange}>
+          {change ? 'SAVE' : 'CHANGE'}
+        </ChangeButton>
       </WrapperFlex>
       <InfoBox>
-        <InfoInput value={itemprops} ref={inputRef} />
+        <InfoInput ref={inputRef} zindex={change ? 0 : -1} />
       </InfoBox>
     </WrapperInfo>
   );
