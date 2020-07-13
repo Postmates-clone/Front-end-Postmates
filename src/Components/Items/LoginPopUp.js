@@ -1,8 +1,6 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
-/* eslint-disable no-unneeded-ternary */
-/* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+/* eslint-disable */
+
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import PopUp from '../../Style/PopUp';
@@ -44,13 +42,18 @@ const LoginForm = styled.form`
   }
 `;
 
-const Input = ({ label, register, validation, ...rest }) => (
+const Alert = styled.div`
+  color: rgb(0, 204, 153);
+`;
+
+const Input = ({ label, register, validation, pattern, ...rest }) => (
   <>
-    <input name={label} ref={register(validation)} {...rest} />
+    <input name={label} ref={register(validation, pattern)} {...rest} />
   </>
 );
 
 const LoginPopUp = ({ setState, openState }) => {
+  const [isLoggedIn, setLoggedIn] = useState(true);
   const { register, handleSubmit, errors, reset, watch } = useForm();
 
   const onSubmit = async (_data) => {
@@ -72,37 +75,48 @@ const LoginPopUp = ({ setState, openState }) => {
 
   return (
     <LoginPopUpBlock>
-      <PopUp
-        width="435px"
-        height="512px"
-        setState={setState}
-        openState={openState}
-      >
-        <LoginForm onSubmit={handleSubmit(onSubmit)}>
-          <h3>Log in</h3>
-          <em>Enter your</em>
-          <Input
-            label="email"
-            placeholder="email"
-            register={register}
-            validation={{ required: true, minLength: 5 }}
-          />
-          {errors.email && <p>this is required.</p>}
-          <Input
-            label="password"
-            placeholder="password"
-            register={register}
-            validation={{ required: true }}
-          />
-          {errors.password && <p>this is required.</p>}
-          <BasicBtn
-            active={watchEmail && watchPassword ? true : false}
-            text="SIGN IN"
-            width="363px"
-            twidth="363px"
-          />
-        </LoginForm>
-      </PopUp>
+      {isLoggedIn && (
+        <>
+          <PopUp
+            width="435px"
+            height="512px"
+            setState={setState}
+            openState={openState}
+          >
+            <LoginForm onSubmit={handleSubmit(onSubmit)}>
+              <h3>Log in</h3>
+              <em>Enter your</em>
+              <Input
+                label="email"
+                placeholder="email"
+                register={register}
+                validation={{
+                  required: true,
+                  minLength: 5,
+                  pattern: /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
+                }}
+              />
+              {errors.email && <Alert>Not a valid email.</Alert>}
+              <Input
+                label="password"
+                placeholder="password"
+                register={register}
+                validation={{ required: true, minLength: 8 }}
+              />
+              {errors.password && (
+                <Alert>The password must be at least 8 characters long.</Alert>
+              )}
+              <BasicBtn
+                active={watchEmail && watchPassword ? true : false}
+                text="SIGN IN"
+                width="363px"
+                twidth="363px"
+              />
+            </LoginForm>
+          </PopUp>
+        </>
+      )}
+      {!isLoggedIn && <button>hello</button>}
     </LoginPopUpBlock>
   );
 };
