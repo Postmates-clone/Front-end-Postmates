@@ -8,17 +8,26 @@ const WrapperCheckoutUser = styled.div`
   ${Media.desktop`
     width: 500px;
   `}
+  .WrapperButton {
+    margin-top: 40px;
+  }
+`;
+
+const CheckoutTitle = styled.h2`
+  margin-top: 20px;
+  font-size: 50px;
 `;
 
 const CheckoutUser = ({ userInfo }) => {
   return (
     <WrapperCheckoutUser>
-      <h2>Checkout</h2>
-      <div>Delivery</div>
-      <CheckoutUserItem title="User Info" itemprops={userInfo} />
-      <CheckoutUserItem title="User Info" itemprops={userInfo} />
-      <CheckoutUserItem itemprops={userInfo} />
-      <BasicBtn active text="CONTINUE" width="300px" />
+      <CheckoutTitle>Checkout</CheckoutTitle>
+      <CheckoutUserItem title="User Name" itemprops={userInfo.username} />
+      <CheckoutUserItem title="Delivery Address" itemprops={userInfo.address} />
+      <CheckoutUserItem title="Phone" itemprops={userInfo.phone} />
+      <div className="WrapperButton">
+        <BasicBtn active text="CONTINUE" width="100%" />
+      </div>
     </WrapperCheckoutUser>
   );
 };
