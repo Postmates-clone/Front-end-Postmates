@@ -10,11 +10,11 @@ const WrapperCheckoutCart = styled.div`
   `}
 `;
 
-const CheckoutCart = () => {
+const CheckoutCart = ({ storeInfo }) => {
   return (
     <WrapperCheckoutCart>
-      <Map />
-      <CheckoutCartList />
+      <Map storeInfo={storeInfo} />
+      <CheckoutCartList storeInfo={storeInfo} />
     </WrapperCheckoutCart>
   );
 };

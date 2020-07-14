@@ -120,8 +120,8 @@ export default function MainBanner({ title, text, place, geoCode }) {
     dispatch(getPlaceAsync(inputRef.current.value));
   };
 
-  const getGeocode = (address) => {
-    dispatch(getGeocodeAsync(address));
+  const getGeocode = () => {
+    dispatch(getGeocodeAsync(place[0].structured_formatting.main_text));
   };
 
   return (
