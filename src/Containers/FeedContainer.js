@@ -31,6 +31,7 @@ const FeedContainer = () => {
     dispatch(getFavorite(lat, lng));
     dispatch(getInFast(lat, lng));
     // dispatch(getNearBy('2'));
+    console.log(lat, lng);
   }, [dispatch]);
 
   // if (nearby.loading) return <div>로딩중...</div>;
