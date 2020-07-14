@@ -35,13 +35,12 @@ const CartName = styled.div`
 const ContentBlock = styled.div`
   width: 345px;
   height: 104px;
-  /* margin: 0 auto; */
   background-color: #fff;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 10px;
-  margin: 10px;
+  margin: 10px auto;
 `;
 
 export const CountBlock = styled.div`
@@ -172,7 +171,7 @@ const Cart = () => {
                   <div>{item.instruction}</div>
                   <PriceBlock>
                     {' '}
-                    {`$${Number(item.price * item.count).toFixed(2)}`}
+                    {`$${item.price * item.count.toFixed(2)}`}
                   </PriceBlock>
                 </DetailBlock>
                 <RemoveBlock>
@@ -193,7 +192,9 @@ const Cart = () => {
                 .toFixed(2)}`}
             </TotalPriceBlock>
             <PriceText>Delivery</PriceText>
-            <TotalPriceBlock>$00.00</TotalPriceBlock>
+            <TotalPriceBlock>{`$${storeData.delivery_fee.toFixed(
+              2,
+            )}`}</TotalPriceBlock>
             <PriceText active>Total</PriceText>
             <TotalPriceBlock active>
               {`$${cart
