@@ -21,8 +21,12 @@ const MainHeaderBlock = styled.div`
     position: sticky;
     background: #fff;
   }
+  &.mainHeader-checkout {
+    position: sticky;
+    background: #fff;
+  }
   top: 0px;
-  z-index: 101;
+  z-index: 70;
 `;
 
 const MainHeaderWrapper = styled.div`

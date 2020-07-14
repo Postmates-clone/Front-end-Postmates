@@ -10,10 +10,10 @@ const WrapperCheckoutCart = styled.div`
   `}
 `;
 
-const CheckoutCart = () => {
+const CheckoutCart = ({ storeInfo }) => {
   return (
     <WrapperCheckoutCart>
-      <Map />
+      <Map storeInfo={storeInfo} />
       <CheckoutCartList />
     </WrapperCheckoutCart>
   );
