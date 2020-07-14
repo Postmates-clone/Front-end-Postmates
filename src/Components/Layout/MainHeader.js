@@ -33,7 +33,7 @@ const MainHeaderWrapper = styled.div`
   max-width: 1024px;
   margin: 0 auto;
   &
-  ${Media.desktop`
+    ${Media.desktop`
   width:1024px;
     `}
     ${Media.tablet`

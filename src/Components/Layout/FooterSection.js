@@ -7,16 +7,16 @@ import Media from '../../Style/Media';
 export const FooterTopWraper = styled.div`
   display: grid;
   height: 483px;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 24px;
   padding-bottom: 48px;
-  margin-bottom: 65px;
+  margin-bottom: 75px;
   border-bottom: 1px solid rgba(151, 151, 151, 0.21);
   & ul {
     margin-bottom: 26px;
   }
   ${Media.desktop`
   width:1024px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 24px;
     `}
     ${Media.tablet`
     max-width:994px;
@@ -26,38 +26,49 @@ export const FooterTopWraper = styled.div`
     grid-template-columns: repeat(8, 1fr);
     `}
     ${Media.mobile`
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 50% 50%;
     grid-column:span 1;
     grid-column-gap:0;
-    width:820px;
     height:978.2px;
     padding:0;
     margin:0;
     `}
 `;
 export const FooterLogoSection = styled.div`
+  ${Media.desktop`
   grid-column: span 2;
+    `}
   ${Media.tablet`
   grid-column: span 2;
+    `}
+    ${Media.mobile`
+  grid-column: span 0;
+  height:-50px;
     `}
 `;
 export const FooterSectionWrap = styled.div`
-  grid-column: span 3;
+  ${Media.desktop`
+      grid-column: span 3;
+    `}
   ${Media.tablet`
       grid-column: span 2;
     `}
-`;
-// export const FooterSecondWrap = styled.div`
-//   /* ${Media.mobile`
-//       grid-column-start: 2;
-//     `} */
-// `;
-export const FooterLastSection = styled.div`
+    ${Media.mobile`
   grid-column: span 1;
-  width: 74px;
+    `}
+`;
+
+export const FooterLastSection = styled.div`
+  ${Media.desktop`
+      grid-column: span 1;
+      width: 74px;
+    `}
   ${Media.tablet`
   width:103px;
   grid-column-start:3;
+    `}
+    ${Media.mobile`
+  grid-column: span 1;
     `}
 `;
 
@@ -65,15 +76,21 @@ export const FooterBottomWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 24px;
-  height: 234px;
+  height: 244px;
   margin: 0 0 45px 0;
   padding: 0 0 18px 0;
   border-bottom: 1px solid rgba(151, 151, 151, 0.21);
   ${Media.tablet`
-  width:990px;
+  
   height:205px;
   padding:8px 0 18px 0;
   margin:0 0 35px 0;
+  grid-template-columns: repeat(3, 1fr);
+    `}
+  ${Media.mobile`
+  height:275px;
+  padding:50px 0 10px 0;
+  grid-template-columns: repeat(2, 1fr);
     `}
 `;
 export const BottomSecionWrap = styled.div`
@@ -86,8 +103,21 @@ export const BottomSecionWrap = styled.div`
 export const FooterLink = styled.div`
   display: flex;
   padding: 15px 0 0 0;
+  ${Media.mobile`
+    height:auto;
+    width:auto;
+    `}
 `;
-
+export const BottomNewyorkSection = styled.div`
+  ${Media.mobile`
+  display:none;
+    `}
+`;
+export const BottomLastSection = styled.div`
+  ${Media.tablet`
+  display:none;
+    `}
+`;
 export default function FooterSection() {
   return (
     <div>
@@ -247,41 +277,44 @@ export default function FooterSection() {
             <a>Nashville</a>
           </li>
         </ul>
-
-        <ul>
-          <li>
-            <a>New York City</a>
-          </li>
-          <li>
-            <a>Orange County</a>
-          </li>
-          <li>
-            <a>Atlanta</a>
-          </li>
-          <li>
-            <a>Charlotte</a>
-          </li>
-          <li>
-            <a>Denver</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a>Chicago</a>
-          </li>
-          <li>
-            <a>Phoenix</a>
-          </li>
-          <li>
-            <a>Las Vegas</a>
-          </li>
-          <li>
-            <a>Scaramento</a>
-          </li>
-          <li>
-            <a>Oklahoma City</a>
-          </li>
-        </ul>
+        <BottomNewyorkSection>
+          <ul>
+            <li>
+              <a>New York City</a>
+            </li>
+            <li>
+              <a>Orange County</a>
+            </li>
+            <li>
+              <a>Atlanta</a>
+            </li>
+            <li>
+              <a>Charlotte</a>
+            </li>
+            <li>
+              <a>Denver</a>
+            </li>
+          </ul>
+        </BottomNewyorkSection>
+        <BottomLastSection>
+          <ul>
+            <li>
+              <a>Chicago</a>
+            </li>
+            <li>
+              <a>Phoenix</a>
+            </li>
+            <li>
+              <a>Las Vegas</a>
+            </li>
+            <li>
+              <a>Scaramento</a>
+            </li>
+            <li>
+              <a>Oklahoma City</a>
+            </li>
+          </ul>
+        </BottomLastSection>
       </FooterBottomWrap>
       <h4>
         Postmates is the largest, most reliable on-demand delivery and pickup
