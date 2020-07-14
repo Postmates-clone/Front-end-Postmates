@@ -5,6 +5,7 @@ import { LoginBtn } from '../../Style/BasicBtn';
 import LoginPopUp from './LoginPopUp';
 import SignUpPopUp from './SignUpPopUp';
 import { CountBlock } from './Cart';
+import UserMenu from './UserMenu';
 
 const MemberWrap = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ const LoginCart = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100%;
+
   cursor: pointer;
 `;
 
@@ -50,7 +52,7 @@ const Member = () => {
       {userInfo.email && (
         <>
           <LoginCart>
-            <div>hi</div>
+            <UserMenu />
             <CountBlock>{cart.map((item) => item.count)}</CountBlock>
             <CartText>Cart</CartText>
             <div>화살표</div>

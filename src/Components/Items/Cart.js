@@ -52,7 +52,7 @@ export const CountBlock = styled.div`
   max-height: 30%;
   text-align: center;
   padding: 1%;
-  background-color: rgb(246, 246, 248);
+  /* background-color: rgb(246, 246, 248); */
 `;
 
 const DetailBlock = styled.div`
