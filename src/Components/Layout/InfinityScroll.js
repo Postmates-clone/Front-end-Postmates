@@ -31,7 +31,7 @@ const InfinityScroll = () => {
   const fetchItems = async () => {
     setState((prev) => ({ ...prev, loading: true }));
 
-    const { data } = await DevApi.getNearBy(state.next);
+    const { data } = await DevApi.getNearBy(1);
 
     setState((prev) => ({
       ...prev,

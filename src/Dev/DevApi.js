@@ -12,12 +12,20 @@ const api = axios.create();
 // },
 
 // '/api/v1/feed/nearby?lat=40.6413151&lng=-73.7803278'
-// http://13.209.22.4:8001/api/v1/feed/?category=favorite&page=2
+// http://13.209.22.4:8001/api/v1/feed?lat=40.7484445&lng=-73.9878531&filter=favorite
 
 export const DevApi = {
   getNearBy: (page) => {
+    return api.get(`/api/v1/feed?lat=40.7484445&lng=-73.9878531&page=${page}`, {
+      responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
+      },
+    });
+  },
+  getOrderBy: () => {
     return api.get(
-      `/api/v1/feed/nearby?lat=40.6413151&lng=-73.7803278&page=${page}`,
+      '/api/v1/feed?lat=40.7484445&lng=-73.9878531&filter=delivery',
       {
         responseType: 'json',
         headers: {
@@ -26,30 +34,25 @@ export const DevApi = {
       },
     );
   },
-  getOrderBy: () => {
-    return api.get('/api/v1/feed?category=delivery', {
-      responseType: 'json',
-      headers: {
-        'access-control-allow-origin': '*',
-      },
-    });
-  },
   getFavorite: () => {
-    return api.get('/api/v1/feed?category=favorite', {
+    return api.get(
+      '/api/v1/feed?lat=40.7484445&lng=-73.9878531&filter=favorite',
+      {
+        responseType: 'json',
+        headers: {
+          'access-control-allow-origin': '*',
+        },
+      },
+    );
+  },
+  getInFast: () => {
+    return api.get('/api/v1/feed?lat=40.7484445&lng=-73.9878531&filter=time', {
       responseType: 'json',
       headers: {
         'access-control-allow-origin': '*',
       },
     });
   },
-  // getInFast: () => {
-  //   return api.get('/api/v1/feed?category=item', {
-  //     responseType: 'json',
-  //     headers: {
-  //       'access-control-allow-origin': '*',
-  //     },
-  //   });
-  // },
   getItem: (url) => {
     return api.get(`/api/v1/store/${url}`, {
       responseType: 'json',
