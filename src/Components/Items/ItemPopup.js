@@ -102,24 +102,25 @@ const ImageBlock = styled.div`
 const DialogBlock = styled.div`
   width: 524px;
   height: 512px;
-  padding-left: 1.5rem;
+  padding: 30px;
   background: #fff;
   background-position: center;
   justify-content: space-between;
   align-items: center;
+  overflow-y: scroll;
 
   h1 {
     margin: 0;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 8px;
-    padding-top: 30px;
   }
 
   p {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.33;
+    margin: 16px 0 30px;
     color: #8f95a3;
   }
 
@@ -145,14 +146,19 @@ export const itemColor = {
 
 const ButtonGroup = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   border-top: 2px solid ${itemColor.lineGray};
   padding-top: 10px;
+`;
+
+const AddToCartBlock = styled.div`
+  max-width: 60%;
 `;
 
 const CounterBlock = styled.div`
   display: inline-block;
   height: 54px;
+  max-width: 40%;
 
   border: 1px solid ${itemColor.lineGray};
   border-radius: 30px;
@@ -192,12 +198,62 @@ export const Counter = ({ active }) => {
     </CounterBlock>
   );
 };
+
+const OptionCategoryBlock = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
+`;
+const OptionCategoryName = styled.div``;
+
+const OptionCategoryRequired = styled.div`
+  color: rgb(143, 149, 163);
+`;
+
+const OptionDetailBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const OptionDetailInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  width: 100%;
+`;
+const Input = styled.input`
+  max-width: 10%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  &:checked {
+    background-color: rgb(45, 49, 56);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(45, 49, 56);
+  }
+`;
+const OptionDetailName = styled.label`
+  margin-left: 18px;
+  max-width: 80%;
+  text-align: left;
+`;
+
+const OptionDetailPrice = styled.div`
+  color: rgb(143, 149, 163);
+  max-width: 10%;
+  text-align: right;
+`;
+
 const InstructionBorder = styled.div`
   width: 100%;
   height: 20%;
   border-top: 2px solid ${itemColor.lineGray};
   border-bottom: 2px solid ${itemColor.lineGray};
 `;
+
 const InstructionBlock = styled(Textarea)`
   width: 80%;
   height: 100%;
@@ -210,6 +266,8 @@ const InstructionBlock = styled(Textarea)`
 
 const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [count, setCount] = useState(1);
+  const [checked, setChecked] = useState(false);
+
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
 
@@ -222,13 +280,19 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
   const [addInstruction, setAddInstruction] = useState('');
+  const [checkedOption, setCheckedOption] = useState('');
 
   const { name, description, image_url, price, option_groups, options } = item;
 
   const onClick = () => {
     dispatch({
       type: ADD_TO_CART,
-      payload: { ...item, count, instruction: addInstruction },
+      payload: {
+        ...item,
+        count,
+        instruction: addInstruction,
+        options: checkedOption,
+      },
     });
     if (addInstruction.lenght > 200) return;
     setAddInstruction('');
@@ -240,6 +304,11 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     setAddInstruction(e.target.value);
   };
 
+  const onChecked = (e) => {
+    console.log(e.target.value);
+    setCheckedOption(e.target.value);
+  };
+
   useEffect(() => {
     if (localVisible && !visible) {
       setAnimate(true);
@@ -248,17 +317,46 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     // visible 값이 바뀔 때마다 localvisible 동기화
     setLocalVisible(visible);
   }, [localVisible, visible]);
-  // const prices = options.map((option) => option);
+
   if (!animate && !localVisible) return null;
-  console.log(image_url);
+
   return (
     <OpacityBackground disappear={!visible}>
       {image_url && <ImageBlock image={image_url} />}
       <DialogBlock disappear={!visible}>
         <CloseBtn onClick={onCancel}>{closeIcon}</CloseBtn>
-        {/* <IconImage cursor src={xIcon} onClick={onCancel} /> */}
         <h1>{name}</h1>
         <p>{description}</p>
+        <ul>
+          {item.option_groups.map((option) => (
+            <>
+              <OptionCategoryBlock>
+                <OptionCategoryName>{option.category}</OptionCategoryName>
+                <OptionCategoryRequired>
+                  {option.is_required === true && 'REQUIRED'}
+                </OptionCategoryRequired>
+              </OptionCategoryBlock>
+              {option.options.map((opt) => (
+                <OptionDetailBlock>
+                  <OptionDetailInfo>
+                    <Input
+                      type="radio"
+                      key={opt.id}
+                      id={opt.id}
+                      value={opt.name}
+                      onClick={onChecked}
+                    />
+                    <OptionDetailName>{opt.name}</OptionDetailName>
+                    <OptionDetailPrice>
+                      {opt.price}
+                      {/* {opt.price === Number(0) && ''} */}
+                    </OptionDetailPrice>
+                  </OptionDetailInfo>
+                </OptionDetailBlock>
+              ))}
+            </>
+          ))}
+        </ul>
         <h2 style={{ marginTop: '50px' }}>SPECIAL INSTRUCTIONS</h2>
         <InstructionBorder>
           <InstructionBlock
@@ -281,12 +379,14 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
             <Value>{count}</Value>
             <Increase onClick={onIncrease}>+</Increase>
           </CounterBlock>
-          <AddToCart
-            active
-            text="Add To Cart"
-            totalprice={`$${(Number(price) * count).toFixed(2)}`}
-            onClick={onClick}
-          />
+          <AddToCartBlock>
+            <AddToCart
+              active
+              text="Add To Cart"
+              totalprice={`$${(Number(price) * count).toFixed(2)}`}
+              onClick={onClick}
+            />
+          </AddToCartBlock>
         </ButtonGroup>
       </DialogBlock>
     </OpacityBackground>

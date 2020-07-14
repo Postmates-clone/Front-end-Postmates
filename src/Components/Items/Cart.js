@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import SlidingPane from 'react-sliding-pane';
-import { REMOVE_FROM_CART } from '../../Modules/CartReducer';
+import { REMOVE_FROM_CART, CLEAR_CART } from '../../Modules/CartReducer';
 import { closeIcon } from '../../Style/IconStyles';
 import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Cart.css';
 import { LoginBtn } from '../../Style/BasicBtn';
+import { Link } from 'react-router-dom';
 
 const DialogBlock = styled.div`
   width: 100%;
@@ -166,7 +167,8 @@ const Cart = () => {
                 <CountBlock>{item.count}</CountBlock>
                 <DetailBlock>
                   <DetailNameBlock>{item.name}</DetailNameBlock>
-                  <DetailOptionBlock>{item.option_groups}</DetailOptionBlock>
+                  {/* TODO: option 들어오게 수정필요. */}
+                  <DetailOptionBlock>{item.options}</DetailOptionBlock>
                   <div>{item.instruction}</div>
                   <PriceBlock>
                     {' '}
@@ -184,7 +186,6 @@ const Cart = () => {
           <SubTotalBlock>
             <PriceText>Subtotal</PriceText>
             <TotalPriceBlock>
-              {' '}
               {`$${cart
                 .reduce((prev, curr) => {
                   return prev + curr.price * curr.count;
@@ -192,13 +193,21 @@ const Cart = () => {
                 .toFixed(2)}`}
             </TotalPriceBlock>
             <PriceText>Delivery</PriceText>
-            <TotalPriceBlock>$11.97</TotalPriceBlock>
+            <TotalPriceBlock>$00.00</TotalPriceBlock>
             <PriceText active>Total</PriceText>
-            <TotalPriceBlock active>$11.97</TotalPriceBlock>
+            <TotalPriceBlock active>
+              {`$${cart
+                .reduce((prev, curr) => {
+                  return prev + curr.price * curr.count;
+                }, 0)
+                .toFixed(2)}`}
+            </TotalPriceBlock>
           </SubTotalBlock>
-          <ButtonGroup>
-            <Button>CHECKOUT</Button>
-          </ButtonGroup>
+          <Link to="/checkout">
+            <ButtonGroup>
+              <Button>CHECKOUT</Button>
+            </ButtonGroup>
+          </Link>
         </DialogBlock>
       </SlidingPane>
     </div>
