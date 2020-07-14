@@ -23,30 +23,24 @@ export const DevApi = {
       },
     });
   },
-  getOrderBy: () => {
-    return api.get(
-      '/api/v1/feed?lat=40.7484445&lng=-73.9878531&filter=delivery',
-      {
-        responseType: 'json',
-        headers: {
-          'access-control-allow-origin': '*',
-        },
+  getOrderBy: (lat, lng) => {
+    return api.get(`/api/v1/feed?lat=${lat}5&lng=${lng}&filter=delivery`, {
+      responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
       },
-    );
+    });
   },
-  getFavorite: () => {
-    return api.get(
-      '/api/v1/feed?lat=40.7484445&lng=-73.9878531&filter=favorite',
-      {
-        responseType: 'json',
-        headers: {
-          'access-control-allow-origin': '*',
-        },
+  getFavorite: (lat, lng) => {
+    return api.get(`/api/v1/feed?lat=${lat}&lng=${lng}&filter=favorite`, {
+      responseType: 'json',
+      headers: {
+        'access-control-allow-origin': '*',
       },
-    );
+    });
   },
-  getInFast: () => {
-    return api.get('/api/v1/feed?lat=40.7484445&lng=-73.9878531&filter=time', {
+  getInFast: (lat, lng) => {
+    return api.get(`/api/v1/feed?lat=${lat}&lng=${lng}&filter=time`, {
       responseType: 'json',
       headers: {
         'access-control-allow-origin': '*',

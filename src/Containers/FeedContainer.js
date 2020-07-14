@@ -24,10 +24,12 @@ const FeedContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const lat = localStorage.getItem('location-lat');
+    const lng = localStorage.getItem('location-lng');
     dispatch(setPage('feed'));
-    dispatch(getOrderBy());
-    dispatch(getFavorite());
-    dispatch(getInFast());
+    dispatch(getOrderBy(lat, lng));
+    dispatch(getFavorite(lat, lng));
+    dispatch(getInFast(lat, lng));
     // dispatch(getNearBy('2'));
   }, [dispatch]);
 
