@@ -41,13 +41,13 @@ const Member = () => {
 
   return (
     <MemberWrap>
-      {userInfo.email && (
+      {!userInfo.email && (
         <>
           <LoginBtn active text="LOG IN" onClick={openLogInPopUp} />
           <LoginBtn text="SIGN UP" onClick={openSignUpPopUp} />
         </>
       )}
-      {!userInfo.email && (
+      {userInfo.email && (
         <>
           <LoginCart>
             <div>hi</div>
