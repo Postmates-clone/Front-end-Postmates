@@ -8,6 +8,7 @@ import DevUserComponent from '../Dev/DevUserComponent';
 import DesignSystem from '../Style/DesignSystem';
 import UserContainer from '../Containers/UserContainer';
 import CheckoutContainer from '../Containers/CheckoutContainer';
+import OrderHistory from '../Components/Pages/OrderHistory';
 
 const MainRouter = () => {
   return (
@@ -16,6 +17,7 @@ const MainRouter = () => {
       <Route path="/feed" component={FeedContainer} />
       <Route path="/item" component={ItemContainer} />
       <Route path="/account" component={UserContainer} />
+      <Route path="/orderhistory" component={OrderHistory} />
       <Route path="/checkout" component={CheckoutContainer} />
       <Route path="/dev" component={DevComponent} />
       <Route path="/devuser" component={DevUserComponent} />

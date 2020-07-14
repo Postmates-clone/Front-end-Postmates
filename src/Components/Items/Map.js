@@ -9,14 +9,14 @@ import {
 
 const MapBox = styled.div``;
 
-const Map = () => {
+const Map = ({ storeInfo }) => {
   const GoogleMapObj = () => {
     return (
       <GoogleMap
         defaultZoom={12}
-        defaultCenter={{ lat: 34.0647612, lng: -118.2492018 }}
+        defaultCenter={{ lat: +storeInfo.lat, lng: +storeInfo.lng }}
       >
-        <Marker position={{ lat: 34.0647612, lng: -118.2492018 }} />
+        <Marker position={{ lat: +storeInfo.lat, lng: +storeInfo.lng }} />
       </GoogleMap>
     );
   };

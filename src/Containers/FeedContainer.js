@@ -27,7 +27,7 @@ const FeedContainer = () => {
     dispatch(setPage('feed'));
     dispatch(getOrderBy());
     dispatch(getFavorite());
-    // dispatch(getInFast());
+    dispatch(getInFast());
     // dispatch(getNearBy('2'));
   }, [dispatch]);
 
@@ -40,8 +40,8 @@ const FeedContainer = () => {
   if (favorite.loading) return <div>로딩중...</div>;
   if (favorite.error) return <div>에러 발생!</div>;
 
-  // if (getinfast.loading) return <div>로딩중...</div>;
-  // if (getinfast.error) return <div>에러 발생!</div>;
+  if (getinfast.loading) return <div>로딩중...</div>;
+  if (getinfast.error) return <div>에러 발생!</div>;
 
   if (!orderby.data && !favorite.data) {
     return null;
@@ -53,7 +53,7 @@ const FeedContainer = () => {
       // nearby={nearby.data}
       orderby={orderby.data.results}
       favorite={favorite.data.results}
-      // getinfast={getinfast.data.results}
+      getinfast={getinfast.data.results}
     />
   );
 };

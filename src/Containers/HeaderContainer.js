@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import SubHeader from '../Components/Layout/SubHeader';
-import SubBanner from '../Components/Layout/SubBanner';
+import WarpSubHeader from '../Components/Layout/WarpSubHeader';
+// import SubBanner from '../Components/Layout/SubBanner';
 import { changeSubInput } from '../Modules/MainReducer';
 import MainHeader from '../Components/Layout/MainHeader';
 
@@ -31,24 +31,36 @@ const HeaderContainer = () => {
     window.scrollTo({ top: yaxis - 60, behavior: 'smooth' });
   };
 
-  const generateSubHeader = () => {
-    return (
-      <>
-        <SubBanner page={page} getBackground={getBackground} />
-        <SubHeader
+  // const GenerateSubHeader = () => {
+  //   console.log(page);
+  //   return (
+  //     <>
+  //       <SubBanner page={page} getBackground={getBackground} />
+  //       <SubHeader
+  //         page={page}
+  //         menuList={menuList}
+  //         handleClickScrollTo={handleClickScrollTo}
+  //         changeSubInput={changeSubInput}
+  //         dispatch={dispatch}
+  //       />
+  //     </>
+  //   );
+  // };
+  return (
+    <>
+      <MainHeader page={page} />
+      {page === 'feed' || page === 'item' ? (
+        <WarpSubHeader
           page={page}
+          getBackground={getBackground}
           menuList={menuList}
           handleClickScrollTo={handleClickScrollTo}
           changeSubInput={changeSubInput}
           dispatch={dispatch}
         />
-      </>
-    );
-  };
-  return (
-    <>
-      <MainHeader page={page} />
-      {page === 'feed' || page === 'item' ? generateSubHeader() : ''}
+      ) : (
+        ''
+      )}
     </>
   );
 };

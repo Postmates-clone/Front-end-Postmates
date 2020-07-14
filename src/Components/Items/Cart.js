@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import SlidingPane from 'react-sliding-pane';
@@ -10,7 +11,8 @@ import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Cart.css';
 import { LoginBtn } from '../../Style/BasicBtn';
-import { Link } from 'react-router-dom';
+
+const WarpCart = styled.div``;
 
 const DialogBlock = styled.div`
   width: 100%;
@@ -49,7 +51,7 @@ export const CountBlock = styled.div`
   max-height: 30%;
   text-align: center;
   padding: 1%;
-  background-color: rgb(246, 246, 248);
+  /* background-color: rgb(246, 246, 248); */
 `;
 
 const DetailBlock = styled.div`
@@ -129,7 +131,7 @@ const Cart = () => {
   };
 
   return (
-    <div>
+    <WarpCart>
       <LoginBtn
         onClick={() => setState({ isPaneOpen: true })}
         active
@@ -204,14 +206,14 @@ const Cart = () => {
                 .toFixed(2)}`}
             </TotalPriceBlock>
           </SubTotalBlock>
-          <Link to="/checkout">
-            <ButtonGroup>
+          <ButtonGroup>
+            <Link to="/checkout">
               <Button>CHECKOUT</Button>
-            </ButtonGroup>
-          </Link>
+            </Link>
+          </ButtonGroup>
         </DialogBlock>
       </SlidingPane>
-    </div>
+    </WarpCart>
   );
 };
 
