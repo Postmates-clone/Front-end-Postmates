@@ -21,8 +21,9 @@ export const geocode = {
     return api.get(
       `/maps/api/place/autocomplete/json?input=${input}&key=${API_KEY}`,
       {
+        responseType: 'json',
         headers: {
-          'access-control-allow-origin': '*',
+          'Access-Control-Allow-Origin': 'http://localhost:3000',
         },
       },
     );
