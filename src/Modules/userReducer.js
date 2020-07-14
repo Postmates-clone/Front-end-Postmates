@@ -506,6 +506,7 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         token: action.data.token,
+        isLogin: true,
         userInfo: { ...state.userInfo, email: action.email },
         status: {
           loading: false,
