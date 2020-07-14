@@ -38,7 +38,15 @@ export const decrease = () => ({ type: DECREASE });
 
 //초기상태
 const initialState = {
+  store: {
+    name: '',
+    location: {
+      lat: 0,
+      lang: 0,
+    },
+  },
   cart: [],
+  total: 0,
 };
 
 export default function CartReducer(state = initialState, action) {

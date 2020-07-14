@@ -1,5 +1,6 @@
-// 0701 seungeun
-import React from 'react';
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-use-before-define */
+import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
@@ -48,21 +49,45 @@ const StoreImage = styled.div`
   width: 100%;
   padding-top: 65%;
   margin-bottom: 15px;
-  background-color: #fff;
+  background-color: #f4f4f4;
 
-  /* background-image: url(${(props) => props.image || null});
+  background-image: url(${(props) => props.image || null});
   background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
 `;
 
-const Stores = ({ id, name, image, fee, time, url }) => {
-  console.log(id, name, image, fee, time, url);
+export default function Stores({ name, image, fee, time, url }) {
+  // console.log(id, name, image, fee, time, url);
+  const imgRef = useRef(null);
+  const [isLoad, setIsLoad] = useState(false);
+
+  useEffect(() => {
+    function loadImage() {
+      setIsLoad(true);
+    }
+
+    const img = imgRef.current;
+    img && img.addEventListener(loadImageEvent, loadImage);
+
+    return () => {
+      img && img.removeEventListener(loadImageEvent, loadImage);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!observer) {
+      observer = new IntersectionObserver(onIntersection, {
+        threshold: 0.5,
+      });
+    }
+    imgRef.current && observer.observe(imgRef.current);
+  }, []);
 
   return (
-    <Store key={id}>
+    <Store>
       <Link to={`/item/${url}`}>
-        <StoreImage image={image} />
+        <StoreImage ref={imgRef} image={isLoad ? image : null} />
         <h3>
           {name}
           <svg width="14" height="14" viewBox="0 0 14 14">
@@ -77,6 +102,16 @@ const Stores = ({ id, name, image, fee, time, url }) => {
       </Link>
     </Store>
   );
-};
+}
 
-export default Stores;
+let observer = null;
+const loadImageEvent = 'loadImage';
+
+function onIntersection(entries, io) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      io.unobserve(entry.target);
+      entry.target.dispatchEvent(new CustomEvent(loadImageEvent));
+    }
+  });
+}

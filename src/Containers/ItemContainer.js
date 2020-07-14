@@ -14,7 +14,6 @@ const ItemContainer = () => {
   useEffect(() => {
     dispatch(setPage('item'));
     dispatch(getStoreAsync(window.location.href.substring(27)));
-    console.log(window.location.href);
   }, [dispatch]);
 
   return <ItemPage storeData={storeData} subInput={subInput} />;

@@ -1,7 +1,7 @@
 .slide-pane {
   display: flex;
   flex-direction: column;
-  background: #d9dbe0;
+  background: rgb(246, 246, 248);
   min-width: 100px;
   height: 100%;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);

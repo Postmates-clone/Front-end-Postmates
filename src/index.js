@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import createSagaMiddleware from 'redux-saga';
 // eslint-disable-next-line import/no-unresolved
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -12,10 +13,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import RootReducer from './Modules';
 
+const sagaMiddleware = createSagaMiddleware();
+
 const store = createStore(
   RootReducer,
-  composeWithDevTools(applyMiddleware(ReduxThunk, logger)),
+  composeWithDevTools(applyMiddleware(ReduxThunk, sagaMiddleware, logger)),
 );
+// sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>

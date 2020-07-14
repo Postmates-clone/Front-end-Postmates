@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Textarea from 'react-textarea-autosize';
 // import { IconImage } from '../Layout/MainBanner';
 // import xIcon from '../../Assets/xicon.png';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // optional
+// import Tippy from '@tippyjs/react';
+// import 'tippy.js/dist/tippy.css'; // optional
 import { AddToCart } from '../../Style/BasicCounter';
 import { ADD_TO_CART } from '../../Modules/CartReducer';
 import { CloseBtn } from '../../Style/PopUp';
@@ -224,7 +224,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [localVisible, setLocalVisible] = useState(visible);
   const [addInstruction, setAddInstruction] = useState('');
 
-  const { name, description, img_url, base_price, options } = item;
+  const { name, description, image_url, price, option_groups, options } = item;
 
   const onClick = () => {
     dispatch({
@@ -253,13 +253,12 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   if (!animate && !localVisible) return null;
   return (
     <OpacityBackground disappear={!visible}>
-      {img_url !== '' ? <ImageBlock image={img_url} /> : null}
+      {image_url !== '' ? <ImageBlock image={image_url} /> : null}
       <DialogBlock disappear={!visible}>
         <CloseBtn onClick={onCancel}>{closeIcon}</CloseBtn>
         {/* <IconImage cursor src={xIcon} onClick={onCancel} /> */}
         <h1>{name}</h1>
         <p>{description}</p>
-        <p>example: Cut Rolls (4 pc each) Toro, Scallop, Cucumber Crab</p>
         <h2 style={{ marginTop: '50px' }}>SPECIAL INSTRUCTIONS</h2>
         <InstructionBorder>
           <InstructionBlock
@@ -285,7 +284,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
           <AddToCart
             active
             text="Add To Cart"
-            totalprice={`$${(Number(base_price) * count).toFixed(2)}`}
+            totalprice={`$${(Number(price) * count).toFixed(2)}`}
             onClick={onClick}
           />
         </ButtonGroup>

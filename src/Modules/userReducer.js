@@ -135,10 +135,10 @@ const initialState = {
   token: '',
   userInfo: {
     id: 0,
-    username: '',
-    email: '',
-    phone: '',
-    address: '',
+    username: 'Donald Trump',
+    email: 'abcd@aaaa.com',
+    phone: '000-0000-0000',
+    address: '24 Willie Mays Plaza, San Francisco, CA 94107',
     orderhistory: [{}, {}], // check out 했던 주문. 구매이력.
   },
   status: {
