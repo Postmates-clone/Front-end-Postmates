@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { DevUserApi } from '../Dev/DevUserApi';
+import api from '../Utils/LoginApi';
 
 // user 가입 action
 const CREATE_USER = 'CREATE_USER';
@@ -40,6 +41,22 @@ const REMOVE_CART_ERROR = 'REMOVE_CART_ERROR';
 const PATCH_CART = 'REMOVE_CART';
 const PATCH_CART_SUCCESS = 'REMOVE_CART_SUCCESS';
 const PATCH_CART_ERROR = 'REMOVE_CART_ERROR';
+
+// 희진 login action
+const LOGIN_USER = 'LOGIN_USER';
+const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
+const LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
+
+// login action 생성 함수
+export const loginUsersAsync = (payload) => async (dispatch, state) => {
+  dispatch({ type: LOGIN_USER });
+  try {
+    const { data } = await api.post('/api/v1/members/login/', payload);
+    dispatch({ type: LOGIN_USER_SUCCESS, data, email: payload.email });
+  } catch (e) {
+    dispatch({ type: LOGIN_USER_ERROR, error: e });
+  }
+};
 
 // user 가입 action 생성 함수
 export const createUsersAsync = (payload) => async (dispatch, state) => {
@@ -463,6 +480,44 @@ export default function userReducer(state = initialState, action) {
         },
       };
     case REMOVE_CART_ERROR:
+      return {
+        ...state,
+        status: {
+          loading: false,
+          success: true,
+          error: {
+            error: true,
+            massage: action.error,
+          },
+        },
+      };
+    case LOGIN_USER:
+      return {
+        ...state,
+        status: {
+          loading: true,
+          success: false,
+          error: {
+            error: false,
+            massage: null,
+          },
+        },
+      };
+    case LOGIN_USER_SUCCESS:
+      return {
+        ...state,
+        token: action.data.token,
+        userInfo: { ...state.userInfo, email: action.email },
+        status: {
+          loading: false,
+          success: true,
+          error: {
+            error: false,
+            massage: null,
+          },
+        },
+      };
+    case LOGIN_USER_ERROR:
       return {
         ...state,
         status: {

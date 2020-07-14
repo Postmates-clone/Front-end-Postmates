@@ -7,8 +7,6 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import Textarea from 'react-textarea-autosize';
-// import { IconImage } from '../Layout/MainBanner';
-// import xIcon from '../../Assets/xicon.png';
 // import Tippy from '@tippyjs/react';
 // import 'tippy.js/dist/tippy.css'; // optional
 import { AddToCart } from '../../Style/BasicCounter';
@@ -82,8 +80,8 @@ const ImageBlock = styled.div`
   background-size: cover;
   width: 524px;
   height: 512px;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat center;
   background-image: url(${(props) => props.image || null});
   display: flex;
   align-items: center;
@@ -106,7 +104,9 @@ const DialogBlock = styled.div`
   height: 512px;
   padding-left: 1.5rem;
   background: #fff;
+  background-position: center;
   justify-content: space-between;
+  align-items: center;
 
   h1 {
     margin: 0;
@@ -178,7 +178,6 @@ const CounterBlock = styled.div`
 const Increase = styled.button``;
 const Decrease = styled.button`
   color: ${(props) => (props.active ? null : itemColor.fontGray)};
-  /* color: ${itemColor.fontGray}; */
 `;
 const Value = styled.div`
   width: 30px;
@@ -251,9 +250,10 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   }, [localVisible, visible]);
   // const prices = options.map((option) => option);
   if (!animate && !localVisible) return null;
+  console.log(image_url);
   return (
     <OpacityBackground disappear={!visible}>
-      {image_url !== '' ? <ImageBlock image={image_url} /> : null}
+      {image_url && <ImageBlock image={image_url} />}
       <DialogBlock disappear={!visible}>
         <CloseBtn onClick={onCancel}>{closeIcon}</CloseBtn>
         {/* <IconImage cursor src={xIcon} onClick={onCancel} /> */}
