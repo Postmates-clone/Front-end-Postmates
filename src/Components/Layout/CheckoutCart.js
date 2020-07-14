@@ -14,7 +14,7 @@ const CheckoutCart = ({ storeInfo }) => {
   return (
     <WrapperCheckoutCart>
       <Map storeInfo={storeInfo} />
-      <CheckoutCartList />
+      <CheckoutCartList storeInfo={storeInfo} />
     </WrapperCheckoutCart>
   );
 };
