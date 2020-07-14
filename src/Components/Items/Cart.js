@@ -12,6 +12,8 @@ import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Cart.css';
 import { LoginBtn } from '../../Style/BasicBtn';
 
+const WarpCart = styled.div``;
+
 const DialogBlock = styled.div`
   width: 100%;
   height: 100%;
@@ -130,7 +132,7 @@ const Cart = () => {
   };
 
   return (
-    <div>
+    <WarpCart>
       <LoginBtn
         onClick={() => setState({ isPaneOpen: true })}
         active
@@ -204,7 +206,7 @@ const Cart = () => {
           </ButtonGroup>
         </DialogBlock>
       </SlidingPane>
-    </div>
+    </WarpCart>
   );
 };
 
