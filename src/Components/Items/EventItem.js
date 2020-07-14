@@ -74,12 +74,12 @@ const EventItemBanner = styled.li`
 
   ${Media.tablet`
   flex: 0 0 calc(50% - 12px);
-  padding-top: 22%;
+  padding-top: 26%;
   `}
 
   ${Media.mobile`
-  flex: 0 0 calc(100% - 32px);
-  padding-top: 45%;
+  flex: 0 0 calc(100%);
+  padding-top: 65%;
   `}
 
  
