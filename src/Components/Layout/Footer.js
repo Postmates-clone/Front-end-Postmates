@@ -79,11 +79,12 @@ export const FooterWrap = styled.div`
   margin:0;
     `}
 `;
-export default function Footer() {
+export default function Footer({ page }) {
+  console.log(page);
   return (
     <FooterBlock>
       <FooterWrap>
-        <FooterSection />
+        <FooterSection page={page} />
       </FooterWrap>
     </FooterBlock>
   );

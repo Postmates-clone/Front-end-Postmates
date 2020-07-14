@@ -6,7 +6,8 @@ import DeliverySection from '../Layout/DeliverySection';
 import Footer from '../Layout/Footer';
 import MainProducts from '../../Assets/mainProducts.png';
 
-const MainPage = ({ place, geoCode }) => {
+const MainPage = ({ place, geoCode, page }) => {
+  console.log(page);
   return (
     <div>
       <MainBanner
@@ -38,7 +39,7 @@ const MainPage = ({ place, geoCode }) => {
         title="Ready to order?"
         text="Browse local restaurants and businesses for delivery by entering your address below."
       />
-      <Footer />
+      <Footer page={page} />
     </div>
   );
 };

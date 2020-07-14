@@ -30,7 +30,6 @@ const LoginCart = styled.div`
 const CartText = styled.div`
   max-width: 80%;
 `;
-
 const Member = () => {
   const [openLogIn, setOpenLogIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);

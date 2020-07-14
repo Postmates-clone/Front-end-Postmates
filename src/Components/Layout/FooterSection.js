@@ -34,6 +34,7 @@ export const FooterTopWraper = styled.div`
     margin:0;
     `}
 `;
+
 export const FooterLogoSection = styled.div`
   ${Media.desktop`
   grid-column: span 2;
@@ -113,12 +114,14 @@ export const BottomNewyorkSection = styled.div`
   display:none;
     `}
 `;
+export const noticeWrap = styled.div``;
 export const BottomLastSection = styled.div`
   ${Media.tablet`
   display:none;
     `}
 `;
-export default function FooterSection() {
+export default function FooterSection({ page }) {
+  console.log(page);
   return (
     <div>
       <FooterTopWraper>
@@ -316,16 +319,20 @@ export default function FooterSection() {
           </ul>
         </BottomLastSection>
       </FooterBottomWrap>
-      <h4>
-        Postmates is the largest, most reliable on-demand delivery and pickup
-        platform.
-      </h4>
-      <p>
-        Able to deliver anything from anywhere, Postmates is the food delivery,
-        grocery delivery, whatever-you-can-think-of delivery app to bring what
-        you crave right to your door.
-        <span>Read More</span>
-      </p>
+      {page === 'main' ? (
+        <noticeWrap>
+          <h4>
+            Postmates is the largest, most reliable on-demand delivery and
+            pickup platform.
+          </h4>
+          <p>
+            Able to deliver anything from anywhere, Postmates is the food
+            delivery, grocery delivery, whatever-you-can-think-of delivery app
+            to bring what you crave right to your door.
+            <span>Read More</span>
+          </p>
+        </noticeWrap>
+      ) : null}
       <FooterLink>
         <span>©2020 POSTMATES INC</span>
         <span>TERMS</span>

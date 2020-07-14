@@ -6,6 +6,7 @@ import Logo from '../Items/Logo';
 import Member from '../Items/Member';
 import Search from '../Items/Search';
 import Media from '../../Style/Media';
+import { searchIconDeep } from '../../Style/IconStyles';
 
 const MainHeaderBlock = styled.div`
   width: 100%;
@@ -46,6 +47,16 @@ const MainHeaderWrapper = styled.div`
       padding:0;
     `}
 `;
+const IconWrap = styled.div`
+  ${Media.desktop`
+  display:none;
+    `}
+  ${Media.tablet`
+    display:on;
+    margin: 0 16px 0 0;
+    cursor:pointer;
+    `}
+`;
 
 const MainHeader = ({ page }) => {
   return (
@@ -54,6 +65,7 @@ const MainHeader = ({ page }) => {
         <Logo />
         {page !== 'main' && <Search />}
         {page !== 'main' && <MainMenu />}
+        <IconWrap>{page !== 'main' && searchIconDeep}</IconWrap>
         <Member />
       </MainHeaderWrapper>
     </MainHeaderBlock>
