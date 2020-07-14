@@ -15,7 +15,6 @@ const UserContainer = () => {
   // 임시 렌더용 user info
   const { userInfo, status } = store;
 
-  // console.log(status);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,16 +25,17 @@ const UserContainer = () => {
   if (status.error.error) return <div>에러 발생!</div>;
 
   if (!userInfo) return null;
-  if (userInfo[0] === undefined) return null;
+  if (!userInfo.email) return null;
 
-  const user = userInfo[0];
+  // const user = userInfo[0];
 
+  // console.log(status);
+  // console.log(userInfo);
   // console.log(user);
-
   return (
     <>
-      {/* <User user={user} /> */}
-      <OrderHistory />
+      <User user={userInfo} />
+      {/* <OrderHistory /> */}
     </>
   );
 };
