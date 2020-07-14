@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import SlidingPane from 'react-sliding-pane';
@@ -210,7 +211,9 @@ const Cart = () => {
             <TotalPriceBlock active>$11.97</TotalPriceBlock>
           </SubTotalBlock>
           <ButtonGroup>
-            <Button>CHECKOUT</Button>
+            <Link to="/checkout">
+              <Button>CHECKOUT</Button>
+            </Link>
           </ButtonGroup>
         </DialogBlock>
       </SlidingPane>
