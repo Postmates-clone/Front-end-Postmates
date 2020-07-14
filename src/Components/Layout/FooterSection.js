@@ -24,27 +24,39 @@ export const FooterTopWraper = styled.div`
     padding: 0 0 48px 0;
     margin: 0 0 45px 0;
     grid-template-columns: repeat(8, 1fr);
-    & div {
-      grid-column: span 2;
-    }
     `}
     ${Media.mobile`
-      margin: 0 25px 0 25px;
-      padding:0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column:span 1;
+    grid-column-gap:0;
+    width:820px;
+    height:978.2px;
+    padding:0;
+    margin:0;
     `}
 `;
 export const FooterLogoSection = styled.div`
   grid-column: span 2;
+  ${Media.tablet`
+  grid-column: span 2;
+    `}
 `;
 export const FooterSectionWrap = styled.div`
   grid-column: span 3;
+  ${Media.tablet`
+      grid-column: span 2;
+    `}
 `;
+// export const FooterSecondWrap = styled.div`
+//   /* ${Media.mobile`
+//       grid-column-start: 2;
+//     `} */
+// `;
 export const FooterLastSection = styled.div`
   grid-column: span 1;
   width: 74px;
   ${Media.tablet`
   width:103px;
-  grid-column: span 2;
   grid-column-start:3;
     `}
 `;

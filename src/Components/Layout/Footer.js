@@ -68,12 +68,15 @@ export const FooterBlock = styled.div`
     font-weight: 500;
     margin: 0 15px 0 0;
   }
+  ${Media.mobile`
+  height:1592.7px;
+    `}
 `;
 export const FooterWrap = styled.div`
   max-width: 1024px;
   margin: 0 auto;
   ${Media.tablet`
-  width:993;
+  width:993px;
   padding: 0 24px 0 24px;
     `}
 `;

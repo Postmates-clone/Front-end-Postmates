@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const LogoStyle = styled.h1`
   width: auto;
@@ -12,9 +12,9 @@ const LogoStyle = styled.h1`
 const Logo = () => {
   return (
     <LogoStyle>
-      <NavLink exact to="/Feed">
+      <Link exact to="/Feed">
         Postmates
-      </NavLink>
+      </Link>
     </LogoStyle>
   );
 };
