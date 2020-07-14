@@ -72,7 +72,7 @@ const LoginButton = styled.button`
   display: inline-block;
   min-width: 86px;
   width: ${(props) => props.width || null};
-  height: 32px;
+  height: ${(props) => props.height || '32px'};
 
   margin: 0 5px 0 0;
   padding: 0 16px;
@@ -154,11 +154,20 @@ export function IconBtn({ active, width, text, icon, ...rest }) {
   );
 }
 
-export function LoginBtn({ active, width, twidth, mwidth, text, ...rest }) {
+export function LoginBtn({
+  height,
+  active,
+  width,
+  twidth,
+  mwidth,
+  text,
+  ...rest
+}) {
   return (
     <LoginButton
       active={active}
       width={width}
+      height={height}
       twidth={twidth}
       mwidth={mwidth}
       {...rest}

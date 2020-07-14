@@ -264,6 +264,14 @@ const InstructionBlock = styled(Textarea)`
   resize: none;
 `;
 
+const getOptionsPrice = (options) => {
+  const optionsList = Object.keys(options).map((key) => options[key]);
+
+  return optionsList.reduce((acc, cur) => {
+    return acc + cur.price;
+  }, 0);
+};
+
 const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [count, setCount] = useState(1);
   const [checked, setChecked] = useState(false);
@@ -280,7 +288,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
   const [addInstruction, setAddInstruction] = useState('');
-  const [checkedOption, setCheckedOption] = useState('');
+  const [checkedOption, setCheckedOption] = useState({});
 
   const { name, description, image_url, price, option_groups, options } = item;
 
@@ -292,6 +300,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
         count,
         instruction: addInstruction,
         options: checkedOption,
+        totalPrice: (Number(price) + getOptionsPrice(checkedOption)) * count,
       },
     });
     if (addInstruction.lenght > 200) return;
@@ -304,9 +313,12 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     setAddInstruction(e.target.value);
   };
 
-  const onChecked = (e) => {
-    console.log(e.target.value);
-    setCheckedOption(e.target.value);
+  const onChecked = (optionId, option) => {
+    console.log(optionId, option);
+    setCheckedOption((_checkedOption) => ({
+      ..._checkedOption,
+      [optionId]: option,
+    }));
   };
 
   useEffect(() => {
@@ -320,6 +332,11 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
 
   if (!animate && !localVisible) return null;
 
+  const totalPrice = (
+    (Number(price) + getOptionsPrice(checkedOption)) *
+    count
+  ).toFixed(2);
+
   return (
     <OpacityBackground disappear={!visible}>
       {image_url && <ImageBlock image={image_url} />}
@@ -327,36 +344,35 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
         <CloseBtn onClick={onCancel}>{closeIcon}</CloseBtn>
         <h1>{name}</h1>
         <p>{description}</p>
-        <ul>
-          {item.option_groups.map((option) => (
-            <>
-              <OptionCategoryBlock>
-                <OptionCategoryName>{option.category}</OptionCategoryName>
-                <OptionCategoryRequired>
-                  {option.is_required === true && 'REQUIRED'}
-                </OptionCategoryRequired>
-              </OptionCategoryBlock>
-              {option.options.map((opt) => (
-                <OptionDetailBlock>
-                  <OptionDetailInfo>
-                    <Input
-                      type="radio"
-                      key={opt.id}
-                      id={opt.id}
-                      value={opt.name}
-                      onClick={onChecked}
-                    />
-                    <OptionDetailName>{opt.name}</OptionDetailName>
-                    <OptionDetailPrice>
-                      {opt.price}
-                      {/* {opt.price === Number(0) && ''} */}
-                    </OptionDetailPrice>
-                  </OptionDetailInfo>
-                </OptionDetailBlock>
-              ))}
-            </>
-          ))}
-        </ul>
+        {item.option_groups.map((option) => (
+          <>
+            <OptionCategoryBlock>
+              <OptionCategoryName>{option.category}</OptionCategoryName>
+              <OptionCategoryRequired>
+                {option.is_required === true && 'REQUIRED'}
+              </OptionCategoryRequired>
+            </OptionCategoryBlock>
+            {option.options.map((opt) => (
+              <OptionDetailBlock>
+                <OptionDetailInfo>
+                  <Input
+                    type="radio"
+                    name={option.id}
+                    key={opt.id}
+                    id={opt.id}
+                    value={opt.name}
+                    onClick={() => onChecked(option.id, opt)}
+                  />
+                  <OptionDetailName>{opt.name}</OptionDetailName>
+                  <OptionDetailPrice>
+                    {opt.price}
+                    {/* {opt.price === Number(0) && ''} */}
+                  </OptionDetailPrice>
+                </OptionDetailInfo>
+              </OptionDetailBlock>
+            ))}
+          </>
+        ))}
         <h2 style={{ marginTop: '50px' }}>SPECIAL INSTRUCTIONS</h2>
         <InstructionBorder>
           <InstructionBlock
@@ -383,7 +399,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
             <AddToCart
               active
               text="Add To Cart"
-              totalprice={`$${(Number(price) * count).toFixed(2)}`}
+              totalprice={`$${totalPrice}`}
               onClick={onClick}
             />
           </AddToCartBlock>

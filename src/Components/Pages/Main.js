@@ -1,14 +1,17 @@
 /* eslint-disable import/no-duplicates */
 import React from 'react';
+import styled from 'styled-components';
 import MainSection from '../Layout/MainSection';
 import MainBanner from '../Layout/MainBanner';
 import DeliverySection from '../Layout/DeliverySection';
 import Footer from '../Layout/Footer';
 import MainProducts from '../../Assets/mainProducts.png';
 
+const MainPageBlock = styled.div``;
+
 const MainPage = ({ place, geoCode }) => {
   return (
-    <div>
+    <MainPageBlock>
       <MainBanner
         title="Want Burgers?"
         text="Food, drinks, groceries, and more available for delivery and pickup."
@@ -39,7 +42,7 @@ const MainPage = ({ place, geoCode }) => {
         text="Browse local restaurants and businesses for delivery by entering your address below."
       />
       <Footer />
-    </div>
+    </MainPageBlock>
   );
 };
 

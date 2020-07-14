@@ -51,7 +51,7 @@ export const CountBlock = styled.div`
   max-height: 30%;
   text-align: center;
   padding: 1%;
-  /* background-color: rgb(246, 246, 248); */
+  background-color: rgb(246, 246, 248);
 `;
 
 const DetailBlock = styled.div`
@@ -115,6 +115,18 @@ const ButtonGroup = styled.div`
   max-height: 80%;
 `;
 
+const renderOptions = (options) => {
+  const optionList = Object.keys(options).map((key) => {
+    return options[key];
+  });
+
+  return optionList.map((option) => (
+    <div>
+      {option.id}: {option.name}, ${option.price}
+    </div>
+  ));
+};
+
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
@@ -130,12 +142,22 @@ const Cart = () => {
     dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
 
+  const cartTotalPrice = cart.reduce((prev, curr) => {
+    return prev + curr.totalPrice;
+  }, 0);
+
+  const cartTotalCount = cart.reduce((prev, curr) => {
+    return prev + curr.count;
+  }, 0);
+
   return (
     <WarpCart>
       <LoginBtn
         onClick={() => setState({ isPaneOpen: true })}
         active
-        text="ITEMS"
+        height="45px"
+        width="100%"
+        text={`${cartTotalCount} ITEMS`}
       />
       <SlidingPane
         className="some-custom-class"
@@ -169,12 +191,11 @@ const Cart = () => {
                 <DetailBlock>
                   <DetailNameBlock>{item.name}</DetailNameBlock>
                   {/* TODO: option 들어오게 수정필요. */}
-                  <DetailOptionBlock>{item.options}</DetailOptionBlock>
+                  <DetailOptionBlock>
+                    {renderOptions(item.options)}
+                  </DetailOptionBlock>
                   <div>{item.instruction}</div>
-                  <PriceBlock>
-                    {' '}
-                    {`$${item.price * item.count.toFixed(2)}`}
-                  </PriceBlock>
+                  <PriceBlock> {`$${item.totalPrice.toFixed(2)}`}</PriceBlock>
                 </DetailBlock>
                 <RemoveBlock>
                   <RemoveBtn onClick={() => onRemove(item.name)}>
@@ -186,24 +207,14 @@ const Cart = () => {
           ))}
           <SubTotalBlock>
             <PriceText>Subtotal</PriceText>
-            <TotalPriceBlock>
-              {`$${cart
-                .reduce((prev, curr) => {
-                  return prev + curr.price * curr.count;
-                }, 0)
-                .toFixed(2)}`}
-            </TotalPriceBlock>
+            <TotalPriceBlock>{`$${cartTotalPrice.toFixed(2)}`}</TotalPriceBlock>
             <PriceText>Delivery</PriceText>
             <TotalPriceBlock>{`$${storeData.delivery_fee.toFixed(
               2,
             )}`}</TotalPriceBlock>
             <PriceText active>Total</PriceText>
             <TotalPriceBlock active>
-              {`$${cart
-                .reduce((prev, curr) => {
-                  return prev + curr.price * curr.count;
-                }, 0)
-                .toFixed(2)}`}
+              {`$${(cartTotalPrice + storeData.delivery_fee).toFixed(2)}`}
             </TotalPriceBlock>
           </SubTotalBlock>
           <ButtonGroup>
