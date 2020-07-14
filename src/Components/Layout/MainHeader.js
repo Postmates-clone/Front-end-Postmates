@@ -5,16 +5,17 @@ import MainMenu from '../Items/MainMenu';
 import Logo from '../Items/Logo';
 import Member from '../Items/Member';
 import Search from '../Items/Search';
+import Media from '../../Style/Media';
 
 const MainHeaderBlock = styled.div`
   width: 100%;
-  height: 72px;
+
   background: #ffdf18;
   line-height: 72px;
 
   &.mainHeader-feed {
     position: sticky;
-    background: rgb(243, 217, 0);
+    background: #fed928;
   }
   &.mainHeader-item {
     /* position: sticky; */
@@ -26,10 +27,24 @@ const MainHeaderBlock = styled.div`
 
 const MainHeaderWrapper = styled.div`
   display: flex;
+  min-height: 72px;
   justify-content: space-between;
   align-items: center;
-  width: 1024px;
+  max-width: 1024px;
   margin: 0 auto;
+  &
+  ${Media.desktop`
+  width:1024px;
+    `}
+    ${Media.tablet`
+    max-width:1020px;
+    padding: 0 54px 0 54px;
+    margin:0;
+    `}
+    ${Media.mobile`
+      margin: 0 25px 0 25px;
+      padding:0;
+    `}
 `;
 
 const MainHeader = ({ page }) => {

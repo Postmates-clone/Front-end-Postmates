@@ -12,6 +12,15 @@ export const FooterBlock = styled.div`
   & h1 {
     color: #fff;
   }
+  & h1 > a {
+    height: 19px;
+    width: auto;
+    font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
+    font-size: 22px;
+    letter-spacing: 0.14px;
+    font-weight: 400;
+    color: #fff;
+  }
   & h2,
   h3 {
     grid-column: span3;
@@ -59,19 +68,17 @@ export const FooterBlock = styled.div`
     font-weight: 500;
     margin: 0 15px 0 0;
   }
-  /* ${Media.desktop`
-    min-width:1024px;
+  ${Media.mobile`
+  height:1592.7px;
     `}
-    ${Media.tablet`
-    min-width:768px;
-    `}
-    ${Media.mobile`
-    max-width:767px;
-    `} */
 `;
 export const FooterWrap = styled.div`
   max-width: 1024px;
   margin: 0 auto;
+  ${Media.tablet`
+  width:993px;
+  padding: 0 24px 0 24px;
+    `}
 `;
 export default function Footer() {
   return (
