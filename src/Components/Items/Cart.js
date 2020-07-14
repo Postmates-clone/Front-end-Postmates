@@ -10,8 +10,6 @@ import { closeIcon } from '../../Style/IconStyles';
 import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Cart.css';
-// import Tippy from '@tippyjs/react';
-// import 'tippy.js/dist/tippy.css';
 import { LoginBtn } from '../../Style/BasicBtn';
 
 const DialogBlock = styled.div`
@@ -117,7 +115,6 @@ const ButtonGroup = styled.div`
 `;
 
 const Cart = () => {
-  // const [cartDialog, setCartDialog] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
   const storeData = useSelector((state) => state.Item.store);
@@ -131,13 +128,7 @@ const Cart = () => {
     console.log('WHAT IS THE NAME', name);
     dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
-  // const onClick = () => {
-  //   setCartDialog(true);
-  // };
 
-  // const onCancel = () => {
-  //   setCartDialog(false);
-  // };
   return (
     <div>
       <LoginBtn
@@ -145,10 +136,6 @@ const Cart = () => {
         active
         text="ITEMS"
       />
-
-      {/* const SlidingPane = styled.dev` ` width: 450px; height: 350px; padding:
-      1.5rem; background: #fff; position: absolute; right: 0; margin-top: 10px;
-      overflow-y: scroll; */}
       <SlidingPane
         className="some-custom-class"
         overlayClassName="some-custom-overlay-class"

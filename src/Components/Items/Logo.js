@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const LogoStyle = styled.h1`
   width: auto;
@@ -9,6 +10,12 @@ const LogoStyle = styled.h1`
   cursor: pointer;
 `;
 const Logo = () => {
-  return <LogoStyle>Postmates</LogoStyle>;
+  return (
+    <LogoStyle>
+      <Link exact to="/Feed">
+        Postmates
+      </Link>
+    </LogoStyle>
+  );
 };
 export default Logo;
