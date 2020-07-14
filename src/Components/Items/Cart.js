@@ -45,7 +45,7 @@ const ContentBlock = styled.div`
   margin: 10px;
 `;
 
-const CountBlock = styled.div`
+export const CountBlock = styled.div`
   min-width: 10%;
   max-width: 10%;
   max-height: 30%;

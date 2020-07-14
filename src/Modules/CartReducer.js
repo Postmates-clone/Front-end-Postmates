@@ -15,15 +15,6 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const CLEAR_CART = 'CLEAR_CART';
 export const ADD_INSTRUCTION_TO_CART = 'ADD_INSTRUCTION_TO_CART';
 
-// count
-export const SET_DIFF = 'SET_DIFF';
-export const INCREASE = 'INCREASE';
-export const DECREASE = 'DECREASE';
-
-export const setDiff = (diff) => ({ type: SET_DIFF, diff });
-export const increase = () => ({ type: INCREASE });
-export const decrease = () => ({ type: DECREASE });
-
 //thunk 생성함수
 // export const getOptions = () => async (dispatch) => {
 //   dispatch({ type: GET_OPTIONS_LOADING });
