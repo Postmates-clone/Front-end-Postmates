@@ -12,7 +12,8 @@ const AddressListBlock = styled.ul`
   top: 100%;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(16, 25, 30, 0.08) 0px 1px 4px 0px;
-  border: 1px solid rgba(45, 49, 56, 0.08);
+  /* TODO; BORDER랑 BACKGROUNDCOLOR 필요한지? */
+  /* border: 1px solid rgba(45, 49, 56, 0.08); */
 `;
 
 const AddressListItem = styled.li`
@@ -20,6 +21,7 @@ const AddressListItem = styled.li`
   align-items: center;
   height: 69px;
   border-bottom: 1px solid rgba(217, 219, 224, 0.5);
+  border-top: 1px solid rgba(217, 219, 224, 0.5);
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
