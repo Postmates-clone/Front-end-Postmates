@@ -12,6 +12,7 @@
   height: 100%;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s;
+  z-index: 80;
   will-change: transform;
   position: relative;
 }

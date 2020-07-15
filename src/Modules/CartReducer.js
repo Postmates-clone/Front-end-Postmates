@@ -5,27 +5,9 @@
 /* eslint-disable no-else-return */
 /* eslint-disable spaced-comment */
 
-//액션타입
-// const GET_OPTIONS_LOADING = 'GET_OPTIONS_LOADING';
-// const GET_OPTIONS_SUCCESS = 'GET_OPTIONS_SUCCESS';
-// const GET_OPTIONS_ERROR = 'GET_OPTIONS_ERROR';
-
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const CLEAR_CART = 'CLEAR_CART';
-export const ADD_INSTRUCTION_TO_CART = 'ADD_INSTRUCTION_TO_CART';
-
-//thunk 생성함수
-// export const getOptions = () => async (dispatch) => {
-//   dispatch({ type: GET_OPTIONS_LOADING });
-
-//   try {
-//     const options = await optionsApi.getOptions();
-//     dispatch({ type: GET_OPTIONS_SUCCESS }, options);
-//   } catch (e) {
-//     dispatch({ type: GET_OPTIONS_ERROR, error: e });
-//   }
-// };
 
 //초기상태
 const initialState = {
@@ -90,18 +72,6 @@ export default function CartReducer(state = initialState, action) {
         }
       }
     }
-
-    // special instruction -삭제 예정
-    // case ADD_INSTRUCTION_TO_CART:
-    //   return {
-    //     ...state,
-    //     cart: state.cart.map((item) => {
-    //       if (item.name === action.payload.name) {
-    //         return action.payload;
-    //       }
-    //       return cart;
-    //     }),
-    //   };
 
     case REMOVE_FROM_CART:
       console.log('WHAT IS THIS PAYLOAD', action.payload);

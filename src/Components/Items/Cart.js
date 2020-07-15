@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import SlidingPane from 'react-sliding-pane';
-import { REMOVE_FROM_CART } from '../../Modules/CartReducer';
+import { REMOVE_FROM_CART, CLEAR_CART } from '../../Modules/CartReducer';
 import { closeIcon } from '../../Style/IconStyles';
 import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
@@ -37,13 +37,12 @@ const CartName = styled.div`
 const ContentBlock = styled.div`
   width: 345px;
   height: 104px;
-  /* margin: 0 auto; */
   background-color: #fff;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 10px;
-  margin: 10px;
+  margin: 10px auto;
 `;
 
 export const CountBlock = styled.div`
@@ -52,7 +51,7 @@ export const CountBlock = styled.div`
   max-height: 30%;
   text-align: center;
   padding: 1%;
-  /* background-color: rgb(246, 246, 248); */
+  background-color: rgb(246, 246, 248);
 `;
 
 const DetailBlock = styled.div`
@@ -116,6 +115,18 @@ const ButtonGroup = styled.div`
   max-height: 80%;
 `;
 
+const renderOptions = (options) => {
+  const optionList = Object.keys(options).map((key) => {
+    return options[key];
+  });
+
+  return optionList.map((option) => (
+    <div>
+      {option.id}: {option.name}, ${option.price}
+    </div>
+  ));
+};
+
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
@@ -131,12 +142,22 @@ const Cart = () => {
     dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
 
+  const cartTotalPrice = cart.reduce((prev, curr) => {
+    return prev + curr.totalPrice;
+  }, 0);
+
+  const cartTotalCount = cart.reduce((prev, curr) => {
+    return prev + curr.count;
+  }, 0);
+
   return (
     <WarpCart>
       <LoginBtn
         onClick={() => setState({ isPaneOpen: true })}
         active
-        text="ITEMS"
+        height="45px"
+        width="100%"
+        text={`${cartTotalCount} ITEMS`}
       />
       <SlidingPane
         className="some-custom-class"
@@ -169,12 +190,12 @@ const Cart = () => {
                 <CountBlock>{item.count}</CountBlock>
                 <DetailBlock>
                   <DetailNameBlock>{item.name}</DetailNameBlock>
-                  <DetailOptionBlock>{item.option_groups}</DetailOptionBlock>
+                  {/* TODO: option 들어오게 수정필요. */}
+                  <DetailOptionBlock>
+                    {renderOptions(item.options)}
+                  </DetailOptionBlock>
                   <div>{item.instruction}</div>
-                  <PriceBlock>
-                    {' '}
-                    {`$${Number(item.price * item.count).toFixed(2)}`}
-                  </PriceBlock>
+                  <PriceBlock> {`$${item.totalPrice.toFixed(2)}`}</PriceBlock>
                 </DetailBlock>
                 <RemoveBlock>
                   <RemoveBtn onClick={() => onRemove(item.name)}>
@@ -186,18 +207,15 @@ const Cart = () => {
           ))}
           <SubTotalBlock>
             <PriceText>Subtotal</PriceText>
-            <TotalPriceBlock>
-              {' '}
-              {`$${cart
-                .reduce((prev, curr) => {
-                  return prev + curr.price * curr.count;
-                }, 0)
-                .toFixed(2)}`}
-            </TotalPriceBlock>
+            <TotalPriceBlock>{`$${cartTotalPrice.toFixed(2)}`}</TotalPriceBlock>
             <PriceText>Delivery</PriceText>
-            <TotalPriceBlock>$11.97</TotalPriceBlock>
+            <TotalPriceBlock>{`$${storeData.delivery_fee.toFixed(
+              2,
+            )}`}</TotalPriceBlock>
             <PriceText active>Total</PriceText>
-            <TotalPriceBlock active>$11.97</TotalPriceBlock>
+            <TotalPriceBlock active>
+              {`$${(cartTotalPrice + storeData.delivery_fee).toFixed(2)}`}
+            </TotalPriceBlock>
           </SubTotalBlock>
           <ButtonGroup>
             <Link to="/checkout">
