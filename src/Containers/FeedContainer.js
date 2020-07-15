@@ -30,7 +30,8 @@ const FeedContainer = () => {
     dispatch(getOrderBy(lat, lng));
     dispatch(getFavorite(lat, lng));
     dispatch(getInFast(lat, lng));
-    // dispatch(getNearBy('2'));
+    // dispatch(getNearBy(1, lat, lng));
+    // console.log(lat, lng);
   }, [dispatch]);
 
   // if (nearby.loading) return <div>로딩중...</div>;

@@ -16,7 +16,7 @@ const api = axios.create();
 
 export const DevApi = {
   getNearBy: (page, lat, lng) => {
-    console.log('nearby async', page, lat, lng);
+    // console.log('nearby async', page, lat, lng);
     return api.get(`/api/v1/feed?lat=${lat}&lng=${lng}&page=${page}`, {
       responseType: 'json',
       headers: {
