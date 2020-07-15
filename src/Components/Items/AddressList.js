@@ -9,6 +9,7 @@ const AddressListBlock = styled.ul`
   padding: 0 16px;
   background-color: yellowgreen;
   position: absolute;
+  display: ${(props) => props.place};
   top: 100%;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(16, 25, 30, 0.08) 0px 1px 4px 0px;
@@ -24,9 +25,16 @@ const AddressListItem = styled.li`
   border-top: 1px solid rgba(217, 219, 224, 0.5);
   font-size: 16px;
   font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   cursor: pointer;
   span {
+    max-width: 330px;
     margin-left: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `;
 
@@ -35,7 +43,7 @@ const AddressList = ({ place, getGeocodeAsync, dispatch }) => {
     dispatch(getGeocodeAsync(address));
   };
   return (
-    <AddressListBlock>
+    <AddressListBlock place={place.length ? 'block' : 'none'}>
       {place.map((item) => (
         <Link to="/feed">
           <AddressListItem
