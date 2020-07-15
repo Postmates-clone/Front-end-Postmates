@@ -23,7 +23,6 @@ export const FooterBlock = styled.div`
   }
   & h2,
   h3 {
-    grid-column: span3;
     color: #fff;
     font-size: 12px;
     letter-spacing: 0.14px;
@@ -69,22 +68,29 @@ export const FooterBlock = styled.div`
     margin: 0 15px 0 0;
   }
   ${Media.mobile`
-  height:1592.7px;
+  height:2200px;
     `}
+  &.footer-item {
+    ${Media.desktop`
+  height:600px;
+  background:red;
+    `}
+  }
 `;
 export const FooterWrap = styled.div`
   max-width: 1024px;
   margin: 0 auto;
   ${Media.tablet`
-  width:993px;
   padding: 0 24px 0 24px;
+  margin:0;
     `}
 `;
-export default function Footer() {
+export default function Footer({ page }) {
+  console.log(page);
   return (
-    <FooterBlock>
+    <FooterBlock className={`footer-${page}`}>
       <FooterWrap>
-        <FooterSection />
+        <FooterSection page={page} />
       </FooterWrap>
     </FooterBlock>
   );

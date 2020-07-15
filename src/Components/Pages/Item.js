@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import StoreIndividual from '../Layout/StoreIndividual';
 import MenuList from '../Layout/MenuList';
+import Footer from '../Layout/Footer';
 
 const StorePageBlock = styled.main`
   width: 100%;
@@ -18,6 +19,7 @@ const ItemPage = ({ storeData, subInput }) => {
     <StorePageBlock>
       <StoreIndividual storeData={storeData} />
       <MenuList storeData={storeData} subInput={subInput} />
+      <Footer />
     </StorePageBlock>
   );
 };
