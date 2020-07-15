@@ -18,7 +18,13 @@ const InnerBlock = styled.div`
   `}
 `;
 
-const Checkout = ({ deliveryAddress, requestTime, payment, userInfo }) => {
+const Checkout = ({
+  deliveryAddress,
+  requestTime,
+  payment,
+  userInfo,
+  storeInfo,
+}) => {
   return (
     <WapperCheckout>
       <InnerBlock>
@@ -28,7 +34,7 @@ const Checkout = ({ deliveryAddress, requestTime, payment, userInfo }) => {
           payment={payment}
           userInfo={userInfo}
         />
-        <CheckoutCart />
+        <CheckoutCart storeInfo={storeInfo} />
       </InnerBlock>
     </WapperCheckout>
   );

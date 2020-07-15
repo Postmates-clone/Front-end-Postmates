@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import SlidingPane from 'react-sliding-pane';
@@ -10,6 +11,8 @@ import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Cart.css';
 import { LoginBtn } from '../../Style/BasicBtn';
+
+const WarpCart = styled.div``;
 
 const DialogBlock = styled.div`
   width: 100%;
@@ -129,7 +132,7 @@ const Cart = () => {
   };
 
   return (
-    <div>
+    <WarpCart>
       <LoginBtn
         onClick={() => setState({ isPaneOpen: true })}
         active
@@ -197,11 +200,13 @@ const Cart = () => {
             <TotalPriceBlock active>$11.97</TotalPriceBlock>
           </SubTotalBlock>
           <ButtonGroup>
-            <Button>CHECKOUT</Button>
+            <Link to="/checkout">
+              <Button>CHECKOUT</Button>
+            </Link>
           </ButtonGroup>
         </DialogBlock>
       </SlidingPane>
-    </div>
+    </WarpCart>
   );
 };
 

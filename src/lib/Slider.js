@@ -15,7 +15,7 @@ const PrevBtn = styled.div`
   position: absolute;
   top: calc(50% - 20px);
   left: -20px;
-  z-index: 99;
+  z-index: 60;
 
   width: 40px;
   height: 40px;
@@ -38,7 +38,7 @@ const NextBtn = styled.div`
   position: absolute;
   top: calc(50% - 20px);
   right: -20px;
-  z-index: 99;
+  z-index: 60;
 
   width: 40px;
   height: 40px;
@@ -80,11 +80,21 @@ const Slider = ({ list, children }) => {
     }
   };
 
-  useEffect(() => {
+  const moveSlide = (cur) => {
+    // console.log(cur);
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
-    slideRef.current.style.transform = `translateX(-${
-      (currentSlide * 100) / 2
-    }%)`;
+
+    // const size = `calc(-${cur * 100}%)`;
+    // const size2 = `calc((${size} - 36px) / 2)`;
+    const size = `${cur * 494 + cur * 36}px`;
+    slideRef.current.style.transform = `translateX(-${cur ? size : 0})`;
+    // console.log(size2);
+  };
+
+  useEffect(() => {
+    const cur = currentSlide;
+    // console.log(slideRef.current.clientWidth);
+    moveSlide(cur);
   }, [currentSlide]);
 
   return (

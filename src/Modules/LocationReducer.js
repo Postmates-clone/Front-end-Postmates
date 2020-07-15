@@ -18,6 +18,8 @@ export const getPlaceAsync = (input) => async (dispatch, state) => {
   try {
     const { data } = await geocode.getPlace(input);
     dispatch({ type: GET_PLACE_SUCCESS, data });
+    // console.log(data.predictions[0]);
+    // localStorage.setItem('test', '123');
   } catch (e) {
     dispatch({ type: GET_PLACE_ERROR, error: e });
   }
@@ -40,6 +42,8 @@ export const getGeocodeAsync = (address) => async (dispatch, state) => {
   try {
     const { data } = await geocode.getGeocode(address);
     dispatch({ type: GET_GEOCODE_SUCCESS, data });
+    localStorage.setItem('location-lat', data.results[0].geometry.location.lat);
+    localStorage.setItem('location-lng', data.results[0].geometry.location.lng);
   } catch (e) {
     dispatch({ type: GET_GEOCODE_ERROR, error: e });
   }

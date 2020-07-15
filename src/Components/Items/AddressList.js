@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 // import Media from '../../Style/Media';
 import { locationIconLarge } from '../../Style/IconStyles';
@@ -35,18 +35,18 @@ const AddressList = ({ place, getGeocodeAsync, dispatch }) => {
   return (
     <AddressListBlock>
       {place.map((item) => (
-        // <Link to="/feed">
-        <AddressListItem
-          key={item.id}
-          onClick={() => getGeocode(item.structured_formatting.main_text)}
-        >
-          {locationIconLarge}
-          <span>
-            {item.structured_formatting.main_text},{' '}
-            {item.structured_formatting.secondary_text}
-          </span>
-        </AddressListItem>
-        // </Link>
+        <Link to="/feed">
+          <AddressListItem
+            key={item.id}
+            onClick={() => getGeocode(item.structured_formatting.main_text)}
+          >
+            {locationIconLarge}
+            <span>
+              {item.structured_formatting.main_text},{' '}
+              {item.structured_formatting.secondary_text}
+            </span>
+          </AddressListItem>
+        </Link>
       ))}
     </AddressListBlock>
   );

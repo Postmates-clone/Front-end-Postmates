@@ -24,11 +24,14 @@ const FeedContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const lat = localStorage.getItem('location-lat');
+    const lng = localStorage.getItem('location-lng');
     dispatch(setPage('feed'));
-    dispatch(getOrderBy());
-    dispatch(getFavorite());
-    dispatch(getInFast());
-    // dispatch(getNearBy('2'));
+    dispatch(getOrderBy(lat, lng));
+    dispatch(getFavorite(lat, lng));
+    dispatch(getInFast(lat, lng));
+    // dispatch(getNearBy(1, lat, lng));
+    // console.log(lat, lng);
   }, [dispatch]);
 
   // if (nearby.loading) return <div>로딩중...</div>;
