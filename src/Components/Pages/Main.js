@@ -6,8 +6,8 @@ import DeliverySection from '../Layout/DeliverySection';
 import Footer from '../Layout/Footer';
 import MainProducts from '../../Assets/mainProducts.png';
 
+
 const MainPage = ({ place, geoCode, page, history }) => {
-  console.log(page);
   return (
     <div>
       <MainBanner

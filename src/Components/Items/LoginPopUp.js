@@ -58,6 +58,7 @@ const Input = ({ label, register, validation, pattern, ...rest }) => (
 
 const LoginPopUp = ({ setState, openState }) => {
   const [isLoggedIn, setLoggedIn] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem('token'));
   const { register, handleSubmit, errors, reset, watch } = useForm({
     mode: 'all',
   });
@@ -78,7 +79,6 @@ const LoginPopUp = ({ setState, openState }) => {
     await dispatch(
       loginUsersAsync({ email: _data.email, password: _data.password }),
     );
-
     reset();
     setLoggedIn(true);
   };
