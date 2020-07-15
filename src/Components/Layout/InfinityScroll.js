@@ -11,7 +11,6 @@ import { DevApi } from '../../Dev/DevApi';
 const StoreList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-
   li {
     margin: 35px 0 0 35px;
   }
@@ -30,8 +29,10 @@ const InfinityScroll = () => {
 
   const fetchItems = async () => {
     setState((prev) => ({ ...prev, loading: true }));
-
-    const { data } = await DevApi.getNearBy(1);
+    const lat = localStorage.getItem('location-lat');
+    const lng = localStorage.getItem('location-lng');
+    // console.log(state.next, lat, lng, 'nearby');
+    const { data } = await DevApi.getNearBy(state.next, lat, lng);
 
     setState((prev) => ({
       ...prev,
@@ -40,8 +41,8 @@ const InfinityScroll = () => {
       data: [...prev.data, ...data.results],
       error: null,
     }));
+    // console.log('next', state.next);
   };
-
   useEffect(() => {
     fetchItems();
   }, []);
@@ -62,8 +63,10 @@ const InfinityScroll = () => {
       observer = new IntersectionObserver(onIntersect, { threshold: 0.5 });
       observer.observe(target);
     }
-    return () => observer && observer.disconnect();
-  }, [target]);
+    return () => {
+      return observer && observer.disconnect();
+    };
+  }, [target, state.next]);
 
   const { loading, data, error } = state;
 

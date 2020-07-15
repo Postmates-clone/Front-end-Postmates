@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { searchIconDeep } from '../../Style/IconStyles';
+import Media from '../../Style/Media';
 
 const SearchWrap = styled.div`
   display: flex;
   width: 200px;
   height: 100%;
   align-items: center;
-  margin-right: 100px;
-  margin-left: 35px;
+  margin-right: 80px;
+  margin-left: 15px;
+  ${Media.tablet`
+    display:none;
+    `}
 `;
 const SearchInput = styled.input`
   max-width: 380px;

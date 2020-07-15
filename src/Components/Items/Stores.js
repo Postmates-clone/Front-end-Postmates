@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-use-before-define */
 import React, { useRef, useState, useEffect } from 'react';
@@ -6,6 +7,7 @@ import styled from 'styled-components';
 import Media from '../../Style/Media';
 
 const Store = styled.li`
+  position: relative;
 
   margin: 0 10px 0 0;
 
@@ -55,6 +57,31 @@ const StoreImage = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* bottom: 0; */
+    width: 100%;
+    padding-top: 65%;
+
+    background-image: radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0) 44%,
+      rgba(0, 0, 0, 1)
+    );
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  &:hover:after {
+    opacity: 0.3;
+  }
 `;
 
 export default function Stores({ name, image, fee, time, url }) {
@@ -97,7 +124,7 @@ export default function Stores({ name, image, fee, time, url }) {
             </g>
           </svg>
         </h3>
-        <strong>${fee} Delivery</strong>
+        <strong>{fee ? `$${fee}` : 'Free'} Delivery</strong>
         <em> · {time} min</em>
       </Link>
     </Store>
@@ -112,6 +139,8 @@ function onIntersection(entries, io) {
     if (entry.isIntersecting) {
       io.unobserve(entry.target);
       entry.target.dispatchEvent(new CustomEvent(loadImageEvent));
+      entry.target.style.opacity = '1';
+      entry.target.style.transition = 'opacity 0.7s ease-in-out';
     }
   });
 }

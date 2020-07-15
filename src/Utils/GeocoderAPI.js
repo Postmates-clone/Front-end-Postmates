@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com',
+  // baseURL: 'https://maps.googleapis.com',
   // https://cors-anywhere.herokuapp.com/
 });
 const API_KEY = process.env.REACT_APP_GEOCODE_API_KEY;

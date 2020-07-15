@@ -6,6 +6,7 @@ import Logo from '../Items/Logo';
 import Member from '../Items/Member';
 import Search from '../Items/Search';
 import Media from '../../Style/Media';
+import { searchIconDeep } from '../../Style/IconStyles';
 
 const MainHeaderBlock = styled.div`
   width: 100%;
@@ -37,7 +38,7 @@ const MainHeaderWrapper = styled.div`
   max-width: 1024px;
   margin: 0 auto;
   &
-  ${Media.desktop`
+    ${Media.desktop`
   width:1024px;
     `}
     ${Media.tablet`
@@ -50,15 +51,40 @@ const MainHeaderWrapper = styled.div`
       padding:0;
     `}
 `;
-
+const IconWrap = styled.div`
+  ${Media.desktop`
+  display:none;
+    `}
+  ${Media.tablet`
+    display:on;
+    margin: 0 16px 0 0;
+    cursor:pointer;
+    `}
+`;
+const MainResponsiveWrap = styled.div`
+  ${Media.desktop`
+  display:flex;
+  width:auto;
+  justify-content: space-between;
+  align-items: center;
+    `}
+  ${Media.tablet`
+  display: flex;
+  width: auto;
+  height: 72px;
+    `}
+`;
 const MainHeader = ({ page }) => {
   return (
     <MainHeaderBlock className={`mainHeader-${page}`}>
       <MainHeaderWrapper>
         <Logo />
-        {page !== 'main' && <Search />}
-        {page !== 'main' && <MainMenu />}
-        <Member />
+        <MainResponsiveWrap>
+          {page !== 'main' && <Search />}
+          {page !== 'main' && <MainMenu />}
+          <IconWrap>{page !== 'main' && searchIconDeep}</IconWrap>
+          <Member />
+        </MainResponsiveWrap>
       </MainHeaderWrapper>
     </MainHeaderBlock>
   );

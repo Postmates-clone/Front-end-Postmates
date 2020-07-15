@@ -42,7 +42,8 @@ export const getGeocodeAsync = (address) => async (dispatch, state) => {
   try {
     const { data } = await geocode.getGeocode(address);
     dispatch({ type: GET_GEOCODE_SUCCESS, data });
-    localStorage.setItem('test', '123');
+    localStorage.setItem('location-lat', data.results[0].geometry.location.lat);
+    localStorage.setItem('location-lng', data.results[0].geometry.location.lng);
   } catch (e) {
     dispatch({ type: GET_GEOCODE_ERROR, error: e });
   }
