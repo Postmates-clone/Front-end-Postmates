@@ -86,7 +86,6 @@ export const FooterWrap = styled.div`
     `}
 `;
 export default function Footer({ page }) {
-  console.log(page);
   return (
     <FooterBlock className={`footer-${page}`}>
       <FooterWrap>
