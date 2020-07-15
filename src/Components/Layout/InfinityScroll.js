@@ -43,7 +43,6 @@ const InfinityScroll = () => {
     }));
     // console.log('next', state.next);
   };
-
   useEffect(() => {
     fetchItems();
   }, []);
