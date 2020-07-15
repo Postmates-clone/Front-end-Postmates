@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import MainPage from '../Components/Pages/Main';
 import { setPage } from '../Modules/MainReducer';
 
-const MainContainer = () => {
+const MainContainer = ({ history }) => {
+  // console.log(history, 'history');
   const { place, geoCode, page } = useSelector((state) => ({
     place: state.Location.place,
     geoCode: state.Location.geoCode,
@@ -13,7 +14,9 @@ const MainContainer = () => {
   useEffect(() => {
     dispatch(setPage('main'));
   }, [dispatch]);
-  return <MainPage place={place} geoCode={geoCode} page={page} />;
+  return (
+    <MainPage place={place} geoCode={geoCode} page={page} history={history} />
+  );
 };
 
 export default MainContainer;

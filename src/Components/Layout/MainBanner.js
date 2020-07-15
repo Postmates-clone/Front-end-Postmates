@@ -201,7 +201,7 @@ export const Specification = styled.div`
 // };
 
 // eslint-disable-next-line no-unused-vars
-export default function MainBanner({ title, text, place, geoCode }) {
+export default function MainBanner({ title, text, place, geoCode, history }) {
   const inputRef = useRef();
   const dispatch = useDispatch();
   const getPlace = () => {
@@ -240,6 +240,7 @@ export default function MainBanner({ title, text, place, geoCode }) {
               place={place}
               getGeocodeAsync={getGeocodeAsync}
               dispatch={dispatch}
+              history={history}
             />
           </InputWrapper>
         </MainTextWrapper>
