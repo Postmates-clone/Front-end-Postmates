@@ -6,6 +6,7 @@ import LoginPopUp from './LoginPopUp';
 import SignUpPopUp from './SignUpPopUp';
 import { CountBlock } from './Cart';
 import UserMenu from './UserMenu';
+import Media from '../../Style/Media';
 
 const MemberWrap = styled.div`
   display: flex;
@@ -16,6 +17,9 @@ const MemberWrap = styled.div`
   button {
     padding: 0 15px;
   }
+  ${Media.mobile`
+  min-width:175px;
+    `}
 `;
 
 const LoginCart = styled.div`
@@ -30,7 +34,6 @@ const LoginCart = styled.div`
 const CartText = styled.div`
   max-width: 80%;
 `;
-
 const Member = () => {
   const [openLogIn, setOpenLogIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
