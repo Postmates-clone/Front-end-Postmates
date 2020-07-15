@@ -43,7 +43,7 @@ const SubLocation = () => {
     <SubLocationBlock>
       <button type="button">
         <div className="icon">{locationIconLarge}</div>
-        <div className="address">Address</div>
+        <div className="address">{localStorage.getItem('location-city')}</div>
       </button>
     </SubLocationBlock>
   );

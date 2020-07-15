@@ -44,6 +44,10 @@ export const getGeocodeAsync = (address) => async (dispatch, state) => {
     dispatch({ type: GET_GEOCODE_SUCCESS, data });
     localStorage.setItem('location-lat', data.results[0].geometry.location.lat);
     localStorage.setItem('location-lng', data.results[0].geometry.location.lng);
+    localStorage.setItem(
+      'location-city',
+      data.results[0].address_components[0].long_name,
+    );
   } catch (e) {
     dispatch({ type: GET_GEOCODE_ERROR, error: e });
   }
