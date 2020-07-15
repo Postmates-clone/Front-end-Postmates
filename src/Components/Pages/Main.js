@@ -7,7 +7,6 @@ import Footer from '../Layout/Footer';
 import MainProducts from '../../Assets/mainProducts.png';
 
 const MainPage = ({ place, geoCode, page }) => {
-  console.log(page);
   return (
     <div>
       <MainBanner
