@@ -127,6 +127,27 @@ const renderOptions = (options) => {
   ));
 };
 
+const deliveryObj = {
+  id: 0,
+  url: '',
+  store_img: '',
+  total_price: 0,
+  ordered_date: '',
+  ordered_menus: [],
+};
+
+const menuObj = {
+  id: 0,
+  name: '',
+  options: [],
+};
+
+const optionObj = {
+  id: 0,
+  name: '',
+  price: 0,
+};
+
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
@@ -218,9 +239,9 @@ const Cart = () => {
             </TotalPriceBlock>
           </SubTotalBlock>
           <ButtonGroup>
-            <Link to="/checkout">
-              <Button>CHECKOUT</Button>
-            </Link>
+            {/* <Link to="/checkout" onClick={() => console.log(1111)}> */}
+            <Button onClick={() => console.log(1111)}>CHECKOUT</Button>
+            {/* </Link> */}
           </ButtonGroup>
         </DialogBlock>
       </SlidingPane>
