@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-curly-newline */
+/* eslint-disable implicit-arrow-linebreak */
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 // import Media from '../../Style/Media';
 import { locationIconLarge } from '../../Style/IconStyles';
@@ -38,25 +40,26 @@ const AddressListItem = styled.li`
   }
 `;
 
-const AddressList = ({ place, getGeocodeAsync, dispatch }) => {
+const AddressList = ({ place, getGeocodeAsync, dispatch, history }) => {
+  // console.log(history, 'history');
   const getGeocode = (address) => {
-    dispatch(getGeocodeAsync(address));
+    dispatch(getGeocodeAsync(address, history));
   };
   return (
     <AddressListBlock place={place.length ? 'block' : 'none'}>
       {place.map((item) => (
-        <Link to="/feed">
-          <AddressListItem
-            key={item.id}
-            onClick={() => getGeocode(item.structured_formatting.main_text)}
-          >
-            {locationIconLarge}
-            <span>
-              {item.structured_formatting.main_text},{' '}
-              {item.structured_formatting.secondary_text}
-            </span>
-          </AddressListItem>
-        </Link>
+        // <Link to="/feed">
+        <AddressListItem
+          key={item.id}
+          onClick={() => getGeocode(item.structured_formatting.main_text)}
+        >
+          {locationIconLarge}
+          <span>
+            {item.structured_formatting.main_text},{' '}
+            {item.structured_formatting.secondary_text}
+          </span>
+        </AddressListItem>
+        // </Link>
       ))}
     </AddressListBlock>
   );

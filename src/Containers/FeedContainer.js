@@ -20,7 +20,6 @@ const FeedContainer = () => {
     favorite: state.Feed.favorite,
     getinfast: state.Feed.getinfast,
   }));
-
   const dispatch = useDispatch();
 
   useEffect(() => {
