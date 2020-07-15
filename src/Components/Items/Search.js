@@ -8,8 +8,8 @@ const SearchWrap = styled.div`
   width: 200px;
   height: 100%;
   align-items: center;
-  margin-right: 100px;
-  margin-left: 35px;
+  margin-right: 80px;
+  margin-left: 15px;
   ${Media.tablet`
     display:none;
     `}

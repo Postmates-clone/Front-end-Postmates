@@ -57,16 +57,30 @@ const IconWrap = styled.div`
     cursor:pointer;
     `}
 `;
-
+const MainResponsiveWrap = styled.div`
+  ${Media.desktop`
+  display:flex;
+  width:auto;
+  justify-content: space-between;
+  align-items: center;
+    `}
+  ${Media.tablet`
+  display: flex;
+  width: auto;
+  height: 72px;
+    `}
+`;
 const MainHeader = ({ page }) => {
   return (
     <MainHeaderBlock className={`mainHeader-${page}`}>
       <MainHeaderWrapper>
         <Logo />
-        {page !== 'main' && <Search />}
-        {page !== 'main' && <MainMenu />}
-        <IconWrap>{page !== 'main' && searchIconDeep}</IconWrap>
-        <Member />
+        <MainResponsiveWrap>
+          {page !== 'main' && <Search />}
+          {page !== 'main' && <MainMenu />}
+          <IconWrap>{page !== 'main' && searchIconDeep}</IconWrap>
+          <Member />
+        </MainResponsiveWrap>
       </MainHeaderWrapper>
     </MainHeaderBlock>
   );

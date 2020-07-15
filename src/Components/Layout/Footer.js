@@ -70,6 +70,12 @@ export const FooterBlock = styled.div`
   ${Media.mobile`
   height:2200px;
     `}
+  &.footer-item {
+    ${Media.desktop`
+  height:600px;
+  background:red;
+    `}
+  }
 `;
 export const FooterWrap = styled.div`
   max-width: 1024px;
@@ -82,7 +88,7 @@ export const FooterWrap = styled.div`
 export default function Footer({ page }) {
   console.log(page);
   return (
-    <FooterBlock>
+    <FooterBlock className={`footer-${page}`}>
       <FooterWrap>
         <FooterSection page={page} />
       </FooterWrap>
