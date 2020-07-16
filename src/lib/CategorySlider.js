@@ -11,12 +11,12 @@ const SliderWrapper = styled.div`
 const SliderContainer = styled.ul`
   width: 100%;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 `;
 
 const PrevBtn = styled.div`
   position: absolute;
-  top: calc(50% - 50px);
+  top: calc(50% - 40px);
   left: -20px;
   z-index: 60;
 
@@ -39,7 +39,7 @@ const PrevBtn = styled.div`
 
 const NextBtn = styled.div`
   position: absolute;
-  top: calc(50% - 50px);
+  top: calc(50% - 40px);
   right: -20px;
   z-index: 60;
 
@@ -69,8 +69,6 @@ const Slider = ({ list, children }) => {
 
   const windowSize = useWindowSize();
 
-  // console.log(list);
-  // console.log(category === 'nearby');
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slideRef = useRef(null);
@@ -97,16 +95,16 @@ const Slider = ({ list, children }) => {
   const moveSlide = (cur) => {
     if (windowSize.width > sizes.desktop) {
       // device = 'desktop';
-      size = `-${cur * 324 + cur * 24}px`;
+      size = `-${cur * 194 * 2 + cur * 18 * 2}px`;
     } else if (
       windowSize.width < sizes.tablet &&
       windowSize.width > sizes.mobile
     ) {
       // device = 'tablet';
-      size = `calc(-${cur * 50}% - ${cur * 12}px)`;
+      size = `calc(-${cur * 50}% - ${cur * 24}px)`;
     } else {
       // device = 'mobile';
-      size = `-${cur * 100}%`;
+      size = `calc(-${cur * 50}% - ${cur * 24}px)`;
     }
 
     // console.log(device);
@@ -118,7 +116,7 @@ const Slider = ({ list, children }) => {
 
   useEffect(() => {
     const cur = currentSlide;
-    // console.log(slideRef.current.clientWidth);
+
     moveSlide(cur);
   }, [currentSlide]);
 
