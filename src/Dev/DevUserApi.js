@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 
@@ -9,10 +10,6 @@ export const DevUserApi = {
   getUser: () => {
     return api.get('/api/v1/members/', {
       responseType: 'json',
-      headers: {
-        Authorization:
-          'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJ1c2VybmFtZSI6IktlbGx5IiwiZXhwIjoxNTk1MTM4Njc0LCJlbWFpbCI6ImFiY0BnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTU5NDUzMzg3NH0.l6PjIIj4zKABCbKYnCGCGqF1qc2GG8NRtrubSYbY7lY',
-      },
     });
   },
 
