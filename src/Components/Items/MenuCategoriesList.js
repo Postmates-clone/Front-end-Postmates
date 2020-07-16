@@ -40,4 +40,4 @@ const MenuCategoriesList = ({ menuList, handleClickScrollTo, isOpen }) => {
   );
 };
 
-export default MenuCategoriesList;
+export default React.memo(MenuCategoriesList);
