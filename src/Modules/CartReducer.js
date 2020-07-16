@@ -8,18 +8,17 @@
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const CLEAR_CART = 'CLEAR_CART';
+const OPEN_CART = 'OPEN_CART';
+const ADD_COUNT = 'ADD_COUNT';
+
+export const openCart = (openState) => ({ type: OPEN_CART, openState });
+export const addCount = (count) => ({ type: ADD_COUNT, count });
 
 //초기상태
 const initialState = {
-  store: {
-    name: '',
-    location: {
-      lat: 0,
-      lang: 0,
-    },
-  },
+  isPaneOpen: false,
   cart: [],
-  total: 0,
+  totalCount: 0,
 };
 
 export default function CartReducer(state = initialState, action) {
@@ -28,8 +27,6 @@ export default function CartReducer(state = initialState, action) {
       const cartItem = state.cart.find(
         (item) => item.name === action.payload.name,
       );
-
-      // TODO: option에 대한 분기처리 어떻게 할지?
       if (!cartItem) {
         return {
           ...state,
@@ -83,6 +80,16 @@ export default function CartReducer(state = initialState, action) {
       return {
         ...state,
         cart: [],
+      };
+    case OPEN_CART:
+      return {
+        ...state,
+        isPaneOpen: action.openState,
+      };
+    case ADD_COUNT:
+      return {
+        ...state,
+        totalCount: action.count,
       };
     default:
       return state;

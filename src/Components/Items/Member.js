@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { LoginBtn } from '../../Style/BasicBtn';
 import LoginPopUp from './LoginPopUp';
 import SignUpPopUp from './SignUpPopUp';
-import { CountBlock } from './Cart';
 import UserMenu from './UserMenu';
 import Media from '../../Style/Media';
 
@@ -25,14 +24,42 @@ const MemberWrap = styled.div`
 const LoginCart = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
   width: 100%;
   height: 100%;
 
   cursor: pointer;
 `;
 
+const CountBlock = styled.div`
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: normal;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  margin: 20px 0;
+  background-color: rgb(246, 246, 248);
+`;
+const Arrow = styled.div`
+  color: rgb(143, 149, 163);
+  width: 40px;
+  height: 40px;
+  margin: 20px 0;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  line-height: normal;
+`;
+
 const CartText = styled.div`
-  max-width: 80%;
+  width: 40px;
+  height: 40px;
+  margin: 20px 0;
+  letter-spacing: 1px;
+  line-height: normal;
+  padding: 10px;
 `;
 const Member = () => {
   const [openLogIn, setOpenLogIn] = useState(false);
@@ -40,6 +67,10 @@ const Member = () => {
   const cart = useSelector((state) => state.Cart.cart);
 
   const userInfo = useSelector((state) => state.User.userInfo);
+
+  const cartTotalCount = cart.reduce((prev, curr) => {
+    return prev + curr.count;
+  }, 0);
 
   const openLogInPopUp = () => setOpenLogIn(!openLogIn);
   const openSignUpPopUp = () => setOpenSignUp(!openSignUp);
@@ -56,9 +87,9 @@ const Member = () => {
         <>
           <LoginCart>
             <UserMenu />
-            <CountBlock>{cart.map((item) => item.count)}</CountBlock>
-            <CartText>Cart</CartText>
-            <div>&gt;</div>
+            <CountBlock>{cartTotalCount}</CountBlock>
+            <CartText>Cart </CartText>
+            <Arrow>&gt;</Arrow>
           </LoginCart>
         </>
       )}

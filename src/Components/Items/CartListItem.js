@@ -11,7 +11,7 @@ const WrapItem = styled.div`
 `;
 
 const ItemTitle = styled.h5`
-  font-size: 16px;
+  font-size: 14px;
 `;
 
 const ItemPrice = styled.span`
@@ -19,16 +19,25 @@ const ItemPrice = styled.span`
 `;
 
 const ItemOption = styled.div`
+  display: flex;
   margin-top: 10px;
+  font-size: 14px;
   color: #8f95a3;
   font-weight: 200;
+  .option-name {
+    width: 300px;
+  }
+  .option-price {
+    margin-left: auto;
+  }
 `;
 
-const Instruction = styled.div`
-  margin-top: 10px;
-  color: #8f95a3;
-  font-weight: 200;
-`;
+// const Instruction = styled.div`
+//   margin-top: 10px;
+//   font-size: 14px;
+//   color: #8f95a3;
+//   font-weight: 200;
+// `;
 
 const CartListItem = ({ item }) => {
   return (
@@ -37,8 +46,13 @@ const CartListItem = ({ item }) => {
         <ItemTitle>{`X${item.count} ${item.name}`}</ItemTitle>
         <ItemPrice>{item.price}</ItemPrice>
       </WrapItem>
-      <ItemOption>option</ItemOption>
-      <Instruction>{item.instruction}</Instruction>
+      {item.options.map(({ name, price }) => (
+        <ItemOption>
+          <span className="option-name">{name}</span>
+          <span className="option-price">{price}</span>
+        </ItemOption>
+      ))}
+      {/* <Instruction>{item.instruction}</Instruction> */}
     </ListItem>
   );
 };
