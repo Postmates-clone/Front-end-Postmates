@@ -192,7 +192,7 @@ const Cart = () => {
 
   const postDelivery = async () => {
     const { data } = await DevApi.postDelivery(deliveryState);
-    console.log(data);
+    console.log('resdata', data);
   };
 
   return (
