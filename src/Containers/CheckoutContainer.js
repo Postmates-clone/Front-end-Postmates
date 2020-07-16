@@ -1,36 +1,44 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Checkout from '../Components/Pages/Checkout';
 import { setPage } from '../Modules/MainReducer';
+import { DevApi } from '../Dev/DevApi';
 
 const CheckoutContainer = () => {
-  const {
-    deliveryAddress,
-    requestTime,
-    payment,
-    userInfo,
-    storeInfo,
-  } = useSelector((state) => ({
-    deliveryAddress: state.Checkout.deliveryAddress,
-    requestTime: state.Checkout.time,
-    payment: state.Checkout.payment,
+  const { userInfo } = useSelector((state) => ({
     userInfo: state.User.userInfo,
-    storeInfo: state.Item.store,
   }));
+  const [storeInfo, setStoreInfo] = useState({
+    id: 0,
+    name: '',
+    ordered_date: '',
+    ordered_menus: [],
+    store_img: '',
+    total_price: 0,
+    url: '',
+  });
+
+  const setResData = (data) => {
+    const lastLangth = data.results.length - 1;
+    const checkoutStore = data.results[lastLangth];
+    setStoreInfo(checkoutStore);
+  };
+
+  const getDelivery = async () => {
+    const { data } = await DevApi.getDelivery();
+    setResData(data);
+    console.log('get delivery', data);
+  };
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setPage('checkout'));
+    getDelivery();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
   return (
     <div>
-      <Checkout
-        deliveryAddress={deliveryAddress}
-        requestTime={requestTime}
-        payment={payment}
-        dispatch={dispatch}
-        userInfo={userInfo}
-        storeInfo={storeInfo}
-      />
+      <Checkout dispatch={dispatch} userInfo={userInfo} storeInfo={storeInfo} />
     </div>
   );
 };

@@ -1,7 +1,8 @@
 // 0630 seungeun
 import React from 'react';
 import styled from 'styled-components';
-import Slider from '../../lib/Slider';
+import CategorySlider from '../../lib/CategorySlider';
+import Media from '../../Style/Media';
 
 const CategoryItemList = [
   {
@@ -53,10 +54,10 @@ const CategoryListBlock = styled.div`
   margin: 0 0 60px 0;
 `;
 const CategoryItemBanner = styled.li`
-  width: 176px;
-  height: 248px;
 
-  margin: 0 20px 0 0;
+  /* height: 248px; */
+
+  /* margin: 0 25px 0 0; */
 
   color: black;
   cursor: pointer;
@@ -66,6 +67,19 @@ const CategoryItemBanner = styled.li`
     font-size: 18px;
     font-weight: bold;
   }
+
+  ${Media.desktop`
+  margin: 0 18px 0 0;
+  flex: 0 0 calc(20% - 10px);
+  `}
+  ${Media.tablet`
+  margin: 0 26px 0 0;
+  flex: 0 0 calc(25% - 12px);
+  `}
+  ${Media.mobile`
+  margin: 0 26px 0 0;
+  flex: 0 0 calc(25% - 12px);
+  `}
 `;
 
 const CategoryImage = styled.div`
@@ -81,14 +95,14 @@ const CategoryImage = styled.div`
 const Category = () => {
   return (
     <CategoryListBlock>
-      <Slider list={CategoryItemList}>
+      <CategorySlider list={CategoryItemList}>
         {CategoryItemList.map((item) => (
           <CategoryItemBanner key={item.id} color={item.color}>
             <CategoryImage image={item.image} />
             <h4>{item.title}</h4>
           </CategoryItemBanner>
         ))}
-      </Slider>
+      </CategorySlider>
     </CategoryListBlock>
   );
 };

@@ -100,7 +100,7 @@ const ImageBlock = styled.div`
 `;
 
 // eslint-disable-next-line no-unused-vars
-const MenuItem = ({ item, subInput }) => {
+const MenuItem = ({ item, subInput, history }) => {
   const titleRef = useRef();
 
   const { name, description, image_url, price } = item;

@@ -8,7 +8,7 @@ import Media from '../../Style/Media';
 
 const Store = styled.li`
   position: relative;
-
+  margin: 35px 0 0 0;
   
 
   cursor: pointer;
@@ -37,17 +37,17 @@ const Store = styled.li`
   }
 
   ${Media.desktop`
-  margin: 0 24px 0 0;
-  flex: 0 0 calc(34% - 24px);
+  /* margin: 0 24px 0 0; */
+  flex: 0 0 calc(33.33% - 24px);
   `}
 
   ${Media.tablet`
-  margin: 0 24px 0 0;
+  /* margin: 0 24px 0 0; */
   flex: 0 0 calc(50% - 12px);
   `}
   
   ${Media.mobile`
-  margin: 0 0 0 0;
+  /* margin: 0 0 0 0; */
   flex: 0 0 calc(100%);
   `}
 `;

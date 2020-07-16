@@ -1,16 +1,18 @@
-/* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import SlidingPane from 'react-sliding-pane';
-import { REMOVE_FROM_CART, CLEAR_CART } from '../../Modules/CartReducer';
+import {
+  REMOVE_FROM_CART,
+  openCart,
+  addCount,
+} from '../../Modules/CartReducer';
 import { closeIcon } from '../../Style/IconStyles';
 import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Cart.css';
-import { LoginBtn } from '../../Style/BasicBtn';
+// import { LoginBtn } from '../../Style/BasicBtn';
 import { DevApi } from '../../Dev/DevApi';
 
 const WarpCart = styled.div``;
@@ -33,11 +35,16 @@ const CartName = styled.div`
   min-width: 20%;
   max-width: 90%;
   margin: 0 auto;
+
+  & > div {
+    color: #00cc99;
+    margin-top: 12px;
+  }
 `;
 
 const ContentBlock = styled.div`
   width: 345px;
-  height: 104px;
+  height: 130px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -58,7 +65,6 @@ export const CountBlock = styled.div`
 const DetailBlock = styled.div`
   min-width: 60%;
   max-width: 60%;
-  max-height: 80%;
   display: flex;
   flex-direction: column;
   padding: 1%;
@@ -66,13 +72,30 @@ const DetailBlock = styled.div`
 const DetailNameBlock = styled.div`
   white-space: normal;
   word-break: break-all;
+  max-height: 20%;
 `;
 
-const DetailOptionBlock = styled.div``;
+const DetailOptionBlock = styled.div`
+  overflow: hidden;
+  white-space: initial;
+  text-overflow: hidden;
+  max-height: 70%;
+  color: rgb(143, 149, 163);
+  font-size: 14px;
+`;
+
+const OptionsName = styled.div`
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  white-space: initial;
+  text-overflow: ellipsis;
+`;
 
 const PriceBlock = styled.div`
   min-width: 20%;
   max-width: 20%;
+  max-height: 10%;
   color: rgb(143, 149, 163);
 `;
 
@@ -121,11 +144,7 @@ const renderOptions = (options) => {
     return options[key];
   });
 
-  return optionList.map((option) => (
-    <div>
-      {option.id}: {option.name}, ${option.price}
-    </div>
-  ));
+  return optionList.map((option) => <OptionsName>{option.name}</OptionsName>);
 };
 
 const deliveryObj = {
@@ -137,19 +156,17 @@ const deliveryObj = {
   ordered_menus: [],
 };
 
-const Cart = () => {
+const Cart = ({ history }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
+  const isPaneOpen = useSelector((state) => state.Cart.isPaneOpen);
+  const cartTotalCount = useSelector((state) => state.Cart.totalCount);
   const storeData = useSelector((state) => state.Item.store);
+  const user = useSelector((state) => state.User.userInfo);
   const [deliveryState, setDeliveryState] = useState(deliveryObj);
 
-  const [state, setState] = useState({
-    isPaneOpen: false,
-    isPaneOpenLeft: false,
-  });
-
   const onRemove = (name) => {
-    console.log('WHAT IS THE NAME', name);
+    // console.log('WHAT IS THE NAME', name);
     dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
 
@@ -157,9 +174,10 @@ const Cart = () => {
     return prev + curr.totalPrice;
   }, 0);
 
-  const cartTotalCount = cart.reduce((prev, curr) => {
-    return prev + curr.count;
-  }, 0);
+  const addTotalCount = () => {
+    const count = cart.reduce((prev, curr) => prev + curr.count, 0);
+    dispatch(addCount(count));
+  };
 
   const setOrderedMenu = () => {
     let orderedMennu = [];
@@ -172,48 +190,52 @@ const Cart = () => {
   };
 
   const setDelivery = () => {
-    console.log(cart);
     console.log('storeData', storeData);
     const today = new Date();
     setDeliveryState({
       id: storeData.id,
+      name: storeData.name,
       url: storeData.url,
       store_img: storeData.store_img,
       total_price: cartTotalPrice,
       ordered_date: today,
       ordered_menus: setOrderedMenu(),
     });
-    console.log('delivery', deliveryState);
+    // console.log('delivery', deliveryState);
   };
 
   useEffect(() => {
     setDelivery();
+    addTotalCount();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart]);
 
   const postDelivery = async () => {
-    const { data } = await DevApi.postDelivery(deliveryState);
+    console.log(deliveryState);
+    const data = await DevApi.postDelivery(deliveryState);
     console.log('resdata', data);
+    history.replace('/checkout');
   };
 
   return (
     <WarpCart>
-      <LoginBtn
+      {/* <LoginBtn
         onClick={() => setState({ isPaneOpen: true })}
         active
         height="45px"
         width="100%"
         text={`${cartTotalCount} ITEMS`}
-      />
+      /> */}
       <SlidingPane
         className="some-custom-class"
         overlayClassName="some-custom-overlay-class"
-        isOpen={state.isPaneOpen}
+        isOpen={isPaneOpen}
         title="Cart"
         width="440px"
         hideHeader
         shouldCloseOnEsc
         onRequestClose={() => {
-          setState({ isPaneOpen: false });
+          dispatch(openCart(false));
         }}
       >
         <DialogBlock>
@@ -221,13 +243,22 @@ const Cart = () => {
             <RemoveBlock>
               <RemoveBtn
                 onClick={() => {
-                  setState({ isPaneOpen: false });
+                  dispatch(openCart(false));
                 }}
               >
                 {closeIcon}
               </RemoveBtn>
             </RemoveBlock>
-            <CartName>Cart - {storeData.name}</CartName>
+            <CartName>
+              Cart - {storeData.name}
+              {user.username ? (
+                <div>
+                  hello! {user.username} youre added {cartTotalCount}items.
+                </div>
+              ) : (
+                ''
+              )}
+            </CartName>
           </HeaderBlock>
           {cart.map((item) => (
             <>
@@ -235,11 +266,10 @@ const Cart = () => {
                 <CountBlock>{item.count}</CountBlock>
                 <DetailBlock>
                   <DetailNameBlock>{item.name}</DetailNameBlock>
-                  {/* TODO: option 들어오게 수정필요. */}
                   <DetailOptionBlock>
                     {renderOptions(item.options)}
                   </DetailOptionBlock>
-                  <div>{item.instruction}</div>
+                  {item.instruction}
                   <PriceBlock> {`$${item.totalPrice.toFixed(2)}`}</PriceBlock>
                 </DetailBlock>
                 <RemoveBlock>
@@ -254,9 +284,9 @@ const Cart = () => {
             <PriceText>Subtotal</PriceText>
             <TotalPriceBlock>{`$${cartTotalPrice.toFixed(2)}`}</TotalPriceBlock>
             <PriceText>Delivery</PriceText>
-            <TotalPriceBlock>{`$${storeData.delivery_fee.toFixed(
-              2,
-            )}`}</TotalPriceBlock>
+            <TotalPriceBlock>
+              {`$${storeData.delivery_fee.toFixed(2)}`}
+            </TotalPriceBlock>
             <PriceText active>Total</PriceText>
             <TotalPriceBlock active>
               {`$${(cartTotalPrice + storeData.delivery_fee).toFixed(2)}`}

@@ -107,6 +107,7 @@ const SignUpPopUp = ({ setState, openState }) => {
       console.log(error);
     } finally {
       reset();
+      setState(!openState);
     }
   };
 

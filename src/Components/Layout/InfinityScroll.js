@@ -4,19 +4,33 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import Stores from '../Items/Stores';
+import Stores from '../Items/NearStores';
 import { getNearBy } from '../../Modules/FeedReducer';
 import { DevApi } from '../../Dev/DevApi';
+import Media from '../../Style/Media';
 
 const StoreList = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  
+/* 
+  ${Media.desktop`
   li {
     margin: 35px 0 0 35px;
   }
   li:nth-of-type(3n + 1) {
     margin-left: 0;
   }
+  `}
+
+  ${Media.tablet`
+
+  `}
+  
+  ${Media.mobile`
+
+  `} */
 `;
 
 const InfinityScroll = () => {
@@ -31,7 +45,7 @@ const InfinityScroll = () => {
     setState((prev) => ({ ...prev, loading: true }));
     const lat = localStorage.getItem('location-lat');
     const lng = localStorage.getItem('location-lng');
-    console.log(state.next, lat, lng, 'nearby');
+    // console.log(state.next, lat, lng, 'nearby');
     const { data } = await DevApi.getNearBy(state.next, lat, lng);
 
     setState((prev) => ({

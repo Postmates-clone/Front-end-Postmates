@@ -1,12 +1,15 @@
 // 0701 seungeun
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 import BreadCrumbs from '../Items/BreadCrumbs';
 import SubLocation from '../Items/SubLocation';
 import MenuCategories from '../Items/MenuCategories';
 import SearchItems from '../Items/SearchItems';
-import Cart from '../Items/Cart';
+import { LoginBtn } from '../../Style/BasicBtn';
+import { openCart } from '../../Modules/CartReducer';
+// import Cart from '../Items/Cart';
 
 const SubHeaderBlock = styled.div`
   display: flex;
@@ -95,6 +98,7 @@ const SubHeader = ({
   changeSubInput,
   dispatch,
 }) => {
+  const totalCount = useSelector((state) => state.Cart.totalCount);
   return (
     <SubHeaderBlock className={`subHeader-${page}`}>
       <div className="wrap-subheader-item">
@@ -115,7 +119,16 @@ const SubHeader = ({
           <SearchItems changeSubInput={changeSubInput} dispatch={dispatch} />
         )}
         {page === 'item' && <Bulkhead />}
-        {page === 'item' && <Cart />}
+        {/* {page === 'item' && <Cart />} */}
+        {page === 'item' && (
+          <LoginBtn
+            onClick={() => dispatch(openCart(true))}
+            active
+            height="45px"
+            width="100px"
+            text={`${totalCount} ITEMS`}
+          />
+        )}
       </div>
     </SubHeaderBlock>
   );

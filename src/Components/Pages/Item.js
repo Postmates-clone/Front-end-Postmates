@@ -7,6 +7,7 @@ import StoreIndividual from '../Layout/StoreIndividual';
 import MenuList from '../Layout/MenuList';
 import { CLEAR_CART } from '../../Modules/CartReducer';
 import Footer from '../Layout/Footer';
+import Cart from '../Items/Cart';
 
 const StorePageBlock = styled.main`
   width: 100%;
@@ -17,7 +18,7 @@ const StorePageBlock = styled.main`
 `;
 
 // 희진
-const ItemPage = ({ storeData, subInput }) => {
+const ItemPage = ({ storeData, subInput, history }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,8 +27,9 @@ const ItemPage = ({ storeData, subInput }) => {
 
   return (
     <StorePageBlock>
+      <Cart history={history} />
       <StoreIndividual storeData={storeData} />
-      <MenuList storeData={storeData} subInput={subInput} />
+      <MenuList storeData={storeData} subInput={subInput} history={history} />
       <Footer />
     </StorePageBlock>
   );
