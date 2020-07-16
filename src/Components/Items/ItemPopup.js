@@ -108,6 +108,7 @@ const DialogBlock = styled.div`
   justify-content: space-between;
   align-items: center;
   overflow-y: scroll;
+  z-index: 80;
 
   h1 {
     margin: 0;

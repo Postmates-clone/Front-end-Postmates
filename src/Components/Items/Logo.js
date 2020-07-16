@@ -10,12 +10,14 @@ const LogoStyle = styled.h1`
   letter-spacing: -1px;
   cursor: pointer;
 `;
-const Logo = () => {
+const Logo = ({ page }) => {
   return (
     <LogoStyle>
-      <Link exact to="/Feed">
-        Postmates
-      </Link>
+      {page === 'main' ? (
+        <Link to="/">Postmates</Link>
+      ) : (
+        <Link to="/feed">Postmates</Link>
+      )}
     </LogoStyle>
   );
 };
