@@ -11,8 +11,8 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import PopUp from '../../Style/PopUp';
 import { BasicBtn } from '../../Style/BasicBtn';
-import { createUsersAsync } from '../../Modules/UserReducer';
-// import SHA256 from '../../lib/sha256';
+import { createUsersAsync, loginUsersAsync } from '../../Modules/UserReducer';
+import SHA256 from '../../lib/sha256';
 
 const SignUpPopUpBlock = styled.div``;
 const SignUpForm = styled.form`
@@ -98,11 +98,14 @@ const SignUpPopUp = ({ setState, openState }) => {
   //   setInputs(initialState);
   // };
   const onSubmit = async (_data) => {
-    // const { password } = _data;
-    // _data.password = SHA256(password);
+    const { password } = _data;
+    _data.password = SHA256(password);
     // console.log(_data);
     try {
       await dispatch(createUsersAsync(_data));
+      await dispatch(
+        loginUsersAsync({ email: _data.email, password: _data.password }),
+      );
     } catch (error) {
       console.log(error);
     } finally {
