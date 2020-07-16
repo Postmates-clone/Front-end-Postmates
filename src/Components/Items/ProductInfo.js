@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
+import { BasicBtn } from '../../Style/BasicBtn';
 
 const ProductInfoBlock = styled.div`
   width: 100%;
@@ -35,41 +36,41 @@ const ProductInfoBlock = styled.div`
   `}
 `;
 
-export const Button = styled.button`
-  background-color: #00cc99;
-  height: 48px;
-  width: 200px;
-  border-radius: 28px;
-  letter-spacing: 0.72px;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  color: #fff;
-  outline: none;
-  border: none;
+// export const Button = styled.button`
+//   background-color: #00cc99;
+//   height: 48px;
+//   width: 200px;
+//   border-radius: 28px;
+//   letter-spacing: 0.72px;
+//   font-weight: bold;
+//   cursor: pointer;
+//   text-align: center;
+//   color: #fff;
+//   outline: none;
+//   border: none;
 
-  font-size: 12px;
+//   font-size: 12px;
 
-  ${Media.mobile`
-    max-width: 80%;
-    max-height: 80%;
-    justify-content:center;
-    align-items: center;
-    text-align: center;
-    padding-top: 28px;
+//   ${Media.mobile`
+//     max-width: 80%;
+//     max-height: 80%;
+//     justify-content:center;
+//     align-items: center;
+//     text-align: center;
+//     padding-top: 28px;
 
-  `}
+//   `}
 
-  ${Media.tablet`
-    max-width: 80%;
-    max-height: 80%;
-    justify-content:center;
-    text-align: center;
-    align-items: center;
-    padding-top: 28px;
+//   ${Media.tablet`
+//     max-width: 80%;
+//     max-height: 80%;
+//     justify-content:center;
+//     text-align: center;
+//     align-items: center;
+//     padding-top: 28px;
 
-  `}
-`;
+//   `}
+// `;
 
 const Title = styled.div`
   font-size: 48px;
@@ -103,9 +104,13 @@ export default function ProductInfo({ title, text, buttonText }) {
     <ProductInfoBlock>
       <Title>{title}</Title>
       <Specification>{text}</Specification>
-      <Button>
-        <span>{buttonText}</span>
-      </Button>
+      <BasicBtn
+        active
+        text={buttonText}
+        width="230px"
+        twidth="230px"
+        mwidth="265px"
+      />
     </ProductInfoBlock>
   );
 }

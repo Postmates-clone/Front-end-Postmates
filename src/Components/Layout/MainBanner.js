@@ -1,13 +1,13 @@
 /* eslint-disable implicit-arrow-linebreak */
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { getPlaceAsync, getGeocodeAsync } from '../../Modules/LocationReducer';
 // import mapMaker from '../../Assets/mapMaker.png';
 import rightArrow from '../../Assets/rightArrow.png';
 import AddressList from '../Items/AddressList';
 import Media from '../../Style/Media';
-import { locationIconLarge } from '../../Style/IconStyles';
+// import { locationIconLarge } from '../../Style/IconStyles';
 
 // import { getStoreAsync } from '../../Modules/ItemReducer';
 
@@ -35,11 +35,11 @@ export const MainBannerBlock = styled.div`
 `;
 
 export const MainBannerContainer = styled.div`
-  max-width: 100%;
+  max-width: 1024px;
   height: 100%;
-  margin: 0 216px;
+  margin: 0 auto;
   display: flex;
-  padding: 116px 0 0;
+  /* padding: 116px 0 0; */
   overflow: hidden;
   white-space: initial;
   text-overflow: ellipsis;
@@ -71,7 +71,8 @@ export const MainTextWrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding-top: 116px;
+  /* padding: 20px; */
   flex-direction: column;
   align-items: flex-start;
   line-height: 40px;
@@ -95,6 +96,9 @@ export const MainTextWrapper = styled.div`
 
 const OriginalText = styled.div`
   display: block;
+  position: relative;
+
+  overflow: hidden;
 
   ${Media.mobile`
     width: 100%;
@@ -160,16 +164,45 @@ export const Input = styled.input`
   margin-left: 10px;
 `;
 
+const titleAni = keyframes`
+  0% {
+    opacity: 0;
+    top: 83px;
+  }
+  1% {
+    opacity: 1;
+    top: 0;
+  }
+  12.5% {
+    opacity: 1;
+    top: 0;
+  }
+  13.5% {
+    opacity: 0;
+    top: -83px;
+  }
+  100% {
+    opacity: 0;
+    top: 83px;
+  }
+`;
+
 export const Title = styled.div`
+  position: absolute;
+  top: -83px;
   font-size: 56px;
   font-weight: bold;
   line-height: 70px;
   letter-spacing: -2.6px;
   margin-bottom: 17px;
-  overflow: hidden;
-  white-space: initial;
-  text-overflow: ellipsis;
+
+  animation-delay: ${(props) => (props.delay ? props.delay : '0s')};
+  animation-duration: 29.6s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation-iteration-count: infinite;
+  animation-name: ${titleAni};
 `;
+
 export const Specification = styled.div`
   font-weight: 200;
   letter-spacing: 0.14px;
@@ -217,7 +250,11 @@ export default function MainBanner({ title, text, place, geoCode, history }) {
       <MainBannerContainer>
         <MainTextWrapper>
           <OriginalText>
-            <Title>{title}</Title>
+            <Title delay="0s">{title}</Title>
+            <Title delay="3.7s">beer?</Title>
+            <Title delay="7.4s">spicy wings?</Title>
+            <Title delay="11s">smoothies?</Title>
+            <Title delay="14.8s">noodles?</Title>
             <Specification>{text}</Specification>
           </OriginalText>
           <ResponsiveWrapper>
@@ -226,7 +263,29 @@ export default function MainBanner({ title, text, place, geoCode, history }) {
           </ResponsiveWrapper>
           <InputWrapper>
             <InputInner>
-              {locationIconLarge}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M14.015 16.435C15.602 14.713 17 12.555 17 10.4 17 7.432 14.552 5 11.5 5S6 7.432 6 10.4c0 2.155 1.398 4.313 2.985 6.035A21.715 21.715 0 0011.5 18.75a21.711 21.711 0 002.515-2.316zM11.5 20s6.5-4.5 6.5-9.6C18 6.865 15.09 4 11.5 4S5 6.865 5 10.4c0 5.1 6.5 9.6 6.5 9.6z"
+                  fill="#fff"
+                />
+                <circle cx="11.5" cy="10.5" fill="#fff" r="1.5" />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M14.015 16.435C15.602 14.713 17 12.555 17 10.4 17 7.432 14.552 5 11.5 5S6 7.432 6 10.4c0 2.155 1.398 4.313 2.985 6.035A21.715 21.715 0 0011.5 18.75a21.711 21.711 0 002.515-2.316zM11.5 20s6.5-4.5 6.5-9.6C18 6.865 15.09 4 11.5 4S5 6.865 5 10.4c0 5.1 6.5 9.6 6.5 9.6z"
+                  fill="#000"
+                />
+                <circle cx="11.5" cy="10.5" fill="#000" r="1.5" />
+                <circle cx="11.5" cy="10.5" r="6" fill="#000" />
+                <circle cx="11.5" cy="10.5" r="1.5" fill="#fff" />
+                <path
+                  d="M8 16v-1h7.5l-.5 1-1 1-1 1-1 .5-2-.5-1-1-1-1z"
+                  fill="#000"
+                  stroke="#000"
+                />
+              </svg>
               <Input
                 placeholder="Enter your address..."
                 ref={inputRef}
