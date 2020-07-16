@@ -149,7 +149,7 @@ const Cart = () => {
   });
 
   const onRemove = (name) => {
-    console.log('WHAT IS THE NAME', name);
+    // console.log('WHAT IS THE NAME', name);
     dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
 
@@ -172,8 +172,8 @@ const Cart = () => {
   };
 
   const setDelivery = () => {
-    console.log(cart);
-    console.log('storeData', storeData);
+    // console.log(cart);
+    // console.log('storeData', storeData);
     const today = new Date();
     setDeliveryState({
       id: storeData.id,
@@ -183,7 +183,7 @@ const Cart = () => {
       ordered_date: today,
       ordered_menus: setOrderedMenu(),
     });
-    console.log('delivery', deliveryState);
+    // console.log('delivery', deliveryState);
   };
 
   useEffect(() => {
@@ -191,7 +191,8 @@ const Cart = () => {
   }, [cart]);
 
   const postDelivery = async () => {
-    const { data } = await DevApi.postDelivery(deliveryState);
+    console.log(deliveryState);
+    const data = await DevApi.postDelivery(deliveryState);
     console.log('resdata', data);
   };
 

@@ -11,12 +11,11 @@ const SliderWrapper = styled.div`
 const SliderContainer = styled.ul`
   width: 100%;
   display: flex;
-  /* justify-content: space-between; */
 `;
 
 const PrevBtn = styled.div`
   position: absolute;
-  top: calc(50% - 50px);
+  top: calc(50% - 20px);
   left: -20px;
   z-index: 60;
 
@@ -39,7 +38,7 @@ const PrevBtn = styled.div`
 
 const NextBtn = styled.div`
   position: absolute;
-  top: calc(50% - 50px);
+  top: calc(50% - 20px);
   right: -20px;
   z-index: 60;
 
@@ -69,6 +68,8 @@ const Slider = ({ list, children }) => {
 
   const windowSize = useWindowSize();
 
+  // console.log(getWindowSize);
+
   // console.log(list);
   // console.log(category === 'nearby');
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -97,7 +98,7 @@ const Slider = ({ list, children }) => {
   const moveSlide = (cur) => {
     if (windowSize.width > sizes.desktop) {
       // device = 'desktop';
-      size = `-${cur * 324 + cur * 24}px`;
+      size = `-${cur * 494 + cur * 36}px`;
     } else if (
       windowSize.width < sizes.tablet &&
       windowSize.width > sizes.mobile
@@ -118,7 +119,7 @@ const Slider = ({ list, children }) => {
 
   useEffect(() => {
     const cur = currentSlide;
-    // console.log(slideRef.current.clientWidth);
+
     moveSlide(cur);
   }, [currentSlide]);
 
@@ -145,7 +146,7 @@ const Slider = ({ list, children }) => {
           </svg>
         </PrevBtn>
       )}
-      {list.length >= 2 && (
+      {list.length - 2 !== currentSlide && (
         <NextBtn onClick={nextSlide}>
           <svg
             width="15"

@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
-import Slider from '../../lib/Slider';
+import EventSlider from '../../lib/EventSlider';
 
 const EventItemList = [
   {
@@ -56,7 +56,7 @@ const EventItemBlock = styled.div`
 const EventItemBanner = styled.li`
   position: relative;
   padding: 20px;
-  margin: 0 36px 0 0;
+  
 
   background-image: url(${(props) => props.image || null});
   background-position: center center;
@@ -68,16 +68,19 @@ const EventItemBanner = styled.li`
 
   /* 494 * 290 */
   ${Media.desktop`
+  margin: 0 36px 0 0;
   flex: 0 0 calc(50% - 18px);
   padding-top: 26%;
   `}
 
   ${Media.tablet`
+  margin: 0 24px 0 0;
   flex: 0 0 calc(50% - 12px);
   padding-top: 26%;
   `}
 
   ${Media.mobile`
+  margin: 0 0 0 0;
   flex: 0 0 calc(100%);
   padding-top: 65%;
   `}
@@ -110,7 +113,7 @@ const EventText = styled.div`
 const EventItem = () => {
   return (
     <EventItemBlock>
-      <Slider list={EventItemList} category="event">
+      <EventSlider list={EventItemList} category="event">
         {EventItemList.map((event) => (
           <EventItemBanner
             key={event.id}
@@ -123,7 +126,7 @@ const EventItem = () => {
             </EventText>
           </EventItemBanner>
         ))}
-      </Slider>
+      </EventSlider>
     </EventItemBlock>
   );
 };
