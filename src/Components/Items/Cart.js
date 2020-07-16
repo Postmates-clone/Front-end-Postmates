@@ -147,7 +147,7 @@ const Cart = ({ history }) => {
   const [deliveryState, setDeliveryState] = useState(deliveryObj);
 
   const onRemove = (name) => {
-    console.log('WHAT IS THE NAME', name);
+    // console.log('WHAT IS THE NAME', name);
     dispatch({ type: REMOVE_FROM_CART, payload: name });
   };
 
@@ -182,7 +182,7 @@ const Cart = ({ history }) => {
       ordered_date: today,
       ordered_menus: setOrderedMenu(),
     });
-    console.log('delivery', deliveryState);
+    // console.log('delivery', deliveryState);
   };
 
   useEffect(() => {
@@ -192,7 +192,8 @@ const Cart = ({ history }) => {
   }, [cart]);
 
   const postDelivery = async () => {
-    const { data } = await DevApi.postDelivery(deliveryState);
+    console.log(deliveryState);
+    const data = await DevApi.postDelivery(deliveryState);
     console.log('resdata', data);
     history.replace('/checkout');
   };
