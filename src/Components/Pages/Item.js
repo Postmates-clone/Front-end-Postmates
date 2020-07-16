@@ -27,7 +27,7 @@ const ItemPage = ({ storeData, subInput, history }) => {
 
   return (
     <StorePageBlock>
-      <Cart />
+      <Cart history={history} />
       <StoreIndividual storeData={storeData} />
       <MenuList storeData={storeData} subInput={subInput} history={history} />
       <Footer />

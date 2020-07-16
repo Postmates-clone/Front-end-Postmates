@@ -139,8 +139,7 @@ const deliveryObj = {
   ordered_menus: [],
 };
 
-const Cart = () => {
-  console.log('Open!');
+const Cart = ({ history }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
   const isPaneOpen = useSelector((state) => state.Cart.isPaneOpen);
@@ -195,6 +194,7 @@ const Cart = () => {
   const postDelivery = async () => {
     const { data } = await DevApi.postDelivery(deliveryState);
     console.log('resdata', data);
+    history.replace('/checkout');
   };
 
   return (
