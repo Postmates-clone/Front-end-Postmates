@@ -7,6 +7,7 @@ import StoreIndividual from '../Layout/StoreIndividual';
 import MenuList from '../Layout/MenuList';
 import { CLEAR_CART } from '../../Modules/CartReducer';
 import Footer from '../Layout/Footer';
+import Cart from '../Items/Cart';
 
 const StorePageBlock = styled.main`
   width: 100%;
@@ -26,6 +27,7 @@ const ItemPage = ({ storeData, subInput, history }) => {
 
   return (
     <StorePageBlock>
+      <Cart />
       <StoreIndividual storeData={storeData} />
       <MenuList storeData={storeData} subInput={subInput} history={history} />
       <Footer />
