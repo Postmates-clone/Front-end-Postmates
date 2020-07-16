@@ -8,7 +8,9 @@ import { BasicBtn } from '../../Style/BasicBtn';
 import { useDispatch } from 'react-redux';
 import { loginUsersAsync } from '../../Modules/UserReducer';
 
-const LoginPopUpBlock = styled.div``;
+const LoginPopUpBlock = styled.div`
+  z-index: 90;
+`;
 const LoginForm = styled.form`
   padding: 48px 36px 0 36px;
 

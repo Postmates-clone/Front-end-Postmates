@@ -74,7 +74,7 @@ export const createUsersAsync = (payload) => async (dispatch, state) => {
 export const getUsersAsync = () => async (dispatch, state) => {
   dispatch({ type: GET_USER });
   try {
-    const { data } = await DevUserApi.getUser(); // API 호출 - API 제작 해야 함
+    const { data } = await api.get('/api/v1/members/'); // API 호출 - API 제작 해야 함
     dispatch({ type: GET_USER_SUCCESS, data });
   } catch (e) {
     dispatch({ type: GET_USER_ERROR, error: e });
