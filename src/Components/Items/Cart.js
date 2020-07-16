@@ -160,6 +160,7 @@ const Cart = ({ history }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
   const isPaneOpen = useSelector((state) => state.Cart.isPaneOpen);
+  const cartTotalCount = useSelector((state) => state.Cart.totalCount);
   const storeData = useSelector((state) => state.Item.store);
   const user = useSelector((state) => state.User.userInfo);
   const [deliveryState, setDeliveryState] = useState(deliveryObj);
@@ -252,7 +253,7 @@ const Cart = ({ history }) => {
               Cart - {storeData.name}
               {user.username ? (
                 <div>
-                  hello! {user.username} you're added {cartTotalCount}items.
+                  hello! {user.username} youre added {cartTotalCount}items.
                 </div>
               ) : (
                 ''
