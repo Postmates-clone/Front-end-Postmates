@@ -5,7 +5,7 @@ import Media from '../../Style/Media';
 
 export const FooterBlock = styled.div`
   width: 100%;
-  height: 1114px;
+  height: auto;
   padding-top: 86px;
   color: rgba(255, 255, 255, 0.6);
   background-color: #000;
@@ -52,8 +52,8 @@ export const FooterBlock = styled.div`
   & p > span {
     color: rgba(255, 255, 255, 0.8);
   }
-  & a,
-  span {
+  & span {
+    margin: 0 15px 0 0;
     font-family: 'PostmatesStd', 'Helvetica Neue', Helvetica;
     font-size: 13px;
     letter-spacing: 0.14px;
@@ -63,19 +63,9 @@ export const FooterBlock = styled.div`
     color: #8f95a3;
     cursor: pointer;
   }
-  & span {
-    font-weight: 500;
-    margin: 0 15px 0 0;
-  }
   ${Media.mobile`
-  height:2200px;
+  height:auto;
     `}
-  &.footer-item {
-    ${Media.desktop`
-  height:600px;
-  background:red;
-    `}
-  }
 `;
 export const FooterWrap = styled.div`
   max-width: 1024px;
@@ -86,9 +76,8 @@ export const FooterWrap = styled.div`
     `}
 `;
 export default function Footer({ page }) {
-  console.log(page);
   return (
-    <FooterBlock className={`footer-${page}`}>
+    <FooterBlock>
       <FooterWrap>
         <FooterSection page={page} />
       </FooterWrap>

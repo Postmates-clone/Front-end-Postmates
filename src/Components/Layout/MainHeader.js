@@ -57,7 +57,7 @@ const IconWrap = styled.div`
   ${Media.tablet`
     display:on;
     margin: 0 16px 0 0;
-    cursor:pointer;
+    cursor: pointer;
     `}
 `;
 const MainResponsiveWrap = styled.div`
@@ -77,7 +77,7 @@ const MainHeader = ({ page }) => {
   return (
     <MainHeaderBlock className={`mainHeader-${page}`}>
       <MainHeaderWrapper>
-        <Logo />
+        <Logo page={page} />
         <MainResponsiveWrap>
           {page !== 'main' && <Search />}
           {page !== 'main' && <MainMenu />}

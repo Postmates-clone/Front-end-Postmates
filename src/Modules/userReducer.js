@@ -53,6 +53,7 @@ export const loginUsersAsync = (payload) => async (dispatch, state) => {
   try {
     const { data } = await api.post('/api/v1/members/login/', payload);
     dispatch({ type: LOGIN_USER_SUCCESS, data, email: payload.email });
+    localStorage.setItem('token', data.token);
   } catch (e) {
     dispatch({ type: LOGIN_USER_ERROR, error: e });
   }
@@ -522,7 +523,7 @@ export default function userReducer(state = initialState, action) {
         ...state,
         status: {
           loading: false,
-          success: true,
+          success: false,
           error: {
             error: true,
             massage: action.error,

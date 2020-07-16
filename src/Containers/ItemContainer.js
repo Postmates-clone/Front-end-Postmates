@@ -10,13 +10,11 @@ const ItemContainer = () => {
     subInput: state.Main.subHeaderInput,
   }));
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(setPage('item'));
     dispatch(getStoreAsync(window.location.href.substring(27)));
     window.scrollTo({ top: 0 });
   }, [dispatch]);
-
   return <ItemPage storeData={storeData} subInput={subInput} />;
 };
 
