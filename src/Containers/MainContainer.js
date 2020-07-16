@@ -13,6 +13,7 @@ const MainContainer = ({ history }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setPage('main'));
+    window.scrollTo({ top: 0 });
   }, [dispatch]);
   return (
     <MainPage place={place} geoCode={geoCode} page={page} history={history} />

@@ -31,7 +31,7 @@ const InfinityScroll = () => {
     setState((prev) => ({ ...prev, loading: true }));
     const lat = localStorage.getItem('location-lat');
     const lng = localStorage.getItem('location-lng');
-    // console.log(state.next, lat, lng, 'nearby');
+    console.log(state.next, lat, lng, 'nearby');
     const { data } = await DevApi.getNearBy(state.next, lat, lng);
 
     setState((prev) => ({
