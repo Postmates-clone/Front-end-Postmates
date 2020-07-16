@@ -28,6 +28,7 @@ const MenuCategory = ({
   setCategoryRef,
   dispatch,
   subInput,
+  history,
 }) => {
   const categoryRef = useRef();
 
@@ -45,7 +46,7 @@ const MenuCategory = ({
               item.name.toLowerCase().indexOf(subInput.toLowerCase()) !== -1,
           )
           .map((item) => (
-            <MenuItem item={item} subInput={subInput} />
+            <MenuItem item={item} subInput={subInput} history={history} />
           ))}
       </StoreListBlock>
     </li>

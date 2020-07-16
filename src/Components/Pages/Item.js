@@ -17,7 +17,7 @@ const StorePageBlock = styled.main`
 `;
 
 // 희진
-const ItemPage = ({ storeData, subInput }) => {
+const ItemPage = ({ storeData, subInput, history }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const ItemPage = ({ storeData, subInput }) => {
   return (
     <StorePageBlock>
       <StoreIndividual storeData={storeData} />
-      <MenuList storeData={storeData} subInput={subInput} />
+      <MenuList storeData={storeData} subInput={subInput} history={history} />
       <Footer />
     </StorePageBlock>
   );
