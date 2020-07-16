@@ -43,10 +43,10 @@ const PATCH_CART_SUCCESS = 'REMOVE_CART_SUCCESS';
 const PATCH_CART_ERROR = 'REMOVE_CART_ERROR';
 
 // 희진 login action
-const LOGIN_USER = 'LOGIN_USER';
-const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
-const LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
-const LOGOUT_USER = 'LOGOUT_USER';
+export const LOGIN_USER = 'LOGIN_USER';
+export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
+export const LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
+export const LOGOUT_USER = 'LOGOUT_USER';
 
 // login action 생성 함수
 export const loginUsersAsync = (payload) => async (dispatch, state) => {
