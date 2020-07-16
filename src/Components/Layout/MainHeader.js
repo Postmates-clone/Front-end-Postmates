@@ -10,7 +10,6 @@ import { searchIconDeep } from '../../Style/IconStyles';
 
 const MainHeaderBlock = styled.div`
   width: 100%;
-
   background: #ffdf18;
   line-height: 72px;
 

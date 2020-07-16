@@ -27,10 +27,11 @@ const ProductInfoBlock = styled.div`
   `}
 
   ${Media.tablet`
-    width: 100%;
-    justify-content:center;
+    width: 300px;
+    height:261px;
+    justify-content:space-around;
     text-align: center;
-    padding-top: 28px;
+    padding-top: 0;
 
   `}
 `;
@@ -56,17 +57,18 @@ export const Button = styled.button`
     justify-content:center;
     align-items: center;
     text-align: center;
-    padding-top: 28px;
+    /* padding-top: 28px; */
 
   `}
 
   ${Media.tablet`
     max-width: 80%;
     max-height: 80%;
-    justify-content:center;
+    margin:0;
+    /* justify-content:center;
     text-align: center;
-    align-items: center;
-    padding-top: 28px;
+    align-items: center; */
+    /* padding-top: 28px; */
 
   `}
 `;
@@ -84,17 +86,30 @@ const Title = styled.div`
   `}
 
   ${Media.tablet`
-    width: 100%;
-    padding-top: 28px;
+    width: 300px;
+    height:80px;
+    letter-spacing:-1.7px;
+    padding: 0;
+    margin: 0;
+    font-size:32px;
+    font-weight:600;
+    line-height:40px;
+    text-align:left;
+
     
   `}
 `;
 
 const Specification = styled.div`
-  font-weight: 400;
+  font-weight: 200;
+  line-height: 26px;
   color: #8f95a3;
   letter-spacing: 0.14px;
   font-size: 16px;
+  ${Media.tablet`
+    margin:8px 0 23px;
+    text-align:left;
+  `}
 `;
 
 // eslint-disable-next-line react/prop-types
