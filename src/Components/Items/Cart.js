@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
@@ -11,6 +11,7 @@ import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Cart.css';
 import { LoginBtn } from '../../Style/BasicBtn';
+import { DevApi } from '../../Dev/DevApi';
 
 const WarpCart = styled.div``;
 
@@ -136,22 +137,11 @@ const deliveryObj = {
   ordered_menus: [],
 };
 
-const menuObj = {
-  id: 0,
-  name: '',
-  options: [],
-};
-
-const optionObj = {
-  id: 0,
-  name: '',
-  price: 0,
-};
-
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
   const storeData = useSelector((state) => state.Item.store);
+  const [deliveryState, setDeliveryState] = useState(deliveryObj);
 
   const [state, setState] = useState({
     isPaneOpen: false,
@@ -170,6 +160,40 @@ const Cart = () => {
   const cartTotalCount = cart.reduce((prev, curr) => {
     return prev + curr.count;
   }, 0);
+
+  const setOrderedMenu = () => {
+    let orderedMennu = [];
+    orderedMennu = cart.map(({ id, name, option }) => ({
+      id,
+      name,
+      option: [{ ...option }],
+    }));
+    return orderedMennu;
+  };
+
+  const setDelivery = () => {
+    console.log(cart);
+    console.log('storeData', storeData);
+    const today = new Date();
+    setDeliveryState({
+      id: storeData.id,
+      url: storeData.url,
+      store_img: storeData.store_img,
+      total_price: cartTotalPrice,
+      ordered_date: today,
+      ordered_menus: setOrderedMenu(),
+    });
+    console.log('delivery', deliveryState);
+  };
+
+  useEffect(() => {
+    setDelivery();
+  }, [cart]);
+
+  const postDelivery = async () => {
+    const { data } = await DevApi.postDelivery(deliveryState);
+    console.log(data);
+  };
 
   return (
     <WarpCart>
@@ -240,7 +264,7 @@ const Cart = () => {
           </SubTotalBlock>
           <ButtonGroup>
             {/* <Link to="/checkout" onClick={() => console.log(1111)}> */}
-            <Button onClick={() => console.log(1111)}>CHECKOUT</Button>
+            <Button onClick={() => postDelivery()}>CHECKOUT</Button>
             {/* </Link> */}
           </ButtonGroup>
         </DialogBlock>
