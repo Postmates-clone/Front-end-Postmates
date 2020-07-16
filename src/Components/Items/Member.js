@@ -58,7 +58,7 @@ const Member = () => {
             <UserMenu />
             <CountBlock>{cart.map((item) => item.count)}</CountBlock>
             <CartText>Cart</CartText>
-            <div>화살표</div>
+            <div>&gt;</div>
           </LoginCart>
         </>
       )}

@@ -60,7 +60,6 @@ const Input = ({ label, register, validation, pattern, ...rest }) => (
 
 const LoginPopUp = ({ setState, openState }) => {
   const [isLoggedIn, setLoggedIn] = useState(false);
-  const [token, setToken] = useState(localStorage.getItem('token'));
   const { register, handleSubmit, errors, reset, watch } = useForm({
     mode: 'all',
   });
