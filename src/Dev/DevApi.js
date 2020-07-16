@@ -56,9 +56,17 @@ export const DevApi = {
       },
     });
   },
-  postDelivery: (paylord) => {
-    console.log(paylord);
-    return api.post('/api/v1/deliveries', paylord, {
+  postDelivery: (payload) => {
+    // console.log(payload);
+    return api.post('/api/v1/deliveries', payload, {
+      headers: {
+        Authorization: `JWT ${localStorage.getItem('token')}`,
+      },
+    });
+  },
+  getDelivery: () => {
+    return api.get('/api/v1/deliveries', {
+      responseType: 'json',
       headers: {
         Authorization: `JWT ${localStorage.getItem('token')}`,
       },
