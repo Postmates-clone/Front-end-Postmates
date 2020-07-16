@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import styled, { css, keyframes } from 'styled-components';
 import { getPlaceAsync, getGeocodeAsync } from '../../Modules/LocationReducer';
 // import mapMaker from '../../Assets/mapMaker.png';
-import rightArrow from '../../Assets/rightArrow.png';
+// import rightArrow from '../../Assets/rightArrow.png';
 import AddressList from '../Items/AddressList';
 import Media from '../../Style/Media';
 // import { locationIconLarge } from '../../Style/IconStyles';
@@ -45,14 +45,16 @@ export const MainBannerContainer = styled.div`
   text-overflow: ellipsis;
   transition: opacity 0.4s linear;
 
-  ${Media.mobile`
-    width: 100%;
+  ${Media.tablet`
+  max-width: 1024px;
+     padding: 0 54px;
     margin: 0;
   `}
 
-  ${Media.tablet`
-    width: 100%;
-    margin: 0;
+  ${Media.mobile`
+     width: 100%;
+     padding: 0 54px;
+    /* margin: 0; */
   `}
 `;
 
@@ -68,42 +70,30 @@ const ResponsiveWrapper = styled.div`
 `;
 
 export const MainTextWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
+  /* display: flex; */
+  /* align-items: center; */
+  /* width: 100%; */
   padding-top: 116px;
   /* padding: 20px; */
   flex-direction: column;
   align-items: flex-start;
   line-height: 40px;
   font-weight: bold;
-  overflow: hidden;
+  /* overflow: hidden;
   white-space: initial;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 
   ${Media.mobile`
     width: 100%;
-    text-align: center;
-    align-items:center;
+    padding-top: 60px;
+    /* text-align: center; */
+    /* align-items:center; */
   `}
 
   ${Media.tablet`
     width: 100%;
-    text-align: center;
-    align-items:center;
-  `}
-`;
-
-const OriginalText = styled.div`
-  display: block;
-  position: relative;
-
-  overflow: hidden;
-
-  ${Media.mobile`
-    width: 100%;
-    text-align: left;
-    display: none;
+    /* text-align: center; */
+    /* align-items:center; */
   `}
 `;
 
@@ -116,13 +106,13 @@ export const InputWrapper = styled.div`
   ${Media.mobile`
     width: 100%;
     justify-content:center;
-    margin:0;
+    margin-top: 30px;
   `}
 
   ${Media.tablet`
-    width: 100%;
-    justify-content:center;
-    margin:0;
+    /* width: 100%; */
+    /* justify-content:center; */
+    /* margin:0; */
   `}
 `;
 
@@ -162,6 +152,8 @@ export const Input = styled.input`
   height: 80%;
   padding: 0;
   margin-left: 10px;
+  font-size: 15px;
+  font-weight: 200;
 `;
 
 const titleAni = keyframes`
@@ -186,6 +178,42 @@ const titleAni = keyframes`
     top: 83px;
   }
 `;
+const TitleTextWrapper = styled.div`
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  ${Media.mobile`
+    display: none;
+  `}
+`;
+
+const TitleText = styled.div`
+  margin-right: 10px;
+
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 70px;
+  letter-spacing: -2.6px;
+  margin-bottom: 17px;
+
+  /* background-color: #eee; */
+`;
+
+const OriginalText = styled.div`
+  width: 100%;
+  /* display: block; */
+  /* position: relative; */
+  overflow: hidden;
+
+  /* background-color: #ccc; */
+/* 
+  ${Media.mobile`
+    width: 100%;
+    text-align: left;
+    display: none;
+  `} */
+`;
 
 export const Title = styled.div`
   position: absolute;
@@ -203,6 +231,11 @@ export const Title = styled.div`
   animation-name: ${titleAni};
 `;
 
+const MobileTitle = styled.div`
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: -2.17px;
+`;
 export const Specification = styled.div`
   font-weight: 200;
   letter-spacing: 0.14px;
@@ -211,6 +244,15 @@ export const Specification = styled.div`
   overflow: hidden;
   white-space: initial;
   text-overflow: ellipsis;
+  line-height: 1.4;
+
+  ${Media.mobile`
+    width: 100%;
+    padding-top: 20px;
+    display: block;
+    text-align: center;
+    margin: 0;
+  `}
 `;
 // const initialState = {
 //   inputState: {
@@ -249,18 +291,22 @@ export default function MainBanner({ title, text, place, geoCode, history }) {
     <MainBannerBlock>
       <MainBannerContainer>
         <MainTextWrapper>
-          <OriginalText>
-            <Title delay="0s">{title}</Title>
-            <Title delay="3.7s">beer?</Title>
-            <Title delay="7.4s">spicy wings?</Title>
-            <Title delay="11s">smoothies?</Title>
-            <Title delay="14.8s">noodles?</Title>
-            <Specification>{text}</Specification>
-          </OriginalText>
+          <TitleTextWrapper>
+            <TitleText>Want</TitleText>
+            <OriginalText>
+              <Title delay="0s">{title}</Title>
+              <Title delay="3.7s">beer?</Title>
+              <Title delay="7.4s">spicy wings?</Title>
+              <Title delay="11s">smoothies?</Title>
+              <Title delay="14.8s">noodles?</Title>
+            </OriginalText>
+          </TitleTextWrapper>
+
           <ResponsiveWrapper>
-            <Title>You want it. We get it.</Title>
-            <Specification>{text}</Specification>
+            <MobileTitle>You want it. We get it.</MobileTitle>
+            {/* <Specification>{text}</Specification> */}
           </ResponsiveWrapper>
+          <Specification>{text}</Specification>
           <InputWrapper>
             <InputInner>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -293,7 +339,15 @@ export default function MainBanner({ title, text, place, geoCode, history }) {
               />
             </InputInner>
             <InputButton onClick={() => getGeocode()}>
-              <IconImage src={rightArrow} />
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M11.971 6.998L6.15 1.176 7.103.22l6.777 6.777-6.777 6.778-.954-.955 5.822-5.823z"
+                  fill="#fff"
+                />
+                <path stroke="#fff" strokeWidth="1.5" d="M.114 6.924h12.6" />
+              </svg>
             </InputButton>
             <AddressList
               place={place}
