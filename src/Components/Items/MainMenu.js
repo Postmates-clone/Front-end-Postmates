@@ -8,6 +8,9 @@ const MainMenuWrap = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
+  ${Media.tablet`
+    letter-spacing:0;
+    `}
   ${Media.mobile`
     display:none;
     `}

@@ -30,7 +30,6 @@ const HeaderContainer = () => {
       .offsetTop;
     window.scrollTo({ top: yaxis - 60, behavior: 'smooth' });
   };
-
   // const GenerateSubHeader = () => {
   //   console.log(page);
   //   return (

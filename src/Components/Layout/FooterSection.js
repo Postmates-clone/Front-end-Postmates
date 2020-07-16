@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styled from 'styled-components';
 import Logo from '../Items/Logo';
@@ -103,7 +102,7 @@ export const BottomSecionWrap = styled.div`
 
 export const FooterLink = styled.div`
   display: flex;
-  padding: 15px 0 0 0;
+  padding: 0 0 100px 0;
   ${Media.mobile`
     height:auto;
     width:auto;
@@ -114,7 +113,7 @@ export const BottomNewyorkSection = styled.div`
   display:none;
     `}
 `;
-export const noticeWrap = styled.div``;
+export const NoticeWrap = styled.div``;
 export const BottomLastSection = styled.div`
   ${Media.tablet`
   display:none;
@@ -131,40 +130,40 @@ export default function FooterSection({ page }) {
           <h2>POSTMATES</h2>
           <ul>
             <li>
-              <a>About</a>
+              <span>About</span>
             </li>
             <li>
-              <a>Careers</a>
+              <span>Careers</span>
             </li>
             <li>
-              <a>Blog</a>
+              <span>Blog</span>
             </li>
             <li>
-              <a>Press & Media</a>
+              <span>Press & Media</span>
             </li>
             <li>
-              <a>Developers</a>
+              <span>Developers</span>
             </li>
             <li>
-              <a>API Docs</a>
+              <span>API Docs</span>
             </li>
             <li>
-              <a>Civic Labs</a>
+              <span>Civic Labs</span>
             </li>
             <li>
-              <a>Unlimited</a>
+              <span>Unlimited</span>
             </li>
             <li>
-              <a>Gift Cards</a>
+              <span>Gift Cards</span>
             </li>
             <li>
-              <a>Pickup</a>
+              <span>Pickup</span>
             </li>
             <li>
-              <a>Postmates Party</a>
+              <span>Postmates Party</span>
             </li>
             <li>
-              <a>Postmates for Work</a>
+              <span>Postmates for Work</span>
             </li>
           </ul>
         </FooterSectionWrap>
@@ -172,28 +171,28 @@ export default function FooterSection({ page }) {
           <h2>MERCHANTS</h2>
           <ul>
             <li>
-              <a>Sell on Postmates</a>
+              <span>Sell on Postmates</span>
             </li>
             <li>
-              <a>Restaurants</a>
+              <span>Restaurants</span>
             </li>
           </ul>
           <h2>FLEET</h2>
           <ul>
             <li>
-              <a>Join the Fleet</a>
+              <span>Join the Fleet</span>
             </li>
           </ul>
           <h2>SUPPORT</h2>
           <ul>
             <li>
-              <a>Customer Help</a>
+              <span>Customer Help</span>
             </li>
             <li>
-              <a>Fleet Help</a>
+              <span>Fleet Help</span>
             </li>
             <li>
-              <a>Merchant Help</a>
+              <span>Merchant Help</span>
             </li>
           </ul>
         </FooterSectionWrap>
@@ -202,25 +201,25 @@ export default function FooterSection({ page }) {
             <h2>MORE</h2>
             <ul>
               <li>
-                <a>Delivery Near Me</a>
+                <span>Delivery Near Me</span>
               </li>
               <li>
-                <a>Takeout Near Me</a>
+                <span>Takeout Near Me</span>
               </li>
               <li>
-                <a>Pizza Near Me</a>
+                <span>Pizza Near Me</span>
               </li>
               <li>
-                <a>Thai Near Me</a>
+                <span>Thai Near Me</span>
               </li>
               <li>
-                <a>Mexican Near Me</a>
+                <span>Mexican Near Me</span>
               </li>
               <li>
-                <a>Alcohol Delivery</a>
+                <span>Alcohol Delivery</span>
               </li>
               <li>
-                <a>FoodFight!</a>
+                <span>FoodFight!</span>
               </li>
             </ul>
           </FooterSectionWrap>
@@ -229,28 +228,28 @@ export default function FooterSection({ page }) {
             <h2>CITIES</h2>
             <ul>
               <li>
-                <a>Washington DC</a>
+                <span>Washington DC</span>
               </li>
               <li>
-                <a>Boston</a>
+                <span>Boston</span>
               </li>
               <li>
-                <a>PhiladelPhia</a>
+                <span>PhiladelPhia</span>
               </li>
               <li>
-                <a>Baltimore</a>
+                <span>Baltimore</span>
               </li>
               <li>
-                <a>Jersey City</a>
+                <span>Jersey City</span>
               </li>
               <li>
-                <a>Delivery Near Me</a>
+                <span>Delivery Near Me</span>
               </li>
               <li>
-                <a>Takeout Near Me</a>
+                <span>Takeout Near Me</span>
               </li>
               <li>
-                <a>Alcohol Near Me</a>
+                <span>Alcohol Near Me</span>
               </li>
             </ul>
           </FooterSectionWrap>
@@ -259,16 +258,16 @@ export default function FooterSection({ page }) {
           <h2>FOLLOW US</h2>
           <ul>
             <li>
-              <a>Twitter</a>
+              <span>Twitter</span>
             </li>
             <li>
-              <a>Facebook</a>
+              <span>Facebook</span>
             </li>
             <li>
-              <a>Instagram</a>
+              <span>Instagram</span>
             </li>
             <li>
-              <a>Snapchat</a>
+              <span>Snapchat</span>
             </li>
           </ul>
         </FooterLastSection>
@@ -279,81 +278,81 @@ export default function FooterSection({ page }) {
             <h3>OUR TOP CITIES</h3>
             <ul>
               <li>
-                <a>San Francisco</a>
+                <span>San Francisco</span>
               </li>
               <li>
-                <a>Miami</a>
+                <span>Miami</span>
               </li>
               <li>
-                <a>San Diego</a>
+                <span>San Diego</span>
               </li>
               <li>
-                <a>East Bay</a>
+                <span>East Bay</span>
               </li>
               <li>
-                <a>Long Beach</a>
+                <span>Long Beach</span>
               </li>
             </ul>
           </BottomSecionWrap>
           <ul>
             <li>
-              <a>Los Angeles</a>
+              <span>Los Angeles</span>
             </li>
             <li>
-              <a>Washingtion DC</a>
+              <span>Washingtion DC</span>
             </li>
             <li>
-              <a>Seattle</a>
+              <span>Seattle</span>
             </li>
             <li>
-              <a>Potland</a>
+              <span>Potland</span>
             </li>
             <li>
-              <a>Nashville</a>
+              <span>Nashville</span>
             </li>
           </ul>
           <BottomNewyorkSection>
             <ul>
               <li>
-                <a>New York City</a>
+                <span>New York City</span>
               </li>
               <li>
-                <a>Orange County</a>
+                <span>Orange County</span>
               </li>
               <li>
-                <a>Atlanta</a>
+                <span>Atlanta</span>
               </li>
               <li>
-                <a>Charlotte</a>
+                <span>Charlotte</span>
               </li>
               <li>
-                <a>Denver</a>
+                <span>Denver</span>
               </li>
             </ul>
           </BottomNewyorkSection>
           <BottomLastSection>
             <ul>
               <li>
-                <a>Chicago</a>
+                <span>Chicago</span>
               </li>
               <li>
-                <a>Phoenix</a>
+                <span>Phoenix</span>
               </li>
               <li>
-                <a>Las Vegas</a>
+                <span>Las Vegas</span>
               </li>
               <li>
-                <a>Scaramento</a>
+                <span>Scaramento</span>
               </li>
               <li>
-                <a>Oklahoma City</a>
+                <span>Oklahoma City</span>
               </li>
             </ul>
           </BottomLastSection>
         </FooterBottomWrap>
       )}
       {page === 'main' && (
-        <noticeWrap>
+        <NoticeWrap>
           <h4>
             Postmates is the largest, most reliable on-demand delivery and
             pickup platform.
@@ -364,7 +363,7 @@ export default function FooterSection({ page }) {
             to bring what you crave right to your door.
             <span>Read More</span>
           </p>
-        </noticeWrap>
+        </NoticeWrap>
       )}
       <FooterLink>
         <span>©2020 POSTMATES INC</span>
