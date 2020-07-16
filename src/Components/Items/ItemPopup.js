@@ -245,6 +245,7 @@ const OptionDetailName = styled.label`
 const OptionDetailPrice = styled.div`
   color: rgb(143, 149, 163);
   max-width: 10%;
+  margin-left: auto;
   text-align: right;
 `;
 
@@ -366,8 +367,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
                   />
                   <OptionDetailName>{opt.name}</OptionDetailName>
                   <OptionDetailPrice>
-                    {opt.price}
-                    {/* {opt.price === Number(0) && ''} */}
+                    {opt.price ? `$${opt.price}` : ''}
                   </OptionDetailPrice>
                 </OptionDetailInfo>
               </OptionDetailBlock>
