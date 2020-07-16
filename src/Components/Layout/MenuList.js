@@ -30,7 +30,7 @@ const MenuList = ({ storeData, subInput }) => {
           <MenuCategory
             key={`itemKey-${item.id}`}
             itemKey={item.id}
-            category={item.name}
+            category={item.category}
             list={item.menus}
             setCategoryRef={setCategoryRef}
             dispatch={dispatch}

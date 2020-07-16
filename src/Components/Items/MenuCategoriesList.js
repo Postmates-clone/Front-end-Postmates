@@ -32,7 +32,7 @@ const MenuCategoriesList = ({ menuList, handleClickScrollTo, isOpen }) => {
             id={`ctitem-${menu.id}`}
             onClick={() => handleClickScrollTo(menu.id)}
           >
-            {menu.name}
+            {menu.category}
           </CategoriyItem>
         ))}
       </ul>

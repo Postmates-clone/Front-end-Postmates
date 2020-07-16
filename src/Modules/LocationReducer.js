@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { put, takeLatest } from 'redux-saga/effects';
+import { withRouter } from 'react-router-dom';
 import { geocode } from '../Utils/GeocoderAPI';
 
 // place 정보 취득 action
@@ -37,7 +38,10 @@ export const getPlaceAsync = (input) => async (dispatch, state) => {
 // };
 
 // place 정보 취득 action 생성 함수
-export const getGeocodeAsync = (address) => async (dispatch, state) => {
+export const getGeocodeAsync = (address, history) => async (
+  dispatch,
+  state,
+) => {
   dispatch({ type: GET_GEOCODE });
   try {
     const { data } = await geocode.getGeocode(address);
@@ -48,6 +52,7 @@ export const getGeocodeAsync = (address) => async (dispatch, state) => {
       'location-city',
       data.results[0].address_components[0].long_name,
     );
+    history.push('/feed');
   } catch (e) {
     dispatch({ type: GET_GEOCODE_ERROR, error: e });
   }

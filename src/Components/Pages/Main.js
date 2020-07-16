@@ -6,7 +6,8 @@ import DeliverySection from '../Layout/DeliverySection';
 import Footer from '../Layout/Footer';
 import MainProducts from '../../Assets/mainProducts.png';
 
-const MainPage = ({ place, geoCode, page }) => {
+
+const MainPage = ({ place, geoCode, page, history }) => {
   return (
     <div>
       <MainBanner
@@ -14,6 +15,7 @@ const MainPage = ({ place, geoCode, page }) => {
         text="Food, drinks, groceries, and more available for delivery and pickup."
         place={place}
         geoCode={geoCode}
+        history={history}
       />
       <MainSection
         title="Save big on every order. Join Unlimited."
