@@ -11,6 +11,7 @@ const WrapperCheckoutCart = styled.div`
 `;
 
 const CheckoutCart = ({ storeInfo }) => {
+  console.log('storeinfo', storeInfo);
   return (
     <WrapperCheckoutCart>
       <Map storeInfo={storeInfo} />
