@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import PopUp from '../../Style/PopUp';
 import { BasicBtn } from '../../Style/BasicBtn';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { loginUsersAsync } from '../../Modules/UserReducer';
 import SHA256 from '../../lib/sha256';
 
@@ -60,11 +60,11 @@ const Input = ({ label, register, validation, pattern, ...rest }) => (
 );
 
 const LoginPopUp = ({ setState, openState }) => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
   const { register, handleSubmit, errors, reset, watch } = useForm({
     mode: 'all',
   });
   const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.User.isLogin);
 
   const onFocus = (e) => {
     e.target.style.borderBottom = '2px solid rgb(0, 204, 153)';
@@ -75,8 +75,7 @@ const LoginPopUp = ({ setState, openState }) => {
   };
 
   const onSubmit = async (_data) => {
-    // console.log(_data);
-    setLoggedIn(true);
+    console.log(_data);
     const { password } = _data;
     _data.password = SHA256(password);
 
@@ -84,7 +83,6 @@ const LoginPopUp = ({ setState, openState }) => {
       loginUsersAsync({ email: _data.email, password: _data.password }),
     );
     reset();
-    setLoggedIn(true);
   };
 
   const watchEmail = watch('email');
@@ -92,7 +90,7 @@ const LoginPopUp = ({ setState, openState }) => {
 
   return (
     <LoginPopUpBlock>
-      {!isLoggedIn && (
+      {!isLogin && (
         <>
           <PopUp width="435px" setState={setState} openState={openState}>
             <LoginForm onSubmit={handleSubmit(onSubmit)}>

@@ -319,6 +319,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     if (addInstruction.lenght > 200) return;
     setAddInstruction('');
     onCancel();
+    console.log(options);
   };
 
   const onChange = (e) => {
@@ -379,7 +380,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
                     />
                     <OptionDetailName>{opt.name}</OptionDetailName>
                     <OptionDetailPrice>
-                      {opt.price ? `$${opt.price}` : ''}
+                      {opt.price ? `+$${opt.price}` : ''}
                     </OptionDetailPrice>
                   </OptionDetailInfo>
                 </OptionDetailBlock>
