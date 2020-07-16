@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getUsersAsync());
+    console.log('hi');
   }, [dispatch]);
 
   return (
