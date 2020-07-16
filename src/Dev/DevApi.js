@@ -57,7 +57,11 @@ export const DevApi = {
     });
   },
   postDelivery: (paylord) => {
-    return api.post('/api/v1/deliveries/', paylord, { headers: {} });
+    return api.post('/api/v1/deliveries/', paylord, {
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    });
   },
 };
 
