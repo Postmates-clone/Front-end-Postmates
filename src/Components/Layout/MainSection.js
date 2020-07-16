@@ -22,16 +22,15 @@ const MainSectionBlock = styled.div`
 
   ${Media.tablet`
     width: 100%;
-    padding:0 54px 0 54px;
-    /* height:900px;
-    justify-content:center;
-    padding:0;
-    flex-direction: column-reverse; */
+    min-height:261px;
+    padding:75px 54px 80px 54px;
+    justify-content:space-around;
   `}
   ${Media.mobile`
     width: 100%;
+    min-height:771px;
     justify-content:center;
-    padding:0;
+    padding:25px 0 40px 0;
     flex-direction: column-reverse;
   `}
 `;

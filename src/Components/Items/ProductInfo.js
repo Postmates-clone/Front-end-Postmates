@@ -19,18 +19,14 @@ const ProductInfoBlock = styled.div`
   }
 
   ${Media.mobile`
-    width: 100%;
-    justify-content:center;
-    text-align: center;
-    padding-top: 28px;
-
+    min-width: 100%;
+    align-items:center;
   `}
 
   ${Media.tablet`
     width: 300px;
-    height:261px;
     justify-content:space-around;
-    text-align: center;
+    text-align: left;
     padding-top: 0;
 
   `}
@@ -57,7 +53,6 @@ export const Button = styled.button`
     justify-content:center;
     align-items: center;
     text-align: center;
-    /* padding-top: 28px; */
 
   `}
 
@@ -65,10 +60,7 @@ export const Button = styled.button`
     max-width: 80%;
     max-height: 80%;
     margin:0;
-    /* justify-content:center;
-    text-align: center;
-    align-items: center; */
-    /* padding-top: 28px; */
+    
 
   `}
 `;
@@ -81,22 +73,18 @@ const Title = styled.div`
   color: #000;
 
   ${Media.mobile`
-    width: 100%;
-    padding-top: 28px;
+    min-width:100%;
+    text-align:center;
   `}
 
   ${Media.tablet`
     width: 300px;
-    height:80px;
     letter-spacing:-1.7px;
     padding: 0;
     margin: 0;
     font-size:32px;
     font-weight:600;
     line-height:40px;
-    text-align:left;
-
-    
   `}
 `;
 
@@ -110,9 +98,11 @@ const Specification = styled.div`
     margin:8px 0 23px;
     text-align:left;
   `}
+  ${Media.mobile`
+  text-align:center;
+  `}
 `;
 
-// eslint-disable-next-line react/prop-types
 export default function ProductInfo({ title, text, buttonText }) {
   return (
     <ProductInfoBlock>

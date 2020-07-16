@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import Media from '../../Style/Media';
 
 const ImageWrapper = styled.div`
-  /* width: 600px;
-  height: 406px; */
   margin-top: -80px;
   width: 600px;
   ${Media.tablet`
@@ -12,6 +10,11 @@ const ImageWrapper = styled.div`
     height:243px;
     padding-top: 28px;
     
+  `}
+  ${Media.mobile`
+  width:100%;
+    margin:0 0 290px 0;
+    padding:0;
   `}
 `;
 
