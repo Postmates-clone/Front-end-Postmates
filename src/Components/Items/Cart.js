@@ -1,16 +1,18 @@
-/* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import SlidingPane from 'react-sliding-pane';
-import { REMOVE_FROM_CART, CLEAR_CART } from '../../Modules/CartReducer';
+import {
+  REMOVE_FROM_CART,
+  openCart,
+  addCount,
+} from '../../Modules/CartReducer';
 import { closeIcon } from '../../Style/IconStyles';
 import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Cart.css';
-import { LoginBtn } from '../../Style/BasicBtn';
+// import { LoginBtn } from '../../Style/BasicBtn';
 import { DevApi } from '../../Dev/DevApi';
 
 const WarpCart = styled.div``;
@@ -137,16 +139,12 @@ const deliveryObj = {
   ordered_menus: [],
 };
 
-const Cart = () => {
+const Cart = ({ history }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
+  const isPaneOpen = useSelector((state) => state.Cart.isPaneOpen);
   const storeData = useSelector((state) => state.Item.store);
   const [deliveryState, setDeliveryState] = useState(deliveryObj);
-
-  const [state, setState] = useState({
-    isPaneOpen: false,
-    isPaneOpenLeft: false,
-  });
 
   const onRemove = (name) => {
     // console.log('WHAT IS THE NAME', name);
@@ -157,9 +155,10 @@ const Cart = () => {
     return prev + curr.totalPrice;
   }, 0);
 
-  const cartTotalCount = cart.reduce((prev, curr) => {
-    return prev + curr.count;
-  }, 0);
+  const addTotalCount = () => {
+    const count = cart.reduce((prev, curr) => prev + curr.count, 0);
+    dispatch(addCount(count));
+  };
 
   const setOrderedMenu = () => {
     let orderedMennu = [];
@@ -172,11 +171,11 @@ const Cart = () => {
   };
 
   const setDelivery = () => {
-    // console.log(cart);
-    // console.log('storeData', storeData);
+    console.log('storeData', storeData);
     const today = new Date();
     setDeliveryState({
       id: storeData.id,
+      name: storeData.name,
       url: storeData.url,
       store_img: storeData.store_img,
       total_price: cartTotalPrice,
@@ -188,33 +187,36 @@ const Cart = () => {
 
   useEffect(() => {
     setDelivery();
+    addTotalCount();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart]);
 
   const postDelivery = async () => {
     console.log(deliveryState);
     const data = await DevApi.postDelivery(deliveryState);
     console.log('resdata', data);
+    history.replace('/checkout');
   };
 
   return (
     <WarpCart>
-      <LoginBtn
+      {/* <LoginBtn
         onClick={() => setState({ isPaneOpen: true })}
         active
         height="45px"
         width="100%"
         text={`${cartTotalCount} ITEMS`}
-      />
+      /> */}
       <SlidingPane
         className="some-custom-class"
         overlayClassName="some-custom-overlay-class"
-        isOpen={state.isPaneOpen}
+        isOpen={isPaneOpen}
         title="Cart"
         width="440px"
         hideHeader
         shouldCloseOnEsc
         onRequestClose={() => {
-          setState({ isPaneOpen: false });
+          dispatch(openCart(false));
         }}
       >
         <DialogBlock>
@@ -222,7 +224,7 @@ const Cart = () => {
             <RemoveBlock>
               <RemoveBtn
                 onClick={() => {
-                  setState({ isPaneOpen: false });
+                  dispatch(openCart(false));
                 }}
               >
                 {closeIcon}
@@ -255,9 +257,9 @@ const Cart = () => {
             <PriceText>Subtotal</PriceText>
             <TotalPriceBlock>{`$${cartTotalPrice.toFixed(2)}`}</TotalPriceBlock>
             <PriceText>Delivery</PriceText>
-            <TotalPriceBlock>{`$${storeData.delivery_fee.toFixed(
-              2,
-            )}`}</TotalPriceBlock>
+            <TotalPriceBlock>
+              {`$${storeData.delivery_fee.toFixed(2)}`}
+            </TotalPriceBlock>
             <PriceText active>Total</PriceText>
             <TotalPriceBlock active>
               {`$${(cartTotalPrice + storeData.delivery_fee).toFixed(2)}`}
