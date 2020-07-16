@@ -10,16 +10,16 @@ function App() {
 
   useEffect(() => {
     dispatch(getUsersAsync());
-    console.log('hi');
   }, [dispatch]);
 
   return (
-    <>
+    <div>
       <HeaderContainer />
       <MainRouter />
       <GlobalStyles />
-    </>
+    </div>
   );
 }
 
-export default App;
+// export default App;
+export default React.memo(App);

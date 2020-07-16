@@ -75,4 +75,4 @@ const SubBanner = ({ page, getBackground }) => {
   );
 };
 
-export default SubBanner;
+export default React.memo(SubBanner);

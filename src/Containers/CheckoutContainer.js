@@ -27,7 +27,6 @@ const CheckoutContainer = () => {
   const getDelivery = async () => {
     const { data } = await DevApi.getDelivery();
     setResData(data);
-    console.log('get delivery', data);
   };
 
   const dispatch = useDispatch();

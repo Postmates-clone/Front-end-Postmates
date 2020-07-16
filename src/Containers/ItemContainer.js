@@ -20,4 +20,4 @@ const ItemContainer = ({ history }) => {
   );
 };
 
-export default ItemContainer;
+export default React.memo(ItemContainer);

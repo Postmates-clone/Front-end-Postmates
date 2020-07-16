@@ -96,4 +96,4 @@ const StoreIndividual = ({ storeData }) => {
   );
 };
 
-export default StoreIndividual;
+export default React.memo(StoreIndividual);

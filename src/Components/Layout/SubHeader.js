@@ -19,7 +19,7 @@ const SubHeaderBlock = styled.div`
   font-size: 14px;
   font-family: 'Postmates Std';
   position: sticky;
-  z-index: 71;
+  z-index: 300;
   background-color: rgb(255, 255, 255);
 
   &.subHeader-feed {
@@ -134,4 +134,4 @@ const SubHeader = ({
   );
 };
 
-export default SubHeader;
+export default React.memo(SubHeader);

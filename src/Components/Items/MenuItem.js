@@ -131,7 +131,7 @@ const MenuItem = ({ item, subInput, history }) => {
     setDialog(false);
   };
   return (
-    <>
+    <div>
       <ItemBlock>
         <ContentBlock onClick={onClick} width={image_url}>
           <div>
@@ -150,8 +150,8 @@ const MenuItem = ({ item, subInput, history }) => {
         visible={dialog}
         onCancel={onCancel}
       />
-    </>
+    </div>
   );
 };
 
-export default MenuItem;
+export default React.memo(MenuItem);
