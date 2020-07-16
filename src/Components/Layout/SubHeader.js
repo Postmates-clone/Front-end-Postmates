@@ -125,7 +125,7 @@ const SubHeader = ({
             onClick={() => dispatch(openCart(true))}
             active
             height="45px"
-            width="100%"
+            width="100px"
             text={`${totalCount} ITEMS`}
           />
         )}

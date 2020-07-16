@@ -12,6 +12,8 @@ export const getStoreAsync = (id) => async (dispatch, state) => {
   try {
     const { data } = await DevApi.getItem(id); // API 호출 - API 제작 해야 함
     dispatch({ type: GET_STORE_SUCCESS, data });
+    localStorage.setItem('store-lat', data.lat);
+    localStorage.setItem('store-lng', data.lng);
   } catch (e) {
     dispatch({ type: GET_STORE_ERROR, error: e });
   }

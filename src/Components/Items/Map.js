@@ -9,14 +9,22 @@ import {
 
 const MapBox = styled.div``;
 
-const Map = ({ storeInfo }) => {
+const Map = () => {
   const GoogleMapObj = () => {
     return (
       <GoogleMap
-        defaultZoom={12}
-        defaultCenter={{ lat: +storeInfo.lat, lng: +storeInfo.lng }}
+        defaultZoom={15}
+        defaultCenter={{
+          lat: +localStorage.getItem('store-lat'),
+          lng: +localStorage.getItem('store-lng'),
+        }}
       >
-        <Marker position={{ lat: +storeInfo.lat, lng: +storeInfo.lng }} />
+        <Marker
+          position={{
+            lat: +localStorage.getItem('store-lat'),
+            lng: +localStorage.getItem('store-lng'),
+          }}
+        />
       </GoogleMap>
     );
   };
