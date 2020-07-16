@@ -28,8 +28,6 @@ export default function CartReducer(state = initialState, action) {
       const cartItem = state.cart.find(
         (item) => item.name === action.payload.name,
       );
-
-      // TODO: option에 대한 분기처리 어떻게 할지?
       if (!cartItem) {
         return {
           ...state,

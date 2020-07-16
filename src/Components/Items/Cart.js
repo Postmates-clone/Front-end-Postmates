@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import SlidingPane from 'react-sliding-pane';
-import { REMOVE_FROM_CART, CLEAR_CART } from '../../Modules/CartReducer';
+import { REMOVE_FROM_CART } from '../../Modules/CartReducer';
 import { closeIcon } from '../../Style/IconStyles';
 import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
@@ -33,6 +33,11 @@ const CartName = styled.div`
   min-width: 20%;
   max-width: 90%;
   margin: 0 auto;
+
+  & > div {
+    color: #00cc99;
+    margin-top: 12px;
+  }
 `;
 
 const ContentBlock = styled.div`
@@ -153,6 +158,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.Cart.cart);
   const storeData = useSelector((state) => state.Item.store);
+  const user = useSelector((state) => state.User.userInfo);
   const [deliveryState, setDeliveryState] = useState(deliveryObj);
 
   const [state, setState] = useState({
@@ -239,7 +245,16 @@ const Cart = () => {
                 {closeIcon}
               </RemoveBtn>
             </RemoveBlock>
-            <CartName>Cart - {storeData.name}</CartName>
+            <CartName>
+              Cart - {storeData.name}
+              {user.username ? (
+                <div>
+                  hello! {user.username} you're added {cartTotalCount}items.
+                </div>
+              ) : (
+                ''
+              )}
+            </CartName>
           </HeaderBlock>
           {cart.map((item) => (
             <>
