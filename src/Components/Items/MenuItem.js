@@ -7,6 +7,15 @@ import Media from '../../Style/Media';
 // FIXME: 희진 -itemPopup 작업
 import ItemPopup from './ItemPopup';
 
+const WarpItem = styled.div`
+  ${Media.tablet`
+  width: 100%;
+  `}
+  ${Media.mobile`
+  width: 100%;
+  `}
+`;
+
 const ItemBlock = styled.li`
   display: flex;
   height: 130px;
@@ -91,12 +100,12 @@ const ContentBlock = styled.div`
   }
 `;
 
-const ImageBlock = styled.div`
+const ImageBlock = styled.img`
   width: 128px;
   height: 128px;
   margin-right: 0;
-  background: no-repeat center url(${(props) => props.background});
-  background-size: cover;
+  /* background: no-repeat center url(${(props) => props.background}); */
+  /* background-size: cover; */
 `;
 
 // eslint-disable-next-line no-unused-vars
@@ -131,7 +140,7 @@ const MenuItem = ({ item, subInput, history }) => {
     setDialog(false);
   };
   return (
-    <div>
+    <WarpItem>
       <ItemBlock>
         <ContentBlock onClick={onClick} width={image_url}>
           <div>
@@ -141,7 +150,7 @@ const MenuItem = ({ item, subInput, history }) => {
           <strong>${price.toFixed(2)}</strong>
         </ContentBlock>
         {/* img가 있을경우 img component 생성, 없을경우 미생성 */}
-        {image_url ? <ImageBlock background={image_url} /> : ''}
+        {image_url ? <ImageBlock src={image_url} /> : ''}
       </ItemBlock>
 
       <ItemPopup
@@ -150,7 +159,7 @@ const MenuItem = ({ item, subInput, history }) => {
         visible={dialog}
         onCancel={onCancel}
       />
-    </div>
+    </WarpItem>
   );
 };
 
