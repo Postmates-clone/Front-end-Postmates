@@ -124,7 +124,7 @@ export default function FooterSection({ page }) {
     <div>
       <FooterTopWraper>
         <FooterLogoSection>
-          <Logo />
+          <Logo page={page} />
         </FooterLogoSection>
         <FooterSectionWrap>
           <h2>POSTMATES</h2>

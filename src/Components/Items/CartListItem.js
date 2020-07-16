@@ -24,6 +24,12 @@ const ItemOption = styled.div`
   font-weight: 200;
 `;
 
+const Instruction = styled.div`
+  margin-top: 10px;
+  color: #8f95a3;
+  font-weight: 200;
+`;
+
 const CartListItem = ({ item }) => {
   return (
     <ListItem>
@@ -31,7 +37,8 @@ const CartListItem = ({ item }) => {
         <ItemTitle>{`X${item.count} ${item.name}`}</ItemTitle>
         <ItemPrice>{item.price}</ItemPrice>
       </WrapItem>
-      <ItemOption>{item.instruction}</ItemOption>
+      <ItemOption>option</ItemOption>
+      <Instruction>{item.instruction}</Instruction>
     </ListItem>
   );
 };

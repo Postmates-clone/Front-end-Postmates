@@ -56,6 +56,14 @@ export const DevApi = {
       },
     });
   },
+  postDelivery: (paylord) => {
+    console.log(paylord);
+    return api.post('/api/v1/deliveries', paylord, {
+      headers: {
+        Authorization: `JWT ${localStorage.getItem('token')}`,
+      },
+    });
+  },
 };
 
 // console.log(DevApi.getNearBy());

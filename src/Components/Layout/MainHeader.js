@@ -37,9 +37,8 @@ const MainHeaderWrapper = styled.div`
   align-items: center;
   max-width: 1024px;
   margin: 0 auto;
-  &
     ${Media.desktop`
-  width:1024px;
+    width:1024px;
     `}
     ${Media.tablet`
     max-width:1020px;
