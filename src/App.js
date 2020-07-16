@@ -4,9 +4,9 @@ import MainRouter from './Router/MainRouter';
 import GlobalStyles from './Style/GlobalStyles';
 import HeaderContainer from './Containers/HeaderContainer';
 import { getUsersAsync } from './Modules/UserReducer';
+import './App.css';
 
 function App() {
-  console.log('Render Test! App');
   const dispatch = useDispatch();
 
   useEffect(() => {
