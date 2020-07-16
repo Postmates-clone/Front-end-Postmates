@@ -1,6 +1,6 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-lone-blocks */
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 
@@ -96,11 +96,11 @@ const GetItAgainBtn = styled.button`
   }
 
   ${Media.desktop`
-  display: none;
+    display: ${(props) => (props.viewBtn ? 'block' : 'none')};
   `}
 
   ${Media.tablet`
-  display: block;
+    display: block;
   `}
 
   ${Media.mobile`
@@ -121,28 +121,34 @@ const GetItAgainBtn = styled.button`
 `;
 
 const PastOrder = ({ id, name, logo, date, orderedmenus }) => {
+  const [viewBtn, setViewBtn] = useState(false);
+
   let orderMenuList = '';
   orderedmenus.map((order) => {
-    orderMenuList += `${order.category} : `;
-    order.menus.map((menu) => {
-      orderMenuList += `${menu.name} `;
-      menu.options.map((option) => {
-        orderMenuList += `(option: ${option.name}), `;
-      });
+    orderMenuList += `${order.name} : `;
+    order.options.map((option) => {
+      orderMenuList += `(option: ${option.name}), `;
     });
   });
 
+  const onMouseEnter = () => setViewBtn(true);
+  const onMouseLeave = () => setViewBtn(false);
+  // console.log(orderedmenus);
   // console.log(orderMenuList);
-
+  // console.log(viewBtn);
   return (
-    <PastOrderBlock key={id}>
+    <PastOrderBlock
+      key={id}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <StoreImage logo={logo} />
       <OrderInfo>
         <h3>{name}</h3>
         <OrderMenus>{orderMenuList}</OrderMenus>
         <OrderDate>Completed {date}</OrderDate>
       </OrderInfo>
-      <GetItAgainBtn>
+      <GetItAgainBtn viewBtn={viewBtn}>
         <span>GET IT AGAIN</span>
         <svg width="18" height="19">
           <g fill="currentColor" fillRule="evenodd">
