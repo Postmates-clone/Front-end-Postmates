@@ -4,7 +4,7 @@ import ItemPage from '../Components/Pages/Item';
 import { getStoreAsync } from '../Modules/ItemReducer';
 import { setPage } from '../Modules/MainReducer';
 
-const ItemContainer = () => {
+const ItemContainer = ({ history }) => {
   const { storeData, subInput } = useSelector((state) => ({
     storeData: state.Item.store,
     subInput: state.Main.subHeaderInput,
@@ -15,7 +15,9 @@ const ItemContainer = () => {
     dispatch(getStoreAsync(window.location.href.substring(27)));
     window.scrollTo({ top: 0 });
   }, [dispatch]);
-  return <ItemPage storeData={storeData} subInput={subInput} />;
+  return (
+    <ItemPage storeData={storeData} subInput={subInput} history={history} />
+  );
 };
 
 export default ItemContainer;
