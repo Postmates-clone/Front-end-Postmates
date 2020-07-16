@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 import PastOrder from '../Items/PastOrder';
+import { DevApi } from '../../Dev/DevApi';
 
 const OrderHeader = styled.div`
   position: relative;
@@ -78,75 +79,111 @@ const OrderCategory = styled.h2`
 
 const PastOrdersList = styled.ul``;
 
-const pastOrders = {
-  count: 2,
-  next: null,
-  previous: null,
-  results: [
-    {
-      id: 1,
-      url: 'perrys-pizza-parlour-san-francisco',
-      name: 'Perrys Pizza Parlour',
-      store_img:
-        'https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/048c222a-9736-44a9-bab9-391ce3b09315/orig.jpg',
-      total_price: 44.9,
-      ordered_date: '2020-07-15T17:07:16.173240+09:00',
-      ordered_menus: [
-        {
-          id: 17305,
-          name: 'Pistachio Baklava',
-          options: [
-            {
-              id: 7633,
-              name: 'Add Hot Tea',
-              price: 2.99,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 2,
-      url: 'perrys-pizza-parlour-san-francisco',
-      name: 'Perrys Pizza Parlour',
-      store_img:
-        'https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/048c222a-9736-44a9-bab9-391ce3b09315/orig.jpg',
-      total_price: 44.9,
-      ordered_date: '2020-07-15T17:07:44.668818+09:00',
-      ordered_menus: [
-        {
-          id: 17305,
-          name: 'Pistachio Baklava',
-          options: [
-            {
-              id: 7633,
-              name: 'Add Hot Tea',
-              price: 2.99,
-            },
-          ],
-        },
-        {
-          id: 17305,
-          name: 'Pistachio Baklava',
-          options: [
-            {
-              id: 7633,
-              name: 'Add Hot Tea',
-              price: 2.99,
-            },
-            {
-              id: 7633,
-              name: 'Add Hot Tea',
-              price: 2.99,
-            },
-          ],
-        },
-      ],
-    },
-  ],
-};
+// const pastOrders = {
+//   count: 2,
+//   next: null,
+//   previous: null,
+//   results: [
+//     {
+//       id: 1,
+//       url: 'perrys-pizza-parlour-san-francisco',
+//       name: 'Perrys Pizza Parlour',
+//       store_img:
+//         'https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/048c222a-9736-44a9-bab9-391ce3b09315/orig.jpg',
+//       total_price: 44.9,
+//       ordered_date: '2020-07-15T17:07:16.173240+09:00',
+//       ordered_menus: [
+//         {
+//           id: 17305,
+//           name: 'Pistachio Baklava',
+//           options: [
+//             {
+//               id: 7633,
+//               name: 'Add Hot Tea',
+//               price: 2.99,
+//             },
+//           ],
+//         },
+//       ],
+//     },
+//     {
+//       id: 2,
+//       url: 'perrys-pizza-parlour-san-francisco',
+//       name: 'Perrys Pizza Parlour',
+//       store_img:
+//         'https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/048c222a-9736-44a9-bab9-391ce3b09315/orig.jpg',
+//       total_price: 44.9,
+//       ordered_date: '2020-07-15T17:07:44.668818+09:00',
+//       ordered_menus: [
+//         {
+//           id: 17305,
+//           name: 'Pistachio Baklava',
+//           options: [
+//             {
+//               id: 7633,
+//               name: 'Add Hot Tea',
+//               price: 2.99,
+//             },
+//           ],
+//         },
+//         {
+//           id: 17305,
+//           name: 'Pistachio Baklava',
+//           options: [
+//             {
+//               id: 7633,
+//               name: 'Add Hot Tea',
+//               price: 2.99,
+//             },
+//             {
+//               id: 7633,
+//               name: 'Add Hot Tea',
+//               price: 2.99,
+//             },
+//           ],
+//         },
+//       ],
+//     },
+//   ],
+// };
 
 const OrderHistory = () => {
+  const [state, setState] = useState({
+    loading: false,
+    next: 1,
+    data: [],
+    error: null,
+  });
+
+  const fetchItems = async () => {
+    setState((prev) => ({ ...prev, loading: true }));
+
+    const { data } = await DevApi.getDelivery();
+
+    // console.log(data);
+
+    setState((prev) => ({
+      ...prev,
+      loading: false,
+      next: prev.next + 1,
+      data: [...prev.data, ...data.results],
+      error: null,
+    }));
+  };
+
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
+  // console.log(state);
+  const { loading, data, error } = state;
+
+  if (loading) return <div>loading</div>;
+  if (!data) return null;
+  if (error) return <div>{error}</div>;
+
+  // console.log(data);
+
   return (
     <div>
       <OrderHeader>
@@ -157,8 +194,9 @@ const OrderHistory = () => {
       <Wrapper>
         <OrderCategory>Past orders</OrderCategory>
         <PastOrdersList>
-          {pastOrders.results.map((order) => (
+          {data.map((order) => (
             <PastOrder
+              key={order.id}
               order={order}
               id={order.id}
               date={order.ordered_date}
