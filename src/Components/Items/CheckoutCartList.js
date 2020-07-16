@@ -23,6 +23,7 @@ const CheckoutCartList = ({ storeInfo }) => {
   const { cart } = useSelector((state) => ({
     cart: state.Cart.cart,
   }));
+  console.log(cart);
   return (
     <WarpperCartList>
       <StoreTitle>{storeInfo.name}</StoreTitle>
