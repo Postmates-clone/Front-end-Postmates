@@ -37,7 +37,7 @@ const CartName = styled.div`
 
 const ContentBlock = styled.div`
   width: 345px;
-  height: 104px;
+  height: 130px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -58,7 +58,6 @@ export const CountBlock = styled.div`
 const DetailBlock = styled.div`
   min-width: 60%;
   max-width: 60%;
-  max-height: 80%;
   display: flex;
   flex-direction: column;
   padding: 1%;
@@ -66,13 +65,30 @@ const DetailBlock = styled.div`
 const DetailNameBlock = styled.div`
   white-space: normal;
   word-break: break-all;
+  max-height: 20%;
 `;
 
-const DetailOptionBlock = styled.div``;
+const DetailOptionBlock = styled.div`
+  overflow: hidden;
+  white-space: initial;
+  text-overflow: hidden;
+  max-height: 70%;
+  color: rgb(143, 149, 163);
+  font-size: 14px;
+`;
+
+const OptionsName = styled.div`
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  white-space: initial;
+  text-overflow: ellipsis;
+`;
 
 const PriceBlock = styled.div`
   min-width: 20%;
   max-width: 20%;
+  max-height: 10%;
   color: rgb(143, 149, 163);
 `;
 
@@ -121,11 +137,7 @@ const renderOptions = (options) => {
     return options[key];
   });
 
-  return optionList.map((option) => (
-    <div>
-      {option.id}: {option.name}, ${option.price}
-    </div>
-  ));
+  return optionList.map((option) => <OptionsName>{option.name}</OptionsName>);
 };
 
 const deliveryObj = {
@@ -235,11 +247,10 @@ const Cart = () => {
                 <CountBlock>{item.count}</CountBlock>
                 <DetailBlock>
                   <DetailNameBlock>{item.name}</DetailNameBlock>
-                  {/* TODO: option 들어오게 수정필요. */}
                   <DetailOptionBlock>
                     {renderOptions(item.options)}
                   </DetailOptionBlock>
-                  <div>{item.instruction}</div>
+                  {item.instruction}
                   <PriceBlock> {`$${item.totalPrice.toFixed(2)}`}</PriceBlock>
                 </DetailBlock>
                 <RemoveBlock>
