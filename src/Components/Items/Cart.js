@@ -253,7 +253,7 @@ const Cart = ({ history }) => {
               Cart - {storeData.name}
               {user.username ? (
                 <div>
-                  hello! {user.username} youre added {cartTotalCount}items.
+                  hello! {user.username} youre added {cartTotalCount} items.
                 </div>
               ) : (
                 ''
