@@ -39,8 +39,14 @@ const SubBannerBlock = styled.div`
       height: 130px;
     `}
   }
-  background: no-repeat center url(${(props) => props.background});
-  background-size: cover;
+  /* background: no-repeat center url(${(props) => props.background}); */
+  /* background-size: cover; */
+`;
+
+const BannerImage = styled.img`
+  position: fixed;
+  width: 100vw;
+  top: -20%;
 `;
 
 const FeedTitle = styled.div`
@@ -64,7 +70,7 @@ const FeedTitle = styled.div`
 
 const SubBanner = ({ page, getBackground }) => {
   return (
-    <SubBannerBlock background={() => getBackground()} className={page}>
+    <SubBannerBlock background={getBackground} className={page}>
       {page === 'feed' && (
         <FeedTitle>
           You crave.
@@ -72,6 +78,7 @@ const SubBanner = ({ page, getBackground }) => {
           We get it.
         </FeedTitle>
       )}
+      <BannerImage src={`${getBackground()}`} alt="aa" />
     </SubBannerBlock>
   );
 };

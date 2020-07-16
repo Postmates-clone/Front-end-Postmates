@@ -32,7 +32,7 @@ const MenuCategories = ({ menuList, handleClickScrollTo }) => {
 
   return (
     <MenuCategoriesBlock>
-      <button type="button" onClick={() => ChangeOpen()}>
+      <button type="button" onClick={ChangeOpen}>
         <span>Category</span>
         {arrowIconLarge}
       </button>

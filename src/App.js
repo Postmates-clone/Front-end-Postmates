@@ -6,6 +6,7 @@ import HeaderContainer from './Containers/HeaderContainer';
 import { getUsersAsync } from './Modules/UserReducer';
 
 function App() {
+  console.log('Render Test! App');
   const dispatch = useDispatch();
 
   useEffect(() => {
