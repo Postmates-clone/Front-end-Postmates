@@ -9,6 +9,7 @@ const SubBannerBlock = styled.div`
   position: fixed;
   width: 100%;
   z-index: -1;
+  top: 72px;
 
   
   &.feed {

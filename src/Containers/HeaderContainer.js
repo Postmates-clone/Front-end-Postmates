@@ -1,19 +1,21 @@
 import React, { useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import WarpSubHeader from '../Components/Layout/WarpSubHeader';
-// import SubBanner from '../Components/Layout/SubBanner';
 import { changeSubInput } from '../Modules/MainReducer';
 import MainHeader from '../Components/Layout/MainHeader';
 
 const HeaderContainer = () => {
   const dispatch = useDispatch();
-  const { page, storeUrl, menuList, categoryRef } = useSelector((state) => ({
-    page: state.Main.page,
-    storeUrl: state.Item.store.store_img,
-    menuList: state.Item.store.all_menus,
-    isOpenCategories: state.Main.isOpenCategories,
-    categoryRef: state.Ref.categoryRef,
-  }));
+  const { page, storeUrl, menuList, categoryRef } = useSelector(
+    (state) => ({
+      page: state.Main.page,
+      storeUrl: state.Item.store.store_img,
+      menuList: state.Item.store.all_menus,
+      categoryRef: state.Ref.categoryRef,
+    }),
+    shallowEqual,
+  );
+
   // 페이지에 따라 sub-banner 배경 변경
   const getBackground = useCallback(() => {
     const itemUrl = storeUrl;
@@ -25,14 +27,17 @@ const HeaderContainer = () => {
   }, [page, storeUrl]);
 
   // 카테고리 click시 스트롤 해당 지점으로 이동
-  const handleClickScrollTo = (id) => {
-    const yaxis = categoryRef.filter(({ itemKey }) => itemKey === id)[0].ref
-      .offsetTop;
-    window.scrollTo({ top: yaxis - 60, behavior: 'smooth' });
-  };
+  const handleClickScrollTo = useCallback(
+    (id) => {
+      const yaxis = categoryRef.filter(({ itemKey }) => itemKey === id)[0].ref
+        .offsetTop;
+      window.scrollTo({ top: yaxis - 60, behavior: 'smooth' });
+    },
+    [categoryRef],
+  );
 
   return (
-    <>
+    <div>
       <MainHeader page={page} />
       {page === 'feed' || page === 'item' ? (
         <WarpSubHeader
@@ -46,8 +51,8 @@ const HeaderContainer = () => {
       ) : (
         ''
       )}
-    </>
+    </div>
   );
 };
 
-export default HeaderContainer;
+export default React.memo(HeaderContainer);
