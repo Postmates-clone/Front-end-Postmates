@@ -17,5 +17,4 @@ export const DevUserApi = {
   // putFavorite: (payload) => api.put('/users', payload),
   // removeFavorite: (id) => api.delete(`/users/${id}`),
 };
-
 // json-server --watch db.json --port 5000

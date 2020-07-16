@@ -37,9 +37,8 @@ const MainHeaderWrapper = styled.div`
   align-items: center;
   max-width: 1024px;
   margin: 0 auto;
-  &
     ${Media.desktop`
-  width:1024px;
+    width:1024px;
     `}
     ${Media.tablet`
     max-width:1020px;
@@ -58,7 +57,7 @@ const IconWrap = styled.div`
   ${Media.tablet`
     display:on;
     margin: 0 16px 0 0;
-    cursor:pointer;
+    cursor: pointer;
     `}
 `;
 const MainResponsiveWrap = styled.div`
@@ -78,7 +77,7 @@ const MainHeader = ({ page }) => {
   return (
     <MainHeaderBlock className={`mainHeader-${page}`}>
       <MainHeaderWrapper>
-        <Logo />
+        <Logo page={page} />
         <MainResponsiveWrap>
           {page !== 'main' && <Search />}
           {page !== 'main' && <MainMenu />}

@@ -56,6 +56,22 @@ export const DevApi = {
       },
     });
   },
+  postDelivery: (payload) => {
+    // console.log(payload);
+    return api.post('/api/v1/deliveries', payload, {
+      headers: {
+        Authorization: `JWT ${localStorage.getItem('token')}`,
+      },
+    });
+  },
+  getDelivery: () => {
+    return api.get('/api/v1/deliveries', {
+      responseType: 'json',
+      headers: {
+        Authorization: `JWT ${localStorage.getItem('token')}`,
+      },
+    });
+  },
 };
 
 // console.log(DevApi.getNearBy());

@@ -31,6 +31,7 @@ const FeedContainer = () => {
     dispatch(getInFast(lat, lng));
     // dispatch(getNearBy(1, lat, lng));
     // console.log(lat, lng);
+    window.scrollTo({ top: 0 });
   }, [dispatch]);
 
   // if (nearby.loading) return <div>로딩중...</div>;
