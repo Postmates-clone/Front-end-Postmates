@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { loginUsersAsync } from '../../Modules/UserReducer';
 
 const UserMenuBlock = styled.div`
   position: relative;
@@ -88,6 +90,16 @@ const UserMenu = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const openMenuPopUp = () => setOpenMenu(!openMenu);
   const closeMenu = () => setOpenMenu(false);
+  const dispatch = useDispatch();
+
+  // const userInfo = useSelector((state) => state.User.userInfo);
+
+  const logOut = async () => {
+    await dispatch(loginUsersAsync());
+    // console.log(userInfo.email);
+    closeMenu();
+    // console.log(userInfo.email);
+  };
 
   return (
     <UserMenuBlock>
@@ -115,7 +127,7 @@ const UserMenu = () => {
               <Link to="/help">
                 <MenuItem>Help Center</MenuItem>
               </Link>
-              <MenuItem>Sign Out</MenuItem>
+              <MenuItem onClick={logOut}>Sign Out</MenuItem>
             </MenuList>
           </UserMainMenu>
           <Dimmed onClick={closeMenu} />

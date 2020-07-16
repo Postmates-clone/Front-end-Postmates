@@ -46,6 +46,7 @@ const PATCH_CART_ERROR = 'REMOVE_CART_ERROR';
 const LOGIN_USER = 'LOGIN_USER';
 const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 const LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
+const LOGOUT_USER = 'LOGOUT_USER';
 
 // login action 생성 함수
 export const loginUsersAsync = (payload) => async (dispatch, state) => {
@@ -56,6 +57,8 @@ export const loginUsersAsync = (payload) => async (dispatch, state) => {
     localStorage.setItem('token', data.token);
   } catch (e) {
     dispatch({ type: LOGIN_USER_ERROR, error: e });
+    dispatch({ type: LOGOUT_USER });
+    localStorage.removeItem('token');
   }
 };
 
@@ -74,7 +77,7 @@ export const createUsersAsync = (payload) => async (dispatch, state) => {
 export const getUsersAsync = () => async (dispatch, state) => {
   dispatch({ type: GET_USER });
   try {
-    const { data } = await DevUserApi.getUser(); // API 호출 - API 제작 해야 함
+    const { data } = await api.get('/api/v1/members/'); // API 호출 - API 제작 해야 함
     dispatch({ type: GET_USER_SUCCESS, data });
   } catch (e) {
     dispatch({ type: GET_USER_ERROR, error: e });
@@ -521,6 +524,22 @@ export default function userReducer(state = initialState, action) {
     case LOGIN_USER_ERROR:
       return {
         ...state,
+        isLogin: false,
+        status: {
+          loading: false,
+          success: false,
+          error: {
+            error: true,
+            massage: action.error,
+          },
+        },
+      };
+
+    case LOGOUT_USER:
+      return {
+        ...state,
+        isLogin: false,
+        userInfo: {},
         status: {
           loading: false,
           success: false,
