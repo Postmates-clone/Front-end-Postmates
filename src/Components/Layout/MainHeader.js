@@ -35,7 +35,8 @@ const MainHeaderBlock = styled.div`
 
 const MainHeaderWrapper = styled.div`
   display: flex;
-  min-height: 72px;
+  /* min-height: 72px; */
+  max-height: 72px;
   justify-content: space-between;
   align-items: center;
   max-width: 1024px;
@@ -82,9 +83,15 @@ const MainHeader = ({ page }) => {
       <MainHeaderWrapper>
         <Logo page={page} />
         <MainResponsiveWrap>
-          {page !== 'main' && <Search />}
-          {page !== 'main' && <MainMenu />}
-          <IconWrap>{page !== 'main' && searchIconDeep}</IconWrap>
+          {page === 'feed' && <Search />}
+          {page === 'item' && <Search />}
+          {page === 'checkout' && <Search />}
+          {page === 'feed' && <MainMenu />}
+          {page === 'item' && <MainMenu />}
+          {page === 'checkout' && <MainMenu />}
+          <IconWrap>{page === 'feed' && searchIconDeep}</IconWrap>
+          <IconWrap>{page === 'item' && searchIconDeep}</IconWrap>
+          <IconWrap>{page === 'checkout' && searchIconDeep}</IconWrap>
           <Member />
         </MainResponsiveWrap>
       </MainHeaderWrapper>

@@ -7,7 +7,7 @@ const Dimmed = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 98;
+  z-index: 900;
 
   width: 100%;
   height: 100%;
@@ -18,7 +18,7 @@ const PopUpBlock = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 99;
+  z-index: 901;
 
   width: ${(props) => props.width || null};
   height: ${(props) => props.height || null};
