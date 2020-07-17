@@ -141,8 +141,8 @@ const MenuItem = ({ item, subInput, history }) => {
   };
   return (
     <WarpItem>
-      <ItemBlock>
-        <ContentBlock onClick={onClick} width={image_url}>
+      <ItemBlock onClick={onClick}>
+        <ContentBlock width={image_url}>
           <div>
             <h3 ref={titleRef}>{name}</h3>
             <span className="menu-caption">{description}</span>
