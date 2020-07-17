@@ -299,6 +299,7 @@ export default function MainBanner({ title, text, place, geoCode, history }) {
               <Title delay="7.4s">spicy wings?</Title>
               <Title delay="11s">smoothies?</Title>
               <Title delay="14.8s">noodles?</Title>
+              <Title delay="18.7s">pizza?</Title>
             </OriginalText>
           </TitleTextWrapper>
 

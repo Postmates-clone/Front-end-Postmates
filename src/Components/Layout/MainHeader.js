@@ -25,9 +25,12 @@ const MainHeaderBlock = styled.div`
     position: sticky;
     background: #fff;
   }
-  /* &.mainHeader-error {
-    background:rgb(251, 208, 69);
-  } */
+  &.mainHeader-error {
+    position: sticky;
+    background: rgb(251, 208, 69);
+  }
+  top: 0px;
+  z-index: 400;
 `;
 
 const MainHeaderWrapper = styled.div`
