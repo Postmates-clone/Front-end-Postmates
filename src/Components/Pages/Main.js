@@ -2,7 +2,7 @@
 import React from 'react';
 import MainSection from '../Layout/MainSection';
 import MainBanner from '../Layout/MainBanner';
-import DeliverySection from '../Layout/DeliverySection';
+// import DeliverySection from '../Layout/DeliverySection';
 import Footer from '../Layout/Footer';
 import MainProducts from '../../Assets/mainProducts.png';
 
@@ -10,7 +10,7 @@ const MainPage = ({ place, geoCode, page, history }) => {
   return (
     <div>
       <MainBanner
-        title="Want Burgers?"
+        title="Burgers?"
         text="Food, drinks, groceries, and more available for delivery and pickup."
         place={place}
         geoCode={geoCode}
@@ -35,10 +35,10 @@ const MainPage = ({ place, geoCode, page, history }) => {
         src={MainProducts}
         buttonText="ORDER NOW"
       />
-      <DeliverySection
+      {/* <DeliverySection
         title="Ready to order?"
         text="Browse local restaurants and businesses for delivery by entering your address below."
-      />
+      /> */}
       <Footer page={page} />
     </div>
   );

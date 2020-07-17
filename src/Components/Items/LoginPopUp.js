@@ -7,6 +7,7 @@ import PopUp from '../../Style/PopUp';
 import { BasicBtn } from '../../Style/BasicBtn';
 import { useDispatch } from 'react-redux';
 import { loginUsersAsync } from '../../Modules/UserReducer';
+import SHA256 from '../../lib/sha256';
 
 const LoginPopUpBlock = styled.div`
   z-index: 90;
@@ -74,8 +75,10 @@ const LoginPopUp = ({ setState, openState }) => {
   };
 
   const onSubmit = async (_data) => {
-    console.log(_data);
+    // console.log(_data);
     setLoggedIn(true);
+    const { password } = _data;
+    _data.password = SHA256(password);
 
     await dispatch(
       loginUsersAsync({ email: _data.email, password: _data.password }),
@@ -109,6 +112,7 @@ const LoginPopUp = ({ setState, openState }) => {
               />
               {errors.email && <Alert>Not a valid email.</Alert>}
               <Input
+                type="password"
                 label="password"
                 placeholder="password"
                 register={register}

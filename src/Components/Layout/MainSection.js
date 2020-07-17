@@ -22,7 +22,7 @@ const MainSectionBlock = styled.div`
 
   ${Media.tablet`
     width: 100%;
-    min-height:261px;
+    /* min-height:261px; */
     padding:75px 54px 80px 54px;
     justify-content:space-around;
   `}

@@ -9,11 +9,12 @@ import {
   addCount,
 } from '../../Modules/CartReducer';
 import { closeIcon } from '../../Style/IconStyles';
-import { Button } from './ProductInfo';
+// import { Button } from './ProductInfo';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import './Cart.css';
 // import { LoginBtn } from '../../Style/BasicBtn';
 import { DevApi } from '../../Dev/DevApi';
+import { BasicBtn } from '../../Style/BasicBtn';
 
 const WarpCart = styled.div``;
 
@@ -253,7 +254,7 @@ const Cart = ({ history }) => {
               Cart - {storeData.name}
               {user.username ? (
                 <div>
-                  hello! {user.username} youre added {cartTotalCount}items.
+                  hello! {user.username} youre added {cartTotalCount} items.
                 </div>
               ) : (
                 ''
@@ -294,7 +295,15 @@ const Cart = ({ history }) => {
           </SubTotalBlock>
           <ButtonGroup>
             {/* <Link to="/checkout" onClick={() => console.log(1111)}> */}
-            <Button onClick={() => postDelivery()}>CHECKOUT</Button>
+            {/* <Button onClick={() => postDelivery()}>CHECKOUT</Button> */}
+            <BasicBtn
+              onClick={() => postDelivery()}
+              active
+              text="CHECKOUT"
+              width="100%"
+              twidth="100%"
+              mwidth="100%"
+            />
             {/* </Link> */}
           </ButtonGroup>
         </DialogBlock>
