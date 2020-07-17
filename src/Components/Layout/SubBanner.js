@@ -39,17 +39,17 @@ const SubBannerBlock = styled.div`
       height: 130px;
     `}
   }
-  /* background: no-repeat center url(${(props) => props.background}); */
-  /* background-size: cover; */
+  background: no-repeat center url(${(props) => props.background});
+  background-size: cover;
 `;
 
-const BannerImage = styled.img`
-  position: fixed;
-  z-index: -1;
-  width: inherit;
-  height: ${(props) => (props.page === 'feed' ? 'inherit' : 'auto')};
-  top: ${(props) => (props.page === 'feed' ? '72px' : '-20%')};
-`;
+// const BannerImage = styled.img`
+//   position: fixed;
+//   z-index: -1;
+//   width: inherit;
+//   height: ${(props) => (props.page === 'feed' ? 'inherit' : 'auto')};
+//   top: ${(props) => (props.page === 'feed' ? '72px' : '-20%')};
+// `;
 
 const FeedTitle = styled.div`
   position: fixed;
@@ -73,7 +73,11 @@ const FeedTitle = styled.div`
 
 const SubBanner = ({ page, getBackground }) => {
   return (
-    <SubBannerBlock background={getBackground} className={page}>
+    <SubBannerBlock
+      background={getBackground}
+      className={page}
+      // styles={{ backgroundImage: `url(${getBackground})` }}
+    >
       {page === 'feed' && (
         <FeedTitle>
           You crave.
@@ -81,7 +85,7 @@ const SubBanner = ({ page, getBackground }) => {
           We get it.
         </FeedTitle>
       )}
-      <BannerImage src={`${getBackground()}`} alt="no image" page={page} />
+      {/* <BannerImage src={`${getBackground()}`} alt="no image" page={page} /> */}
     </SubBannerBlock>
   );
 };
