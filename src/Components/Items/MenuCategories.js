@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import MenuCategoriesList from './MenuCategoriesList';
 import Media from '../../Style/Media';
@@ -25,9 +25,14 @@ const MenuCategoriesBlock = styled.div`
 
 const MenuCategories = ({ menuList, handleClickScrollTo }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const ChangeOpen = useCallback(() => {
+    setIsOpen(!isOpen);
+  }, [isOpen]);
+
   return (
     <MenuCategoriesBlock>
-      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+      <button type="button" onClick={ChangeOpen}>
         <span>Category</span>
         {arrowIconLarge}
       </button>
@@ -40,4 +45,4 @@ const MenuCategories = ({ menuList, handleClickScrollTo }) => {
   );
 };
 
-export default MenuCategories;
+export default React.memo(MenuCategories);

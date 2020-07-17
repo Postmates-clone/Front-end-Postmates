@@ -26,7 +26,7 @@ const MainHeaderBlock = styled.div`
     background: #fff;
   }
   top: 0px;
-  z-index: 70;
+  z-index: 400;
 `;
 
 const MainHeaderWrapper = styled.div`

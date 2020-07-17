@@ -35,4 +35,4 @@ const ItemPage = ({ storeData, subInput, history }) => {
   );
 };
 
-export default ItemPage;
+export default React.memo(ItemPage);

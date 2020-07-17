@@ -54,4 +54,4 @@ const CheckoutCartList = ({ storeInfo }) => {
   );
 };
 
-export default CheckoutCartList;
+export default React.memo(CheckoutCartList);

@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 // action
 const SET_CATEGORY_REF = 'SET_CATEGORY_REF';
 const INIT_CATEGORY_REF = 'INIT_CATEGORY_REF';

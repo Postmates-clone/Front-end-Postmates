@@ -13,6 +13,7 @@ const CategoriyListBlock = styled.div`
   overflow-y: scroll;
   overflow-x: auto;
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  transform: translateY();
 `;
 
 const CategoriyItem = styled.li`
@@ -40,4 +41,4 @@ const MenuCategoriesList = ({ menuList, handleClickScrollTo, isOpen }) => {
   );
 };
 
-export default MenuCategoriesList;
+export default React.memo(MenuCategoriesList);
