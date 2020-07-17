@@ -19,7 +19,7 @@ const MenuCategoriesBlock = styled.div`
     font-weight: 400;
   }
   ${Media.tablet`
-    display: none;
+    /* display: none; */
   `}
 `;
 

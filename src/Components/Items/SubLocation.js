@@ -23,6 +23,15 @@ const SubLocationBlock = styled.div`
       align-items: center;
     }
     .icon {
+      margin-right: 8px;
+      ${Media.tablet`
+      margin-right: -8px;
+      `}
+      ${Media.mobile`
+      margin-right: -8px;
+      `}
+    }
+    .address {
       ${Media.tablet`
         display: none;
       `}
@@ -30,11 +39,8 @@ const SubLocationBlock = styled.div`
         display: none;
       `}
     }
-    .address {
-    }
   }
   svg {
-    margin-right: 8px;
   }
 `;
 

@@ -14,7 +14,6 @@ const CategoriyListBlock = styled.div`
   overflow-y: scroll;
   overflow-x: auto;
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
-  transform: translateY();
 `;
 
 const CategoriyItem = styled.li`
