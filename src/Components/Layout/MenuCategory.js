@@ -53,4 +53,4 @@ const MenuCategory = ({
   );
 };
 
-export default MenuCategory;
+export default React.memo(MenuCategory);

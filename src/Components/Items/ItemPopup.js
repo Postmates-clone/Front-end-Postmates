@@ -51,15 +51,18 @@ to{
 `;
 
 const OpacityBackground = styled.div`
+  z-index: 1100;
   position: fixed;
   left: 0;
   top: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: row; */
   transform: translateY(0%);
   transition: transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
   background: rgba(0, 0, 0, 0.1);
@@ -103,12 +106,10 @@ const DialogBlock = styled.div`
   width: 524px;
   height: 512px;
   padding: 30px;
-  background: #fff;
-  background-position: center;
+  /* background-position: center; */
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   overflow-y: scroll;
-  z-index: 80;
 
   h1 {
     margin: 0;
@@ -135,6 +136,16 @@ const DialogBlock = styled.div`
     css`
       animation-name: ${slideDown};
     `}
+`;
+
+const ItemPopupWrapper = styled.div`
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(34, 34, 34, 0.15) 0px 2px 20px 0px;
 `;
 
 // couter button
@@ -308,6 +319,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     if (addInstruction.lenght > 200) return;
     setAddInstruction('');
     onCancel();
+    console.log(options);
   };
 
   const onChange = (e) => {
@@ -341,71 +353,73 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
 
   return (
     <OpacityBackground disappear={!visible}>
-      {image_url && <ImageBlock image={image_url} />}
-      <DialogBlock disappear={!visible}>
-        <CloseBtn onClick={onCancel}>{closeIcon}</CloseBtn>
-        <h1>{name}</h1>
-        <p>{description}</p>
-        {item.option_groups.map((option) => (
-          <>
-            <OptionCategoryBlock>
-              <OptionCategoryName>{option.category}</OptionCategoryName>
-              <OptionCategoryRequired>
-                {option.is_required === true && 'REQUIRED'}
-              </OptionCategoryRequired>
-            </OptionCategoryBlock>
-            {option.options.map((opt) => (
-              <OptionDetailBlock>
-                <OptionDetailInfo>
-                  <Input
-                    type="radio"
-                    name={option.id}
-                    key={opt.id}
-                    id={opt.id}
-                    value={opt.name}
-                    onClick={() => onChecked(option.id, opt)}
-                  />
-                  <OptionDetailName>{opt.name}</OptionDetailName>
-                  <OptionDetailPrice>
-                    {opt.price ? `$${opt.price}` : ''}
-                  </OptionDetailPrice>
-                </OptionDetailInfo>
-              </OptionDetailBlock>
-            ))}
-          </>
-        ))}
-        <h2 style={{ marginTop: '50px' }}>SPECIAL INSTRUCTIONS</h2>
-        <InstructionBorder>
-          <InstructionBlock
-            placeholder="Add Instructions..."
-            minRows={3}
-            maxRows={5}
-            maxLength={200}
-            name="body"
-            value={addInstruction}
-            onChange={onChange}
-          />
-        </InstructionBorder>
-        <div style={{ marginBottom: '10%' }}>{addInstruction.length}/200</div>
-        <ButtonGroup>
-          {/* counter */}
-          <CounterBlock>
-            <Decrease active={active} onClick={onDecrease}>
-              -
-            </Decrease>
-            <Value>{count}</Value>
-            <Increase onClick={onIncrease}>+</Increase>
-          </CounterBlock>
-          <AddToCartBlock>
-            <AddToCart
-              active
-              text="Add To Cart"
-              totalprice={`$${totalPrice}`}
-              onClick={onClick}
+      <ItemPopupWrapper>
+        {image_url && <ImageBlock image={image_url} />}
+        <DialogBlock disappear={!visible}>
+          <CloseBtn onClick={onCancel}>{closeIcon}</CloseBtn>
+          <h1>{name}</h1>
+          <p>{description}</p>
+          {item.option_groups.map((option) => (
+            <>
+              <OptionCategoryBlock>
+                <OptionCategoryName>{option.category}</OptionCategoryName>
+                <OptionCategoryRequired>
+                  {option.is_required === true && 'REQUIRED'}
+                </OptionCategoryRequired>
+              </OptionCategoryBlock>
+              {option.options.map((opt) => (
+                <OptionDetailBlock>
+                  <OptionDetailInfo>
+                    <Input
+                      type="radio"
+                      name={option.id}
+                      key={opt.id}
+                      id={opt.id}
+                      value={opt.name}
+                      onClick={() => onChecked(option.id, opt)}
+                    />
+                    <OptionDetailName>{opt.name}</OptionDetailName>
+                    <OptionDetailPrice>
+                      {opt.price ? `+$${opt.price}` : ''}
+                    </OptionDetailPrice>
+                  </OptionDetailInfo>
+                </OptionDetailBlock>
+              ))}
+            </>
+          ))}
+          <h2 style={{ marginTop: '50px' }}>SPECIAL INSTRUCTIONS</h2>
+          <InstructionBorder>
+            <InstructionBlock
+              placeholder="Add Instructions..."
+              minRows={3}
+              maxRows={5}
+              maxLength={200}
+              name="body"
+              value={addInstruction}
+              onChange={onChange}
             />
-          </AddToCartBlock>
-        </ButtonGroup>
-      </DialogBlock>
+          </InstructionBorder>
+          <div style={{ marginBottom: '10%' }}>{addInstruction.length}/200</div>
+          <ButtonGroup>
+            {/* counter */}
+            <CounterBlock>
+              <Decrease active={active} onClick={onDecrease}>
+                -
+              </Decrease>
+              <Value>{count}</Value>
+              <Increase onClick={onIncrease}>+</Increase>
+            </CounterBlock>
+            <AddToCartBlock>
+              <AddToCart
+                active
+                text="Add To Cart"
+                totalprice={`$${totalPrice}`}
+                onClick={onClick}
+              />
+            </AddToCartBlock>
+          </ButtonGroup>
+        </DialogBlock>
+      </ItemPopupWrapper>
     </OpacityBackground>
   );
 };

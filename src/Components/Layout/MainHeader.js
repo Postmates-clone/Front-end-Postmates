@@ -10,7 +10,6 @@ import { searchIconDeep } from '../../Style/IconStyles';
 
 const MainHeaderBlock = styled.div`
   width: 100%;
-
   background: #ffdf18;
   line-height: 72px;
 
@@ -31,7 +30,7 @@ const MainHeaderBlock = styled.div`
     background: rgb(251, 208, 69);
   }
   top: 0px;
-  z-index: 70;
+  z-index: 400;
 `;
 
 const MainHeaderWrapper = styled.div`

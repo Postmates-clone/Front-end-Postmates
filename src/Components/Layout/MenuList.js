@@ -43,4 +43,4 @@ const MenuList = ({ storeData, subInput, history }) => {
   );
 };
 
-export default MenuList;
+export default React.memo(MenuList);

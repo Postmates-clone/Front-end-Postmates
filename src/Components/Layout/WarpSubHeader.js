@@ -1,4 +1,5 @@
 import React from 'react';
+// import styled from 'styled-components';
 import SubHeader from './SubHeader';
 import SubBanner from './SubBanner';
 
@@ -24,4 +25,4 @@ const WarpSubHeader = ({
   );
 };
 
-export default WarpSubHeader;
+export default React.memo(WarpSubHeader);
