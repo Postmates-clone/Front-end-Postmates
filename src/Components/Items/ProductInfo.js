@@ -32,7 +32,7 @@ const ProductInfoBlock = styled.div`
 
 const Title = styled.div`
   font-size: 48px;
-  font-weight: 600px;
+  font-weight: bold;
   line-height: 50px;
   letter-spacing: -2.6px;
   color: #000;

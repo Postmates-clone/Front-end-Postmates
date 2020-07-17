@@ -19,7 +19,7 @@ const SubHeaderBlock = styled.div`
   font-size: 14px;
   font-family: 'Postmates Std';
   position: sticky;
-  z-index: 401;
+  z-index: 300;
   background-color: rgb(255, 255, 255);
 
   &.subHeader-feed {
@@ -45,6 +45,7 @@ const SubHeaderBlock = styled.div`
 
   &.subHeader-item {
     top: 0px;
+    z-index: 500;
     ${Media.desktop`
       height: 69px;
       margin-top: 260px;

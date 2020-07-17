@@ -27,7 +27,6 @@ const HeaderContainer = () => {
   }, [page, storeUrl]);
 
   // 카테고리 click시 스트롤 해당 지점으로 이동
-
   const handleClickScrollTo = useCallback(
     (id) => {
       const yaxis = categoryRef.filter(({ itemKey }) => itemKey === id)[0].ref

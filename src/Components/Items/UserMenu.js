@@ -35,7 +35,7 @@ const UserMainMenu = styled.div`
   top: 80px;
   /* left: 0; */
   right: -30px;
-  z-index: 95;
+  z-index: 701;
 
   width: 215px;
   /* height: 200px; */
@@ -76,7 +76,7 @@ const Dimmed = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 93;
+  z-index: 700;
 
   width: 100%;
   height: 100%;
