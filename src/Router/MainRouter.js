@@ -23,7 +23,7 @@ const MainRouter = () => {
       <Route path="/dev" component={DevComponent} />
       <Route path="/devuser" component={DevUserComponent} />
       <Route path="/design" component={DesignSystem} />
-      <Route path="/error" component={Error404} />
+      <Route component={Error404} />
     </Switch>
   );
 };

@@ -10,11 +10,12 @@
   background: rgb(246, 246, 248);
   min-width: 100px;
   height: 100%;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s;
   z-index: 600;
   will-change: transform;
   position: relative;
+  line-height: 1.6;
 }
 
 .slide-pane:focus {
