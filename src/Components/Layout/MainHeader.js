@@ -25,8 +25,6 @@ const MainHeaderBlock = styled.div`
     position: sticky;
     background: #fff;
   }
-  top: 0px;
-  z-index: 400;
 `;
 
 const MainHeaderWrapper = styled.div`
