@@ -107,4 +107,4 @@ const InfinityScroll = () => {
   );
 };
 
-export default InfinityScroll;
+export default React.memo(InfinityScroll);
