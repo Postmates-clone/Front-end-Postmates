@@ -303,7 +303,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   const [addInstruction, setAddInstruction] = useState('');
   const [checkedOption, setCheckedOption] = useState({});
 
-  const { name, description, image_url, price, option_groups, options } = item;
+  const { name, description, image_url, price, options } = item;
 
   const onClick = () => {
     dispatch({
@@ -319,7 +319,6 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     if (addInstruction.lenght > 200) return;
     setAddInstruction('');
     onCancel();
-    console.log(options);
   };
 
   const onChange = (e) => {
@@ -328,7 +327,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
   };
 
   const onChecked = (optionId, option) => {
-    console.log(optionId, option);
+    console.log('here', optionId, option);
     setCheckedOption((_checkedOption) => ({
       ..._checkedOption,
       [optionId]: option,

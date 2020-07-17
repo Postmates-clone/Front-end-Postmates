@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { loginUsersAsync, LOGOUT_USER } from '../../Modules/UserReducer';
+import { loginUsersAsync, LOGIN_USER_ERROR } from '../../Modules/UserReducer';
 
 const UserMenuBlock = styled.div`
   position: relative;
@@ -93,7 +93,7 @@ const UserMenu = () => {
   const dispatch = useDispatch();
 
   const logOut = async () => {
-    await dispatch(loginUsersAsync({ type: LOGOUT_USER }));
+    await dispatch(loginUsersAsync({ type: LOGIN_USER_ERROR }));
     closeMenu();
   };
 

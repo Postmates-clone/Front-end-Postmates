@@ -25,10 +25,11 @@ export default function CartReducer(state = initialState, action) {
     case ADD_TO_CART: {
       const cartItem = state.cart.find(
         (item) => item.name === action.payload.name,
+        console.log(action.payload.name),
       );
 
       if (!cartItem) {
-        console.log('cartItem', action.payload);
+        console.log(action.payload);
         return {
           ...state,
           cart: state.cart.concat(action.payload),
@@ -39,16 +40,19 @@ export default function CartReducer(state = initialState, action) {
         console.log('KEYS', optionsKeys, payloadKeys);
 
         if (optionsKeys.length !== payloadKeys.length) {
+          console.log('KEYS', optionsKeys.length, payloadKeys.length);
+
           return {
             ...state,
             cart: state.cart.concat(action.payload),
           };
         } else {
           let isInCart = true;
-
           optionsKeys.forEach((key) => {
             const optionItem = cartItem.options[key];
             const payloadOptionItem = action.payload.options[key];
+            console.log(optionItem, payloadOptionItem);
+            console.log(action.payload);
 
             if (!payloadOptionItem) {
               isInCart = false;
@@ -57,6 +61,7 @@ export default function CartReducer(state = initialState, action) {
               isInCart = false;
             }
           });
+          console.log('bye', optionsKeys);
 
           if (!isInCart) {
             return {
