@@ -1,4 +1,4 @@
-<!-- # 제목
+# 제목
 
 - Postmates clone service
 - https://postmates.com
@@ -71,35 +71,4 @@
 
 # 사용 기술
 
-- html, scss, javascript, react, redux, axios, github -->
-
-# Postmates Clone Service
-
-- 온디맨드(onDemand) 기반 배달 서비스 플랫폼 Postmates의 서비스를 리버스 엔지니어링 하여 리액트를 통한 상태 Object 설계 및 컴포넌트를 재설계
-- https://postmates.com
-
-## Requirements
-
-- 사용 기술: Html, Styled Components, React, Redux, Axios, Github
-
-## Getting Started
-- 프로젝트 설치: Yarn Install.
-- 실행방법: Yarn Start.
-
-## Contributors 
-- Front-end : 송부용, 송승은, 이희진, 박기태
-- Back-end : 신재민
-
-## 프로젝트 아이템 결정 계기
-- 
-## 기획 순서
-
-## 스프린트 단위 별 구현 기능
-
-## 결과물 시연
-
-## 소감
-- 송부용:
-- 송승은:
-- 이희진:
-- 박기태:
+- html, scss, javascript, react, redux, axios, github
