@@ -35,7 +35,8 @@ const MainHeaderBlock = styled.div`
 
 const MainHeaderWrapper = styled.div`
   display: flex;
-  min-height: 72px;
+  /* min-height: 72px; */
+  max-height: 72px;
   justify-content: space-between;
   align-items: center;
   max-width: 1024px;
