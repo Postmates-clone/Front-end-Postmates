@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Media from '../../Style/Media';
+import { setPage } from '../../Modules/MainReducer';
 
 const ErrorBlock = styled.div`
   width: 100%;
   height: 100%;
   min-height: calc(100vh - 72px);
-
   color: rgb(45, 49, 56);
   background-color: rgb(251, 208, 69);
 `;
@@ -98,8 +99,13 @@ const GoMainBtn = styled.button`
 `;
 
 const Error404 = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setPage('error'));
+  }, [dispatch]);
+
   return (
-    <ErrorBlock>
+    <ErrorBlock dispatch={dispatch}>
       <ErrorWrapper>
         <MainMessage>
           <Title>404</Title>
