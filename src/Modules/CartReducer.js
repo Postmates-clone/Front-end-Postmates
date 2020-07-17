@@ -69,6 +69,7 @@ export default function CartReducer(state = initialState, action) {
               cart: state.cart.concat(action.payload),
             };
           } else {
+            console.log('ddddd', action.payload);
             return {
               ...state,
               cart: state.cart.map((_cartItem) => {
@@ -96,6 +97,7 @@ export default function CartReducer(state = initialState, action) {
       return {
         ...state,
         cart: [],
+        totalCount: 0,
       };
     case OPEN_CART:
       return {

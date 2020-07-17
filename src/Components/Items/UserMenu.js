@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
+import { CLEAR_CART } from '../../Modules/CartReducer';
 import { loginUsersAsync, LOGIN_USER_ERROR } from '../../Modules/UserReducer';
 
 const UserMenuBlock = styled.div`
@@ -94,6 +95,7 @@ const UserMenu = () => {
 
   const logOut = async () => {
     await dispatch(loginUsersAsync({ type: LOGIN_USER_ERROR }));
+    await dispatch({ type: CLEAR_CART });
     closeMenu();
   };
 

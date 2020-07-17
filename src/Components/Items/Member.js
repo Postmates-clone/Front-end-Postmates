@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { LoginBtn } from '../../Style/BasicBtn';
 import LoginPopUp from './LoginPopUp';
 import SignUpPopUp from './SignUpPopUp';
 import UserMenu from './UserMenu';
 import Media from '../../Style/Media';
+import { openCart } from '../../Modules/CartReducer';
 
 const MemberWrap = styled.div`
   display: flex;
@@ -60,21 +61,18 @@ const CartText = styled.div`
   letter-spacing: 1px;
   line-height: normal;
   padding: 10px;
+  cursor: pointer;
 `;
 const Member = () => {
   const [openLogIn, setOpenLogIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
-  // const cart = useSelector((state) => state.Cart.cart);
   const cartTotalCount = useSelector((state) => state.Cart.totalCount);
-
   const userInfo = useSelector((state) => state.User.userInfo);
-
-  // const cartTotalCount = cart.reduce((prev, curr) => {
-  //   return prev + curr.count;
-  // }, 0);
 
   const openLogInPopUp = () => setOpenLogIn(!openLogIn);
   const openSignUpPopUp = () => setOpenSignUp(!openSignUp);
+
+  const dispatch = useDispatch();
 
   return (
     <MemberWrap>
@@ -89,8 +87,8 @@ const Member = () => {
           <LoginCart>
             <UserMenu />
             <CountBlock>{cartTotalCount}</CountBlock>
-            <CartText>Cart </CartText>
-            <Arrow>&gt;</Arrow>
+            <CartText onClick={() => dispatch(openCart(true))}>Cart </CartText>
+            <Arrow onClick={() => dispatch(openCart(true))}>&gt;</Arrow>
           </LoginCart>
         </>
       )}
