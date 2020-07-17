@@ -18,7 +18,12 @@ const CheckoutTitle = styled.h2`
   font-size: 50px;
 `;
 
-const CheckoutUser = ({ userInfo }) => {
+const CheckoutUser = ({ userInfo, openPopUp, setOpenPopUp }) => {
+  // const closePopUp = () => setOpenPopUp(!openPopUp);
+  const startDelivery = () => {
+    setOpenPopUp(!openPopUp);
+  };
+
   return (
     <WrapperCheckoutUser>
       <CheckoutTitle>Checkout</CheckoutTitle>
@@ -26,7 +31,7 @@ const CheckoutUser = ({ userInfo }) => {
       <CheckoutUserItem title="Delivery Address" itemprops={userInfo.address} />
       <CheckoutUserItem title="Phone" itemprops={userInfo.phone} />
       <div className="WrapperButton">
-        <BasicBtn active text="CONTINUE" width="100%" />
+        <BasicBtn active text="CONTINUE" width="100%" onClick={startDelivery} />
       </div>
     </WrapperCheckoutUser>
   );
