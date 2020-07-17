@@ -1,11 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import SubHeader from './SubHeader';
 import SubBanner from './SubBanner';
-
-const Warp = styled.div`
-  position: relative;
-`;
 
 const WarpSubHeader = ({
   page,
@@ -16,7 +12,7 @@ const WarpSubHeader = ({
   dispatch,
 }) => {
   return (
-    <Warp>
+    <>
       <SubBanner page={page} getBackground={getBackground} />
       <SubHeader
         page={page}
@@ -25,7 +21,7 @@ const WarpSubHeader = ({
         changeSubInput={changeSubInput}
         dispatch={dispatch}
       />
-    </Warp>
+    </>
   );
 };
 

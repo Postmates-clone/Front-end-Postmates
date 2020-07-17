@@ -45,11 +45,13 @@ const SubBannerBlock = styled.div`
 
 const BannerImage = styled.img`
   position: fixed;
-  width: 100vw;
-  top: -20%;
+  z-index: -1;
+  height: ${(props) => (props.page === 'feed' ? 'inherit' : 'auto')};
+  top: ${(props) => (props.page === 'feed' ? '72px' : '-20%')};
 `;
 
 const FeedTitle = styled.div`
+  position: fixed;
   font-weight: 600;
   ${Media.desktop`
     width: 1024px;
@@ -78,7 +80,7 @@ const SubBanner = ({ page, getBackground }) => {
           We get it.
         </FeedTitle>
       )}
-      <BannerImage src={`${getBackground()}`} alt="aa" />
+      <BannerImage src={`${getBackground()}`} alt="no image" page={page} />
     </SubBannerBlock>
   );
 };

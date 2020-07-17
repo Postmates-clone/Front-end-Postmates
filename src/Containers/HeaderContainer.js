@@ -37,7 +37,7 @@ const HeaderContainer = () => {
   );
 
   return (
-    <div>
+    <>
       <MainHeader page={page} />
       {page === 'feed' || page === 'item' ? (
         <WarpSubHeader
@@ -51,7 +51,7 @@ const HeaderContainer = () => {
       ) : (
         ''
       )}
-    </div>
+    </>
   );
 };
 
