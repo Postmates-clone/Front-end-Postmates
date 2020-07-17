@@ -7,7 +7,7 @@ const SubBannerBlock = styled.div`
   display: flex;
   justify-content: center;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: -1;
   top: 72px;
 
@@ -46,6 +46,7 @@ const SubBannerBlock = styled.div`
 const BannerImage = styled.img`
   position: fixed;
   z-index: -1;
+  width: inherit;
   height: ${(props) => (props.page === 'feed' ? 'inherit' : 'auto')};
   top: ${(props) => (props.page === 'feed' ? '72px' : '-20%')};
 `;

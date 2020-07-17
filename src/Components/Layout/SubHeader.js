@@ -44,7 +44,7 @@ const SubHeaderBlock = styled.div`
   }
 
   &.subHeader-item {
-    top: 72px;
+    top: 0px;
     ${Media.desktop`
       height: 69px;
       margin-top: 260px;
