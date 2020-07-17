@@ -2,10 +2,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
 import Media from '../../Style/Media';
 import ItemPopup from './ItemPopup';
-import { CLEAR_CART } from '../../Modules/CartReducer';
 
 const ItemBlock = styled.li`
   display: flex;
@@ -122,16 +120,14 @@ const MenuItem = ({ item, subInput, history }) => {
   }, [description, name, subInput]);
 
   const [dialog, setDialog] = useState(false);
-  const dispatch = useDispatch();
 
   const onClick = () => {
     setDialog(true);
-    dispatch({ type: CLEAR_CART });
   };
 
   const onCancel = () => {
     setDialog(false);
-    dispatch({ type: CLEAR_CART });
+    // dispatcsh({ type: CLEAR_CART });
   };
   return (
     <>
