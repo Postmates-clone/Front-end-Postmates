@@ -25,6 +25,9 @@ const MainHeaderBlock = styled.div`
     position: sticky;
     background: #fff;
   }
+  /* &.mainHeader-error {
+    background:rgb(251, 208, 69);
+  } */
 `;
 
 const MainHeaderWrapper = styled.div`

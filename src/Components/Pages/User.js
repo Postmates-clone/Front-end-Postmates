@@ -44,9 +44,7 @@ const UserPhoto = styled.div`
 const UserImage = styled.div`
   width: 80px;
   height: 80px;
-
   margin: 20px 0;
-
   border-radius: 45px;
   border: 1px dashed rgb(217, 219, 224);
 
