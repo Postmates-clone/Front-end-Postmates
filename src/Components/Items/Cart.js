@@ -58,7 +58,7 @@ const ContentBlock = styled.div`
 export const CountBlock = styled.div`
   min-width: 10%;
   max-width: 10%;
-  height: 30px;ss
+  height: 30px;
   text-align: center;
   padding: 7px;
   background-color: rgb(246, 246, 248);
@@ -183,12 +183,13 @@ const Cart = ({ history }) => {
 
   const setOrderedMenu = () => {
     let orderedMennu = [];
+    // eslint-disable-next-line no-unused-vars
     orderedMennu = cart.map(({ id, name, option, totalPrice, count }) => ({
       id,
       name,
       total_price: totalPrice,
       quantity: count,
-      option: [{ ...option }],
+      option: [],
     }));
     return orderedMennu;
   };

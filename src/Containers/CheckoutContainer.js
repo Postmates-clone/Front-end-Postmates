@@ -25,7 +25,8 @@ const CheckoutContainer = () => {
   }, []);
 
   const getDelivery = async () => {
-    const { data } = await DevApi.getDelivery();
+    const data = await DevApi.getDelivery();
+    console.log('checkout res', data);
     setResData(data);
   };
 
