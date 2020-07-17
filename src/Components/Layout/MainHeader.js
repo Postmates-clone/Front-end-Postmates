@@ -83,10 +83,6 @@ const MainHeader = ({ page }) => {
       <MainHeaderWrapper>
         <Logo page={page} />
         <MainResponsiveWrap>
-          {/* {page !== 'main' && page !== 'error' && <Search />}
-          {page !== 'main' && page !== 'error' && <MainMenu />}
-          <IconWrap>
-            {page !== 'main' && page !== 'error' && searchIconDeep} */}
           {page === 'feed' && <Search />}
           {page === 'item' && <Search />}
           {page === 'checkout' && <Search />}
