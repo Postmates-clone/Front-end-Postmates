@@ -24,6 +24,7 @@ const Price = styled.div`
   }
   .price {
     margin-left: auto;
+    color: #00cc99;
   }
 `;
 
@@ -44,11 +45,11 @@ const CheckoutCartList = ({ storeInfo }) => {
       </CartList>
       <Price border="1px solid #d9dbe0">
         <span className="title">Delivery Price</span>
-        <span className="price">{`$${storeInfo.total_price}`}</span>
+        <span className="price">{`$${storeInfo.delivery_fee.toFixed(2)}`}</span>
       </Price>
       <Price border="none">
         <span className="title">Total Price</span>
-        <span className="price">{`$${storeInfo.total_price}`}</span>
+        <span className="price">{`$${storeInfo.total_price.toFixed(2)}`}</span>
       </Price>
     </WarpperCartList>
   );

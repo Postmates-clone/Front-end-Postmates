@@ -43,13 +43,13 @@ const CartListItem = ({ item }) => {
   return (
     <ListItem>
       <WrapItem>
-        <ItemTitle>{`X${item.count} ${item.name}`}</ItemTitle>
-        <ItemPrice>{item.price}</ItemPrice>
+        <ItemTitle>{`X${item.quantity} ${item.name}`}</ItemTitle>
+        <ItemPrice>{`$${item.total_price.toFixed(2)}`}</ItemPrice>
       </WrapItem>
       {item.options.map(({ name, price }) => (
         <ItemOption>
           <span className="option-name">{name}</span>
-          <span className="option-price">{price}</span>
+          <span className="option-price">{price.toFixed(2)}</span>
         </ItemOption>
       ))}
       {/* <Instruction>{item.instruction}</Instruction> */}
