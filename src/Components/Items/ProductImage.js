@@ -13,7 +13,6 @@ const ImageWrapper = styled.div`
   `}
   ${Media.mobile`
   width:100%;
-    /* margin:0 0 290px 0; */
     padding:0;
   `}
 `;
@@ -22,7 +21,6 @@ const Image = styled.img`
   width: 100%;
   max-height: 500px;
   object-fit: contain;
-  /* cursor: pointer; */
   transition: opacity 0.4s linear 0s;
 `;
 

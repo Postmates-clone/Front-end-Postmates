@@ -30,38 +30,6 @@ const ProductInfoBlock = styled.div`
   `}
 `;
 
-// export const Button = styled.button`
-//   background-color: #00cc99;
-//   height: 48px;
-//   width: 200px;
-//   border-radius: 28px;
-//   letter-spacing: 0.72px;
-//   font-weight: bold;
-//   cursor: pointer;
-//   text-align: center;
-//   color: #fff;
-//   outline: none;
-//   border: none;
-
-//   font-size: 12px;
-
-//   ${Media.mobile`
-//     max-width: 80%;
-//     max-height: 80%;
-//     justify-content:center;
-//     align-items: center;
-//     text-align: center;
-
-//   `}
-
-//   ${Media.tablet`
-//     max-width: 80%;
-//     max-height: 80%;
-//     margin:0;
-
-//   `}
-// `;
-
 const Title = styled.div`
   font-size: 48px;
   font-weight: 600px;
