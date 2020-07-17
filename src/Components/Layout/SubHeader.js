@@ -99,6 +99,7 @@ const SubHeader = ({
   dispatch,
 }) => {
   const totalCount = useSelector((state) => state.Cart.totalCount);
+
   return (
     <SubHeaderBlock className={`subHeader-${page}`}>
       <div className="wrap-subheader-item">

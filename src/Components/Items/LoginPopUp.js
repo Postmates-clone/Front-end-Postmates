@@ -8,6 +8,7 @@ import { BasicBtn } from '../../Style/BasicBtn';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginUsersAsync } from '../../Modules/UserReducer';
 import SHA256 from '../../lib/sha256';
+import { CLEAR_CART } from '../../Modules/CartReducer';
 
 const LoginPopUpBlock = styled.div`
   z-index: 90;

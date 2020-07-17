@@ -58,7 +58,7 @@ const ContentBlock = styled.div`
 export const CountBlock = styled.div`
   min-width: 10%;
   max-width: 10%;
-  height: 30px;ss
+  height: 30px;
   text-align: center;
   padding: 7px;
   background-color: rgb(246, 246, 248);

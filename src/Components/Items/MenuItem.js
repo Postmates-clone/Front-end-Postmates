@@ -2,10 +2,10 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import Media from '../../Style/Media';
-
-// FIXME: 희진 -itemPopup 작업
 import ItemPopup from './ItemPopup';
+import { CLEAR_CART } from '../../Modules/CartReducer';
 
 const ItemBlock = styled.li`
   display: flex;
@@ -122,13 +122,16 @@ const MenuItem = ({ item, subInput, history }) => {
   }, [description, name, subInput]);
 
   const [dialog, setDialog] = useState(false);
+  const dispatch = useDispatch();
 
   const onClick = () => {
     setDialog(true);
+    dispatch({ type: CLEAR_CART });
   };
 
   const onCancel = () => {
     setDialog(false);
+    dispatch({ type: CLEAR_CART });
   };
   return (
     <>
@@ -149,6 +152,7 @@ const MenuItem = ({ item, subInput, history }) => {
         // eslint-disable-next-line react/no-children-prop
         visible={dialog}
         onCancel={onCancel}
+        onClick={onClick}
       />
     </>
   );

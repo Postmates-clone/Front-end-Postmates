@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
@@ -10,7 +11,7 @@ import Textarea from 'react-textarea-autosize';
 // import Tippy from '@tippyjs/react';
 // import 'tippy.js/dist/tippy.css'; // optional
 import { AddToCart } from '../../Style/BasicCounter';
-import { ADD_TO_CART } from '../../Modules/CartReducer';
+import { ADD_TO_CART, CLEAR_CART } from '../../Modules/CartReducer';
 import { CloseBtn } from '../../Style/PopUp';
 import { closeIcon } from '../../Style/IconStyles';
 
@@ -285,7 +286,7 @@ const getOptionsPrice = (options) => {
   }, 0);
 };
 
-const ItemPopup = ({ item, visible, onCancel, active }) => {
+const ItemPopup = ({ item, visible, onCancel, onClick, active }) => {
   const [count, setCount] = useState(1);
   const [checked, setChecked] = useState(false);
 
@@ -305,7 +306,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
 
   const { name, description, image_url, price, options } = item;
 
-  const onClick = () => {
+  const _onClick = () => {
     dispatch({
       type: ADD_TO_CART,
       payload: {
@@ -318,7 +319,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
     });
     if (addInstruction.lenght > 200) return;
     setAddInstruction('');
-    onCancel();
+    onCancel({ type: CLEAR_CART });
   };
 
   const onChange = (e) => {
@@ -379,7 +380,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
                     />
                     <OptionDetailName>{opt.name}</OptionDetailName>
                     <OptionDetailPrice>
-                      {opt.price ? `+$${opt.price}` : ''}
+                      {opt.price ? `+$${opt.price.toFixed(2)}` : ''}
                     </OptionDetailPrice>
                   </OptionDetailInfo>
                 </OptionDetailBlock>
@@ -413,7 +414,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
                 active
                 text="Add To Cart"
                 totalprice={`$${totalPrice}`}
-                onClick={onClick}
+                onClick={_onClick}
               />
             </AddToCartBlock>
           </ButtonGroup>
