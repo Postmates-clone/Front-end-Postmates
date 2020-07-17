@@ -19,6 +19,8 @@ export const DeliverySectionBlock = styled.div`
   height: 400px;
   background-repeat: no-repeat;
   background-image: url('https://raster-static.postmates.com?url=https://buyer-static-gcp.postmates.com/dist/prod/ready-to-order-food.51b50e784d9cb2acdd8e37a9fda07d937570cd440fde10cdd758862308d6bde614e51c1b877a58dcddfac3245d882619be81aeeec79cff352b9e2dc5393556a1.png&quality=85&w=3480&h=0&mode=auto&format=webp&v=4');
+  background-position: center;
+  background-size: cover;
 `;
 
 export const DeliveryTextWrapper = styled.div`
