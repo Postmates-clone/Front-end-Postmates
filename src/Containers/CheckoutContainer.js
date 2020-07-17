@@ -16,6 +16,7 @@ const CheckoutContainer = () => {
     store_img: '',
     total_price: 0,
     url: '',
+    delivery_fee: 0,
   });
 
   const setResData = useCallback((data) => {
@@ -25,7 +26,7 @@ const CheckoutContainer = () => {
   }, []);
 
   const getDelivery = async () => {
-    const data = await DevApi.getDelivery();
+    const { data } = await DevApi.getDelivery();
     console.log('checkout res', data);
     setResData(data);
   };
