@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUsersAsync, patchUsersAsync } from '../Modules/UserReducer';
 import User from '../Components/Pages/User';
+import { setPage } from '../Modules/MainReducer';
 // import OrderHistory from '../Components/Pages/OrderHistory';
 
 const UserContainer = () => {
@@ -19,6 +20,7 @@ const UserContainer = () => {
 
   useEffect(() => {
     dispatch(getUsersAsync());
+    dispatch(setPage('account'));
   }, [dispatch]);
 
   if (status.loading) return <div>로딩중...</div>;

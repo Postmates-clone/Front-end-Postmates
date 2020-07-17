@@ -90,6 +90,16 @@ const Bulkhead = styled.div`
   `}
 `;
 
+const WarpLoginButton = styled.div`
+  margin-left: auto;
+  ${Media.tablet`
+     display: none;
+  `}
+  ${Media.mobile`
+     display: none;
+  `}
+`;
+
 const SubHeader = ({
   page,
   menuList,
@@ -122,13 +132,15 @@ const SubHeader = ({
         {page === 'item' && <Bulkhead />}
         {/* {page === 'item' && <Cart />} */}
         {page === 'item' && (
-          <LoginBtn
-            onClick={() => dispatch(openCart(true))}
-            active
-            height="45px"
-            width="100px"
-            text={`${totalCount} ITEMS`}
-          />
+          <WarpLoginButton>
+            <LoginBtn
+              onClick={() => dispatch(openCart(true))}
+              active
+              height="45px"
+              width="100px"
+              text={`${totalCount} ITEMS`}
+            />
+          </WarpLoginButton>
         )}
       </div>
     </SubHeaderBlock>

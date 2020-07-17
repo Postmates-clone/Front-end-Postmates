@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
 import PastOrder from '../Items/PastOrder';
 import { DevApi } from '../../Dev/DevApi';
+import { setPage } from '../../Modules/MainReducer';
 
 const OrderHeader = styled.div`
   position: relative;
@@ -170,10 +172,12 @@ const OrderHistory = () => {
       error: null,
     }));
   };
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetchItems();
-  }, []);
+    dispatch(setPage('order'));
+  }, [dispatch]);
 
   // console.log(state);
   const { loading, data, error } = state;

@@ -14,7 +14,6 @@ const CategoriyListBlock = styled.div`
   overflow-y: scroll;
   overflow-x: auto;
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
-  transform: translateY();
 `;
 
 const CategoriyItem = styled.li`
@@ -36,6 +35,7 @@ const MenuCategoriesList = ({
 
   const closeList = useCallback(
     (target) => {
+      if (!target.parentElement) return;
       if (target === openButtonRef.current || target === openTextRef.current) {
         return;
       }
