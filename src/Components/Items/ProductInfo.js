@@ -31,11 +31,12 @@ const ProductInfoBlock = styled.div`
 `;
 
 const Title = styled.div`
+  font-weight: 600;
   font-size: 48px;
-  font-weight: 600px;
   line-height: 50px;
   letter-spacing: -2.6px;
   color: #000;
+
   ${Media.mobile`
     min-width:100%;
     text-align:center;
