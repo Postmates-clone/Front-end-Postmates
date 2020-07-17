@@ -64,13 +64,14 @@ const CartText = styled.div`
 const Member = () => {
   const [openLogIn, setOpenLogIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
-  const cart = useSelector((state) => state.Cart.cart);
+  // const cart = useSelector((state) => state.Cart.cart);
+  const cartTotalCount = useSelector((state) => state.Cart.totalCount);
 
   const userInfo = useSelector((state) => state.User.userInfo);
 
-  const cartTotalCount = cart.reduce((prev, curr) => {
-    return prev + curr.count;
-  }, 0);
+  // const cartTotalCount = cart.reduce((prev, curr) => {
+  //   return prev + curr.count;
+  // }, 0);
 
   const openLogInPopUp = () => setOpenLogIn(!openLogIn);
   const openSignUpPopUp = () => setOpenSignUp(!openSignUp);
