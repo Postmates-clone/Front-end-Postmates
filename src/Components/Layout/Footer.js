@@ -28,7 +28,6 @@ export const FooterBlock = styled.div`
     letter-spacing: 0.14px;
     font-weight: 600;
     line-height: 2.3em;
-    letter-spacing: 0.9px;
   }
   & h4 {
     font-family: PostmatesStd, 'Helvetica Neue', Helvetica;
@@ -59,7 +58,6 @@ export const FooterBlock = styled.div`
     letter-spacing: 0.14px;
     font-weight: 400;
     line-height: 2rem;
-    letter-spacing: 0.9px;
     color: #8f95a3;
     cursor: pointer;
   }

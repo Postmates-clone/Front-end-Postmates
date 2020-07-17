@@ -14,7 +14,6 @@ const ADD_COUNT = 'ADD_COUNT';
 export const openCart = (openState) => ({ type: OPEN_CART, openState });
 export const addCount = (count) => ({ type: ADD_COUNT, count });
 
-//초기상태
 const initialState = {
   isPaneOpen: false,
   cart: [],
@@ -27,13 +26,19 @@ export default function CartReducer(state = initialState, action) {
       const cartItem = state.cart.find(
         (item) => item.name === action.payload.name,
       );
+
       if (!cartItem) {
+        console.log('cartItem', action.payload);
         return {
           ...state,
           cart: state.cart.concat(action.payload),
         };
       } else {
-        if (cartItem.options.length !== action.payload.options.length) {
+        const optionsKeys = Object.keys(cartItem.options);
+        const payloadKeys = Object.keys(action.payload.options);
+        console.log('KEYS', optionsKeys, payloadKeys);
+
+        if (optionsKeys.length !== payloadKeys.length) {
           return {
             ...state,
             cart: state.cart.concat(action.payload),
@@ -41,8 +46,14 @@ export default function CartReducer(state = initialState, action) {
         } else {
           let isInCart = true;
 
-          cartItem.options.forEach((option, idx) => {
-            if (option.id !== action.payload.options[idx]) {
+          optionsKeys.forEach((key) => {
+            const optionItem = cartItem.options[key];
+            const payloadOptionItem = action.payload.options[key];
+
+            if (!payloadOptionItem) {
+              isInCart = false;
+            }
+            if (optionItem.id !== payloadOptionItem.id) {
               isInCart = false;
             }
           });

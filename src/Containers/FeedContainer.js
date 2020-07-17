@@ -5,16 +5,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import Feed from '../Components/Pages/Feed';
 
 // eslint-disable-next-line no-unused-vars
-import {
-  getNearBy,
-  getOrderBy,
-  getFavorite,
-  getInFast,
-} from '../Modules/FeedReducer';
+import { getOrderBy, getFavorite, getInFast } from '../Modules/FeedReducer';
 import { setPage } from '../Modules/MainReducer';
 
 const FeedContainer = () => {
-  const { nearby, orderby, favorite, getinfast } = useSelector((state) => ({
+  const { orderby, favorite, getinfast } = useSelector((state) => ({
     // nearby: state.Feed.nearby,
     orderby: state.Feed.orderby,
     favorite: state.Feed.favorite,
@@ -61,4 +56,4 @@ const FeedContainer = () => {
   );
 };
 
-export default FeedContainer;
+export default React.memo(FeedContainer);

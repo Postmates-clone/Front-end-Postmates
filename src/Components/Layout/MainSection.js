@@ -17,22 +17,19 @@ const MainSectionBlock = styled.div`
   overflow: hidden;
   white-space: initial;
   text-overflow: ellipsis;
-
   flex-direction: ${({ isRowReverse }) =>
     isRowReverse ? 'row-reverse' : 'row'};
 
-  ${Media.mobile`
-    width: 100%;
-    justify-content:center;
-    padding:0;
-    flex-direction: column-reverse;
-  `}
-
   ${Media.tablet`
     width: 100%;
+    padding:75px 54px 80px 54px;
+    justify-content:space-around;
+  `}
+  ${Media.mobile`
+    width: 100%;
+    min-height:771px;
     justify-content:center;
-    padding:0;
-
+    padding:25px 0 40px 0;
     flex-direction: column-reverse;
   `}
 `;
