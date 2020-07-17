@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -57,9 +58,9 @@ const ContentBlock = styled.div`
 export const CountBlock = styled.div`
   min-width: 10%;
   max-width: 10%;
-  max-height: 30%;
+  height: 30px;ss
   text-align: center;
-  padding: 1%;
+  padding: 7px;
   background-color: rgb(246, 246, 248);
 `;
 
@@ -73,16 +74,17 @@ const DetailBlock = styled.div`
 const DetailNameBlock = styled.div`
   white-space: normal;
   word-break: break-all;
-  max-height: 20%;
 `;
 
 const DetailOptionBlock = styled.div`
-  overflow: hidden;
-  white-space: initial;
-  text-overflow: hidden;
-  max-height: 70%;
   color: rgb(143, 149, 163);
   font-size: 14px;
+`;
+
+const DetailInstruction = styled.div`
+  overflow: hidden;
+  white-space: initial;
+  text-overflow: ellipsiss;
 `;
 
 const OptionsName = styled.div`
@@ -96,7 +98,6 @@ const OptionsName = styled.div`
 const PriceBlock = styled.div`
   min-width: 20%;
   max-width: 20%;
-  max-height: 10%;
   color: rgb(143, 149, 163);
 `;
 
@@ -254,7 +255,8 @@ const Cart = ({ history }) => {
               Cart - {storeData.name}
               {user.username ? (
                 <div>
-                  hello! {user.username} youre added {cartTotalCount} items.
+                  hello! {user.username} you&rsquo;re added {cartTotalCount}{' '}
+                  items.
                 </div>
               ) : (
                 ''
@@ -270,7 +272,7 @@ const Cart = ({ history }) => {
                   <DetailOptionBlock>
                     {renderOptions(item.options)}
                   </DetailOptionBlock>
-                  {item.instruction}
+                  <DetailInstruction>{item.instruction}</DetailInstruction>
                   <PriceBlock> {`$${item.totalPrice.toFixed(2)}`}</PriceBlock>
                 </DetailBlock>
                 <RemoveBlock>

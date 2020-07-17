@@ -57,8 +57,6 @@ export const loginUsersAsync = (payload) => async (dispatch, state) => {
     localStorage.setItem('token', data.token);
   } catch (e) {
     dispatch({ type: LOGIN_USER_ERROR, error: e });
-    dispatch({ type: LOGOUT_USER });
-    localStorage.removeItem('token');
   }
 };
 
@@ -525,6 +523,7 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         isLogin: false,
+        userInfo: {},
         status: {
           loading: false,
           success: false,
