@@ -105,7 +105,7 @@ const ImageBlock = styled.div`
 const DialogBlock = styled.div`
   width: 524px;
   height: 512px;
-  padding: 30px;
+  padding: 35px;
   /* background-position: center; */
   justify-content: space-between;
   /* align-items: center; */
@@ -120,7 +120,7 @@ const DialogBlock = styled.div`
 
   p {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.33;
     margin: 16px 0 30px;
     color: #8f95a3;
@@ -159,12 +159,16 @@ export const itemColor = {
 const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
-  border-top: 2px solid ${itemColor.lineGray};
-  padding-top: 10px;
+  /* border-top: 2px solid ${itemColor.lineGray}; */
+  padding-top: 20px;
 `;
 
 const AddToCartBlock = styled.div`
   max-width: 60%;
+  button {
+    font-weight: 400;
+    font-size: 14px;
+  }
 `;
 
 const CounterBlock = styled.div`
@@ -251,6 +255,8 @@ const OptionDetailName = styled.label`
   margin-left: 18px;
   max-width: 80%;
   text-align: left;
+  font-size: 14px;
+  font-weight: 200;
 `;
 
 const OptionDetailPrice = styled.div`
@@ -258,13 +264,16 @@ const OptionDetailPrice = styled.div`
   max-width: 10%;
   margin-left: auto;
   text-align: right;
+  font-size: 14px;
+  font-weight: 200;
 `;
 
 const InstructionBorder = styled.div`
   width: 100%;
   height: 20%;
-  border-top: 2px solid ${itemColor.lineGray};
-  border-bottom: 2px solid ${itemColor.lineGray};
+  margin-top: 10px;
+  border-top: 1px solid ${itemColor.lineGray};
+  border-bottom: 1px solid ${itemColor.lineGray};
 `;
 
 const InstructionBlock = styled(Textarea)`
@@ -277,6 +286,12 @@ const InstructionBlock = styled(Textarea)`
   resize: none;
 `;
 
+const InstructionLength = styled.div`
+  color: #ccc;
+  font-size: 14px;
+  padding: 5px;
+  text-align: right;
+`;
 const getOptionsPrice = (options) => {
   const optionsList = Object.keys(options).map((key) => options[key]);
 
@@ -386,7 +401,11 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
               ))}
             </>
           ))}
-          <h2 style={{ marginTop: '50px' }}>SPECIAL INSTRUCTIONS</h2>
+          <h2
+            style={{ marginTop: '50px', fontSize: '14px', fontWeight: 'bold' }}
+          >
+            SPECIAL INSTRUCTIONS
+          </h2>
           <InstructionBorder>
             <InstructionBlock
               placeholder="Add Instructions..."
@@ -398,7 +417,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
               onChange={onChange}
             />
           </InstructionBorder>
-          <div style={{ marginBottom: '10%' }}>{addInstruction.length}/200</div>
+          <InstructionLength>{addInstruction.length}/200</InstructionLength>
           <ButtonGroup>
             {/* counter */}
             <CounterBlock>
@@ -411,7 +430,7 @@ const ItemPopup = ({ item, visible, onCancel, active }) => {
             <AddToCartBlock>
               <AddToCart
                 active
-                text="Add To Cart"
+                text="ADD TO CART"
                 totalprice={`$${totalPrice}`}
                 onClick={onClick}
               />
