@@ -74,4 +74,4 @@ const Feed = ({ orderby, favorite, getinfast }) => {
   );
 };
 
-export default Feed;
+export default React.memo(Feed);

@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable implicit-arrow-linebreak */
+import React, { useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
 const CategoriyListBlock = styled.div`
@@ -23,9 +24,40 @@ const CategoriyItem = styled.li`
   border-bottom: 1px solid rgb(239, 239, 239);
 `;
 
-const MenuCategoriesList = ({ menuList, handleClickScrollTo, isOpen }) => {
+const MenuCategoriesList = ({
+  menuList,
+  handleClickScrollTo,
+  isOpen,
+  setIsOpen,
+  openButtonRef,
+  openTextRef,
+}) => {
+  const listRef = useRef();
+
+  const closeList = useCallback(
+    (target) => {
+      if (target === openButtonRef.current || target === openTextRef.current) {
+        return;
+      }
+
+      if (target.parentElement.parentElement === listRef.current) return;
+      setIsOpen(false);
+    },
+    [openButtonRef, openTextRef, setIsOpen],
+  );
+
+  useEffect(() => {
+    document.addEventListener('mousedown', ({ target }) => closeList(target));
+    return () => {
+      document.removeEventListener(
+        'mousedown',
+        ({ target }) => closeList(target),
+        // eslint-disable-next-line function-paren-newline
+      );
+    };
+  }, [closeList]);
   return (
-    <CategoriyListBlock isOpen={isOpen}>
+    <CategoriyListBlock isOpen={isOpen} ref={listRef}>
       <ul>
         {menuList.map((menu) => (
           <CategoriyItem

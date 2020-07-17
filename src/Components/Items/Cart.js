@@ -183,9 +183,11 @@ const Cart = ({ history }) => {
 
   const setOrderedMenu = () => {
     let orderedMennu = [];
-    orderedMennu = cart.map(({ id, name, option }) => ({
+    orderedMennu = cart.map(({ id, name, option, totalPrice, count }) => ({
       id,
       name,
+      total_price: totalPrice,
+      quantity: count,
       option: [{ ...option }],
     }));
     return orderedMennu;
@@ -193,14 +195,9 @@ const Cart = ({ history }) => {
 
   const setDelivery = () => {
     console.log('storeData', storeData);
-    const today = new Date();
     setDeliveryState({
-      id: storeData.id,
-      name: storeData.name,
       url: storeData.url,
-      store_img: storeData.store_img,
       total_price: cartTotalPrice,
-      ordered_date: today,
       ordered_menus: setOrderedMenu(),
     });
     // console.log('delivery', deliveryState);
