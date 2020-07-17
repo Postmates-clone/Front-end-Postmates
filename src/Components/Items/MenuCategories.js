@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import styled from 'styled-components';
 import MenuCategoriesList from './MenuCategoriesList';
 import Media from '../../Style/Media';
@@ -26,20 +26,26 @@ const MenuCategoriesBlock = styled.div`
 const MenuCategories = ({ menuList, handleClickScrollTo }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const openButtonRef = useRef();
+  const openTextRef = useRef();
+
   const ChangeOpen = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen]);
 
   return (
     <MenuCategoriesBlock>
-      <button type="button" onClick={ChangeOpen}>
-        <span>Category</span>
+      <button type="button" onClick={ChangeOpen} ref={openButtonRef}>
+        <span ref={openTextRef}>Category</span>
         {arrowIconLarge}
       </button>
       <MenuCategoriesList
         menuList={menuList}
         handleClickScrollTo={handleClickScrollTo}
         isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        openButtonRef={openButtonRef}
+        openTextRef={openTextRef}
       />
     </MenuCategoriesBlock>
   );
