@@ -57,4 +57,4 @@ const CartListItem = ({ item }) => {
   );
 };
 
-export default CartListItem;
+export default React.memo(CartListItem);

@@ -9,6 +9,7 @@ const SubBannerBlock = styled.div`
   position: fixed;
   width: 100%;
   z-index: -1;
+  top: 72px;
 
   
   &.feed {
@@ -38,11 +39,19 @@ const SubBannerBlock = styled.div`
       height: 130px;
     `}
   }
-  background: no-repeat center url(${(props) => props.background});
-  background-size: cover;
+  /* background: no-repeat center url(${(props) => props.background}); */
+  /* background-size: cover; */
+`;
+
+const BannerImage = styled.img`
+  position: fixed;
+  z-index: -1;
+  height: ${(props) => (props.page === 'feed' ? 'inherit' : 'auto')};
+  top: ${(props) => (props.page === 'feed' ? '72px' : '-20%')};
 `;
 
 const FeedTitle = styled.div`
+  position: fixed;
   font-weight: 600;
   ${Media.desktop`
     width: 1024px;
@@ -63,7 +72,7 @@ const FeedTitle = styled.div`
 
 const SubBanner = ({ page, getBackground }) => {
   return (
-    <SubBannerBlock background={() => getBackground()} className={page}>
+    <SubBannerBlock background={getBackground} className={page}>
       {page === 'feed' && (
         <FeedTitle>
           You crave.
@@ -71,8 +80,9 @@ const SubBanner = ({ page, getBackground }) => {
           We get it.
         </FeedTitle>
       )}
+      <BannerImage src={`${getBackground()}`} alt="no image" page={page} />
     </SubBannerBlock>
   );
 };
 
-export default SubBanner;
+export default React.memo(SubBanner);

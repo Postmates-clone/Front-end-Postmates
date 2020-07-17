@@ -71,15 +71,7 @@ const WrapButtonBlock = styled.div`
 `;
 
 const StoreIndividual = ({ storeData }) => {
-  const {
-    name,
-    description,
-    open_hour,
-    address,
-    food_type,
-    is_pickup,
-    delivery_fee,
-  } = storeData;
+  const { name, address, food_type, delivery_fee } = storeData;
   return (
     <StoreIndividualBlock>
       <DeliveryCostBlock>${delivery_fee} Delivery</DeliveryCostBlock>
@@ -88,7 +80,6 @@ const StoreIndividual = ({ storeData }) => {
         <Badge>{food_type}</Badge>
       </div>
       <WrapButtonBlock>
-        <button>00~00</button>
         <button>{address}</button>
         <button>MORE INFO</button>
       </WrapButtonBlock>
@@ -96,4 +87,4 @@ const StoreIndividual = ({ storeData }) => {
   );
 };
 
-export default StoreIndividual;
+export default React.memo(StoreIndividual);

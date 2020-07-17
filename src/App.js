@@ -4,22 +4,23 @@ import MainRouter from './Router/MainRouter';
 import GlobalStyles from './Style/GlobalStyles';
 import HeaderContainer from './Containers/HeaderContainer';
 import { getUsersAsync } from './Modules/UserReducer';
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUsersAsync());
-    console.log('hi');
   }, [dispatch]);
 
   return (
-    <>
+    <div>
       <HeaderContainer />
       <MainRouter />
       <GlobalStyles />
-    </>
+    </div>
   );
 }
 
-export default App;
+// export default App;
+export default React.memo(App);

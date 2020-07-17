@@ -12,4 +12,4 @@ const MenuCategoryTitle = ({ category }) => {
   return <CategoryBlock>{category}</CategoryBlock>;
 };
 
-export default MenuCategoryTitle;
+export default React.memo(MenuCategoryTitle);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Checkout from '../Components/Pages/Checkout';
 import { setPage } from '../Modules/MainReducer';
@@ -18,16 +18,15 @@ const CheckoutContainer = () => {
     url: '',
   });
 
-  const setResData = (data) => {
+  const setResData = useCallback((data) => {
     const lastLangth = data.results.length - 1;
     const checkoutStore = data.results[lastLangth];
     setStoreInfo(checkoutStore);
-  };
+  }, []);
 
   const getDelivery = async () => {
     const { data } = await DevApi.getDelivery();
     setResData(data);
-    console.log('get delivery', data);
   };
 
   const dispatch = useDispatch();
@@ -36,6 +35,7 @@ const CheckoutContainer = () => {
     getDelivery();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
+
   return (
     <div>
       <Checkout dispatch={dispatch} userInfo={userInfo} storeInfo={storeInfo} />
