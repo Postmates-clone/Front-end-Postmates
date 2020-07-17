@@ -57,6 +57,7 @@ export const loginUsersAsync = (payload) => async (dispatch, state) => {
     localStorage.setItem('token', data.token);
   } catch (e) {
     dispatch({ type: LOGIN_USER_ERROR, error: e });
+    localStorage.removeItem('token');
   }
 };
 
