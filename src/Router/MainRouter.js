@@ -9,6 +9,7 @@ import DesignSystem from '../Style/DesignSystem';
 import UserContainer from '../Containers/UserContainer';
 import CheckoutContainer from '../Containers/CheckoutContainer';
 import OrderHistory from '../Components/Pages/OrderHistory';
+import Error404 from '../Components/Pages/Error404';
 
 const MainRouter = () => {
   return (
@@ -22,6 +23,7 @@ const MainRouter = () => {
       <Route path="/dev" component={DevComponent} />
       <Route path="/devuser" component={DevUserComponent} />
       <Route path="/design" component={DesignSystem} />
+      <Route path="/error" component={Error404} />
     </Switch>
   );
 };
