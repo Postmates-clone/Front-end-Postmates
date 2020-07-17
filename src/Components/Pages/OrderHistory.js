@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Media from '../../Style/Media';
 import PastOrder from '../Items/PastOrder';
 import { DevApi } from '../../Dev/DevApi';
-import DeliveryPopup from '../Layout/DeliveryPopup';
 
 const OrderHeader = styled.div`
   position: relative;
@@ -187,7 +186,6 @@ const OrderHistory = () => {
 
   return (
     <div>
-      <DeliveryPopup />
       <OrderHeader>
         <HeaderWrapper>
           <h1>Orders</h1>
