@@ -334,7 +334,7 @@ const ItemPopup = ({ item, visible, onCancel, onClick, active }) => {
     });
     if (addInstruction.lenght > 200) return;
     setAddInstruction('');
-    onCancel({ type: CLEAR_CART });
+    onCancel();
   };
 
   const onChange = (e) => {
