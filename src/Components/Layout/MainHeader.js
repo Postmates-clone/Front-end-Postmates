@@ -29,6 +29,14 @@ const MainHeaderBlock = styled.div`
     position: sticky;
     background: rgb(251, 208, 69);
   }
+  &.mainHeader-order {
+    position: sticky;
+    background: #fff;
+  }
+  &.mainHeader-account {
+    position: sticky;
+    background: #fff;
+  }
   top: 0px;
   z-index: 400;
 `;
