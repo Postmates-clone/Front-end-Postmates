@@ -36,6 +36,7 @@ const MenuCategoriesList = ({
 
   const closeList = useCallback(
     (target) => {
+      if (!target.parentElement) return;
       if (target === openButtonRef.current || target === openTextRef.current) {
         return;
       }
